@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-12" view-index="0" gantt-divider-location="706" resource-divider-location="300" version="3.3.3312" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-04-08" view-index="0" gantt-divider-location="706" resource-divider-location="300" version="3.3.3312" locale="fr_FR">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Nom" width="532" order="0"/>
@@ -40,6 +40,7 @@
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
         <task id="9" uid="b46839b2d08445099c4878b020accb14" name="Rendre cahier des charges" color="#ff0033" meeting="true" start="2025-04-08" duration="0" complete="0" expand="true"/>
+        <task id="21" uid="52e90dfde66c44fca6107e1175817134" name="Planification" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true"/>
         <task id="1" uid="6f602f3886a34d0a8d080431419b6c21" name="Cahier des charges" meeting="false" start="2025-03-24" duration="3" complete="0" expand="true">
             <depend id="7" type="2" difference="0" hardness="Strong"/>
             <depend id="17" type="2" difference="0" hardness="Strong"/>
@@ -50,7 +51,6 @@
             <depend id="17" type="2" difference="0" hardness="Strong"/>
             <depend id="20" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="21" uid="52e90dfde66c44fca6107e1175817134" name="Planification" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true"/>
         <task id="8" uid="0b5364de00b5434c9fcf7ee488b40985" name="Création du MCD" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true">
             <depend id="6" type="2" difference="0" hardness="Strong"/>
         </task>
