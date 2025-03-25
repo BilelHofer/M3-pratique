@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-24" view-index="0" gantt-divider-location="706" resource-divider-location="300" version="3.3.3312" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-03-12" view-index="0" gantt-divider-location="706" resource-divider-location="300" version="3.3.3312" locale="fr_FR">
     <description/>
-    <view zooming-state="default:4" id="gantt-chart">
+    <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Nom" width="532" order="0"/>
         <field id="tpd4" name="Date de début" width="37" order="1"/>
         <field id="tpd5" name="Date de fin" width="136" order="2"/>
@@ -20,7 +20,7 @@
         <day-types>
             <day-type id="0"/>
             <day-type id="1"/>
-            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="1" wed="1" thu="1" fri="1" sat="1"/>
             <only-show-weekends value="false"/>
             <overriden-day-types/>
             <days/>
@@ -40,75 +40,88 @@
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
         <task id="9" uid="b46839b2d08445099c4878b020accb14" name="Rendre cahier des charges" color="#ff0033" meeting="true" start="2025-04-08" duration="0" complete="0" expand="true"/>
-        <task id="1" uid="6f602f3886a34d0a8d080431419b6c21" name="Cahier des charges" meeting="false" start="2025-03-24" duration="12" complete="0" expand="true">
-            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        <task id="1" uid="6f602f3886a34d0a8d080431419b6c21" name="Cahier des charges" meeting="false" start="2025-03-24" duration="3" complete="0" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
             <depend id="20" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="0" uid="afb450e5e2024a5485b8a98e20ceeaec" name="Création de la maquette" meeting="false" start="2025-03-24" duration="6" complete="0" expand="true">
-            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        <task id="0" uid="afb450e5e2024a5485b8a98e20ceeaec" name="Création de la maquette" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+            <depend id="17" type="2" difference="0" hardness="Strong"/>
             <depend id="20" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="21" uid="52e90dfde66c44fca6107e1175817134" name="Planification" meeting="false" start="2025-03-24" duration="6" complete="0" expand="true"/>
-        <task id="8" uid="0b5364de00b5434c9fcf7ee488b40985" name="Création du MCD" meeting="false" start="2025-03-24" duration="6" complete="0" expand="true">
+        <task id="21" uid="52e90dfde66c44fca6107e1175817134" name="Planification" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true"/>
+        <task id="8" uid="0b5364de00b5434c9fcf7ee488b40985" name="Création du MCD" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true">
             <depend id="6" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="6" uid="b053d2d8972945f996d2b6ac19914851" name="Création de la base de données" meeting="false" start="2025-04-01" duration="1" complete="0" expand="true">
-            <depend id="5" type="2" difference="0" hardness="Strong"/>
+        <task id="6" uid="b053d2d8972945f996d2b6ac19914851" name="Création de la base de données" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="5" uid="b4147da0ad4748caa8e8b55f7b58ab26" name="Création du programme" meeting="false" start="2025-04-10" duration="12" complete="0" expand="true">
+        <task id="5" uid="b4147da0ad4748caa8e8b55f7b58ab26" name="Création du programme" meeting="false" start="2025-04-14" duration="8" complete="0" expand="true">
             <depend id="40" type="2" difference="0" hardness="Strong"/>
-            <task id="7" uid="a09093f5cc174e1a95ac27b924be2dde" name="Création de la classe pour intéragir avec la base de données" meeting="false" start="2025-04-10" duration="6" complete="0" expand="true">
+            <task id="7" uid="a09093f5cc174e1a95ac27b924be2dde" name="Création de la classe pour intéragir avec la base de données" meeting="false" start="2025-04-14" duration="2" complete="0" expand="true">
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
                 <depend id="19" type="2" difference="0" hardness="Strong"/>
+                <depend id="22" type="2" difference="0" hardness="Strong"/>
                 <depend id="26" type="2" difference="0" hardness="Strong"/>
+                <depend id="27" type="2" difference="0" hardness="Strong"/>
+                <depend id="32" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="14" uid="a2473fc9434a430b9244ef6ca1ec7bd6" name="Affichage de la liste des lots" meeting="false" start="2025-04-18" duration="3" complete="0" expand="false">
+            <task id="14" uid="a2473fc9434a430b9244ef6ca1ec7bd6" name="Affichage de la liste des lots" meeting="false" start="2025-04-28" duration="3" complete="0" expand="true">
                 <depend id="39" type="2" difference="0" hardness="Strong"/>
-                <task id="22" uid="4b3da2c83e324c329e32b8f366ed650c" name="Afficher la liste des lots" meeting="false" start="2025-04-18" duration="1" complete="0" expand="true">
+                <task id="22" uid="4b3da2c83e324c329e32b8f366ed650c" name="Afficher la liste des lots" meeting="false" start="2025-04-28" duration="1" complete="0" expand="true">
                     <depend id="23" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="23" uid="10339e21e490496cab24edb721b3ca05" name="Sélection d'un élement de la liste" meeting="false" start="2025-04-21" duration="1" complete="0" expand="true">
+                <task id="23" uid="10339e21e490496cab24edb721b3ca05" name="Sélection d'un élement de la liste" meeting="false" start="2025-05-05" duration="1" complete="0" expand="true">
                     <depend id="24" type="2" difference="0" hardness="Strong"/>
                     <depend id="25" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="24" uid="5f7fbcfb5b19474d82b746acaeefc2be" name="Lors de la sélection afficher son historique" meeting="false" start="2025-04-22" duration="1" complete="0" expand="true"/>
-                <task id="25" uid="7a3c237282524ae9b98c38176d2e92eb" name="Création des bouton" meeting="false" start="2025-04-22" duration="1" complete="0" expand="true">
+                <task id="24" uid="5f7fbcfb5b19474d82b746acaeefc2be" name="Lors de la sélection afficher son historique" meeting="false" start="2025-05-12" duration="1" complete="0" expand="true"/>
+                <task id="25" uid="7a3c237282524ae9b98c38176d2e92eb" name="Création des bouton" meeting="false" start="2025-05-12" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Modifier
-Lancer le lots]]></notes>
+Lancer le lots
+Supprimer]]></notes>
                 </task>
             </task>
-            <task id="26" uid="bf59dce09bfb46e7b03c3457075eb84e" name="Affichage de la liste des recette" color="#000000" meeting="false" start="2025-04-18" duration="3" complete="0" expand="false">
+            <task id="26" uid="bf59dce09bfb46e7b03c3457075eb84e" name="Affichage de la liste des recette" color="#000000" meeting="false" start="2025-04-28" duration="3" complete="0" expand="true">
                 <depend id="39" type="2" difference="0" hardness="Strong"/>
-                <task id="27" uid="fe927244a4f34253936cdaa2c00793ea" name="Afficher la liste des recette" color="#8cb6ce" meeting="false" start="2025-04-18" duration="1" complete="0" expand="true">
+                <task id="27" uid="fe927244a4f34253936cdaa2c00793ea" name="Afficher la liste des recette" color="#8cb6ce" meeting="false" start="2025-04-28" duration="1" complete="0" expand="true">
                     <depend id="28" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="28" uid="b72474e0c0a543cfa21c17e8e4fe670a" name="Sélection d'un élement de la liste" color="#8cb6ce" meeting="false" start="2025-04-21" duration="1" complete="0" expand="true">
+                <task id="28" uid="b72474e0c0a543cfa21c17e8e4fe670a" name="Sélection d'un élement de la liste" color="#8cb6ce" meeting="false" start="2025-05-05" duration="1" complete="0" expand="true">
                     <depend id="29" type="2" difference="0" hardness="Strong"/>
                     <depend id="30" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="29" uid="67c1426cc4d842b2847a5061fb2e66db" name="Lors de la sélection afficher les opérations + détail" color="#8cb6ce" meeting="false" start="2025-04-22" duration="1" complete="0" expand="true"/>
-                <task id="30" uid="64a53fcb76f54336b91abf469cb0a26d" name="Création des boutons" color="#8cb6ce" meeting="false" start="2025-04-22" duration="1" complete="0" expand="true">
-                    <notes><![CDATA[btn modifier]]></notes>
+                <task id="29" uid="67c1426cc4d842b2847a5061fb2e66db" name="Lors de la sélection afficher les opérations + détail" color="#8cb6ce" meeting="false" start="2025-05-12" duration="1" complete="0" expand="true"/>
+                <task id="30" uid="64a53fcb76f54336b91abf469cb0a26d" name="Création des boutons" color="#8cb6ce" meeting="false" start="2025-05-12" duration="1" complete="0" expand="true">
+                    <notes><![CDATA[btn modifier
+supprimer]]></notes>
                 </task>
             </task>
-            <task id="19" uid="d50681094f204e939fa7bf38fa382432" name="Getion pour la création/modification d'une recette" meeting="false" start="2025-04-18" duration="3" complete="0" expand="false">
+            <task id="19" uid="d50681094f204e939fa7bf38fa382432" name="Getion pour la création/modification d'une recette" meeting="false" start="2025-04-28" duration="3" complete="0" expand="true">
                 <depend id="35" type="2" difference="0" hardness="Strong"/>
-                <task id="32" uid="960ff209e068488fad5d0387253ec588" name="interface graphique" meeting="false" start="2025-04-18" duration="1" complete="0" expand="true">
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+                <task id="32" uid="960ff209e068488fad5d0387253ec588" name="interface graphique" meeting="false" start="2025-04-28" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Ajout champ graphique et nommage de ceux-ci
 
 nom, description
+
+btn enregister, annuler, supprimer
+
 ]]></notes>
                     <depend id="33" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="33" uid="89b06c479edc46b39d99c81b86e7301b" name="Gestion d'une opération" meeting="false" start="2025-04-21" duration="1" complete="0" expand="true">
+                <task id="33" uid="89b06c479edc46b39d99c81b86e7301b" name="Gestion d'une opération" meeting="false" start="2025-05-05" duration="1" complete="0" expand="true">
                     <notes><![CDATA[création, modification, suppression]]></notes>
                     <depend id="34" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="34" uid="93be9228a4284678b93209a457e34da3" name="Gestion de la recette" meeting="false" start="2025-04-22" duration="1" complete="0" expand="true"/>
+                <task id="34" uid="93be9228a4284678b93209a457e34da3" name="Gestion de la recette" meeting="false" start="2025-05-12" duration="1" complete="0" expand="true">
+                    <notes><![CDATA[Logique, fonctionnement]]></notes>
+                </task>
             </task>
-            <task id="35" uid="662d392aa4984d86a407d8c70e82605e" name="Getion pour la création/modification d'un lot" color="#000000" meeting="false" start="2025-04-23" duration="2" complete="0" expand="false">
+            <task id="35" uid="662d392aa4984d86a407d8c70e82605e" name="Getion pour la création/modification d'un lot" color="#000000" meeting="false" start="2025-05-19" duration="2" complete="0" expand="true">
                 <depend id="39" type="2" difference="0" hardness="Strong"/>
-                <task id="36" uid="ffb595ad14d347e79078f6693985dce5" name="interface graphique" color="#8cb6ce" meeting="false" start="2025-04-23" duration="1" complete="0" expand="true">
+                <task id="36" uid="ffb595ad14d347e79078f6693985dce5" name="interface graphique" color="#8cb6ce" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Ajout champ graphique et nommage de ceux-ci
 
 génération du nom : nbpiece + nom recette
@@ -119,20 +132,43 @@ Historique
 Bouton enregister le lot, supprimer le lots, btn créer new recette]]></notes>
                     <depend id="38" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="38" uid="cc95363ec3264ccdb67de9c2a6d1f97a" name="Gestion du lots" color="#8cb6ce" meeting="false" start="2025-04-24" duration="1" complete="0" expand="true"/>
+                <task id="38" uid="cc95363ec3264ccdb67de9c2a6d1f97a" name="Gestion du lots" color="#8cb6ce" meeting="false" start="2025-05-26" duration="1" complete="0" expand="true"/>
             </task>
-            <task id="39" uid="13badb26ab9a487da7ed29b30f9f1991" name="Gestion des erreur" meeting="false" start="2025-04-25" duration="1" complete="0" expand="true"/>
+            <task id="39" uid="13badb26ab9a487da7ed29b30f9f1991" name="Gestion des erreur" meeting="false" start="2025-06-02" duration="1" complete="0" expand="true"/>
         </task>
-        <task id="40" uid="7318a6098da5470399deb8931dd62262" name="Test de l'application" meeting="false" start="2025-04-28" duration="1" complete="0" expand="true"/>
-        <task id="20" uid="4c4d59b652244fbb9936c781ccb5e070" name="Documentation" meeting="false" start="2025-04-09" duration="55" complete="0" expand="false">
-            <task id="15" uid="1afada6fe7d04f6b99d3ee4a0706d06c" name="Création de la présentation" meeting="false" start="2025-06-02" duration="10" complete="0" expand="true"/>
+        <task id="40" uid="7318a6098da5470399deb8931dd62262" name="Test de l'application" meeting="false" start="2025-06-09" duration="1" complete="0" expand="true"/>
+        <task id="20" uid="4c4d59b652244fbb9936c781ccb5e070" name="Documentation" meeting="false" start="2025-04-14" duration="11" complete="0" expand="true">
+            <task id="17" uid="872b9eabbe11415d8f316a2ab7d4b6f5" name="Rapport" meeting="false" start="2025-04-14" duration="11" complete="0" expand="true"/>
+            <task id="15" uid="1afada6fe7d04f6b99d3ee4a0706d06c" name="Création de la présentation" meeting="false" start="2025-06-02" duration="3" complete="0" expand="true"/>
             <task id="16" uid="b1c7bcb6dad7472ab0537e4732492fc3" name="Présentation du projet" color="#ff0033" meeting="true" start="2025-06-16" duration="0" complete="0" expand="true"/>
-            <task id="17" uid="872b9eabbe11415d8f316a2ab7d4b6f5" name="Rapport" meeting="false" start="2025-04-09" duration="55" complete="0" expand="true"/>
             <task id="11" uid="fd1b268e8171473f953bb63a6c1c5062" name="Rendre le rapport" color="#ff0033" meeting="true" start="2025-06-24" duration="0" complete="0" expand="true"/>
         </task>
     </tasks>
-    <resources/>
-    <allocations/>
+    <resources>
+        <resource id="0" name="Lucas Domont" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="Bilel Hofer" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="9" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="20" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="40" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="39" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="1" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="8" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="7" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="9" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="20" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="40" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="39" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="1" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="0" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="8" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="6" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="7" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+    </allocations>
     <vacations/>
     <previous/>
     <roles roleset-name="Default"/>
