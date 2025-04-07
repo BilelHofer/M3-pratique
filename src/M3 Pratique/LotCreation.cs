@@ -21,5 +21,12 @@ namespace M3_Pratique
         {
             
         }
+
+        // Bouton annuler 
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            // Ferme la fenêtre
+            this.Close();
+        }
     }
 }

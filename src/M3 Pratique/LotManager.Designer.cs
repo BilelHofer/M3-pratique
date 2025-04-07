@@ -28,14 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnCreerLot = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnCreerLot
+            // 
+            this.btnCreerLot.Location = new System.Drawing.Point(78, 32);
+            this.btnCreerLot.Name = "btnCreerLot";
+            this.btnCreerLot.Size = new System.Drawing.Size(75, 23);
+            this.btnCreerLot.TabIndex = 0;
+            this.btnCreerLot.Text = "Créer";
+            this.btnCreerLot.UseVisualStyleBackColor = true;
+            this.btnCreerLot.Click += new System.EventHandler(this.btnCreerLot_Click);
             // 
             // LotManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCreerLot);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LotManager";
             this.Text = "Manager de lot";
             this.Load += new System.EventHandler(this.LotManager_Load);
@@ -44,6 +56,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnCreerLot;
     }
 }
 
