@@ -7,7 +7,7 @@ CREATE TABLE Etat(
 CREATE TABLE Recette(
    Id_Recette INT AUTO_INCREMENT,
    REC_Nom VARCHAR(50)  NOT NULL,
-   REC_DateHeureCréation DATETIME NOT NULL,
+   REC_DateHeureCrÃ©ation DATETIME NOT NULL,
    PRIMARY KEY(Id_Recette),
    UNIQUE(REC_Nom)
 );
@@ -16,7 +16,7 @@ CREATE TABLE Lot(
    Id_Lot INT AUTO_INCREMENT,
    LOT_Nom VARCHAR(50)  NOT NULL,
    LOT_Quantite INT NOT NULL,
-   LOT_DateHeureCréation DATETIME NOT NULL,
+   LOT_DateHeureCrÃ©ation DATETIME NOT NULL,
    Id_Etat INT NOT NULL,
    Id_Recette INT NOT NULL,
    PRIMARY KEY(Id_Lot),
@@ -25,16 +25,16 @@ CREATE TABLE Lot(
    FOREIGN KEY(Id_Recette) REFERENCES Recette(Id_Recette)
 );
 
-CREATE TABLE Evénement(
-   Id_Evénement INT AUTO_INCREMENT,
+CREATE TABLE EvÃ©nement(
+   Id_EvÃ©nement INT AUTO_INCREMENT,
    EVE_Message VARCHAR(50)  NOT NULL,
    EVE_DateHeure DATETIME,
    Id_Lot INT NOT NULL,
-   PRIMARY KEY(Id_Evénement),
+   PRIMARY KEY(Id_EvÃ©nement),
    FOREIGN KEY(Id_Lot) REFERENCES Lot(Id_Lot)
 );
 
-CREATE TABLE Opération(
+CREATE TABLE OpÃ©ration(
    Id_Operation INT AUTO_INCREMENT,
    OPE_Nom VARCHAR(50) ,
    OPE_Numero INT,
