@@ -23,7 +23,7 @@ namespace M3_Pratique
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LotManager());
         }
     }
 }

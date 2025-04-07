@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace M3_Pratique
 {
-    public partial class Form1 : Form
+    public partial class RecetteCreation : Form
     {
-        public Form1()
+        public RecetteCreation()
         {
             InitializeComponent();
+        }
+
+        private void RecetteCreation_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

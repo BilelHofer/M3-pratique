@@ -8,7 +8,6 @@ namespace M3_Pratique
     /// <summary>
     /// Classe de gestion de la base de données.
     /// </summary>
-
     public class DatabaseManager
     {
         private static MySqlConnection _connection;
