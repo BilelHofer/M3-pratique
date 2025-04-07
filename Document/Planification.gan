@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-04-03" view-index="0" gantt-divider-location="408" resource-divider-location="300" version="3.3.3312" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-04-03" view-index="1" gantt-divider-location="393" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="296" order="0"/>
+        <field id="tpd3" name="Nom" width="284" order="0"/>
         <field id="tpd4" name="Date de début" width="20" order="1"/>
-        <field id="tpd5" name="Date de fin" width="76" order="2"/>
+        <field id="tpd5" name="Date de fin" width="73" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
@@ -168,7 +168,7 @@ Bouton enregister le lot, supprimer le lots, btn créer new recette]]></notes>
         </task>
     </tasks>
     <resources>
-        <resource id="0" name="Lucas Domont" function="Default:0" contacts="" phone=""/>
+        <resource id="0" name="Lucas Domon" function="Default:0" contacts="" phone=""/>
         <resource id="1" name="Bilel Hofer" function="Default:0" contacts="" phone=""/>
     </resources>
     <allocations>
