@@ -26,7 +26,7 @@ namespace M3_Pratique
         public long IdRecette { get => _idRecette; set => _idRecette = value; }
 
         // Constructure d'un lot
-        public Lot(int id, string nom, int quantite, DateTime date, int idEtat, int idRecette)
+        public Lot(long id, string nom, int quantite, DateTime date, long idEtat, long idRecette)
         {
             Id = id;
             Nom = nom;

@@ -20,7 +20,7 @@ namespace M3_Pratique
         public DateTime DateCreation { get => _dateCreation; set => _dateCreation = value; }
 
         // Constructeur de la classe Recette
-        public Recette(int id, string nom, DateTime dateCreation)
+        public Recette(long id, string nom, DateTime dateCreation)
         {
             Id = id;
             Nom = nom;

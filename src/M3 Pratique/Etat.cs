@@ -17,7 +17,7 @@ namespace M3_Pratique
         public string Libelle { get => _libelle; set => _libelle = value; }
 
         // Constructeur d'un état
-        public Etat(int id, string libelle)
+        public Etat(long id, string libelle)
         {
             Id = id;
             Libelle = libelle;

@@ -18,7 +18,7 @@ namespace M3_Pratique
         private bool _CycleVerin;
         private bool _quittance;
         private bool SensMoteur;
-        private int _idRecette;
+        private long _idRecette;
 
         public long Id { get => _id; set => _id = value; }
         public string Nom { get => _nom; set => _nom = value; }
@@ -28,11 +28,11 @@ namespace M3_Pratique
         public bool CycleVerin { get => _CycleVerin; set => _CycleVerin = value; }
         public bool Quittance { get => _quittance; set => _quittance = value; }
         public bool SensMoteur1 { get => SensMoteur; set => SensMoteur = value; }
-        public int IdRecette { get => _idRecette; set => _idRecette = value; }
+        public long IdRecette { get => _idRecette; set => _idRecette = value; }
 
 
         // Constructeur d'une opération
-        public Operation(int id, string nom, int numero, int positionMoteur, int tempsAttente, bool cycleVerin, bool quittance, bool sensMoteur1, int idRecette)
+        public Operation(long id, string nom, int numero, int positionMoteur, int tempsAttente, bool cycleVerin, bool quittance, bool sensMoteur1, long idRecette)
         {
             Id = id;
             Nom = nom;

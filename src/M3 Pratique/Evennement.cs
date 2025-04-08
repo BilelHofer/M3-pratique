@@ -14,7 +14,7 @@ namespace M3_Pratique
         private long _id;
         private string _message;
         private DateTime _date;
-        private int _idLot;
+        private long _idLot;
 
         public long Id { get => _id; set => _id = value; }
         public string Message { get => _message; set => _message = value; }
@@ -22,7 +22,7 @@ namespace M3_Pratique
         public long IdLot { get => _idLot; set => _idLot = value; }
 
         // Constructeur de la calsse evennement.
-        public Evennement(int id, string message, DateTime date, int idLot)
+        public Evennement(long id, string message, DateTime date, long idLot)
         {
             Id = id;
             Message = message;

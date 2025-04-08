@@ -90,6 +90,7 @@
             this.selectRecette.Name = "selectRecette";
             this.selectRecette.Size = new System.Drawing.Size(120, 24);
             this.selectRecette.TabIndex = 5;
+            this.selectRecette.SelectedIndexChanged += new System.EventHandler(this.selectRecette_SelectedIndexChanged);
             // 
             // btnCreerRecette
             // 
