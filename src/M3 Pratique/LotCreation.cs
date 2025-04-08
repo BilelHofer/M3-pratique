@@ -39,16 +39,25 @@ namespace M3_Pratique
         // Création d'un lot
         private void btnCreer_Click(object sender, EventArgs e)
         {
-            // TODO récupérer le bon état depuis la db
-            int idEtat = 1;
+            // Vérification des champs
+            if (inputNbPiece.Value <= 0)
+            {
+                MessageBox.Show("Le nombre de pièce doit être supérieur à 0", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+            else if (selectRecette.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une recette", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } 
+            else
+            {
+                // TODO récupérer le bon id état depuis la db
+                int idEtat = 1;
 
+                Global.AjouterLot((int)inputNbPiece.Value, idEtat, ((Recette)selectRecette.SelectedItem).Id, ((Recette)selectRecette.SelectedItem).Nom);
 
-            // TODO vérifier les données récupérer
-
-            Global.AjouterLot((int)inputNbPiece.Value, idEtat, ((Recette)selectRecette.SelectedItem).Id, ((Recette)selectRecette.SelectedItem).Nom);
-
-            // Ferme la fenêtre
-            this.Close();
+                // Ferme la fenêtre
+                this.Close();
+            }
         }
 
         // Bouton annuler 
@@ -70,6 +79,11 @@ namespace M3_Pratique
             {
                 recetteCreationForm.BringToFront();
             }
+        }
+
+        private void LotCreation_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

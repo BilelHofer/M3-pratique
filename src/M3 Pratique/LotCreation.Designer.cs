@@ -116,6 +116,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LotCreation";
             this.Text = "Création d\'un lot";
+            this.Load += new System.EventHandler(this.LotCreation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inputNbPiece)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
