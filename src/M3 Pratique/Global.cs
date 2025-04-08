@@ -28,5 +28,11 @@ namespace M3_Pratique
 
         // Liste des évenements
         private static List<Evennement> _evenements;
+
+        public static List<Recette> Recettes { get => _recettes; set => _recettes = value; }
+        public static List<Operation> Operation { get => _operation; set => _operation = value; }
+        public static List<Lot> Lots { get => _lots; set => _lots = value; }
+        public static List<Etat> Etats { get => _etats; set => _etats = value; }
+        public static List<Evennement> Evenements { get => _evenements; set => _evenements = value; }
     }
 }

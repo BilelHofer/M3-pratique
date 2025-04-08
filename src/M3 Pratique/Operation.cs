@@ -10,7 +10,7 @@ namespace M3_Pratique
     // Classe représentant une opération
     public class Operation
     {
-        private int _id;
+        private long _id;
         private string _nom;
         private int _numero;
         private int _positionMoteur;
@@ -20,7 +20,7 @@ namespace M3_Pratique
         private bool SensMoteur;
         private int _idRecette;
 
-        public int Id { get => _id; set => _id = value; }
+        public long Id { get => _id; set => _id = value; }
         public string Nom { get => _nom; set => _nom = value; }
         public int Numero { get => _numero; set => _numero = value; }
         public int PositionMoteur { get => _positionMoteur; set => _positionMoteur = value; }

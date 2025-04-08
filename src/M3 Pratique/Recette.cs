@@ -11,11 +11,11 @@ namespace M3_Pratique
     /// </summary>
     public class Recette
     {
-        private int _id;
+        private long _id;
         private string _nom;
         private DateTime _dateCreation;
 
-        public int Id { get => _id; set => _id = value; }
+        public long Id { get => _id; set => _id = value; }
         public string Nom { get => _nom; set => _nom = value; }
         public DateTime DateCreation { get => _dateCreation; set => _dateCreation = value; }
 

@@ -11,19 +11,19 @@ namespace M3_Pratique
     /// </summary>
     public class Lot
     {
-        private int _id;
+        private long _id;
         private string _nom;
         private int _quantite;
         private DateTime _date;
-        private int _idEtat;
-        private int _idRecette;
+        private long _idEtat;
+        private long _idRecette;
 
-        public int Id { get => _id; set => _id = value; }
+        public long Id { get => _id; set => _id = value; }
         public string Nom { get => _nom; set => _nom = value; }
         public int Quantite { get => _quantite; set => _quantite = value; }
         public DateTime Date { get => _date; set => _date = value; }
-        public int IdEtat { get => _idEtat; set => _idEtat = value; }
-        public int IdRecette { get => _idRecette; set => _idRecette = value; }
+        public long IdEtat { get => _idEtat; set => _idEtat = value; }
+        public long IdRecette { get => _idRecette; set => _idRecette = value; }
 
         // Constructure d'un lot
         public Lot(int id, string nom, int quantite, DateTime date, int idEtat, int idRecette)
