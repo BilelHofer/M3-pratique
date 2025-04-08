@@ -90,7 +90,6 @@
             this.selectRecette.Name = "selectRecette";
             this.selectRecette.Size = new System.Drawing.Size(120, 24);
             this.selectRecette.TabIndex = 5;
-            this.selectRecette.SelectedIndexChanged += new System.EventHandler(this.selectRecette_SelectedIndexChanged);
             // 
             // btnCreerRecette
             // 
@@ -117,7 +116,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LotCreation";
             this.Text = "Création d\'un lot";
-            this.Load += new System.EventHandler(this.LotCreation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inputNbPiece)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
