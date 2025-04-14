@@ -74,6 +74,10 @@ namespace M3_Pratique
             {
                 MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            catch (System.InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             finally
             {
                 // On ferme la connexion
@@ -120,6 +124,10 @@ namespace M3_Pratique
             catch (MySqlException ex)
             {
                 MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des lots", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {
@@ -173,6 +181,10 @@ namespace M3_Pratique
             catch (MySqlException ex)
             {
                 MessageBox.Show("Une erreur est survenu : " + ex.Message, "Création lot", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Création lot", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {

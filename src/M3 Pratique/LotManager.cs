@@ -25,6 +25,7 @@ namespace M3_Pratique
 
             flowLayoutPanelLots.Controls.Clear();
 
+            // TODO ajouter une carte lors de l'ajout d'un lot
             foreach (var lot in Global.Lots)
             {
                 var carte = new LotCarte();
@@ -41,7 +42,12 @@ namespace M3_Pratique
             // Vérifie si la fenêtre de création de lot est déjà ouverte
             if (lotCreationForm == null || lotCreationForm.IsDisposed)
             {
+
                 lotCreationForm = new LotCreation();
+
+                // Ajoute un évènement pour rafraîchir la liste des lots
+                lotCreationForm.LotAjoute += (s, args) => RafraichirListeLots();
+
                 lotCreationForm.Show();
             }
             else
@@ -88,6 +94,21 @@ namespace M3_Pratique
                 }
             }
         }
+
+        /// <summary>
+        /// Rafraîchit la liste des lots affichés dans le FlowLayoutPanel
+        /// </summary>
+        private void RafraichirListeLots()
+        {
+            flowLayoutPanelLots.Controls.Clear();
+            foreach (var lot in Global.Lots)
+            {
+                var carte = new LotCarte();
+                carte.SetData(lot.Nom, "En attente");
+                flowLayoutPanelLots.Controls.Add(carte);
+            }
+        }
+
 
         private void btnRechercher_Click(object sender, EventArgs e)
         {

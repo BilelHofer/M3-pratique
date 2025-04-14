@@ -14,6 +14,7 @@ namespace M3_Pratique
 {
     public partial class LotCreation : Form
     {
+        public event EventHandler LotAjoute;
 
         private RecetteCreation recetteCreationForm = null;
         public LotCreation()
@@ -52,6 +53,9 @@ namespace M3_Pratique
                 int idEtat = 1;
 
                 Global.AjouterLot((int)inputNbPiece.Value, idEtat, ((Recette)selectRecette.SelectedItem).Id, ((Recette)selectRecette.SelectedItem).Nom);
+
+                // Ajout de l'évènement
+                LotAjoute?.Invoke(this, EventArgs.Empty);
 
                 // Ferme la fenêtre
                 this.Close();
