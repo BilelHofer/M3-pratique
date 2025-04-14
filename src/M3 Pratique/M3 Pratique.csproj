@@ -122,6 +122,12 @@
       <DependentUpon>LotManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Operation.cs" />
+    <Compile Include="OperationCarte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OperationCarte.Designer.cs">
+      <DependentUpon>OperationCarte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recette.cs" />
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LotManager.resx">
       <DependentUpon>LotManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationCarte.resx">
+      <DependentUpon>OperationCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
