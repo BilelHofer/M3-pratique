@@ -103,6 +103,12 @@
     <Compile Include="Evennement.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Lot.cs" />
+    <Compile Include="LotCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LotCard.Designer.cs">
+      <DependentUpon>LotCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="LotCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     <Compile Include="RecetteManager.Designer.cs">
       <DependentUpon>RecetteManager.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LotCard.resx">
+      <DependentUpon>LotCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LotCreation.resx">
       <DependentUpon>LotCreation.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +160,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RecetteCreation.resx">
       <DependentUpon>RecetteCreation.cs</DependentUpon>
@@ -174,6 +184,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rechercheIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
