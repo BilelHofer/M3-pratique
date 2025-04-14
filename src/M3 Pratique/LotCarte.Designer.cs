@@ -1,6 +1,6 @@
 ﻿namespace M3_Pratique
 {
-    partial class LotCard
+    partial class LotCarte
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.

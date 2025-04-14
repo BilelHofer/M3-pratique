@@ -52,7 +52,7 @@
             this.flowLayoutPanelLots.Location = new System.Drawing.Point(0, 60);
             this.flowLayoutPanelLots.Name = "flowLayoutPanelLots";
             this.flowLayoutPanelLots.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.flowLayoutPanelLots.Size = new System.Drawing.Size(435, 530);
+            this.flowLayoutPanelLots.Size = new System.Drawing.Size(443, 530);
             this.flowLayoutPanelLots.TabIndex = 1;
             this.flowLayoutPanelLots.WrapContents = false;
             // 

@@ -27,11 +27,11 @@ namespace M3_Pratique
 
             foreach (var lot in Global.Lots)
             {
-                var card = new LotCard();
+                var carte = new LotCarte();
                 // TODO récupérer le nom de l'état
                 //string etatNom = GetEtatName(lot.IdEtat);
-                card.SetData(lot.Nom, "En attente");
-                flowLayoutPanelLots.Controls.Add(card);
+                carte.SetData(lot.Nom, "En attente");
+                flowLayoutPanelLots.Controls.Add(carte);
             }
         }
 
@@ -67,7 +67,7 @@ namespace M3_Pratique
                 flowLayoutPanelLots.Controls.Clear();
                 foreach (var lot in Global.Lots)
                 {
-                    var card = new LotCard();
+                    var card = new LotCarte();
                     // TODO récupérer le nom de l'état
                     //string etatNom = GetEtatName(lot.IdEtat);
                     card.SetData(lot.Nom, "En attente");
@@ -80,7 +80,7 @@ namespace M3_Pratique
                 flowLayoutPanelLots.Controls.Clear();
                 foreach (var lot in Global.Lots.Where(l => l.Nom.ToLower().Contains(recherche)))
                 {
-                    var card = new LotCard();
+                    var card = new LotCarte();
                     // TODO récupérer le nom de l'état
                     //string etatNom = GetEtatName(lot.IdEtat);
                     card.SetData(lot.Nom, "En attente");
@@ -91,7 +91,6 @@ namespace M3_Pratique
 
         private void btnRechercher_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
