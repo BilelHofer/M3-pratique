@@ -70,6 +70,11 @@
             // inputNbPiece
             // 
             this.inputNbPiece.Location = new System.Drawing.Point(140, 28);
+            this.inputNbPiece.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.inputNbPiece.Name = "inputNbPiece";
             this.inputNbPiece.Size = new System.Drawing.Size(120, 22);
             this.inputNbPiece.TabIndex = 3;

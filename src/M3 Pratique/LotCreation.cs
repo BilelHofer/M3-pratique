@@ -23,8 +23,6 @@ namespace M3_Pratique
             // Récupération de la liste des recette
             Global.RecupererRecette();
 
-            int nbRectte = Global.Recettes.Count;
-
             // Ajout des recettes à la selection
             BindingList<Recette> recettes = new BindingList<Recette>();
             for (int i = 0; i < Global.Recettes.Count; i++)

@@ -45,6 +45,8 @@ namespace M3_Pratique
             // Si la liste n'est pas encore initialisé, l'initialise
             if (Recettes == null)
                 Recettes = new List<Recette>();
+            else
+                Recettes.Clear();
 
             try
             {
