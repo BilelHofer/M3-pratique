@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-04-14" view-index="0" gantt-divider-location="363" resource-divider-location="300" version="3.3.3312" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-05-12" view-index="0" gantt-divider-location="348" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
-    <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="260" order="0"/>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="248" order="0"/>
         <field id="tpd4" name="Date de début" width="20" order="1"/>
-        <field id="tpd5" name="Date de fin" width="67" order="2"/>
+        <field id="tpd5" name="Date de fin" width="64" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
@@ -45,7 +45,7 @@
         <task id="0" uid="afb450e5e2024a5485b8a98e20ceeaec" name="Création de la maquette" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true"/>
         <task id="8" uid="0b5364de00b5434c9fcf7ee488b40985" name="Création du MCD" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true"/>
         <task id="6" uid="b053d2d8972945f996d2b6ac19914851" name="Création de la base de données" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
-        <task id="5" uid="b4147da0ad4748caa8e8b55f7b58ab26" name="Création du programme" meeting="false" start="2025-04-07" duration="7" complete="0" expand="true">
+        <task id="5" uid="b4147da0ad4748caa8e8b55f7b58ab26" name="Création du programme" meeting="false" start="2025-04-07" duration="6" complete="0" expand="true">
             <task id="7" uid="a09093f5cc174e1a95ac27b924be2dde" name="Création de la classe pour intéragir avec la base de données" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
             <task id="29" uid="67c1426cc4d842b2847a5061fb2e66db" name="Création des différente page" color="#000000" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true">
                 <task id="41" uid="933e0bc0b7264648bcaa318712017d7f" name="Listes lot" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
@@ -104,8 +104,8 @@ btn enregister, annuler, supprimer
                     <notes><![CDATA[Logique, fonctionnement]]></notes>
                 </task>
             </task>
-            <task id="35" uid="662d392aa4984d86a407d8c70e82605e" name="Getion pour la création/modification d'un lot" color="#000000" meeting="false" start="2025-05-12" duration="2" complete="0" expand="true">
-                <task id="36" uid="ffb595ad14d347e79078f6693985dce5" name="interface graphique" color="#8cb6ce" meeting="false" start="2025-05-12" duration="1" complete="0" expand="true">
+            <task id="35" uid="662d392aa4984d86a407d8c70e82605e" name="Getion pour la création/modification d'un lot" color="#000000" meeting="false" start="2025-04-14" duration="1" complete="0" expand="true">
+                <task id="36" uid="ffb595ad14d347e79078f6693985dce5" name="interface graphique" color="#8cb6ce" meeting="false" start="2025-04-14" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Ajout champ graphique et nommage de ceux-ci
 
 génération du nom : nbpiece + nom recette
@@ -115,7 +115,7 @@ Historique
 
 Bouton enregister le lot, supprimer le lots, btn créer new recette]]></notes>
                 </task>
-                <task id="38" uid="cc95363ec3264ccdb67de9c2a6d1f97a" name="Gestion du lots" color="#8cb6ce" meeting="false" start="2025-05-19" duration="1" complete="0" expand="true"/>
+                <task id="38" uid="cc95363ec3264ccdb67de9c2a6d1f97a" name="Gestion du lots" color="#8cb6ce" meeting="false" start="2025-04-14" duration="1" complete="0" expand="true"/>
             </task>
             <task id="39" uid="13badb26ab9a487da7ed29b30f9f1991" name="Gestion des erreur" meeting="false" start="2025-05-12" duration="1" complete="0" expand="true"/>
         </task>
