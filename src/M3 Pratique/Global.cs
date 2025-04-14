@@ -82,6 +82,50 @@ namespace M3_Pratique
         }
 
         /// <summary>
+        /// Récupère les lots de la base de données
+        /// </summary>
+        public static void RecupererLots()
+        {
+            // Si la liste n'est pas encore initialisé, l'initialise
+            if (Lots == null)
+                Lots = new List<Lot>();
+            else
+                Lots.Clear();
+
+            try
+            {
+                DatabaseManager.ConnectDB();
+
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM recette", DatabaseManager.GetConnexion()))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Recette recette = new Recette(
+                                reader.GetInt64("id_recette"),
+                                reader.GetString("REC_Nom"),
+                                reader.GetDateTime("REC_DateHeureCréation")
+                            );
+
+                            // Ajout de la recette à la liste
+                            Recettes.Add(recette);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                // On ferme la connexion
+                DatabaseManager.CloseConnexion();
+            }
+        }
+
+        /// <summary>
         /// Ajoute un lot à la base de données
         /// </summary>
         /// <param name="quantite">quantité de pièce</param>
