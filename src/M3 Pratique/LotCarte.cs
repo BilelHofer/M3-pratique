@@ -10,17 +10,19 @@ using System.Windows.Forms;
 
 namespace M3_Pratique
 {
-    public partial class LotCard : UserControl
+    public partial class LotCarte : UserControl
     {
-        public LotCard()
+        public LotCarte()
         {
             InitializeComponent();
         }
 
         public void SetData(string nom, string etat)
         {
-            labelNom.Text = $"{nom}";
-            labelEtat.Text = $"{etat}";
+            // Met à jour le nom du lot
+            labelNom.Text = nom;
+            // Met à jour l'état du lot
+            labelEtat.Text = etat;
         }
     }
 }

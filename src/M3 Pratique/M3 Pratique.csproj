@@ -103,11 +103,11 @@
     <Compile Include="Evennement.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Lot.cs" />
-    <Compile Include="LotCard.cs">
+    <Compile Include="LotCarte.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="LotCard.Designer.cs">
-      <DependentUpon>LotCard.cs</DependentUpon>
+    <Compile Include="LotCarte.Designer.cs">
+      <DependentUpon>LotCarte.cs</DependentUpon>
     </Compile>
     <Compile Include="LotCreation.cs">
       <SubType>Form</SubType>
@@ -143,8 +143,8 @@
     <Compile Include="RecetteManager.Designer.cs">
       <DependentUpon>RecetteManager.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="LotCard.resx">
-      <DependentUpon>LotCard.cs</DependentUpon>
+    <EmbeddedResource Include="LotCarte.resx">
+      <DependentUpon>LotCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LotCreation.resx">
       <DependentUpon>LotCreation.cs</DependentUpon>
