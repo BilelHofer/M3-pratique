@@ -163,6 +163,12 @@ namespace M3_Pratique
                     cmd.ExecuteNonQuery();
                     id = cmd.LastInsertedId;
                 }
+
+                // ajout du lot à la liste des lots global
+                Global.Lots.Add(new Lot(id, nom, (int)quantite, date, idEtat, idRecette));
+
+                MessageBox.Show($"Lot {nom} créé avec succès", "Création de lot", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (MySqlException ex)
             {
@@ -173,11 +179,6 @@ namespace M3_Pratique
                 // Ferme la connexion
                 DatabaseManager.CloseConnexion();
             }
-
-            // ajout du lot à la liste des lots global
-            Global.Lots.Add(new Lot(id, nom, (int)quantite, date, idEtat, idRecette));
-
-            MessageBox.Show($"Lot {nom} créé avec succès", "Création de lot", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+         }
     }
 }
