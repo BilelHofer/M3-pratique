@@ -96,20 +96,23 @@ namespace M3_Pratique
             {
                 DatabaseManager.ConnectDB();
 
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM recette", DatabaseManager.GetConnexion()))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM lot", DatabaseManager.GetConnexion()))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Recette recette = new Recette(
-                                reader.GetInt64("id_recette"),
-                                reader.GetString("REC_Nom"),
-                                reader.GetDateTime("REC_DateHeureCréation")
+                            Lot lot = new Lot(
+                                reader.GetInt64("id_Lot"),
+                                reader.GetString("LOT_Nom"),
+                                reader.GetInt32("LOT_Quantite"),
+                                reader.GetDateTime("LOT_DateHeureCréation"),
+                                reader.GetInt64("id_Etat"),
+                                reader.GetInt64("id_recette")
                             );
 
                             // Ajout de la recette à la liste
-                            Recettes.Add(recette);
+                            Lots.Add(lot);
                         }
                     }
                 }
