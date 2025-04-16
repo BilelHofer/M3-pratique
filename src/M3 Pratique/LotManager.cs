@@ -15,6 +15,7 @@ namespace M3_Pratique
     {
         // Instance de fenetre pour la création d'un lot
         private LotCreation lotCreationForm = null;
+        private LotCarte carteSelectionne = null;
 
         public LotManager()
         {
@@ -28,11 +29,29 @@ namespace M3_Pratique
 
             foreach (var lot in Global.Lots)
             {
-                var carte = new LotCarte();
-                carte.SetData(lot.Nom, Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat).Libelle);
+                var carte = new LotCarte(lot);
+                carte.LotSelectionne += SelectionCarte;
                 flowLayoutPanelLots.Controls.Add(carte);
             }
         }
+
+        private void SelectionCarte(object sender, long idLot)
+        {
+            if (carteSelectionne != null)
+            {
+                // Réinitialise la couleur de la carte sélectionnée
+                carteSelectionne.BackColor = Color.White;
+            }
+
+
+            carteSelectionne = sender as LotCarte;
+            carteSelectionne.BackColor = Color.LightBlue; // Couleur de sélection
+
+            // TODO afficher les données
+            //carteSelectionne.Lot.Id;
+            TEMPORAIRE.Text = carteSelectionne.Lot.Id.ToString();
+        }
+
 
         // Bouton pour créer un lot
         private void btnCreerLot_Click(object sender, EventArgs e)
@@ -71,8 +90,7 @@ namespace M3_Pratique
                 flowLayoutPanelLots.Controls.Clear();
                 foreach (var lot in Global.Lots)
                 {
-                    var card = new LotCarte();
-                    card.SetData(lot.Nom, Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat).Libelle);
+                    var card = new LotCarte(lot);
                     flowLayoutPanelLots.Controls.Add(card);
                 }
             }
@@ -82,8 +100,7 @@ namespace M3_Pratique
                 flowLayoutPanelLots.Controls.Clear();
                 foreach (var lot in Global.Lots.Where(lot => lot.Nom.ToLower().Contains(recherche)))
                 {
-                    var card = new LotCarte();
-                    card.SetData(lot.Nom, Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat).Libelle);
+                    var card = new LotCarte(lot);
                     flowLayoutPanelLots.Controls.Add(card);
                 }
             }
@@ -97,8 +114,7 @@ namespace M3_Pratique
             flowLayoutPanelLots.Controls.Clear();
             foreach (var lot in Global.Lots)
             {
-                var carte = new LotCarte();
-                carte.SetData(lot.Nom, "En attente");
+                var carte = new LotCarte(lot);
                 flowLayoutPanelLots.Controls.Add(carte);
             }
         }

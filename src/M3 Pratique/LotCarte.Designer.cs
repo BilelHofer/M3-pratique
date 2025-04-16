@@ -34,7 +34,7 @@
             // 
             // labelNom
             // 
-            this.labelNom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.labelNom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.labelNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNom.Location = new System.Drawing.Point(11, 10);
@@ -45,7 +45,7 @@
             // 
             // labelEtat
             // 
-            this.labelEtat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.labelEtat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEtat.Location = new System.Drawing.Point(295, 12);
             this.labelEtat.Name = "labelEtat";
@@ -55,7 +55,7 @@
             this.labelEtat.Text = "Etat";
             this.labelEtat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // LotCard
+            // LotCarte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,9 +63,10 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelEtat);
             this.Controls.Add(this.labelNom);
-            this.Name = "LotCard";
+            this.Name = "LotCarte";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(403, 49);
+            this.Click += new System.EventHandler(this.LotCarte_Click);
             this.ResumeLayout(false);
 
         }

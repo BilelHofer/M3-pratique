@@ -32,6 +32,7 @@
             this.flowLayoutPanelLots = new System.Windows.Forms.FlowLayoutPanel();
             this.textBoxRechercheLot = new System.Windows.Forms.TextBox();
             this.labelRechercherIcon = new System.Windows.Forms.Label();
+            this.TEMPORAIRE = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCreerLot
@@ -73,11 +74,19 @@
             this.labelRechercherIcon.Size = new System.Drawing.Size(34, 31);
             this.labelRechercherIcon.TabIndex = 3;
             // 
+            // TEMPORAIRE
+            // 
+            this.TEMPORAIRE.Location = new System.Drawing.Point(620, 150);
+            this.TEMPORAIRE.Name = "TEMPORAIRE";
+            this.TEMPORAIRE.Size = new System.Drawing.Size(100, 22);
+            this.TEMPORAIRE.TabIndex = 4;
+            // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 590);
+            this.Controls.Add(this.TEMPORAIRE);
             this.Controls.Add(this.labelRechercherIcon);
             this.Controls.Add(this.textBoxRechercheLot);
             this.Controls.Add(this.flowLayoutPanelLots);
@@ -98,6 +107,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelLots;
         private System.Windows.Forms.TextBox textBoxRechercheLot;
         private System.Windows.Forms.Label labelRechercherIcon;
+        private System.Windows.Forms.TextBox TEMPORAIRE;
     }
 }
 
