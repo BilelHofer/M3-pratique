@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -16,9 +17,26 @@ namespace M3_Pratique
         public LotManager()
         {
             InitializeComponent();
+            
             Global.RecupererLots();
             Global.RecupererEtat();
             AfficherLots(Global.Lots);
+
+            // Ajout des Etat à la combobox
+            comboBoxEtat.Items.Clear();
+
+            BindingList<Etat> etats = new BindingList<Etat>();
+
+            // Création des états
+            etats.Add(new Etat(-1, "Tous"));
+            for (int i = 0; i < Global.Etats.Count; i++)
+            {
+                etats.Add(new Etat(Global.Etats[i].Id, Global.Etats[i].Libelle));
+            }
+
+            comboBoxEtat.ValueMember = null;
+            comboBoxEtat.DisplayMember = "Libelle";
+            comboBoxEtat.DataSource = etats;
         }
 
         /// <summary>
@@ -76,13 +94,38 @@ namespace M3_Pratique
         /// </summary>
         private void textBoxRechercheLot_TextChanged(object sender, EventArgs e)
         {
-            string recherche = textBoxRechercheLot.Text.ToLower();
+            RechercheEtFiltrageLots();
+        }
 
-            var lotsFiltres = string.IsNullOrEmpty(recherche)
-                ? Global.Lots
-                : Global.Lots.Where(lot => lot.Nom.ToLower().Contains(recherche));
+        private void comboBoxEtat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RechercheEtFiltrageLots();
+        }
+
+        /// <summary>
+        /// Applique les filtres de recherche et d'état pour afficher les lots.
+        /// </summary>
+        private void RechercheEtFiltrageLots()
+        {
+            string recherche = textBoxRechercheLot.Text.ToLower();
+            long idEtatSelectionne = (comboBoxEtat.SelectedItem as Etat)?.Id ?? -1;
+
+            IEnumerable<Lot> lotsFiltres = Global.Lots;
+
+            // Filtrage par texte si recherche non vide
+            if (!string.IsNullOrWhiteSpace(recherche))
+            {
+                lotsFiltres = lotsFiltres.Where(lot => lot.Nom.ToLower().Contains(recherche));
+            }
+
+            // Filtrage par état si un état spécifique est sélectionné
+            if (idEtatSelectionne != -1)
+            {
+                lotsFiltres = lotsFiltres.Where(lot => lot.IdEtat == idEtatSelectionne);
+            }
 
             AfficherLots(lotsFiltres);
         }
+
     }
 }
