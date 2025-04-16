@@ -22,15 +22,14 @@ namespace M3_Pratique
 
             // Mise à jour des lots
             Global.RecupererLots();
+            Global.RecupererEtat();
 
             flowLayoutPanelLots.Controls.Clear();
 
             foreach (var lot in Global.Lots)
             {
                 var carte = new LotCarte();
-                // TODO récupérer le nom de l'état
-                //string etatNom = GetEtatName(lot.IdEtat);
-                carte.SetData(lot.Nom, "En attente");
+                carte.SetData(lot.Nom, Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat).Libelle);
                 flowLayoutPanelLots.Controls.Add(carte);
             }
         }
@@ -73,9 +72,7 @@ namespace M3_Pratique
                 foreach (var lot in Global.Lots)
                 {
                     var card = new LotCarte();
-                    // TODO récupérer le nom de l'état
-                    //string etatNom = GetEtatName(lot.IdEtat);
-                    card.SetData(lot.Nom, "En attente");
+                    card.SetData(lot.Nom, Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat).Libelle);
                     flowLayoutPanelLots.Controls.Add(card);
                 }
             }
@@ -86,9 +83,7 @@ namespace M3_Pratique
                 foreach (var lot in Global.Lots.Where(lot => lot.Nom.ToLower().Contains(recherche)))
                 {
                     var card = new LotCarte();
-                    // TODO récupérer le nom de l'état
-                    //string etatNom = GetEtatName(lot.IdEtat);
-                    card.SetData(lot.Nom, "En attente");
+                    card.SetData(lot.Nom, Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat).Libelle);
                     flowLayoutPanelLots.Controls.Add(card);
                 }
             }
