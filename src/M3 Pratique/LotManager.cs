@@ -25,7 +25,6 @@ namespace M3_Pratique
 
             flowLayoutPanelLots.Controls.Clear();
 
-            // TODO ajouter une carte lors de l'ajout d'un lot
             foreach (var lot in Global.Lots)
             {
                 var carte = new LotCarte();
@@ -84,7 +83,7 @@ namespace M3_Pratique
             {
                 // Sinon, filtre les lots en fonction du texte de recherche
                 flowLayoutPanelLots.Controls.Clear();
-                foreach (var lot in Global.Lots.Where(l => l.Nom.ToLower().Contains(recherche)))
+                foreach (var lot in Global.Lots.Where(lot => lot.Nom.ToLower().Contains(recherche)))
                 {
                     var card = new LotCarte();
                     // TODO récupérer le nom de l'état
