@@ -30,20 +30,20 @@ namespace M3_Pratique
             {
                 recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
             }
-            selectRecette.ValueMember = null;
-            selectRecette.DisplayMember = "Nom";
-            selectRecette.DataSource = recettes;
+            comboBoxRecette.ValueMember = null;
+            comboBoxRecette.DisplayMember = "Nom";
+            comboBoxRecette.DataSource = recettes;
         }
 
         // Création d'un lot
         private void btnCreer_Click(object sender, EventArgs e)
         {
             // Vérification des champs
-            if (inputNbPiece.Value <= 0)
+            if (numericUpDownNbPiece.Value <= 0)
             {
                 MessageBox.Show("Le nombre de pièce doit être supérieur à 0", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
-            else if (selectRecette.SelectedItem == null)
+            else if (comboBoxRecette.SelectedItem == null)
             {
                 MessageBox.Show("Veuillez sélectionner une recette", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
@@ -52,7 +52,7 @@ namespace M3_Pratique
                 // TODO récupérer le bon id état depuis la db
                 int idEtat = 1;
 
-                Global.AjouterLot((int)inputNbPiece.Value, idEtat, ((Recette)selectRecette.SelectedItem).Id, ((Recette)selectRecette.SelectedItem).Nom);
+                Global.AjouterLot((int)numericUpDownNbPiece.Value, idEtat, ((Recette)comboBoxRecette.SelectedItem).Id, ((Recette)comboBoxRecette.SelectedItem).Nom);
 
                 // Ajout de l'évènement
                 LotAjoute?.Invoke(this, EventArgs.Empty);

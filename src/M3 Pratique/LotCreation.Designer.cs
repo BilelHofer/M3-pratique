@@ -31,11 +31,11 @@
             this.btnCreer = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.labelNbPiece = new System.Windows.Forms.Label();
-            this.inputNbPiece = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownNbPiece = new System.Windows.Forms.NumericUpDown();
             this.labelRecette = new System.Windows.Forms.Label();
-            this.selectRecette = new System.Windows.Forms.ComboBox();
+            this.comboBoxRecette = new System.Windows.Forms.ComboBox();
             this.btnCreerRecette = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.inputNbPiece)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreer
@@ -67,17 +67,17 @@
             this.labelNbPiece.TabIndex = 2;
             this.labelNbPiece.Text = "Nombre de pièce";
             // 
-            // inputNbPiece
+            // numericUpDownNbPiece
             // 
-            this.inputNbPiece.Location = new System.Drawing.Point(140, 28);
-            this.inputNbPiece.Maximum = new decimal(new int[] {
+            this.numericUpDownNbPiece.Location = new System.Drawing.Point(140, 28);
+            this.numericUpDownNbPiece.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.inputNbPiece.Name = "inputNbPiece";
-            this.inputNbPiece.Size = new System.Drawing.Size(120, 22);
-            this.inputNbPiece.TabIndex = 3;
+            this.numericUpDownNbPiece.Name = "numericUpDownNbPiece";
+            this.numericUpDownNbPiece.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownNbPiece.TabIndex = 3;
             // 
             // labelRecette
             // 
@@ -88,13 +88,13 @@
             this.labelRecette.TabIndex = 4;
             this.labelRecette.Text = "Type de pièce";
             // 
-            // selectRecette
+            // comboBoxRecette
             // 
-            this.selectRecette.FormattingEnabled = true;
-            this.selectRecette.Location = new System.Drawing.Point(140, 63);
-            this.selectRecette.Name = "selectRecette";
-            this.selectRecette.Size = new System.Drawing.Size(120, 24);
-            this.selectRecette.TabIndex = 5;
+            this.comboBoxRecette.FormattingEnabled = true;
+            this.comboBoxRecette.Location = new System.Drawing.Point(140, 63);
+            this.comboBoxRecette.Name = "comboBoxRecette";
+            this.comboBoxRecette.Size = new System.Drawing.Size(120, 24);
+            this.comboBoxRecette.TabIndex = 5;
             // 
             // btnCreerRecette
             // 
@@ -112,9 +112,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(360, 197);
             this.Controls.Add(this.btnCreerRecette);
-            this.Controls.Add(this.selectRecette);
+            this.Controls.Add(this.comboBoxRecette);
             this.Controls.Add(this.labelRecette);
-            this.Controls.Add(this.inputNbPiece);
+            this.Controls.Add(this.numericUpDownNbPiece);
             this.Controls.Add(this.labelNbPiece);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnCreer);
@@ -122,7 +122,7 @@
             this.Name = "LotCreation";
             this.Text = "Création d\'un lot";
             this.Load += new System.EventHandler(this.LotCreation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.inputNbPiece)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,9 +133,9 @@
         private System.Windows.Forms.Button btnCreer;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Label labelNbPiece;
-        private System.Windows.Forms.NumericUpDown inputNbPiece;
+        private System.Windows.Forms.NumericUpDown numericUpDownNbPiece;
         private System.Windows.Forms.Label labelRecette;
-        private System.Windows.Forms.ComboBox selectRecette;
+        private System.Windows.Forms.ComboBox comboBoxRecette;
         private System.Windows.Forms.Button btnCreerRecette;
     }
 }
