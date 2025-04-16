@@ -137,6 +137,50 @@ namespace M3_Pratique
         }
 
         /// <summary>
+        /// Récupère les Etat de la base de données
+        /// </summary>
+        public static void RecupererEtat()
+        {
+            // Si la liste n'est pas encore initialisé, l'initialise
+            if (Etats == null)
+                Etats = new List<Etat>();
+            else
+                Etats.Clear();
+            try
+            {
+                DatabaseManager.ConnectDB();
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM etat", DatabaseManager.GetConnexion()))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Etat etat = new Etat(
+                                reader.GetInt64("id_Etat"),
+                                reader.GetString("ETA_Libelle")
+                            );
+                            // Ajout de la recette à la liste
+                            Etats.Add(etat);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des lots", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                // On ferme la connexion
+                DatabaseManager.CloseConnexion();
+            }
+        }
+
+        /// <summary>
         /// Ajoute un lot à la base de données
         /// </summary>
         /// <param name="quantite">quantité de pièce</param>
