@@ -34,6 +34,9 @@
             this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBoxLotSelectionner = new System.Windows.Forms.GroupBox();
+            this.labelEvenementMessage = new System.Windows.Forms.Label();
+            this.labelEvenementDate = new System.Windows.Forms.Label();
+            this.flowLayoutPanelEvenements = new System.Windows.Forms.FlowLayoutPanel();
             this.labelRecette = new System.Windows.Forms.Label();
             this.labelNbPiece = new System.Windows.Forms.Label();
             this.labelCreation = new System.Windows.Forms.Label();
@@ -43,8 +46,9 @@
             this.labelTitreCreation = new System.Windows.Forms.Label();
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
-            this.flowLayoutPanelEvenement = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBoxEvenement = new System.Windows.Forms.GroupBox();
             this.groupBoxLotSelectionner.SuspendLayout();
+            this.groupBoxEvenement.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCreerLot
@@ -100,7 +104,7 @@
             this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxLotSelectionner.Controls.Add(this.flowLayoutPanelEvenement);
+            this.groupBoxLotSelectionner.Controls.Add(this.groupBoxEvenement);
             this.groupBoxLotSelectionner.Controls.Add(this.labelRecette);
             this.groupBoxLotSelectionner.Controls.Add(this.labelNbPiece);
             this.groupBoxLotSelectionner.Controls.Add(this.labelCreation);
@@ -110,13 +114,43 @@
             this.groupBoxLotSelectionner.Controls.Add(this.labelTitreCreation);
             this.groupBoxLotSelectionner.Controls.Add(this.labelTitreEtat);
             this.groupBoxLotSelectionner.Controls.Add(this.labelLotNom);
-            this.groupBoxLotSelectionner.Location = new System.Drawing.Point(463, 14);
+            this.groupBoxLotSelectionner.Location = new System.Drawing.Point(449, 14);
             this.groupBoxLotSelectionner.Name = "groupBoxLotSelectionner";
-            this.groupBoxLotSelectionner.Size = new System.Drawing.Size(544, 561);
+            this.groupBoxLotSelectionner.Size = new System.Drawing.Size(558, 561);
             this.groupBoxLotSelectionner.TabIndex = 6;
             this.groupBoxLotSelectionner.TabStop = false;
             this.groupBoxLotSelectionner.Text = "Lot sélectionné";
             this.groupBoxLotSelectionner.Visible = false;
+            // 
+            // labelEvenementMessage
+            // 
+            this.labelEvenementMessage.AutoSize = true;
+            this.labelEvenementMessage.Location = new System.Drawing.Point(151, 18);
+            this.labelEvenementMessage.Name = "labelEvenementMessage";
+            this.labelEvenementMessage.Size = new System.Drawing.Size(64, 16);
+            this.labelEvenementMessage.TabIndex = 11;
+            this.labelEvenementMessage.Text = "Message";
+            // 
+            // labelEvenementDate
+            // 
+            this.labelEvenementDate.AutoSize = true;
+            this.labelEvenementDate.Location = new System.Drawing.Point(15, 19);
+            this.labelEvenementDate.Name = "labelEvenementDate";
+            this.labelEvenementDate.Size = new System.Drawing.Size(36, 16);
+            this.labelEvenementDate.TabIndex = 10;
+            this.labelEvenementDate.Text = "Date";
+            // 
+            // flowLayoutPanelEvenements
+            // 
+            this.flowLayoutPanelEvenements.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelEvenements.AutoScroll = true;
+            this.flowLayoutPanelEvenements.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelEvenements.Location = new System.Drawing.Point(9, 37);
+            this.flowLayoutPanelEvenements.Name = "flowLayoutPanelEvenements";
+            this.flowLayoutPanelEvenements.Size = new System.Drawing.Size(505, 333);
+            this.flowLayoutPanelEvenements.TabIndex = 9;
+            this.flowLayoutPanelEvenements.WrapContents = false;
             // 
             // labelRecette
             // 
@@ -208,17 +242,17 @@
             this.labelLotNom.TabIndex = 0;
             this.labelLotNom.Text = "Nom";
             // 
-            // flowLayoutPanelEvenement
+            // groupBoxEvenement
             // 
-            this.flowLayoutPanelEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelEvenement.AutoScroll = true;
-            this.flowLayoutPanelEvenement.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelEvenement.Location = new System.Drawing.Point(22, 174);
-            this.flowLayoutPanelEvenement.Name = "flowLayoutPanelEvenement";
-            this.flowLayoutPanelEvenement.Size = new System.Drawing.Size(505, 373);
-            this.flowLayoutPanelEvenement.TabIndex = 9;
-            this.flowLayoutPanelEvenement.WrapContents = false;
+            this.groupBoxEvenement.Controls.Add(this.labelEvenementMessage);
+            this.groupBoxEvenement.Controls.Add(this.labelEvenementDate);
+            this.groupBoxEvenement.Controls.Add(this.flowLayoutPanelEvenements);
+            this.groupBoxEvenement.Location = new System.Drawing.Point(22, 175);
+            this.groupBoxEvenement.Name = "groupBoxEvenement";
+            this.groupBoxEvenement.Size = new System.Drawing.Size(520, 380);
+            this.groupBoxEvenement.TabIndex = 12;
+            this.groupBoxEvenement.TabStop = false;
+            this.groupBoxEvenement.Text = "Evénement";
             // 
             // LotManager
             // 
@@ -237,6 +271,8 @@
             this.Text = "Manager de lot";
             this.groupBoxLotSelectionner.ResumeLayout(false);
             this.groupBoxLotSelectionner.PerformLayout();
+            this.groupBoxEvenement.ResumeLayout(false);
+            this.groupBoxEvenement.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +295,10 @@
         private System.Windows.Forms.Label labelNbPiece;
         private System.Windows.Forms.Label labelCreation;
         private System.Windows.Forms.Label labelEtat;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelEvenement;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelEvenements;
+        private System.Windows.Forms.Label labelEvenementMessage;
+        private System.Windows.Forms.Label labelEvenementDate;
+        private System.Windows.Forms.GroupBox groupBoxEvenement;
     }
 }
 

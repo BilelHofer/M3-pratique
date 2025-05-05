@@ -101,6 +101,12 @@
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="Etat.cs" />
     <Compile Include="Evenement.cs" />
+    <Compile Include="EvenementCarte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EvenementCarte.Designer.cs">
+      <DependentUpon>EvenementCarte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Lot.cs" />
     <Compile Include="LotCarte.cs">
@@ -149,6 +155,9 @@
     <Compile Include="RecetteManager.Designer.cs">
       <DependentUpon>RecetteManager.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EvenementCarte.resx">
+      <DependentUpon>EvenementCarte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LotCarte.resx">
       <DependentUpon>LotCarte.cs</DependentUpon>
     </EmbeddedResource>

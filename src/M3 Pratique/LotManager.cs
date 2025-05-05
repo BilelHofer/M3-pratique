@@ -73,14 +73,26 @@ namespace M3_Pratique
             {
                 carteSelectionnee.BackColor = Color.LightBlue;
 
-                // TODO affichage en détails du lot
                 // Afficher les détails du lot sélectionné
                 labelLotNom.Text = carteSelectionnee.Lot.Nom;
-                labelEtat.Text = carteSelectionnee.Lot.IdEtat.ToString();
+                labelEtat.Text = Global.Etats.FirstOrDefault(etat => etat.Id == carteSelectionnee.Lot.IdEtat).Libelle;
                 labelCreation.Text = carteSelectionnee.Lot.Date.ToString("dd/MM/yyyy");
                 labelNbPiece.Text = carteSelectionnee.Lot.Quantite.ToString();
                 labelRecette.Text = Global.Recettes.FirstOrDefault(recette => recette.Id == carteSelectionnee.Lot.IdRecette).Nom;
 
+                // Ajout des événements 
+                flowLayoutPanelEvenements.Controls.Clear();
+
+                // récupère les événements du lot
+                var evenements = Global.Evenements.Where(evenement => evenement.IdLot == carteSelectionnee.Lot.Id).ToList();
+
+                groupBoxEvenement.Visible = evenements.Count > 0;
+
+                foreach (var evenement in evenements)
+                {
+                    var carteEvenement = new EvenementCarte(evenement);
+                    flowLayoutPanelEvenements.Controls.Add(carteEvenement);
+                }
 
                 groupBoxLotSelectionner.Visible = true;
             }
@@ -140,6 +152,5 @@ namespace M3_Pratique
 
             AfficherLots(lotsFiltres);
         }
-
     }
 }
