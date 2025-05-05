@@ -50,7 +50,6 @@ namespace M3_Pratique
             // Trie la liste par la date
             var lotsTries = lots.OrderByDescending(lot => lot.Date);
 
-
             foreach (var lot in lotsTries)
             {
                 var carte = new LotCarte(lot);
@@ -108,18 +107,18 @@ namespace M3_Pratique
         /// </summary>
         private void textBoxRechercheLot_TextChanged(object sender, EventArgs e)
         {
-            RechercheEtFiltrageLots();
+            FiltrerLots();
         }
 
         private void comboBoxEtat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RechercheEtFiltrageLots();
+            FiltrerLots();
         }
 
         /// <summary>
         /// Applique les filtres de recherche et d'état pour afficher les lots.
         /// </summary>
-        private void RechercheEtFiltrageLots()
+        private void FiltrerLots()
         {
             string recherche = textBoxRechercheLot.Text.ToLower();
             long idEtatSelectionne = (comboBoxEtat.SelectedItem as Etat)?.Id ?? -1;
