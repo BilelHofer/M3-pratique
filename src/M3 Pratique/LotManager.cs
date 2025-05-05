@@ -84,7 +84,11 @@ namespace M3_Pratique
                 flowLayoutPanelEvenements.Controls.Clear();
 
                 // récupère les événements du lot
-                var evenements = Global.Evenements.Where(evenement => evenement.IdLot == carteSelectionnee.Lot.Id).ToList();
+                var evenements = Global.Evenements
+                    .Where(evenement => evenement.IdLot == carteSelectionnee.Lot.Id)
+                    .OrderByDescending(evenement => evenement.Date)
+                    .ToList();
+
 
                 groupBoxEvenement.Visible = evenements.Count > 0;
 
