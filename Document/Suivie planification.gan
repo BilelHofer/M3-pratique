@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-05-12" view-index="0" gantt-divider-location="348" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2025-04-04" view-index="0" gantt-divider-location="333" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
     <view zooming-state="default:0" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="248" order="0"/>
+        <field id="tpd3" name="Nom" width="236" order="0"/>
         <field id="tpd4" name="Date de début" width="20" order="1"/>
-        <field id="tpd5" name="Date de fin" width="64" order="2"/>
+        <field id="tpd5" name="Date de fin" width="61" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
@@ -16,7 +16,7 @@
         <field id="1" name="Rôle par défaut" width="86" order="1"/>
     </view>
     <!-- -->
-    <calendars>
+    <calendars base-id="Aucun">
         <day-types>
             <day-type id="0"/>
             <day-type id="1"/>
@@ -25,6 +25,18 @@
             <overriden-day-types/>
             <days/>
         </day-types>
+        <date year="2025" month="4" date="21" type="HOLIDAY"/>
+        <date year="2025" month="4" date="22" type="HOLIDAY"/>
+        <date year="2025" month="4" date="23" type="HOLIDAY"/>
+        <date year="2025" month="4" date="24" type="HOLIDAY"/>
+        <date year="2025" month="4" date="25" type="HOLIDAY"/>
+        <date year="2025" month="4" date="26" type="HOLIDAY"/>
+        <date year="2025" month="4" date="27" type="HOLIDAY"/>
+        <date year="2025" month="4" date="28" type="HOLIDAY"/>
+        <date year="2025" month="4" date="29" type="HOLIDAY"/>
+        <date year="2025" month="4" date="30" type="HOLIDAY"/>
+        <date year="2025" month="5" date="1" type="HOLIDAY"/>
+        <date year="2025" month="5" date="2" type="HOLIDAY"/>
     </calendars>
     <tasks empty-milestones="true">
         <taskproperties>
@@ -45,7 +57,7 @@
         <task id="0" uid="afb450e5e2024a5485b8a98e20ceeaec" name="Création de la maquette" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true"/>
         <task id="8" uid="0b5364de00b5434c9fcf7ee488b40985" name="Création du MCD" meeting="false" start="2025-03-24" duration="2" complete="0" expand="true"/>
         <task id="6" uid="b053d2d8972945f996d2b6ac19914851" name="Création de la base de données" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
-        <task id="5" uid="b4147da0ad4748caa8e8b55f7b58ab26" name="Création du programme" meeting="false" start="2025-04-07" duration="6" complete="0" expand="true">
+        <task id="5" uid="b4147da0ad4748caa8e8b55f7b58ab26" name="Création du programme" meeting="false" start="2025-04-07" duration="4" complete="0" expand="true">
             <task id="7" uid="a09093f5cc174e1a95ac27b924be2dde" name="Création de la classe pour intéragir avec la base de données" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
             <task id="29" uid="67c1426cc4d842b2847a5061fb2e66db" name="Création des différente page" color="#000000" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true">
                 <task id="41" uid="933e0bc0b7264648bcaa318712017d7f" name="Listes lot" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
@@ -54,9 +66,9 @@
                 <task id="47" uid="dcba3b2f56794bc080aa933b49fdf7ec" name="Création recette" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
                 <task id="46" uid="0c74876b9c6645ef8b1358bdffcc737e" name="Création lot" meeting="false" start="2025-04-07" duration="1" complete="0" expand="true"/>
             </task>
-            <task id="14" uid="a2473fc9434a430b9244ef6ca1ec7bd6" name="Affichage de la liste des lots" meeting="false" start="2025-04-21" duration="3" complete="0" expand="true">
-                <task id="22" uid="4b3da2c83e324c329e32b8f366ed650c" name="Afficher la liste des lots" meeting="false" start="2025-04-21" duration="1" complete="0" expand="true"/>
-                <task id="23" uid="10339e21e490496cab24edb721b3ca05" name="Sélection d'un élement de la liste" meeting="false" start="2025-04-28" duration="1" complete="0" expand="true"/>
+            <task id="14" uid="a2473fc9434a430b9244ef6ca1ec7bd6" name="Affichage de la liste des lots" meeting="false" start="2025-04-14" duration="2" complete="0" expand="true">
+                <task id="22" uid="4b3da2c83e324c329e32b8f366ed650c" name="Afficher la liste des lots" meeting="false" start="2025-04-14" duration="1" complete="0" expand="true"/>
+                <task id="23" uid="10339e21e490496cab24edb721b3ca05" name="Sélection d'un élement de la liste" meeting="false" start="2025-04-14" duration="1" complete="0" expand="true"/>
                 <task id="24" uid="5f7fbcfb5b19474d82b746acaeefc2be" name="Metadata lors de la création" meeting="false" start="2025-05-05" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Nom 
 Etat
@@ -67,14 +79,14 @@ Type de pièce(recette) / lien sur page information information
 
 ]]></notes>
                 </task>
-                <task id="25" uid="7a3c237282524ae9b98c38176d2e92eb" name="Création des champ" meeting="false" start="2025-05-05" duration="1" complete="0" expand="true">
+                <task id="25" uid="7a3c237282524ae9b98c38176d2e92eb" name="Création des champ" meeting="false" start="2025-04-14" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Créer,
 Recherche par nom
 ]]></notes>
                 </task>
             </task>
-            <task id="26" uid="bf59dce09bfb46e7b03c3457075eb84e" name="Affichage de la liste des recette" color="#000000" meeting="false" start="2025-04-21" duration="4" complete="0" expand="true">
-                <task id="27" uid="fe927244a4f34253936cdaa2c00793ea" name="Afficher la liste des recette" color="#8cb6ce" meeting="false" start="2025-04-21" duration="1" complete="0" expand="true"/>
+            <task id="26" uid="bf59dce09bfb46e7b03c3457075eb84e" name="Affichage de la liste des recette" color="#000000" meeting="false" start="2025-04-28" duration="2" complete="0" expand="true">
+                <task id="27" uid="fe927244a4f34253936cdaa2c00793ea" name="Afficher la liste des recette" color="#8cb6ce" meeting="false" start="2025-05-05" duration="1" complete="0" expand="true"/>
                 <task id="28" uid="b72474e0c0a543cfa21c17e8e4fe670a" name="Sélection d'un élement de la liste" color="#8cb6ce" meeting="false" start="2025-04-28" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Lors de la selection ouvre pop up information recette
 ]]></notes>
@@ -87,8 +99,8 @@ Recherche par nom
 ]]></notes>
                 </task>
             </task>
-            <task id="19" uid="d50681094f204e939fa7bf38fa382432" name="Getion pour la création/modification d'une recette" meeting="false" start="2025-04-21" duration="3" complete="0" expand="true">
-                <task id="32" uid="960ff209e068488fad5d0387253ec588" name="interface graphique" meeting="false" start="2025-04-21" duration="1" complete="0" expand="true">
+            <task id="19" uid="d50681094f204e939fa7bf38fa382432" name="Getion pour la création/modification d'une recette" meeting="false" start="2025-04-14" duration="2" complete="0" expand="true">
+                <task id="32" uid="960ff209e068488fad5d0387253ec588" name="interface graphique" meeting="false" start="2025-04-14" duration="1" complete="0" expand="true">
                     <notes><![CDATA[Ajout champ graphique et nommage de ceux-ci
 
 nom, description

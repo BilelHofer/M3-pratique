@@ -30,11 +30,6 @@ namespace M3_Pratique
 
         }
 
-        private void btnSupprimerRecette_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEnregistrerRecette_Click(object sender, EventArgs e)
         {
 
@@ -69,6 +64,11 @@ namespace M3_Pratique
         {
             var carte = new OperationCarte();
             flowLayoutPanelOperation.Controls.Add(carte);
+        }
+
+        private void labelOperation_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
