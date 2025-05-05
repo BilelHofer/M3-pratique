@@ -17,19 +17,10 @@ namespace M3_Pratique
             InitializeComponent();
         }
 
-        private void comboBoxPoition_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void numericUpDownTempsAttente_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btnQuittance_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

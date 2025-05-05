@@ -36,10 +36,14 @@
             this.btnAjoutOperation = new System.Windows.Forms.Button();
             this.btnSupprimerOperation = new System.Windows.Forms.Button();
             this.labelOperation = new System.Windows.Forms.Label();
-            this.labelPosition = new System.Windows.Forms.Label();
-            this.labelTempsAttente = new System.Windows.Forms.Label();
-            this.labelQuittance = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
+            this.labelSensHoraireOperation = new System.Windows.Forms.Label();
+            this.labelQuittanceOperation = new System.Windows.Forms.Label();
+            this.labelCycleVerinOperation = new System.Windows.Forms.Label();
+            this.labelTempsAttenteOperation = new System.Windows.Forms.Label();
+            this.labelPositionMoteurOperation = new System.Windows.Forms.Label();
+            this.labelNumeroOperation = new System.Windows.Forms.Label();
+            this.labelNomOperation = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTextRecette
@@ -93,7 +97,7 @@
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelOperation.Location = new System.Drawing.Point(104, 301);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
-            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(792, 400);
+            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(830, 400);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
             this.flowLayoutPanelOperation.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelOperation_Paint);
@@ -131,39 +135,6 @@
             this.labelOperation.Text = "Opération";
             this.labelOperation.Click += new System.EventHandler(this.labelOperation_Click);
             // 
-            // labelPosition
-            // 
-            this.labelPosition.AutoSize = true;
-            this.labelPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPosition.Location = new System.Drawing.Point(120, 278);
-            this.labelPosition.Name = "labelPosition";
-            this.labelPosition.Size = new System.Drawing.Size(251, 22);
-            this.labelPosition.TabIndex = 9;
-            this.labelPosition.Text = "Position                                    ";
-            // 
-            // labelTempsAttente
-            // 
-            this.labelTempsAttente.AutoSize = true;
-            this.labelTempsAttente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTempsAttente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTempsAttente.Location = new System.Drawing.Point(397, 278);
-            this.labelTempsAttente.Name = "labelTempsAttente";
-            this.labelTempsAttente.Size = new System.Drawing.Size(202, 22);
-            this.labelTempsAttente.TabIndex = 10;
-            this.labelTempsAttente.Text = "Temps d\'attene en ms     ";
-            // 
-            // labelQuittance
-            // 
-            this.labelQuittance.AutoSize = true;
-            this.labelQuittance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelQuittance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuittance.Location = new System.Drawing.Point(630, 278);
-            this.labelQuittance.Name = "labelQuittance";
-            this.labelQuittance.Size = new System.Drawing.Size(203, 22);
-            this.labelQuittance.TabIndex = 11;
-            this.labelQuittance.Text = "Quittance                        ";
-            // 
             // btnAnnuler
             // 
             this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -175,6 +146,70 @@
             this.btnAnnuler.TabIndex = 12;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
+            // 
+            // labelSensHoraireOperation
+            // 
+            this.labelSensHoraireOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelSensHoraireOperation.Location = new System.Drawing.Point(844, 278);
+            this.labelSensHoraireOperation.Name = "labelSensHoraireOperation";
+            this.labelSensHoraireOperation.Size = new System.Drawing.Size(90, 20);
+            this.labelSensHoraireOperation.TabIndex = 42;
+            this.labelSensHoraireOperation.Text = "Sens horaire";
+            // 
+            // labelQuittanceOperation
+            // 
+            this.labelQuittanceOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelQuittanceOperation.Location = new System.Drawing.Point(744, 278);
+            this.labelQuittanceOperation.Name = "labelQuittanceOperation";
+            this.labelQuittanceOperation.Size = new System.Drawing.Size(80, 20);
+            this.labelQuittanceOperation.TabIndex = 41;
+            this.labelQuittanceOperation.Text = "Quittance";
+            // 
+            // labelCycleVerinOperation
+            // 
+            this.labelCycleVerinOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCycleVerinOperation.Location = new System.Drawing.Point(644, 278);
+            this.labelCycleVerinOperation.Name = "labelCycleVerinOperation";
+            this.labelCycleVerinOperation.Size = new System.Drawing.Size(80, 20);
+            this.labelCycleVerinOperation.TabIndex = 40;
+            this.labelCycleVerinOperation.Text = "Cycle vérin";
+            // 
+            // labelTempsAttenteOperation
+            // 
+            this.labelTempsAttenteOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(514, 278);
+            this.labelTempsAttenteOperation.Name = "labelTempsAttenteOperation";
+            this.labelTempsAttenteOperation.Size = new System.Drawing.Size(110, 20);
+            this.labelTempsAttenteOperation.TabIndex = 39;
+            this.labelTempsAttenteOperation.Text = "Temps d\'attente";
+            // 
+            // labelPositionMoteurOperation
+            // 
+            this.labelPositionMoteurOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(374, 278);
+            this.labelPositionMoteurOperation.Name = "labelPositionMoteurOperation";
+            this.labelPositionMoteurOperation.Size = new System.Drawing.Size(120, 20);
+            this.labelPositionMoteurOperation.TabIndex = 38;
+            this.labelPositionMoteurOperation.Text = "Position du moteur";
+            // 
+            // labelNumeroOperation
+            // 
+            this.labelNumeroOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelNumeroOperation.Location = new System.Drawing.Point(274, 278);
+            this.labelNumeroOperation.Name = "labelNumeroOperation";
+            this.labelNumeroOperation.Size = new System.Drawing.Size(80, 20);
+            this.labelNumeroOperation.TabIndex = 37;
+            this.labelNumeroOperation.Text = "Numéro";
+            // 
+            // labelNomOperation
+            // 
+            this.labelNomOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelNomOperation.Location = new System.Drawing.Point(104, 278);
+            this.labelNomOperation.Name = "labelNomOperation";
+            this.labelNomOperation.Size = new System.Drawing.Size(150, 20);
+            this.labelNomOperation.TabIndex = 36;
+            this.labelNomOperation.Text = "Nom                                     ";
             // 
             // RecetteCreation
             // 
@@ -182,10 +217,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1064, 713);
+            this.Controls.Add(this.labelSensHoraireOperation);
+            this.Controls.Add(this.labelQuittanceOperation);
+            this.Controls.Add(this.labelCycleVerinOperation);
+            this.Controls.Add(this.labelTempsAttenteOperation);
+            this.Controls.Add(this.labelPositionMoteurOperation);
+            this.Controls.Add(this.labelNumeroOperation);
+            this.Controls.Add(this.labelNomOperation);
             this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.labelQuittance);
-            this.Controls.Add(this.labelTempsAttente);
-            this.Controls.Add(this.labelPosition);
             this.Controls.Add(this.labelOperation);
             this.Controls.Add(this.btnSupprimerOperation);
             this.Controls.Add(this.btnAjoutOperation);
@@ -213,9 +252,13 @@
         private System.Windows.Forms.Button btnAjoutOperation;
         private System.Windows.Forms.Button btnSupprimerOperation;
         private System.Windows.Forms.Label labelOperation;
-        private System.Windows.Forms.Label labelPosition;
-        private System.Windows.Forms.Label labelTempsAttente;
-        private System.Windows.Forms.Label labelQuittance;
         private System.Windows.Forms.Button btnAnnuler;
+        private System.Windows.Forms.Label labelSensHoraireOperation;
+        private System.Windows.Forms.Label labelQuittanceOperation;
+        private System.Windows.Forms.Label labelCycleVerinOperation;
+        private System.Windows.Forms.Label labelTempsAttenteOperation;
+        private System.Windows.Forms.Label labelPositionMoteurOperation;
+        private System.Windows.Forms.Label labelNumeroOperation;
+        private System.Windows.Forms.Label labelNomOperation;
     }
 }

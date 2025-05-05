@@ -63,12 +63,22 @@ namespace M3_Pratique
         private void btnAjoutOperation_Click(object sender, EventArgs e)
         {
             var carte = new OperationCarte();
-            flowLayoutPanelOperation.Controls.Add(carte);
+            if(flowLayoutPanelOperation.Controls.Count < 10)
+            {
+                flowLayoutPanelOperation.Controls.Add(carte);
+            }
+            
         }
 
         private void labelOperation_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            // Ferme la fenêtre
+            this.Close();
         }
     }
 }
