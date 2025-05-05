@@ -21,6 +21,7 @@ namespace M3_Pratique
             Global.RecupererLots();
             Global.RecupererEtat();
             Global.RecupererRecette();
+            Global.recupererEvenement();
             AfficherLots(Global.Lots);
 
             // Ajout des Etat à la combobox

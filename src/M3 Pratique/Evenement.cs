@@ -9,7 +9,7 @@ namespace M3_Pratique
     /// <summary>
     /// Classe représentant une evennement.
     /// </summary>
-    public class Evennement
+    public class Evenement
     {
         private long _id;
         private string _message;
@@ -22,7 +22,7 @@ namespace M3_Pratique
         public long IdLot { get => _idLot; set => _idLot = value; }
 
         // Constructeur de la calsse evennement.
-        public Evennement(long id, string message, DateTime date, long idLot)
+        public Evenement(long id, string message, DateTime date, long idLot)
         {
             Id = id;
             Message = message;

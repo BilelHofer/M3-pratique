@@ -100,7 +100,7 @@
   <ItemGroup>
     <Compile Include="DatabaseManager.cs" />
     <Compile Include="Etat.cs" />
-    <Compile Include="Evennement.cs" />
+    <Compile Include="Evenement.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Lot.cs" />
     <Compile Include="LotCarte.cs">

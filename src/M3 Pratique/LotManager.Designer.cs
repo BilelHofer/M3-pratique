@@ -43,6 +43,7 @@
             this.labelTitreCreation = new System.Windows.Forms.Label();
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
+            this.flowLayoutPanelEvenement = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +100,7 @@
             this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxLotSelectionner.Controls.Add(this.flowLayoutPanelEvenement);
             this.groupBoxLotSelectionner.Controls.Add(this.labelRecette);
             this.groupBoxLotSelectionner.Controls.Add(this.labelNbPiece);
             this.groupBoxLotSelectionner.Controls.Add(this.labelCreation);
@@ -206,6 +208,18 @@
             this.labelLotNom.TabIndex = 0;
             this.labelLotNom.Text = "Nom";
             // 
+            // flowLayoutPanelEvenement
+            // 
+            this.flowLayoutPanelEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelEvenement.AutoScroll = true;
+            this.flowLayoutPanelEvenement.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelEvenement.Location = new System.Drawing.Point(22, 174);
+            this.flowLayoutPanelEvenement.Name = "flowLayoutPanelEvenement";
+            this.flowLayoutPanelEvenement.Size = new System.Drawing.Size(505, 373);
+            this.flowLayoutPanelEvenement.TabIndex = 9;
+            this.flowLayoutPanelEvenement.WrapContents = false;
+            // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -245,6 +259,7 @@
         private System.Windows.Forms.Label labelNbPiece;
         private System.Windows.Forms.Label labelCreation;
         private System.Windows.Forms.Label labelEtat;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelEvenement;
     }
 }
 
