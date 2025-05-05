@@ -30,12 +30,16 @@
         {
             this.labelTextRecette = new System.Windows.Forms.Label();
             this.labelNomRecette = new System.Windows.Forms.Label();
-            this.btnSupprimerRecette = new System.Windows.Forms.Button();
             this.btnEnregistrerRecette = new System.Windows.Forms.Button();
             this.textBoxNomRecette = new System.Windows.Forms.TextBox();
             this.flowLayoutPanelOperation = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAjoutOperation = new System.Windows.Forms.Button();
             this.btnSupprimerOperation = new System.Windows.Forms.Button();
+            this.labelOperation = new System.Windows.Forms.Label();
+            this.labelPosition = new System.Windows.Forms.Label();
+            this.labelTempsAttente = new System.Windows.Forms.Label();
+            this.labelQuittance = new System.Windows.Forms.Label();
+            this.btnAnnuler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTextRecette
@@ -62,27 +66,14 @@
             this.labelNomRecette.Text = "Nom :";
             this.labelNomRecette.Click += new System.EventHandler(this.labelNomRecette_Click);
             // 
-            // btnSupprimerRecette
-            // 
-            this.btnSupprimerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSupprimerRecette.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnSupprimerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerRecette.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSupprimerRecette.Location = new System.Drawing.Point(902, 12);
-            this.btnSupprimerRecette.Name = "btnSupprimerRecette";
-            this.btnSupprimerRecette.Size = new System.Drawing.Size(150, 100);
-            this.btnSupprimerRecette.TabIndex = 2;
-            this.btnSupprimerRecette.Text = "Supprimer la recette";
-            this.btnSupprimerRecette.UseVisualStyleBackColor = false;
-            this.btnSupprimerRecette.Click += new System.EventHandler(this.btnSupprimerRecette_Click);
-            // 
             // btnEnregistrerRecette
             // 
             this.btnEnregistrerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnregistrerRecette.Location = new System.Drawing.Point(902, 601);
+            this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
+            this.btnEnregistrerRecette.Location = new System.Drawing.Point(952, 601);
             this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
-            this.btnEnregistrerRecette.Size = new System.Drawing.Size(150, 100);
+            this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnEnregistrerRecette.TabIndex = 3;
             this.btnEnregistrerRecette.Text = "Enregistrer";
             this.btnEnregistrerRecette.UseVisualStyleBackColor = true;
@@ -109,9 +100,10 @@
             // 
             // btnAjoutOperation
             // 
-            this.btnAjoutOperation.Location = new System.Drawing.Point(125, 249);
+            this.btnAjoutOperation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAjoutOperation.Location = new System.Drawing.Point(200, 210);
             this.btnAjoutOperation.Name = "btnAjoutOperation";
-            this.btnAjoutOperation.Size = new System.Drawing.Size(29, 33);
+            this.btnAjoutOperation.Size = new System.Drawing.Size(40, 40);
             this.btnAjoutOperation.TabIndex = 6;
             this.btnAjoutOperation.Text = "+";
             this.btnAjoutOperation.UseVisualStyleBackColor = true;
@@ -119,13 +111,70 @@
             // 
             // btnSupprimerOperation
             // 
-            this.btnSupprimerOperation.Location = new System.Drawing.Point(196, 249);
+            this.btnSupprimerOperation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSupprimerOperation.Location = new System.Drawing.Point(260, 210);
             this.btnSupprimerOperation.Name = "btnSupprimerOperation";
-            this.btnSupprimerOperation.Size = new System.Drawing.Size(60, 23);
+            this.btnSupprimerOperation.Size = new System.Drawing.Size(40, 40);
             this.btnSupprimerOperation.TabIndex = 7;
             this.btnSupprimerOperation.Text = "-";
             this.btnSupprimerOperation.UseVisualStyleBackColor = true;
             this.btnSupprimerOperation.Click += new System.EventHandler(this.btnSupprimerOperation_Click);
+            // 
+            // labelOperation
+            // 
+            this.labelOperation.AutoSize = true;
+            this.labelOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOperation.Location = new System.Drawing.Point(100, 220);
+            this.labelOperation.Name = "labelOperation";
+            this.labelOperation.Size = new System.Drawing.Size(82, 20);
+            this.labelOperation.TabIndex = 8;
+            this.labelOperation.Text = "Opération";
+            this.labelOperation.Click += new System.EventHandler(this.labelOperation_Click);
+            // 
+            // labelPosition
+            // 
+            this.labelPosition.AutoSize = true;
+            this.labelPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPosition.Location = new System.Drawing.Point(120, 278);
+            this.labelPosition.Name = "labelPosition";
+            this.labelPosition.Size = new System.Drawing.Size(251, 22);
+            this.labelPosition.TabIndex = 9;
+            this.labelPosition.Text = "Position                                    ";
+            // 
+            // labelTempsAttente
+            // 
+            this.labelTempsAttente.AutoSize = true;
+            this.labelTempsAttente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTempsAttente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTempsAttente.Location = new System.Drawing.Point(397, 278);
+            this.labelTempsAttente.Name = "labelTempsAttente";
+            this.labelTempsAttente.Size = new System.Drawing.Size(202, 22);
+            this.labelTempsAttente.TabIndex = 10;
+            this.labelTempsAttente.Text = "Temps d\'attene en ms     ";
+            // 
+            // labelQuittance
+            // 
+            this.labelQuittance.AutoSize = true;
+            this.labelQuittance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelQuittance.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuittance.Location = new System.Drawing.Point(630, 278);
+            this.labelQuittance.Name = "labelQuittance";
+            this.labelQuittance.Size = new System.Drawing.Size(203, 22);
+            this.labelQuittance.TabIndex = 11;
+            this.labelQuittance.Text = "Quittance                        ";
+            // 
+            // btnAnnuler
+            // 
+            this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
+            this.btnAnnuler.Location = new System.Drawing.Point(952, 515);
+            this.btnAnnuler.Name = "btnAnnuler";
+            this.btnAnnuler.Size = new System.Drawing.Size(100, 80);
+            this.btnAnnuler.TabIndex = 12;
+            this.btnAnnuler.Text = "Annuler";
+            this.btnAnnuler.UseVisualStyleBackColor = true;
             // 
             // RecetteCreation
             // 
@@ -133,12 +182,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1064, 713);
+            this.Controls.Add(this.btnAnnuler);
+            this.Controls.Add(this.labelQuittance);
+            this.Controls.Add(this.labelTempsAttente);
+            this.Controls.Add(this.labelPosition);
+            this.Controls.Add(this.labelOperation);
             this.Controls.Add(this.btnSupprimerOperation);
             this.Controls.Add(this.btnAjoutOperation);
             this.Controls.Add(this.flowLayoutPanelOperation);
             this.Controls.Add(this.textBoxNomRecette);
             this.Controls.Add(this.btnEnregistrerRecette);
-            this.Controls.Add(this.btnSupprimerRecette);
             this.Controls.Add(this.labelNomRecette);
             this.Controls.Add(this.labelTextRecette);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -154,11 +207,15 @@
 
         private System.Windows.Forms.Label labelTextRecette;
         private System.Windows.Forms.Label labelNomRecette;
-        private System.Windows.Forms.Button btnSupprimerRecette;
         private System.Windows.Forms.Button btnEnregistrerRecette;
         private System.Windows.Forms.TextBox textBoxNomRecette;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOperation;
         private System.Windows.Forms.Button btnAjoutOperation;
         private System.Windows.Forms.Button btnSupprimerOperation;
+        private System.Windows.Forms.Label labelOperation;
+        private System.Windows.Forms.Label labelPosition;
+        private System.Windows.Forms.Label labelTempsAttente;
+        private System.Windows.Forms.Label labelQuittance;
+        private System.Windows.Forms.Button btnAnnuler;
     }
 }
