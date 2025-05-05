@@ -29,13 +29,13 @@ namespace M3_Pratique
         private static List<Etat> _etats;
 
         // Liste des évenements
-        private static List<Evennement> _evenements;
+        private static List<Evenement> _evenements;
 
         public static List<Recette> Recettes { get => _recettes; set => _recettes = value; }
         public static List<Operation> Operation { get => _operation; set => _operation = value; }
         public static List<Lot> Lots { get => _lots; set => _lots = value; }
         public static List<Etat> Etats { get => _etats; set => _etats = value; }
-        public static List<Evennement> Evenements { get => _evenements; set => _evenements = value; }
+        public static List<Evenement> Evenements { get => _evenements; set => _evenements = value; }
 
         /// <summary>
         /// Récupère les recette de la base de données
@@ -77,6 +77,52 @@ namespace M3_Pratique
             catch (System.InvalidOperationException ex)
             {
                 MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                // On ferme la connexion
+                DatabaseManager.CloseConnexion();
+            }
+        }
+
+        /// <summary>
+        /// Récupère les évenements de la base de données
+        /// </summary>
+        public static void recupererEvenement()
+        {
+            // Si la liste n'est pas encore initialisé, l'initialise
+            if (Evenements == null)
+                Evenements = new List<Evenement>();
+            else
+                Evenements.Clear();
+            try
+            {
+                DatabaseManager.ConnectDB();
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM evénement", DatabaseManager.GetConnexion()))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Evenement evennement = new Evenement(
+                                reader.GetInt64("id_evénement"),
+                                reader.GetString("EVE_Message"),
+                                reader.GetDateTime("EVE_DateHeure"),
+                                reader.GetInt64("id_Lot")
+                            );
+                            // Ajout de la recette à la liste
+                            Evenements.Add(evennement);
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des évennements", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des évennements", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {

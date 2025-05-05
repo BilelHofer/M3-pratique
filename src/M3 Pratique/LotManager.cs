@@ -20,6 +20,8 @@ namespace M3_Pratique
             
             Global.RecupererLots();
             Global.RecupererEtat();
+            Global.RecupererRecette();
+            Global.recupererEvenement();
             AfficherLots(Global.Lots);
 
             // Ajout des Etat à la combobox
@@ -46,7 +48,10 @@ namespace M3_Pratique
         {
             flowLayoutPanelLots.Controls.Clear();
 
-            foreach (var lot in lots)
+            // Trie la liste par la date
+            var lotsTries = lots.OrderByDescending(lot => lot.Date);
+
+            foreach (var lot in lotsTries)
             {
                 var carte = new LotCarte(lot);
                 carte.LotSelectionne += SelectionCarte;
@@ -69,6 +74,15 @@ namespace M3_Pratique
                 carteSelectionnee.BackColor = Color.LightBlue;
 
                 // TODO affichage en détails du lot
+                // Afficher les détails du lot sélectionné
+                labelLotNom.Text = carteSelectionnee.Lot.Nom;
+                labelEtat.Text = carteSelectionnee.Lot.IdEtat.ToString();
+                labelCreation.Text = carteSelectionnee.Lot.Date.ToString("dd/MM/yyyy");
+                labelNbPiece.Text = carteSelectionnee.Lot.Quantite.ToString();
+                labelRecette.Text = Global.Recettes.FirstOrDefault(recette => recette.Id == carteSelectionnee.Lot.IdRecette).Nom;
+
+
+                groupBoxLotSelectionner.Visible = true;
             }
         }
 
@@ -94,18 +108,18 @@ namespace M3_Pratique
         /// </summary>
         private void textBoxRechercheLot_TextChanged(object sender, EventArgs e)
         {
-            RechercheEtFiltrageLots();
+            FiltrerLots();
         }
 
         private void comboBoxEtat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RechercheEtFiltrageLots();
+            FiltrerLots();
         }
 
         /// <summary>
         /// Applique les filtres de recherche et d'état pour afficher les lots.
         /// </summary>
-        private void RechercheEtFiltrageLots()
+        private void FiltrerLots()
         {
             string recherche = textBoxRechercheLot.Text.ToLower();
             long idEtatSelectionne = (comboBoxEtat.SelectedItem as Etat)?.Id ?? -1;

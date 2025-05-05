@@ -34,15 +34,16 @@
             this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBoxLotSelectionner = new System.Windows.Forms.GroupBox();
-            this.labelLotNom = new System.Windows.Forms.Label();
-            this.labelTitreEtat = new System.Windows.Forms.Label();
-            this.labelTitreCreation = new System.Windows.Forms.Label();
-            this.labelTitreNbPièce = new System.Windows.Forms.Label();
-            this.labelTitreType = new System.Windows.Forms.Label();
-            this.labelEtat = new System.Windows.Forms.Label();
-            this.labelCreation = new System.Windows.Forms.Label();
-            this.labelNbPiece = new System.Windows.Forms.Label();
             this.labelRecette = new System.Windows.Forms.Label();
+            this.labelNbPiece = new System.Windows.Forms.Label();
+            this.labelCreation = new System.Windows.Forms.Label();
+            this.labelEtat = new System.Windows.Forms.Label();
+            this.labelTitreType = new System.Windows.Forms.Label();
+            this.labelTitreNbPièce = new System.Windows.Forms.Label();
+            this.labelTitreCreation = new System.Windows.Forms.Label();
+            this.labelTitreEtat = new System.Windows.Forms.Label();
+            this.labelLotNom = new System.Windows.Forms.Label();
+            this.flowLayoutPanelEvenement = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +100,7 @@
             this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxLotSelectionner.Controls.Add(this.flowLayoutPanelEvenement);
             this.groupBoxLotSelectionner.Controls.Add(this.labelRecette);
             this.groupBoxLotSelectionner.Controls.Add(this.labelNbPiece);
             this.groupBoxLotSelectionner.Controls.Add(this.labelCreation);
@@ -114,76 +116,17 @@
             this.groupBoxLotSelectionner.TabIndex = 6;
             this.groupBoxLotSelectionner.TabStop = false;
             this.groupBoxLotSelectionner.Text = "Lot sélectionné";
+            this.groupBoxLotSelectionner.Visible = false;
             // 
-            // labelLotNom
+            // labelRecette
             // 
-            this.labelLotNom.AutoSize = true;
-            this.labelLotNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLotNom.Location = new System.Drawing.Point(19, 30);
-            this.labelLotNom.Name = "labelLotNom";
-            this.labelLotNom.Size = new System.Drawing.Size(47, 20);
-            this.labelLotNom.TabIndex = 0;
-            this.labelLotNom.Text = "Nom";
-            // 
-            // labelTitreEtat
-            // 
-            this.labelTitreEtat.AutoSize = true;
-            this.labelTitreEtat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreEtat.Location = new System.Drawing.Point(20, 66);
-            this.labelTitreEtat.Name = "labelTitreEtat";
-            this.labelTitreEtat.Size = new System.Drawing.Size(42, 16);
-            this.labelTitreEtat.TabIndex = 1;
-            this.labelTitreEtat.Text = "Etat :";
-            // 
-            // labelTitreCreation
-            // 
-            this.labelTitreCreation.AutoSize = true;
-            this.labelTitreCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreCreation.Location = new System.Drawing.Point(19, 93);
-            this.labelTitreCreation.Name = "labelTitreCreation";
-            this.labelTitreCreation.Size = new System.Drawing.Size(130, 16);
-            this.labelTitreCreation.TabIndex = 2;
-            this.labelTitreCreation.Text = "Date de création :";
-            // 
-            // labelTitreNbPièce
-            // 
-            this.labelTitreNbPièce.AutoSize = true;
-            this.labelTitreNbPièce.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreNbPièce.Location = new System.Drawing.Point(21, 119);
-            this.labelTitreNbPièce.Name = "labelTitreNbPièce";
-            this.labelTitreNbPièce.Size = new System.Drawing.Size(135, 16);
-            this.labelTitreNbPièce.TabIndex = 3;
-            this.labelTitreNbPièce.Text = "Nombre de pièce :";
-            // 
-            // labelTitreType
-            // 
-            this.labelTitreType.AutoSize = true;
-            this.labelTitreType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreType.Location = new System.Drawing.Point(21, 145);
-            this.labelTitreType.Name = "labelTitreType";
-            this.labelTitreType.Size = new System.Drawing.Size(116, 16);
-            this.labelTitreType.TabIndex = 4;
-            this.labelTitreType.Text = "Type de pièce :";
-            // 
-            // labelEtat
-            // 
-            this.labelEtat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEtat.Location = new System.Drawing.Point(60, 66);
-            this.labelEtat.Name = "labelEtat";
-            this.labelEtat.Size = new System.Drawing.Size(190, 16);
-            this.labelEtat.TabIndex = 5;
-            this.labelEtat.Text = "Etat";
-            this.labelEtat.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // labelCreation
-            // 
-            this.labelCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreation.Location = new System.Drawing.Point(149, 93);
-            this.labelCreation.Name = "labelCreation";
-            this.labelCreation.Size = new System.Drawing.Size(101, 16);
-            this.labelCreation.TabIndex = 6;
-            this.labelCreation.Text = "Creation";
-            this.labelCreation.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelRecette.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecette.Location = new System.Drawing.Point(134, 145);
+            this.labelRecette.Name = "labelRecette";
+            this.labelRecette.Size = new System.Drawing.Size(116, 16);
+            this.labelRecette.TabIndex = 8;
+            this.labelRecette.Text = "Type de pièce";
+            this.labelRecette.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelNbPiece
             // 
@@ -195,15 +138,87 @@
             this.labelNbPiece.Text = "Nb Pièce";
             this.labelNbPiece.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // labelRecette
+            // labelCreation
             // 
-            this.labelRecette.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRecette.Location = new System.Drawing.Point(134, 145);
-            this.labelRecette.Name = "labelRecette";
-            this.labelRecette.Size = new System.Drawing.Size(116, 16);
-            this.labelRecette.TabIndex = 8;
-            this.labelRecette.Text = "Type de pièce";
-            this.labelRecette.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.labelCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreation.Location = new System.Drawing.Point(149, 93);
+            this.labelCreation.Name = "labelCreation";
+            this.labelCreation.Size = new System.Drawing.Size(101, 16);
+            this.labelCreation.TabIndex = 6;
+            this.labelCreation.Text = "Creation";
+            this.labelCreation.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelEtat
+            // 
+            this.labelEtat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEtat.Location = new System.Drawing.Point(60, 66);
+            this.labelEtat.Name = "labelEtat";
+            this.labelEtat.Size = new System.Drawing.Size(190, 16);
+            this.labelEtat.TabIndex = 5;
+            this.labelEtat.Text = "Etat";
+            this.labelEtat.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // labelTitreType
+            // 
+            this.labelTitreType.AutoSize = true;
+            this.labelTitreType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitreType.Location = new System.Drawing.Point(21, 145);
+            this.labelTitreType.Name = "labelTitreType";
+            this.labelTitreType.Size = new System.Drawing.Size(116, 16);
+            this.labelTitreType.TabIndex = 4;
+            this.labelTitreType.Text = "Type de pièce :";
+            // 
+            // labelTitreNbPièce
+            // 
+            this.labelTitreNbPièce.AutoSize = true;
+            this.labelTitreNbPièce.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitreNbPièce.Location = new System.Drawing.Point(21, 119);
+            this.labelTitreNbPièce.Name = "labelTitreNbPièce";
+            this.labelTitreNbPièce.Size = new System.Drawing.Size(135, 16);
+            this.labelTitreNbPièce.TabIndex = 3;
+            this.labelTitreNbPièce.Text = "Nombre de pièce :";
+            // 
+            // labelTitreCreation
+            // 
+            this.labelTitreCreation.AutoSize = true;
+            this.labelTitreCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitreCreation.Location = new System.Drawing.Point(19, 93);
+            this.labelTitreCreation.Name = "labelTitreCreation";
+            this.labelTitreCreation.Size = new System.Drawing.Size(130, 16);
+            this.labelTitreCreation.TabIndex = 2;
+            this.labelTitreCreation.Text = "Date de création :";
+            // 
+            // labelTitreEtat
+            // 
+            this.labelTitreEtat.AutoSize = true;
+            this.labelTitreEtat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitreEtat.Location = new System.Drawing.Point(20, 66);
+            this.labelTitreEtat.Name = "labelTitreEtat";
+            this.labelTitreEtat.Size = new System.Drawing.Size(42, 16);
+            this.labelTitreEtat.TabIndex = 1;
+            this.labelTitreEtat.Text = "Etat :";
+            // 
+            // labelLotNom
+            // 
+            this.labelLotNom.AutoSize = true;
+            this.labelLotNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLotNom.Location = new System.Drawing.Point(19, 30);
+            this.labelLotNom.Name = "labelLotNom";
+            this.labelLotNom.Size = new System.Drawing.Size(47, 20);
+            this.labelLotNom.TabIndex = 0;
+            this.labelLotNom.Text = "Nom";
+            // 
+            // flowLayoutPanelEvenement
+            // 
+            this.flowLayoutPanelEvenement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelEvenement.AutoScroll = true;
+            this.flowLayoutPanelEvenement.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelEvenement.Location = new System.Drawing.Point(22, 174);
+            this.flowLayoutPanelEvenement.Name = "flowLayoutPanelEvenement";
+            this.flowLayoutPanelEvenement.Size = new System.Drawing.Size(505, 373);
+            this.flowLayoutPanelEvenement.TabIndex = 9;
+            this.flowLayoutPanelEvenement.WrapContents = false;
             // 
             // LotManager
             // 
@@ -244,6 +259,7 @@
         private System.Windows.Forms.Label labelNbPiece;
         private System.Windows.Forms.Label labelCreation;
         private System.Windows.Forms.Label labelEtat;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelEvenement;
     }
 }
 
