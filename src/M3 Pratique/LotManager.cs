@@ -20,6 +20,7 @@ namespace M3_Pratique
             
             Global.RecupererLots();
             Global.RecupererEtat();
+            Global.RecupererRecette();
             AfficherLots(Global.Lots);
 
             // Ajout des Etat à la combobox
@@ -46,7 +47,11 @@ namespace M3_Pratique
         {
             flowLayoutPanelLots.Controls.Clear();
 
-            foreach (var lot in lots)
+            // Trie la liste par la date
+            var lotsTries = lots.OrderByDescending(lot => lot.Date);
+
+
+            foreach (var lot in lotsTries)
             {
                 var carte = new LotCarte(lot);
                 carte.LotSelectionne += SelectionCarte;
@@ -69,6 +74,15 @@ namespace M3_Pratique
                 carteSelectionnee.BackColor = Color.LightBlue;
 
                 // TODO affichage en détails du lot
+                // Afficher les détails du lot sélectionné
+                labelLotNom.Text = carteSelectionnee.Lot.Nom;
+                labelEtat.Text = carteSelectionnee.Lot.IdEtat.ToString();
+                labelCreation.Text = carteSelectionnee.Lot.Date.ToString("dd/MM/yyyy");
+                labelNbPiece.Text = carteSelectionnee.Lot.Quantite.ToString();
+                labelRecette.Text = Global.Recettes.FirstOrDefault(recette => recette.Id == carteSelectionnee.Lot.IdRecette).Nom;
+
+
+                groupBoxLotSelectionner.Visible = true;
             }
         }
 
