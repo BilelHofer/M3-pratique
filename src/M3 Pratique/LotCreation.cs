@@ -87,5 +87,10 @@ namespace M3_Pratique
         {
 
         }
+
+        private void comboBoxRecette_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

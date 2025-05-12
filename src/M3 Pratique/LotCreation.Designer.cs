@@ -95,6 +95,7 @@
             this.comboBoxRecette.Name = "comboBoxRecette";
             this.comboBoxRecette.Size = new System.Drawing.Size(120, 24);
             this.comboBoxRecette.TabIndex = 5;
+            this.comboBoxRecette.SelectedIndexChanged += new System.EventHandler(this.comboBoxRecette_SelectedIndexChanged);
             // 
             // btnCreerRecette
             // 

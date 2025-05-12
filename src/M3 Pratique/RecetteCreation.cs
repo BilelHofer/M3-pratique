@@ -29,12 +29,28 @@ namespace M3_Pratique
         {
 
         }
-
+        // Création d'une recette
         private void btnEnregistrerRecette_Click(object sender, EventArgs e)
         {
+            if (textBoxNomRecette.Text == null)
+            {
+                MessageBox.Show("Veuillez entrer un nom de recette", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (flowLayoutPanelOperation.Controls.Count <= 0)
+            {
+                MessageBox.Show("Veuillez ajouter au moins une opération", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Global.AjouterRecette(textBoxNomRecette.Text, idEtat);
 
+                // Ajout de l'évènement
+                LotAjoute?.Invoke(this, EventArgs.Empty);
+
+                // Ferme la fenêtre
+                this.Close();
+            }
         }
-
         private void labelNomRecette_Click(object sender, EventArgs e)
         {
 
