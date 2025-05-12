@@ -34,6 +34,7 @@
             this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBoxLotSelectionner = new System.Windows.Forms.GroupBox();
+            this.groupBoxEvenement = new System.Windows.Forms.GroupBox();
             this.labelEvenementMessage = new System.Windows.Forms.Label();
             this.labelEvenementDate = new System.Windows.Forms.Label();
             this.flowLayoutPanelEvenements = new System.Windows.Forms.FlowLayoutPanel();
@@ -46,7 +47,6 @@
             this.labelTitreCreation = new System.Windows.Forms.Label();
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
-            this.groupBoxEvenement = new System.Windows.Forms.GroupBox();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.SuspendLayout();
@@ -121,6 +121,18 @@
             this.groupBoxLotSelectionner.TabStop = false;
             this.groupBoxLotSelectionner.Text = "Lot sélectionné";
             this.groupBoxLotSelectionner.Visible = false;
+            // 
+            // groupBoxEvenement
+            // 
+            this.groupBoxEvenement.Controls.Add(this.labelEvenementMessage);
+            this.groupBoxEvenement.Controls.Add(this.labelEvenementDate);
+            this.groupBoxEvenement.Controls.Add(this.flowLayoutPanelEvenements);
+            this.groupBoxEvenement.Location = new System.Drawing.Point(22, 175);
+            this.groupBoxEvenement.Name = "groupBoxEvenement";
+            this.groupBoxEvenement.Size = new System.Drawing.Size(520, 380);
+            this.groupBoxEvenement.TabIndex = 12;
+            this.groupBoxEvenement.TabStop = false;
+            this.groupBoxEvenement.Text = "Evénement";
             // 
             // labelEvenementMessage
             // 
@@ -241,18 +253,6 @@
             this.labelLotNom.Size = new System.Drawing.Size(47, 20);
             this.labelLotNom.TabIndex = 0;
             this.labelLotNom.Text = "Nom";
-            // 
-            // groupBoxEvenement
-            // 
-            this.groupBoxEvenement.Controls.Add(this.labelEvenementMessage);
-            this.groupBoxEvenement.Controls.Add(this.labelEvenementDate);
-            this.groupBoxEvenement.Controls.Add(this.flowLayoutPanelEvenements);
-            this.groupBoxEvenement.Location = new System.Drawing.Point(22, 175);
-            this.groupBoxEvenement.Name = "groupBoxEvenement";
-            this.groupBoxEvenement.Size = new System.Drawing.Size(520, 380);
-            this.groupBoxEvenement.TabIndex = 12;
-            this.groupBoxEvenement.TabStop = false;
-            this.groupBoxEvenement.Text = "Evénement";
             // 
             // LotManager
             // 

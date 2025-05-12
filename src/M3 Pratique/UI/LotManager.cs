@@ -8,7 +8,6 @@ using System.Windows.Forms;
 
 namespace M3_Pratique
 {
-    // Fenêtre de gestion des lots
     public partial class LotManager : Form
     {
         private LotCreation lotCreationForm = null;
@@ -17,38 +16,43 @@ namespace M3_Pratique
         public LotManager()
         {
             InitializeComponent();
-            
+
+            // Charge les données nécessaires depuis les objets globaux
             Global.RecupererLots();
             Global.RecupererEtat();
             Global.RecupererRecette();
             Global.recupererEvenement();
+
+            // Prépare la combobox des états
+            InitialiserComboBoxEtat();
+
+            // Affiche tous les lots
             AfficherLots(Global.Lots);
-
-            // Ajout des Etat à la combobox
-            comboBoxEtat.Items.Clear();
-
-            BindingList<Etat> etats = new BindingList<Etat>();
-
-            // Création des états
-            etats.Add(new Etat(-1, "Tous"));
-            for (int i = 0; i < Global.Etats.Count; i++)
-            {
-                etats.Add(new Etat(Global.Etats[i].Id, Global.Etats[i].Libelle));
-            }
-
-            comboBoxEtat.ValueMember = null;
-            comboBoxEtat.DisplayMember = "Libelle";
-            comboBoxEtat.DataSource = etats;
         }
 
         /// <summary>
-        /// Affiche une collection de lots dans le FlowLayoutPanel.
+        /// Initialise la combobox contenant les états possibles, avec un état "Tous".
+        /// </summary>
+        private void InitialiserComboBoxEtat()
+        {
+            comboBoxEtat.Items.Clear();
+
+            // Fusionne l'état "Tous" avec les états récupérés
+            comboBoxEtat.DataSource = new BindingList<Etat>(
+                new[] { new Etat(-1, "Tous") }.Concat(Global.Etats).ToList()
+            );
+
+            comboBoxEtat.DisplayMember = "Libelle";
+            comboBoxEtat.ValueMember = "Id";
+        }
+
+        /// <summary>
+        /// Affiche les lots dans le FlowLayoutPanel, triés par date décroissante.
         /// </summary>
         private void AfficherLots(IEnumerable<Lot> lots)
         {
             flowLayoutPanelLots.Controls.Clear();
 
-            // Trie la liste par la date
             var lotsTries = lots.OrderByDescending(lot => lot.Date);
 
             foreach (var lot in lotsTries)
@@ -60,99 +64,115 @@ namespace M3_Pratique
         }
 
         /// <summary>
-        /// Gère la sélection d'une carte de lot.
+        /// Événement déclenché lors de la sélection d’un lot.
+        /// Met à jour l’UI avec les détails et événements du lot sélectionné.
         /// </summary>
         private void SelectionCarte(object sender, long idLot)
         {
+            // Réinitialise la couleur de la carte précédemment sélectionnée
             if (carteSelectionnee != null)
                 carteSelectionnee.BackColor = Color.White;
 
+            // Sélectionne la nouvelle carte
             carteSelectionnee = sender as LotCarte;
-
             if (carteSelectionnee != null)
             {
                 carteSelectionnee.BackColor = Color.LightBlue;
 
-                // Afficher les détails du lot sélectionné
-                labelLotNom.Text = carteSelectionnee.Lot.Nom;
-                labelEtat.Text = Global.Etats.FirstOrDefault(etat => etat.Id == carteSelectionnee.Lot.IdEtat).Libelle;
-                labelCreation.Text = carteSelectionnee.Lot.Date.ToString("dd/MM/yyyy");
-                labelNbPiece.Text = carteSelectionnee.Lot.Quantite.ToString();
-                labelRecette.Text = Global.Recettes.FirstOrDefault(recette => recette.Id == carteSelectionnee.Lot.IdRecette).Nom;
+                // Affiche les infos détaillées du lot
+                AfficherDetailsLot(carteSelectionnee.Lot);
 
-                // Ajout des événements 
-                flowLayoutPanelEvenements.Controls.Clear();
-
-                // récupère les événements du lot
-                var evenements = Global.Evenements
-                    .Where(evenement => evenement.IdLot == carteSelectionnee.Lot.Id)
-                    .OrderByDescending(evenement => evenement.Date)
-                    .ToList();
-
-
-                groupBoxEvenement.Visible = evenements.Count > 0;
-
-                foreach (var evenement in evenements)
-                {
-                    var carteEvenement = new EvenementCarte(evenement);
-                    flowLayoutPanelEvenements.Controls.Add(carteEvenement);
-                }
-
-                groupBoxLotSelectionner.Visible = true;
+                // Affiche les événements associés à ce lot
+                AfficherEvenementsLot(carteSelectionnee.Lot.Id);
             }
         }
 
         /// <summary>
-        /// Ouvre la fenêtre de création d’un nouveau lot.
+        /// Met à jour les libellés et champs avec les données du lot sélectionné.
         /// </summary>
-        private void btnCreerLot_Click(object sender, EventArgs e)
+        private void AfficherDetailsLot(Lot lot)
+        {
+            labelLotNom.Text = lot.Nom;
+            labelEtat.Text = Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat)?.Libelle ?? "";
+            labelCreation.Text = lot.Date.ToString("dd/MM/yyyy");
+            labelNbPiece.Text = lot.Quantite.ToString();
+            labelRecette.Text = Global.Recettes.FirstOrDefault(r => r.Id == lot.IdRecette)?.Nom ?? "";
+            groupBoxLotSelectionner.Visible = true;
+        }
+
+        /// <summary>
+        /// Affiche tous les événements associés à un lot.
+        /// </summary>
+        private void AfficherEvenementsLot(long idLot)
+        {
+            flowLayoutPanelEvenements.Controls.Clear();
+
+            var evenements = Global.Evenements
+                .Where(e => e.IdLot == idLot)
+                .OrderByDescending(e => e.Date)
+                .ToList();
+
+            groupBoxEvenement.Visible = evenements.Count > 0;
+
+            foreach (var evenement in evenements)
+            {
+                var carteEvenement = new EvenementCarte(evenement);
+                flowLayoutPanelEvenements.Controls.Add(carteEvenement);
+            }
+        }
+
+        /// <summary>
+        /// Gère l’ouverture de la fenêtre de création de lot.
+        /// </summary>
+        private void OuvrirFormulaireCreationLot()
         {
             if (lotCreationForm == null || lotCreationForm.IsDisposed)
             {
                 lotCreationForm = new LotCreation();
                 lotCreationForm.LotAjoute += (s, args) => AfficherLots(Global.Lots);
-                lotCreationForm.Show();
             }
-            else
-            {
-                lotCreationForm.BringToFront();
-            }
+
+            lotCreationForm.Show();
+            lotCreationForm.BringToFront();
         }
 
         /// <summary>
-        /// Filtre les lots en fonction du texte saisi dans la barre de recherche.
+        /// Gère le clic sur le bouton "Créer un lot".
+        /// </summary>
+        private void btnCreerLot_Click(object sender, EventArgs e)
+        {
+            OuvrirFormulaireCreationLot();
+        }
+
+        /// <summary>
+        /// Réagit à la modification du texte de recherche pour filtrer les lots.
         /// </summary>
         private void textBoxRechercheLot_TextChanged(object sender, EventArgs e)
         {
             FiltrerLots();
         }
 
+        /// <summary>
+        /// Réagit au changement de sélection dans la ComboBox des états.
+        /// </summary>
         private void comboBoxEtat_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltrerLots();
         }
 
         /// <summary>
-        /// Applique les filtres de recherche et d'état pour afficher les lots.
+        /// Applique un filtre sur les lots en fonction du texte saisi et de l’état sélectionné.
         /// </summary>
         private void FiltrerLots()
         {
-            string recherche = textBoxRechercheLot.Text.ToLower();
-            long idEtatSelectionne = (comboBoxEtat.SelectedItem as Etat)?.Id ?? -1;
+            var recherche = textBoxRechercheLot.Text.ToLower();
+            var idEtat = (comboBoxEtat.SelectedItem as Etat)?.Id ?? -1;
 
-            IEnumerable<Lot> lotsFiltres = Global.Lots;
-
-            // Filtrage par texte si recherche non vide
-            if (!string.IsNullOrWhiteSpace(recherche))
-            {
-                lotsFiltres = lotsFiltres.Where(lot => lot.Nom.ToLower().Contains(recherche));
-            }
-
-            // Filtrage par état si un état spécifique est sélectionné
-            if (idEtatSelectionne != -1)
-            {
-                lotsFiltres = lotsFiltres.Where(lot => lot.IdEtat == idEtatSelectionne);
-            }
+            var lotsFiltres = Global.Lots
+                .Where(lot =>
+                    (string.IsNullOrWhiteSpace(recherche) || lot.Nom.ToLower().Contains(recherche)) &&
+                    (idEtat == -1 || lot.IdEtat == idEtat)
+                );
 
             AfficherLots(lotsFiltres);
         }
