@@ -38,7 +38,7 @@
             this.labelNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNom.Location = new System.Drawing.Point(13, 10);
             this.labelNom.Name = "labelNom";
-            this.labelNom.Size = new System.Drawing.Size(298, 18);
+            this.labelNom.Size = new System.Drawing.Size(298, 16);
             this.labelNom.TabIndex = 1;
             this.labelNom.Text = "Nom";
             // 
@@ -46,10 +46,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelNom);
             this.Name = "RecetteCarte";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(403, 49);
+            this.Size = new System.Drawing.Size(401, 47);
             this.ResumeLayout(false);
 
         }

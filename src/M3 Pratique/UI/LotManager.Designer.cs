@@ -47,6 +47,7 @@
             this.labelTitreCreation = new System.Windows.Forms.Label();
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
+            this.buttonRecette = new System.Windows.Forms.Button();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.SuspendLayout();
@@ -254,11 +255,22 @@
             this.labelLotNom.TabIndex = 0;
             this.labelLotNom.Text = "Nom";
             // 
+            // buttonRecette
+            // 
+            this.buttonRecette.Location = new System.Drawing.Point(331, 47);
+            this.buttonRecette.Name = "buttonRecette";
+            this.buttonRecette.Size = new System.Drawing.Size(86, 32);
+            this.buttonRecette.TabIndex = 7;
+            this.buttonRecette.Text = "Recette";
+            this.buttonRecette.UseVisualStyleBackColor = true;
+            this.buttonRecette.Click += new System.EventHandler(this.buttonRecette_Click);
+            // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 590);
+            this.Controls.Add(this.buttonRecette);
             this.Controls.Add(this.groupBoxLotSelectionner);
             this.Controls.Add(this.comboBoxEtat);
             this.Controls.Add(this.labelRechercherIcon);
@@ -299,6 +311,7 @@
         private System.Windows.Forms.Label labelEvenementMessage;
         private System.Windows.Forms.Label labelEvenementDate;
         private System.Windows.Forms.GroupBox groupBoxEvenement;
+        private System.Windows.Forms.Button buttonRecette;
     }
 }
 

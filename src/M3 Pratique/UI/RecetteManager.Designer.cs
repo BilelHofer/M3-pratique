@@ -81,7 +81,7 @@
             this.Controls.Add(this.labelRechercherIcon);
             this.Controls.Add(this.textBoxRechercheRecette);
             this.Controls.Add(this.btnCreerRecette);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RecetteManager";
             this.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
             this.Text = "Manager de recette";

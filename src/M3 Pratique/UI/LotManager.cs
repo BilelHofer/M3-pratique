@@ -10,6 +10,7 @@ namespace M3_Pratique
 {
     public partial class LotManager : Form
     {
+        private RecetteManager RecetteManagerForm = null;
         private LotCreation lotCreationForm = null;
         private LotCarte carteSelectionnee = null;
 
@@ -122,9 +123,9 @@ namespace M3_Pratique
         }
 
         /// <summary>
-        /// Gère l’ouverture de la fenêtre de création de lot.
+        /// Gère le clic sur le bouton "Créer un lot".
         /// </summary>
-        private void OuvrirFormulaireCreationLot()
+        private void btnCreerLot_Click(object sender, EventArgs e)
         {
             if (lotCreationForm == null || lotCreationForm.IsDisposed)
             {
@@ -134,14 +135,6 @@ namespace M3_Pratique
 
             lotCreationForm.Show();
             lotCreationForm.BringToFront();
-        }
-
-        /// <summary>
-        /// Gère le clic sur le bouton "Créer un lot".
-        /// </summary>
-        private void btnCreerLot_Click(object sender, EventArgs e)
-        {
-            OuvrirFormulaireCreationLot();
         }
 
         /// <summary>
@@ -175,6 +168,20 @@ namespace M3_Pratique
                 );
 
             AfficherLots(lotsFiltres);
+        }
+
+        /// <summary>
+        /// Gère le clic sur le bouton "Ouvrir les recettes".
+        /// </summary>
+        private void buttonRecette_Click(object sender, EventArgs e)
+        {
+            if (RecetteManagerForm == null || RecetteManagerForm.IsDisposed)
+            {
+                RecetteManagerForm = new RecetteManager();
+            }
+
+            RecetteManagerForm.Show();
+            RecetteManagerForm.BringToFront();
         }
     }
 }
