@@ -14,6 +14,9 @@ namespace M3_Pratique
         private LotCreation lotCreationForm = null;
         private LotCarte carteSelectionnee = null;
 
+        /// <summary>
+        /// Constructeur de la classe LotManager.
+        /// </summary>
         public LotManager()
         {
             InitializeComponent();

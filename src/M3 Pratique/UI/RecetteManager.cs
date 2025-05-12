@@ -12,8 +12,14 @@ using System.Windows.Forms.VisualStyles;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Classe de gestion de l'interface utilisateur pour la gestion des recettes.
+    /// </summary>
     public partial class RecetteManager : Form
     {
+        /// <summary>
+        /// Constructeur de la classe RecetteManager.
+        /// </summary>
         public RecetteManager()
         {
             InitializeComponent();

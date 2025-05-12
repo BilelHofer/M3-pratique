@@ -289,7 +289,6 @@ namespace M3_Pratique
         /// </summary>
         /// <param name="recetteNom"> le nom de la recette </param>
         /// <param name="listeOperation"> la liste des opérations </param>
-        /// <param name=""></param>
         public static void AjouterRecette(string recetteNom, List<Operation>listeOperation)
         {
             // Si la liste n'est pas encore initialisé, l'initialise
