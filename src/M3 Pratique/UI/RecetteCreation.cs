@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,8 @@ namespace M3_Pratique
 {
     public partial class RecetteCreation : Form
     {
+
+        List<OperationCarte> operationCartes = new List<OperationCarte>();
         public RecetteCreation()
         {
             InitializeComponent();
@@ -32,7 +35,8 @@ namespace M3_Pratique
         // Création d'une recette
         private void btnEnregistrerRecette_Click(object sender, EventArgs e)
         {
-            if (textBoxNomRecette.Text == null)
+            // Vérification des champs (Regex pour enlever les espaces)
+            if (Regex.Replace(textBoxNomRecette.Text, @"\s+", "") == "")
             {
                 MessageBox.Show("Veuillez entrer un nom de recette", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -42,8 +46,13 @@ namespace M3_Pratique
             }
             else
             {
-               
-               // Global.AjouterRecette(textBoxNomRecette.Text, idEtat);
+                // Création de la liste des opérations
+                List<Operation> listeOperations = new List<Operation>();
+
+                // Récupération des opérations
+                listeOperations = operationCartes.Select(carte => carte.GetOperation()).ToList();
+
+                Global.AjouterRecette(textBoxNomRecette.Text, listeOperations);
 
                 // Ajout de l'évènement
                 //LotAjoute?.Invoke(this, EventArgs.Empty);
@@ -73,6 +82,7 @@ namespace M3_Pratique
             if (flowLayoutPanelOperation.Controls.Count > 0)
             {
                 flowLayoutPanelOperation.Controls.Remove(flowLayoutPanelOperation.Controls[flowLayoutPanelOperation.Controls.Count - 1]);
+                operationCartes.RemoveAt(operationCartes.Count - 1);
             }
             
         }
@@ -83,6 +93,7 @@ namespace M3_Pratique
             if(flowLayoutPanelOperation.Controls.Count < 10)
             {
                 flowLayoutPanelOperation.Controls.Add(carte);
+                operationCartes.Add(carte);
             }
             
         }

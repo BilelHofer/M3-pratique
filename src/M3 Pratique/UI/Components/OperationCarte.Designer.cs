@@ -31,13 +31,13 @@
             this.numericUpDownTempsAttente = new System.Windows.Forms.NumericUpDown();
             this.checkBoxCycleVerin = new System.Windows.Forms.CheckBox();
             this.checkBoxQuittance = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.textBoxNomOperation = new System.Windows.Forms.TextBox();
+            this.numericUpDownNumeroOperation = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPositionMoteur = new System.Windows.Forms.NumericUpDown();
             this.checkBoxSensHoraire = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempsAttente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroOperation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPositionMoteur)).BeginInit();
             this.SuspendLayout();
             // 
             // numericUpDownTempsAttente
@@ -66,26 +66,26 @@
             this.checkBoxQuittance.TabIndex = 4;
             this.checkBoxQuittance.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textBoxNomOperation
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 22);
-            this.textBox1.TabIndex = 5;
+            this.textBoxNomOperation.Location = new System.Drawing.Point(0, 19);
+            this.textBoxNomOperation.Name = "textBoxNomOperation";
+            this.textBoxNomOperation.Size = new System.Drawing.Size(150, 22);
+            this.textBoxNomOperation.TabIndex = 5;
             // 
-            // numericUpDown1
+            // numericUpDownNumeroOperation
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(170, 19);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(80, 22);
-            this.numericUpDown1.TabIndex = 7;
+            this.numericUpDownNumeroOperation.Location = new System.Drawing.Point(170, 19);
+            this.numericUpDownNumeroOperation.Name = "numericUpDownNumeroOperation";
+            this.numericUpDownNumeroOperation.Size = new System.Drawing.Size(80, 22);
+            this.numericUpDownNumeroOperation.TabIndex = 7;
             // 
-            // numericUpDown2
+            // numericUpDownPositionMoteur
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(270, 19);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown2.TabIndex = 10;
+            this.numericUpDownPositionMoteur.Location = new System.Drawing.Point(270, 19);
+            this.numericUpDownPositionMoteur.Name = "numericUpDownPositionMoteur";
+            this.numericUpDownPositionMoteur.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownPositionMoteur.TabIndex = 10;
             // 
             // checkBoxSensHoraire
             // 
@@ -101,17 +101,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.checkBoxSensHoraire);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.numericUpDownPositionMoteur);
+            this.Controls.Add(this.numericUpDownNumeroOperation);
+            this.Controls.Add(this.textBoxNomOperation);
             this.Controls.Add(this.checkBoxQuittance);
             this.Controls.Add(this.checkBoxCycleVerin);
             this.Controls.Add(this.numericUpDownTempsAttente);
             this.Name = "OperationCarte";
             this.Size = new System.Drawing.Size(830, 60);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempsAttente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroOperation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPositionMoteur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,9 +121,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDownTempsAttente;
         private System.Windows.Forms.CheckBox checkBoxCycleVerin;
         private System.Windows.Forms.CheckBox checkBoxQuittance;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.TextBox textBoxNomOperation;
+        private System.Windows.Forms.NumericUpDown numericUpDownNumeroOperation;
+        private System.Windows.Forms.NumericUpDown numericUpDownPositionMoteur;
         private System.Windows.Forms.CheckBox checkBoxSensHoraire;
     }
 }

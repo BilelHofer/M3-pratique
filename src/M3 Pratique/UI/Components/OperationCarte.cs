@@ -22,5 +22,11 @@ namespace M3_Pratique
 
         }
 
+        public Operation GetOperation()
+        {
+            // Récupération de l'opération
+            Operation operation = new Operation(-1, textBoxNomOperation.Text, (int)numericUpDownNumeroOperation.Value, (int)numericUpDownPositionMoteur.Value, (int)numericUpDownTempsAttente.Value, checkBoxCycleVerin.Checked, checkBoxQuittance.Checked, checkBoxSensHoraire.Checked, -1);
+            return operation;
+        }
     }
 }

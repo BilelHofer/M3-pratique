@@ -10,7 +10,7 @@ namespace M3_Pratique
     // Classe représentant une opération
     public class Operation
     {
-        private long _id;
+        private long _id =-1;
         private string _nom;
         private int _numero;
         private int _positionMoteur;

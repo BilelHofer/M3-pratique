@@ -233,6 +233,7 @@ namespace M3_Pratique
         /// <param name="quantite">quantité de pièce</param>
         /// <param name="idEtat">l'id de l'état</param>
         /// <param name="idRecette">l'id de la recette</param>
+        /// <param name="recetteNom">le nom de la recette</param>
         public static void AjouterLot(int quantite, long idEtat, long idRecette, string recetteNom)
         {
             // Si la liste n'est pas encore initialisé, l'initialise
@@ -283,5 +284,69 @@ namespace M3_Pratique
                 DatabaseManager.CloseConnexion();
             }
          }
+        /// <summary>
+        /// Ajoute une recette à la base de données
+        /// </summary>
+        /// <param name="recetteNom"> le nom de la recette </param>
+        /// <param name="listeOperation"> la liste des opérations </param>
+        /// <param name=""></param>
+        public static void AjouterRecette(string recetteNom, List<Operation>listeOperation)
+        {
+            // Si la liste n'est pas encore initialisé, l'initialise
+            if (Recettes == null)
+                Recettes = new List<Recette>();
+
+            // Récupère la date
+            DateTime date = DateTime.Now;
+            long id = -1;
+            try
+            {
+                DatabaseManager.ConnectDB();
+                using (MySqlCommand cmd = new MySqlCommand("INSERT INTO recette (REC_Nom, REC_DateHeureCréation) " +
+                    "VALUES (@nom, @dateCreation)", DatabaseManager.GetConnexion()))
+                {
+                    cmd.Parameters.AddWithValue("@nom", recetteNom);
+                    cmd.Parameters.AddWithValue("@dateCreation", date);
+                    cmd.ExecuteNonQuery();
+                    id = cmd.LastInsertedId;
+                }
+                // ajout de la recette à la liste des recettes global
+                Global.Recettes.Add(new Recette(id, recetteNom, date));
+
+                // Pour chaque opération, on l'ajoute à la base de données
+                foreach (Operation operation in listeOperation)
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO opération (OPE_Nom, OPE_Numero, OPE_PositionMoteur, OPE_TempsAttente, OPE_CycleVerin, OPE_Quittance, OPE_SensMoteur, Id_Recette) " +
+                        "VALUES (@nom, @numero, @positionMoteur, @tempsAttente, @cycleVerin, @quittance, @sensMoteur1, @idRecette)", DatabaseManager.GetConnexion()))
+                    {
+                        cmd.Parameters.AddWithValue("@nom", operation.Nom);
+                        cmd.Parameters.AddWithValue("@numero", operation.Numero);
+                        cmd.Parameters.AddWithValue("@positionMoteur", operation.PositionMoteur);
+                        cmd.Parameters.AddWithValue("@tempsAttente", operation.TempsAttente);
+                        cmd.Parameters.AddWithValue("@cycleVerin", operation.CycleVerin);
+                        cmd.Parameters.AddWithValue("@quittance", operation.Quittance);
+                        cmd.Parameters.AddWithValue("@sensMoteur1", operation.SensMoteur1);
+                        cmd.Parameters.AddWithValue("@idRecette", id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+
+                MessageBox.Show($"Recette {recetteNom} créé avec succès", "Création de recette", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Création recette", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Création recette", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                // Ferme la connexion
+                DatabaseManager.CloseConnexion();
+            }
+        }
     }
 }
