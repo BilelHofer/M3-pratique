@@ -52,7 +52,7 @@
             this.labelTextRecette.Cursor = System.Windows.Forms.Cursors.Default;
             this.labelTextRecette.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextRecette.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelTextRecette.Location = new System.Drawing.Point(97, 95);
+            this.labelTextRecette.Location = new System.Drawing.Point(12, 9);
             this.labelTextRecette.Name = "labelTextRecette";
             this.labelTextRecette.Size = new System.Drawing.Size(141, 39);
             this.labelTextRecette.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             this.labelNomRecette.AutoSize = true;
             this.labelNomRecette.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomRecette.Location = new System.Drawing.Point(100, 150);
+            this.labelNomRecette.Location = new System.Drawing.Point(16, 71);
             this.labelNomRecette.Name = "labelNomRecette";
             this.labelNomRecette.Size = new System.Drawing.Size(54, 20);
             this.labelNomRecette.TabIndex = 1;
@@ -72,10 +72,9 @@
             // 
             // btnEnregistrerRecette
             // 
-            this.btnEnregistrerRecette.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnEnregistrerRecette.Location = new System.Drawing.Point(952, 601);
+            this.btnEnregistrerRecette.Location = new System.Drawing.Point(856, 510);
             this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
             this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnEnregistrerRecette.TabIndex = 3;
@@ -85,7 +84,7 @@
             // 
             // textBoxNomRecette
             // 
-            this.textBoxNomRecette.Location = new System.Drawing.Point(160, 150);
+            this.textBoxNomRecette.Location = new System.Drawing.Point(76, 71);
             this.textBoxNomRecette.Name = "textBoxNomRecette";
             this.textBoxNomRecette.Size = new System.Drawing.Size(188, 22);
             this.textBoxNomRecette.TabIndex = 4;
@@ -95,7 +94,7 @@
             // 
             this.flowLayoutPanelOperation.AutoScroll = true;
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelOperation.Location = new System.Drawing.Point(104, 301);
+            this.flowLayoutPanelOperation.Location = new System.Drawing.Point(20, 190);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
             this.flowLayoutPanelOperation.Size = new System.Drawing.Size(830, 400);
             this.flowLayoutPanelOperation.TabIndex = 5;
@@ -105,7 +104,7 @@
             // btnAjoutOperation
             // 
             this.btnAjoutOperation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAjoutOperation.Location = new System.Drawing.Point(200, 210);
+            this.btnAjoutOperation.Location = new System.Drawing.Point(116, 99);
             this.btnAjoutOperation.Name = "btnAjoutOperation";
             this.btnAjoutOperation.Size = new System.Drawing.Size(40, 40);
             this.btnAjoutOperation.TabIndex = 6;
@@ -116,7 +115,7 @@
             // btnSupprimerOperation
             // 
             this.btnSupprimerOperation.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSupprimerOperation.Location = new System.Drawing.Point(260, 210);
+            this.btnSupprimerOperation.Location = new System.Drawing.Point(176, 99);
             this.btnSupprimerOperation.Name = "btnSupprimerOperation";
             this.btnSupprimerOperation.Size = new System.Drawing.Size(40, 40);
             this.btnSupprimerOperation.TabIndex = 7;
@@ -128,7 +127,7 @@
             // 
             this.labelOperation.AutoSize = true;
             this.labelOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOperation.Location = new System.Drawing.Point(100, 220);
+            this.labelOperation.Location = new System.Drawing.Point(16, 109);
             this.labelOperation.Name = "labelOperation";
             this.labelOperation.Size = new System.Drawing.Size(82, 20);
             this.labelOperation.TabIndex = 8;
@@ -137,10 +136,9 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(952, 515);
+            this.btnAnnuler.Location = new System.Drawing.Point(856, 424);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 80);
             this.btnAnnuler.TabIndex = 12;
@@ -151,7 +149,7 @@
             // labelSensHoraireOperation
             // 
             this.labelSensHoraireOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSensHoraireOperation.Location = new System.Drawing.Point(844, 278);
+            this.labelSensHoraireOperation.Location = new System.Drawing.Point(760, 167);
             this.labelSensHoraireOperation.Name = "labelSensHoraireOperation";
             this.labelSensHoraireOperation.Size = new System.Drawing.Size(90, 20);
             this.labelSensHoraireOperation.TabIndex = 42;
@@ -160,7 +158,7 @@
             // labelQuittanceOperation
             // 
             this.labelQuittanceOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelQuittanceOperation.Location = new System.Drawing.Point(744, 278);
+            this.labelQuittanceOperation.Location = new System.Drawing.Point(660, 167);
             this.labelQuittanceOperation.Name = "labelQuittanceOperation";
             this.labelQuittanceOperation.Size = new System.Drawing.Size(80, 20);
             this.labelQuittanceOperation.TabIndex = 41;
@@ -169,7 +167,7 @@
             // labelCycleVerinOperation
             // 
             this.labelCycleVerinOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCycleVerinOperation.Location = new System.Drawing.Point(644, 278);
+            this.labelCycleVerinOperation.Location = new System.Drawing.Point(560, 167);
             this.labelCycleVerinOperation.Name = "labelCycleVerinOperation";
             this.labelCycleVerinOperation.Size = new System.Drawing.Size(80, 20);
             this.labelCycleVerinOperation.TabIndex = 40;
@@ -178,7 +176,7 @@
             // labelTempsAttenteOperation
             // 
             this.labelTempsAttenteOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(514, 278);
+            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(430, 167);
             this.labelTempsAttenteOperation.Name = "labelTempsAttenteOperation";
             this.labelTempsAttenteOperation.Size = new System.Drawing.Size(110, 20);
             this.labelTempsAttenteOperation.TabIndex = 39;
@@ -187,7 +185,7 @@
             // labelPositionMoteurOperation
             // 
             this.labelPositionMoteurOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(374, 278);
+            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(290, 167);
             this.labelPositionMoteurOperation.Name = "labelPositionMoteurOperation";
             this.labelPositionMoteurOperation.Size = new System.Drawing.Size(120, 20);
             this.labelPositionMoteurOperation.TabIndex = 38;
@@ -196,7 +194,7 @@
             // labelNumeroOperation
             // 
             this.labelNumeroOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumeroOperation.Location = new System.Drawing.Point(274, 278);
+            this.labelNumeroOperation.Location = new System.Drawing.Point(190, 167);
             this.labelNumeroOperation.Name = "labelNumeroOperation";
             this.labelNumeroOperation.Size = new System.Drawing.Size(80, 20);
             this.labelNumeroOperation.TabIndex = 37;
@@ -205,7 +203,7 @@
             // labelNomOperation
             // 
             this.labelNomOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNomOperation.Location = new System.Drawing.Point(104, 278);
+            this.labelNomOperation.Location = new System.Drawing.Point(20, 167);
             this.labelNomOperation.Name = "labelNomOperation";
             this.labelNomOperation.Size = new System.Drawing.Size(150, 20);
             this.labelNomOperation.TabIndex = 36;
@@ -216,7 +214,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1064, 713);
+            this.ClientSize = new System.Drawing.Size(1103, 713);
             this.Controls.Add(this.labelSensHoraireOperation);
             this.Controls.Add(this.labelQuittanceOperation);
             this.Controls.Add(this.labelCycleVerinOperation);
