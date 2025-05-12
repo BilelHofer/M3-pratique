@@ -115,6 +115,12 @@
     <Compile Include="UI\Components\LotCarte.Designer.cs">
       <DependentUpon>LotCarte.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\RecetteCarte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\RecetteCarte.Designer.cs">
+      <DependentUpon>RecetteCarte.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\LotCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\LotCarte.resx">
       <DependentUpon>LotCarte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\RecetteCarte.resx">
+      <DependentUpon>RecetteCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\LotCreation.resx">
       <DependentUpon>LotCreation.cs</DependentUpon>
