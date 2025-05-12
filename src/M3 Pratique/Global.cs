@@ -152,7 +152,8 @@ namespace M3_Pratique
                     {
                         while (reader.Read())
                         {
-                            Lot lot = new Lot(
+
+                        Lot lot = new Lot(
                                 reader.GetInt64("id_Lot"),
                                 reader.GetString("LOT_Nom"),
                                 reader.GetInt32("LOT_Quantite"),

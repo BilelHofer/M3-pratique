@@ -42,10 +42,11 @@ namespace M3_Pratique
             }
             else
             {
-                Global.AjouterRecette(textBoxNomRecette.Text, idEtat);
+               
+               // Global.AjouterRecette(textBoxNomRecette.Text, idEtat);
 
                 // Ajout de l'évènement
-                LotAjoute?.Invoke(this, EventArgs.Empty);
+                //LotAjoute?.Invoke(this, EventArgs.Empty);
 
                 // Ferme la fenêtre
                 this.Close();
