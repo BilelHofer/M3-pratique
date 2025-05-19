@@ -13,6 +13,7 @@ namespace M3_Pratique
 {
     public partial class RecetteCreation : Form
     {
+        public event EventHandler RecetteAjoute;
 
         List<OperationCarte> operationCartes = new List<OperationCarte>();
         public RecetteCreation()
@@ -55,7 +56,7 @@ namespace M3_Pratique
                 Global.AjouterRecette(textBoxNomRecette.Text, listeOperations);
 
                 // Ajout de l'évènement
-                //LotAjoute?.Invoke(this, EventArgs.Empty);
+                RecetteAjoute?.Invoke(this, EventArgs.Empty);
 
                 // Ferme la fenêtre
                 this.Close();

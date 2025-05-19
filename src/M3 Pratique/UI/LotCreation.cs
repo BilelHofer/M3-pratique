@@ -72,6 +72,17 @@ namespace M3_Pratique
             if (recetteCreationForm == null || recetteCreationForm.IsDisposed)
             {
                 recetteCreationForm = new RecetteCreation();
+                recetteCreationForm.RecetteAjoute += (s, args) =>
+                {
+                    // Met à jour la liste des recettes après la création d'une nouvelle recette
+                    BindingList<Recette> recettes = new BindingList<Recette>();
+                    for (int i = 0; i < Global.Recettes.Count; i++)
+                    {
+                        recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
+                    }
+                    comboBoxRecette.DataSource = recettes;
+                };
+
                 recetteCreationForm.Show();
             }
             else
