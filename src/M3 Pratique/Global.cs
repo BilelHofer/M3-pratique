@@ -59,7 +59,7 @@ namespace M3_Pratique
                             Recette recette = new Recette(
                                 reader.GetInt64("id_recette"),
                                 reader.GetString("REC_Nom"),
-                                reader.GetDateTime("REC_DateHeureCréation")
+                                reader.GetDateTime("REC_DateHeureCreation")
                             );
 
                             // Ajout de la recette à la liste
@@ -85,14 +85,14 @@ namespace M3_Pratique
             try
             {
                 DatabaseManager.ConnectDB();
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM evénement", DatabaseManager.GetConnexion()))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM evenement", DatabaseManager.GetConnexion()))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             Evenement evennement = new Evenement(
-                                reader.GetInt64("id_evénement"),
+                                reader.GetInt64("id_evenement"),
                                 reader.GetString("EVE_Message"),
                                 reader.GetDateTime("EVE_DateHeure"),
                                 reader.GetInt64("id_Lot")
@@ -132,7 +132,7 @@ namespace M3_Pratique
                                     reader.GetInt64("id_Lot"),
                                     reader.GetString("LOT_Nom"),
                                     reader.GetInt32("LOT_Quantite"),
-                                    reader.GetDateTime("LOT_DateHeureCréation"),
+                                    reader.GetDateTime("LOT_DateHeureCreation"),
                                     reader.GetInt64("id_Etat"),
                                     reader.GetInt64("id_recette")
                                 );
@@ -226,7 +226,7 @@ namespace M3_Pratique
             {
                 DatabaseManager.ConnectDB();
 
-                using (MySqlCommand cmd = new MySqlCommand("INSERT INTO lot (LOT_Nom, LOT_Quantite, LOT_DateHeureCréation, Id_Etat, Id_Recette) " +
+                using (MySqlCommand cmd = new MySqlCommand("INSERT INTO lot (LOT_Nom, LOT_Quantite, LOT_DateHeureCreation, Id_Etat, Id_Recette) " +
                     "VALUES (@nom, @quantite, @dateCreation, @idEtat, @idRecette)", DatabaseManager.GetConnexion()))
                 {
                     cmd.Parameters.AddWithValue("@nom", nom);
@@ -272,7 +272,7 @@ namespace M3_Pratique
             try
             {
                 DatabaseManager.ConnectDB();
-                using (MySqlCommand cmd = new MySqlCommand("INSERT INTO recette (REC_Nom, REC_DateHeureCréation) " +
+                using (MySqlCommand cmd = new MySqlCommand("INSERT INTO recette (REC_Nom, REC_DateHeureCreation) " +
                     "VALUES (@nom, @dateCreation)", DatabaseManager.GetConnexion()))
                 {
                     cmd.Parameters.AddWithValue("@nom", recetteNom);
@@ -286,7 +286,7 @@ namespace M3_Pratique
                 // Pour chaque opération, on l'ajoute à la base de données
                 foreach (Operation operation in listeOperation)
                 {
-                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO opération (OPE_Nom, OPE_Numero, OPE_PositionMoteur, OPE_TempsAttente, OPE_CycleVerin, OPE_Quittance, OPE_SensMoteur, Id_Recette) " +
+                    using (MySqlCommand cmd = new MySqlCommand("INSERT INTO operation (OPE_Nom, OPE_Numero, OPE_PositionMoteur, OPE_TempsAttente, OPE_CycleVerin, OPE_Quittance, OPE_SensMoteur, Id_Recette) " +
                         "VALUES (@nom, @numero, @positionMoteur, @tempsAttente, @cycleVerin, @quittance, @sensMoteur1, @idRecette)", DatabaseManager.GetConnexion()))
                     {
                         cmd.Parameters.AddWithValue("@nom", operation.Nom);
