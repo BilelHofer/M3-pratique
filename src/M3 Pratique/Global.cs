@@ -182,6 +182,25 @@ namespace M3_Pratique
         }
 
         /// <summary>
+        /// Récupère les données de la base de données 
+        /// </summary>
+        public static void RecupererTout()
+        {
+            // Récupère les données depuis la base de données
+            try
+            {
+                RecupererEtat();
+                RecupererLots();
+                RecupererRecette();
+                recupererEvenement();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la connexion à la base de données : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
         /// Ajoute un lot à la base de données
         /// </summary>
         /// <param name="quantite">quantité de pièce</param>
