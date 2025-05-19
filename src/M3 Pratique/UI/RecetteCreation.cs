@@ -15,7 +15,7 @@ namespace M3_Pratique
     {
         public event EventHandler RecetteAjoute;
 
-        List<OperationCarte> operationCartes = new List<OperationCarte>();
+        List<OperationCarteEdit> operationCartes = new List<OperationCarteEdit>();
         public RecetteCreation()
         {
             InitializeComponent();
@@ -79,7 +79,7 @@ namespace M3_Pratique
 
         private void btnSupprimerOperation_Click(object sender, EventArgs e)
         {
-            var carte = new OperationCarte();
+            var carte = new OperationCarteEdit();
             if (flowLayoutPanelOperation.Controls.Count > 0)
             {
                 flowLayoutPanelOperation.Controls.Remove(flowLayoutPanelOperation.Controls[flowLayoutPanelOperation.Controls.Count - 1]);
@@ -90,7 +90,7 @@ namespace M3_Pratique
 
         private void btnAjoutOperation_Click(object sender, EventArgs e)
         {
-            var carte = new OperationCarte();
+            var carte = new OperationCarteEdit();
             if(flowLayoutPanelOperation.Controls.Count < 10)
             {
                 flowLayoutPanelOperation.Controls.Add(carte);

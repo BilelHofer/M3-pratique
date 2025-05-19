@@ -134,11 +134,11 @@
       <DependentUpon>LotManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Operation.cs" />
-    <Compile Include="UI\Components\OperationCarte.cs">
+    <Compile Include="UI\Components\OperationCarteEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Components\OperationCarte.Designer.cs">
-      <DependentUpon>OperationCarte.cs</DependentUpon>
+    <Compile Include="UI\Components\OperationCarteEdit.Designer.cs">
+      <DependentUpon>OperationCarteEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="UI\LotManager.resx">
       <DependentUpon>LotManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Components\OperationCarte.resx">
-      <DependentUpon>OperationCarte.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Components\OperationCarteEdit.resx">
+      <DependentUpon>OperationCarteEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -217,6 +217,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\croix.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

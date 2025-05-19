@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace M3_Pratique
 {
-    public partial class OperationCarte : UserControl
+    public partial class OperationCarteEdit : UserControl
     {
-        public OperationCarte()
+        public OperationCarteEdit()
         {
             InitializeComponent();
         }
