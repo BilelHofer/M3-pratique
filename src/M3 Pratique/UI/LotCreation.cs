@@ -21,6 +21,7 @@ namespace M3_Pratique
         {
             InitializeComponent();
 
+
             // Ajout des recettes à la selection
             BindingList<Recette> recettes = new BindingList<Recette>();
             for (int i = 0; i < Global.Recettes.Count; i++)
@@ -51,7 +52,7 @@ namespace M3_Pratique
 
                 Global.AjouterLot((int)numericUpDownNbPiece.Value, idEtat, ((Recette)comboBoxRecette.SelectedItem).Id, ((Recette)comboBoxRecette.SelectedItem).Nom);
 
-                // Ajout de l'évènement
+                // Ajout de l'évènement pour mettre à jours la listes des lots
                 LotAjoute?.Invoke(this, EventArgs.Empty);
 
                 // Ferme la fenêtre

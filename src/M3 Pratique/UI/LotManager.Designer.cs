@@ -31,7 +31,6 @@
             this.btnCreerLot = new System.Windows.Forms.Button();
             this.flowLayoutPanelLots = new System.Windows.Forms.FlowLayoutPanel();
             this.textBoxRechercheLot = new System.Windows.Forms.TextBox();
-            this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBoxLotSelectionner = new System.Windows.Forms.GroupBox();
             this.groupBoxEvenement = new System.Windows.Forms.GroupBox();
@@ -48,6 +47,8 @@
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
             this.buttonRecette = new System.Windows.Forms.Button();
+            this.LabelIconRefresh = new System.Windows.Forms.Label();
+            this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.SuspendLayout();
@@ -81,15 +82,6 @@
             this.textBoxRechercheLot.Size = new System.Drawing.Size(219, 22);
             this.textBoxRechercheLot.TabIndex = 2;
             this.textBoxRechercheLot.TextChanged += new System.EventHandler(this.textBoxRechercheLot_TextChanged);
-            // 
-            // labelRechercherIcon
-            // 
-            this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
-            this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
-            this.labelRechercherIcon.Location = new System.Drawing.Point(236, 10);
-            this.labelRechercherIcon.Name = "labelRechercherIcon";
-            this.labelRechercherIcon.Size = new System.Drawing.Size(34, 31);
-            this.labelRechercherIcon.TabIndex = 3;
             // 
             // comboBoxEtat
             // 
@@ -265,11 +257,31 @@
             this.buttonRecette.UseVisualStyleBackColor = true;
             this.buttonRecette.Click += new System.EventHandler(this.buttonRecette_Click);
             // 
+            // LabelIconRefresh
+            // 
+            this.LabelIconRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.LabelIconRefresh.Image = global::M3_Pratique.Properties.Resources.refresh;
+            this.LabelIconRefresh.Location = new System.Drawing.Point(291, 10);
+            this.LabelIconRefresh.Name = "LabelIconRefresh";
+            this.LabelIconRefresh.Size = new System.Drawing.Size(34, 31);
+            this.LabelIconRefresh.TabIndex = 8;
+            this.LabelIconRefresh.Click += new System.EventHandler(this.LabelIconRefresh_Click);
+            // 
+            // labelRechercherIcon
+            // 
+            this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
+            this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
+            this.labelRechercherIcon.Location = new System.Drawing.Point(236, 10);
+            this.labelRechercherIcon.Name = "labelRechercherIcon";
+            this.labelRechercherIcon.Size = new System.Drawing.Size(34, 31);
+            this.labelRechercherIcon.TabIndex = 3;
+            // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 590);
+            this.Controls.Add(this.LabelIconRefresh);
             this.Controls.Add(this.buttonRecette);
             this.Controls.Add(this.groupBoxLotSelectionner);
             this.Controls.Add(this.comboBoxEtat);
@@ -312,6 +324,7 @@
         private System.Windows.Forms.Label labelEvenementDate;
         private System.Windows.Forms.GroupBox groupBoxEvenement;
         private System.Windows.Forms.Button buttonRecette;
+        private System.Windows.Forms.Label LabelIconRefresh;
     }
 }
 

@@ -184,7 +184,7 @@ namespace M3_Pratique
         /// <summary>
         /// Récupère les données de la base de données 
         /// </summary>
-        public static void RecupererTout()
+        public static bool RecupererTout()
         {
             // Récupère les données depuis la base de données
             try
@@ -193,10 +193,13 @@ namespace M3_Pratique
                 RecupererLots();
                 RecupererRecette();
                 recupererEvenement();
+
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur lors de la connexion à la base de données : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 

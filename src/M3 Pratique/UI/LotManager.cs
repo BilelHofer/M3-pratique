@@ -33,7 +33,7 @@ namespace M3_Pratique
         /// </summary>
         private void InitialiserComboBoxEtat()
         {
-            comboBoxEtat.Items.Clear();
+            comboBoxEtat.DataSource = null;
 
             // Fusionne l'état "Tous" avec les états récupérés
             comboBoxEtat.DataSource = new BindingList<Etat>(
@@ -179,6 +179,19 @@ namespace M3_Pratique
 
             RecetteManagerForm.Show();
             RecetteManagerForm.BringToFront();
+        }
+
+        private void LabelIconRefresh_Click(object sender, EventArgs e)
+        {
+            if (Global.RecupererTout())
+            {
+                // Prépare la combobox des états
+                InitialiserComboBoxEtat();
+                // Affiche tous les lots
+                AfficherLots(Global.Lots);
+
+                MessageBox.Show("Données mises à jour avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
