@@ -319,54 +319,5 @@ namespace M3_Pratique
                 DatabaseManager.CloseConnexion();
             }
         }
-        /// <summary>
-        /// Ajoute une opération à la base de données
-        /// </summary>
-        /// <param name="nom"></param>
-        /// <param name="numero"></param>
-        /// <param name="positionMoteur"></param>
-        /// <param name="tempsAttente"></param>
-        /// <param name="cycleVerin"></param>
-        /// <param name="quittance"></param>
-        /// <param name="sensMoteur1"></param>
-        /// <param name="idRecette"></param>
-        public static void AjouterOperation(string nom, int numero, int positionMoteur, int tempsAttente, bool cycleVerin, bool quittance, bool sensMoteur1, long idRecette)
-        {
-            long id = -1;
-            try
-            {
-                DatabaseManager.ConnectDB();
-                using (MySqlCommand cmd = new MySqlCommand("INSERT INTO opération (OPE_Nom, OPE_Numero, OPE_PositionMoteur, OPE_TempsAttente, OPE_CycleVerin, OPE_Quittance, OPE_SensMoteur, Id_Recette) " +
-                    "VALUES (@nom, @numero, @positionMoteur, @tempsAttente, @cycleVerin, @quittance, @sensMoteur1, @idRecette)", DatabaseManager.GetConnexion()))
-                {
-                    cmd.Parameters.AddWithValue("@nom", nom);
-                    cmd.Parameters.AddWithValue("@numero", numero);
-                    cmd.Parameters.AddWithValue("@positionMoteur", positionMoteur);
-                    cmd.Parameters.AddWithValue("@tempsAttente", tempsAttente);
-                    cmd.Parameters.AddWithValue("@cycleVerin", cycleVerin);
-                    cmd.Parameters.AddWithValue("@quittance", quittance);
-                    cmd.Parameters.AddWithValue("@sensMoteur1", sensMoteur1);
-                    cmd.Parameters.AddWithValue("@idRecette", idRecette);
-                    cmd.ExecuteNonQuery();
-                    id = cmd.LastInsertedId;
-                }
-                // Ajout de la recette à la liste des recettes global
-                Global.Operation.Add(new Operation(id, nom, numero, positionMoteur, tempsAttente, cycleVerin, quittance, sensMoteur1, idRecette));
-                MessageBox.Show($"Opération {nom} créé avec succès", "Création d'opération", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Création d'opération", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Création d'opération", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            finally
-            {
-                // Ferme la connexion
-                DatabaseManager.CloseConnexion();
-            }
-        }
     }
 }
