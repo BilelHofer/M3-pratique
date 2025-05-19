@@ -97,7 +97,7 @@ namespace M3_Pratique
                                 reader.GetDateTime("EVE_DateHeure"),
                                 reader.GetInt64("id_Lot")
                             );
-                            // Ajout de la recette à la liste
+                            // Ajout de l'événnement à la liste
                             Evenements.Add(evennement);
                         }
                     }
@@ -137,7 +137,7 @@ namespace M3_Pratique
                                     reader.GetInt64("id_recette")
                                 );
 
-                            // Ajout de la recette à la liste
+                            // Ajout du lot à la liste
                             Lots.Add(lot);
                         }
                     }
@@ -170,8 +170,46 @@ namespace M3_Pratique
                                 reader.GetInt64("id_Etat"),
                                 reader.GetString("ETA_Libelle")
                             );
-                            // Ajout de la recette à la liste
+                            // Ajout de l'état à la liste
                             Etats.Add(etat);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                // On ferme la connexion
+                DatabaseManager.CloseConnexion();
+            }
+        }
+
+        public static void RecupererOperation()
+        {
+            Operation.Clear();
+
+            try
+            {
+                DatabaseManager.ConnectDB();
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM operation", DatabaseManager.GetConnexion()))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Operation operation = new Operation(
+                                reader.GetInt64("id_operation"),
+                                reader.GetString("OPE_NOM"),
+                                reader.GetInt32("OPE_Numero"),
+                                reader.GetInt32("OPE_PositionMoteur"),
+                                reader.GetInt32("OPE_TempsAttente"),
+                                reader.GetBoolean("OPE_CycleVerin"),
+                                reader.GetBoolean("OPE_Quittance"),
+                                reader.GetBoolean("OPE_SensMoteur"),
+                                reader.GetInt64("Id_Recette")
+                                );
+
+                            // Ajout de l'opération à la liste
+                            Operation.Add(operation);
                         }
                     }
                 }
@@ -195,6 +233,7 @@ namespace M3_Pratique
                 RecupererLots();
                 RecupererRecette();
                 RecupererEvenement();
+                RecupererOperation();
 
                 return true;
             }
