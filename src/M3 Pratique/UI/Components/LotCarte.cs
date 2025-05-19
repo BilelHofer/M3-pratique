@@ -14,6 +14,7 @@ namespace M3_Pratique
     public partial class LotCarte : UserControl
     {
         private Lot _lot;
+        public event EventHandler<long> LotSelectionne;
 
         public Lot Lot { get => _lot; set => _lot = value; }
         public LotCarte(Lot lot)
@@ -34,7 +35,6 @@ namespace M3_Pratique
             }
         }
 
-        public event EventHandler<long> LotSelectionne;
 
         private void LotCarte_Click(object sender, EventArgs e)
         {
