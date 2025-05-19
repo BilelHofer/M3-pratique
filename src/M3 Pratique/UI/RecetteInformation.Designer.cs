@@ -37,7 +37,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "RecetteInformation";
             this.Text = "Information de la recette";
-            this.Load += new System.EventHandler(this.RecetteInformation_Load);
             this.ResumeLayout(false);
 
         }

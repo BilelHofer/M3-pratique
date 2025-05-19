@@ -12,14 +12,9 @@ namespace M3_Pratique
 {
     public partial class RecetteInformation : Form
     {
-        public RecetteInformation()
+        public RecetteInformation(Recette recette)
         {
             InitializeComponent();
-        }
-
-        private void RecetteInformation_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
