@@ -1,4 +1,6 @@
-﻿using System;
+﻿using M3_Pratique.UI.Components;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,11 +26,30 @@ namespace M3_Pratique
             MiseAJourInformation(recette);
         }
 
+        private void AfficherOperation(IEnumerable<Operation> operations)
+        {
+            flowLayoutPanelOperations.Controls.Clear();
+
+            var operationsTries = operations.OrderBy(operation => operation.Numero);
+
+            foreach (var operation in operationsTries)
+            {
+                var carte = new OperationCarte(operation);
+                flowLayoutPanelOperations.Controls.Add(carte);
+            }
+        }
+
         public void MiseAJourInformation(Recette recette)
         {
             _recette = recette;
             labelNomRecette.Text = recette.Nom;
             labelDate.Text = recette.DateCreation.ToString();
+
+            // Récupère tous les opération qui ont l'id de la recette
+            var operations = Global.Operations.Where(op => op.IdRecette == recette.Id).ToList();
+
+            // Affiche les opérations dans le FlowLayoutPanel
+            AfficherOperation(operations);
         }
     }
 }

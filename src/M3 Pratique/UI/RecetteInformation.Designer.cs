@@ -32,6 +32,8 @@
             this.labelInfoDate = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
             this.groupBoxOpération = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanelOperations = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBoxOpération.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNomRecette
@@ -64,13 +66,23 @@
             // 
             // groupBoxOpération
             // 
+            this.groupBoxOpération.Controls.Add(this.flowLayoutPanelOperations);
             this.groupBoxOpération.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxOpération.Location = new System.Drawing.Point(10, 65);
             this.groupBoxOpération.Name = "groupBoxOpération";
+            this.groupBoxOpération.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.groupBoxOpération.Size = new System.Drawing.Size(1047, 479);
             this.groupBoxOpération.TabIndex = 3;
             this.groupBoxOpération.TabStop = false;
             this.groupBoxOpération.Text = "Opération";
+            // 
+            // flowLayoutPanelOperations
+            // 
+            this.flowLayoutPanelOperations.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 21);
+            this.flowLayoutPanelOperations.Name = "flowLayoutPanelOperations";
+            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(1027, 455);
+            this.flowLayoutPanelOperations.TabIndex = 0;
             // 
             // RecetteInformation
             // 
@@ -81,10 +93,11 @@
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelInfoDate);
             this.Controls.Add(this.labelNomRecette);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RecetteInformation";
             this.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.Text = "Information de la recette";
+            this.groupBoxOpération.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +109,6 @@
         private System.Windows.Forms.Label labelInfoDate;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.GroupBox groupBoxOpération;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOperations;
     }
 }

@@ -22,7 +22,7 @@ namespace M3_Pratique
         private static List<Recette> _recettes = new List<Recette>();
 
         // Liste des opération
-        private static List<Operation> _operation = new List<Operation>();
+        private static List<Operation> _operations = new List<Operation>();
 
         // Liste des lots
         private static List<Lot> _lots = new List<Lot>();
@@ -34,7 +34,7 @@ namespace M3_Pratique
         private static List<Evenement> _evenements = new List<Evenement>();
 
         public static List<Recette> Recettes { get => _recettes; set => _recettes = value; }
-        public static List<Operation> Operation { get => _operation; set => _operation = value; }
+        public static List<Operation> Operations { get => _operations; set => _operations = value; }
         public static List<Lot> Lots { get => _lots; set => _lots = value; }
         public static List<Etat> Etats { get => _etats; set => _etats = value; }
         public static List<Evenement> Evenements { get => _evenements; set => _evenements = value; }
@@ -185,7 +185,7 @@ namespace M3_Pratique
 
         public static void RecupererOperation()
         {
-            Operation.Clear();
+            Operations.Clear();
 
             try
             {
@@ -209,7 +209,7 @@ namespace M3_Pratique
                                 );
 
                             // Ajout de l'opération à la liste
-                            Operation.Add(operation);
+                            Operations.Add(operation);
                         }
                     }
                 }
@@ -334,12 +334,12 @@ namespace M3_Pratique
                         cmd.Parameters.AddWithValue("@tempsAttente", operation.TempsAttente);
                         cmd.Parameters.AddWithValue("@cycleVerin", operation.CycleVerin);
                         cmd.Parameters.AddWithValue("@quittance", operation.Quittance);
-                        cmd.Parameters.AddWithValue("@sensMoteur1", operation.SensMoteur1);
+                        cmd.Parameters.AddWithValue("@sensMoteur1", operation.SensMoteur);
                         cmd.Parameters.AddWithValue("@idRecette", id);
                         cmd.ExecuteNonQuery();
 
                         // Ajout de l'opération à la liste des opérations global
-                        Global.Operation.Add(new Operation(cmd.LastInsertedId, operation.Nom, operation.Numero, operation.PositionMoteur, operation.TempsAttente, operation.CycleVerin, operation.Quittance, operation.SensMoteur1, id));
+                        Global.Operations.Add(new Operation(cmd.LastInsertedId, operation.Nom, operation.Numero, operation.PositionMoteur, operation.TempsAttente, operation.CycleVerin, operation.Quittance, operation.SensMoteur, id));
                     }
                 }
 

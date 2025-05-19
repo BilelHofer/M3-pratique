@@ -100,7 +100,7 @@
             // labelIconCroix
             // 
             this.labelIconCroix.Image = global::M3_Pratique.Properties.Resources.croix;
-            this.labelIconCroix.Location = new System.Drawing.Point(846, 10);
+            this.labelIconCroix.Location = new System.Drawing.Point(846, 8);
             this.labelIconCroix.Name = "labelIconCroix";
             this.labelIconCroix.Size = new System.Drawing.Size(37, 39);
             this.labelIconCroix.TabIndex = 16;
