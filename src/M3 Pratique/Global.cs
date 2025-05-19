@@ -78,7 +78,7 @@ namespace M3_Pratique
         /// <summary>
         /// Récupère les évenements de la base de données
         /// </summary>
-        public static void recupererEvenement()
+        public static void RecupererEvenement()
         {
             Evenements.Clear();
 
@@ -194,7 +194,7 @@ namespace M3_Pratique
                 RecupererEtat();
                 RecupererLots();
                 RecupererRecette();
-                recupererEvenement();
+                RecupererEvenement();
 
                 return true;
             }
