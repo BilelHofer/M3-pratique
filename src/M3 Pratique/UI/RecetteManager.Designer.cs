@@ -59,6 +59,7 @@
             this.btnCreerRecette.TabIndex = 4;
             this.btnCreerRecette.Text = "Créer";
             this.btnCreerRecette.UseVisualStyleBackColor = true;
+            this.btnCreerRecette.Click += new System.EventHandler(this.btnCreerRecette_Click);
             // 
             // flowLayoutPanelRecettes
             // 

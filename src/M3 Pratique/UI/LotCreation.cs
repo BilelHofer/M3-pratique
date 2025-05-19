@@ -16,7 +16,6 @@ namespace M3_Pratique
     {
         public event EventHandler LotAjoute;
 
-        private RecetteCreation recetteCreationForm = null;
         public LotCreation()
         {
             InitializeComponent();
@@ -70,10 +69,10 @@ namespace M3_Pratique
         private void btnCreerRecette_Click(object sender, EventArgs e)
         {
             // Vérifie si la fenêtre de création de recette est déjà ouverte
-            if (recetteCreationForm == null || recetteCreationForm.IsDisposed)
+            if (Global.recetteCreationForm == null || Global.recetteCreationForm.IsDisposed)
             {
-                recetteCreationForm = new RecetteCreation();
-                recetteCreationForm.RecetteAjoute += (s, args) =>
+                Global.recetteCreationForm = new RecetteCreation();
+                Global.recetteCreationForm.RecetteAjoute += (s, args) =>
                 {
                     // Met à jour la liste des recettes après la création d'une nouvelle recette
                     BindingList<Recette> recettes = new BindingList<Recette>();
@@ -84,11 +83,11 @@ namespace M3_Pratique
                     comboBoxRecette.DataSource = recettes;
                 };
 
-                recetteCreationForm.Show();
+                Global.recetteCreationForm.Show();
             }
             else
             {
-                recetteCreationForm.BringToFront();
+                Global.recetteCreationForm.BringToFront();
             }
         }
 

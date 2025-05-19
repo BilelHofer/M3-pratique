@@ -17,6 +17,8 @@ namespace M3_Pratique
     /// </summary>
     public partial class RecetteManager : Form
     {
+        
+
         /// <summary>
         /// Constructeur de la classe RecetteManager.
         /// </summary>
@@ -37,8 +39,6 @@ namespace M3_Pratique
             foreach (var recette in recettes)
             {
                 var carte = new RecetteCarte(recette);
-                // TODO gérer la selection d'une carte
-                //carte.LotSelectionne += SelectionCarte;
                 flowLayoutPanelRecettes.Controls.Add(carte);
             }
         }
@@ -63,6 +63,27 @@ namespace M3_Pratique
         private void textBoxRechercheRecette_TextChanged(object sender, EventArgs e)
         {
             FiltrerLots();
+        }
+
+        /// <summary>
+        /// Crée la fenetre de création de recette ou la met en page principal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCreerRecette_Click(object sender, EventArgs e)
+        {
+            // Vérifie si la fenêtre de création de recette est déjà ouverte
+            if (Global.recetteCreationForm == null || Global.recetteCreationForm.IsDisposed)
+            {
+                Global.recetteCreationForm = new RecetteCreation();
+                Global.recetteCreationForm.RecetteAjoute += (s, args) => AfficherRecettes(Global.Recettes);
+
+                Global.recetteCreationForm.Show();
+            }
+            else
+            {
+                Global.recetteCreationForm.BringToFront();
+            }
         }
     }
 }

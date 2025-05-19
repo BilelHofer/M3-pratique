@@ -189,8 +189,6 @@ namespace M3_Pratique
                 InitialiserComboBoxEtat();
                 // Affiche tous les lots
                 AfficherLots(Global.Lots);
-
-                MessageBox.Show("Données mises à jour avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
