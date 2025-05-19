@@ -83,11 +83,13 @@ namespace M3_Pratique
                     comboBoxRecette.DataSource = recettes;
                 };
 
+                // Si la fenêtre est minimusée, on la restaure
+                if (Global.recetteCreationForm.WindowState == FormWindowState.Minimized)
+                    Global.recetteCreationForm.WindowState = FormWindowState.Normal;
+
                 Global.recetteCreationForm.Show();
-            }
-            else
-            {
                 Global.recetteCreationForm.BringToFront();
+                Global.recetteCreationForm.Activate();
             }
         }
 

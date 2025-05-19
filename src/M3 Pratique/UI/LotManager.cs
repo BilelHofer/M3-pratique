@@ -130,8 +130,13 @@ namespace M3_Pratique
                 lotCreationForm.LotAjoute += (s, args) => AfficherLots(Global.Lots);
             }
 
+            // Si la fenêtre est minimusée, on la restaure
+            if (lotCreationForm.WindowState == FormWindowState.Minimized)
+                lotCreationForm.WindowState = FormWindowState.Normal;
+
             lotCreationForm.Show();
             lotCreationForm.BringToFront();
+            lotCreationForm.Activate();
         }
 
         /// <summary>

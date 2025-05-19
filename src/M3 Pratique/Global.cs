@@ -3,7 +3,6 @@
  * 
  */
 
-
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -17,6 +16,7 @@ namespace M3_Pratique
     static class Global
     {
         public static RecetteCreation recetteCreationForm = null;
+        public static RecetteInformation recetteInformationForm = null;
 
         // Liste des recettes
         private static List<Recette> _recettes = new List<Recette>();

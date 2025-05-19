@@ -78,11 +78,13 @@ namespace M3_Pratique
                 Global.recetteCreationForm = new RecetteCreation();
                 Global.recetteCreationForm.RecetteAjoute += (s, args) => AfficherRecettes(Global.Recettes);
 
+                // Si la fenêtre est minimusée, on la restaure
+                if (Global.recetteCreationForm.WindowState == FormWindowState.Minimized)
+                    Global.recetteCreationForm.WindowState = FormWindowState.Normal;
+
                 Global.recetteCreationForm.Show();
-            }
-            else
-            {
                 Global.recetteCreationForm.BringToFront();
+                Global.recetteCreationForm.Activate();
             }
         }
     }
