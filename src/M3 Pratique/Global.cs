@@ -17,19 +17,19 @@ namespace M3_Pratique
     static class Global
     {
         // Liste des recettes
-        private static List<Recette> _recettes;
+        private static List<Recette> _recettes = new List<Recette>();
 
         // Liste des opération
-        private static List<Operation> _operation;
+        private static List<Operation> _operation = new List<Operation>();
 
         // Liste des lots
-        private static List<Lot> _lots;
+        private static List<Lot> _lots = new List<Lot>();
 
         // Liste des états
-        private static List<Etat> _etats;
+        private static List<Etat> _etats = new List<Etat>();
 
         // Liste des évenements
-        private static List<Evenement> _evenements;
+        private static List<Evenement> _evenements = new List<Evenement>();
 
         public static List<Recette> Recettes { get => _recettes; set => _recettes = value; }
         public static List<Operation> Operation { get => _operation; set => _operation = value; }
@@ -42,11 +42,7 @@ namespace M3_Pratique
         /// </summary>
         public static void RecupererRecette()
         {
-            // Si la liste n'est pas encore initialisé, l'initialise
-            if (Recettes == null)
-                Recettes = new List<Recette>();
-            else
-                Recettes.Clear();
+            Recettes.Clear();
 
             try
             {
@@ -70,14 +66,6 @@ namespace M3_Pratique
                     }
                 }
             }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des recettes", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
             finally
             {
                 // On ferme la connexion
@@ -90,11 +78,8 @@ namespace M3_Pratique
         /// </summary>
         public static void recupererEvenement()
         {
-            // Si la liste n'est pas encore initialisé, l'initialise
-            if (Evenements == null)
-                Evenements = new List<Evenement>();
-            else
-                Evenements.Clear();
+            Evenements.Clear();
+
             try
             {
                 DatabaseManager.ConnectDB();
@@ -116,14 +101,6 @@ namespace M3_Pratique
                     }
                 }
             }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des évennements", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des évennements", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
             finally
             {
                 // On ferme la connexion
@@ -136,11 +113,7 @@ namespace M3_Pratique
         /// </summary>
         public static void RecupererLots()
         {
-            // Si la liste n'est pas encore initialisé, l'initialise
-            if (Lots == null)
-                Lots = new List<Lot>();
-            else
-                Lots.Clear();
+            Lots.Clear();
 
             try
             {
@@ -153,28 +126,20 @@ namespace M3_Pratique
                         while (reader.Read())
                         {
 
-                        Lot lot = new Lot(
-                                reader.GetInt64("id_Lot"),
-                                reader.GetString("LOT_Nom"),
-                                reader.GetInt32("LOT_Quantite"),
-                                reader.GetDateTime("LOT_DateHeureCréation"),
-                                reader.GetInt64("id_Etat"),
-                                reader.GetInt64("id_recette")
-                            );
+                            Lot lot = new Lot(
+                                    reader.GetInt64("id_Lot"),
+                                    reader.GetString("LOT_Nom"),
+                                    reader.GetInt32("LOT_Quantite"),
+                                    reader.GetDateTime("LOT_DateHeureCréation"),
+                                    reader.GetInt64("id_Etat"),
+                                    reader.GetInt64("id_recette")
+                                );
 
                             // Ajout de la recette à la liste
                             Lots.Add(lot);
                         }
                     }
                 }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des lots", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des lots", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {
@@ -188,11 +153,8 @@ namespace M3_Pratique
         /// </summary>
         public static void RecupererEtat()
         {
-            // Si la liste n'est pas encore initialisé, l'initialise
-            if (Etats == null)
-                Etats = new List<Etat>();
-            else
-                Etats.Clear();
+            Etats.Clear();
+
             try
             {
                 DatabaseManager.ConnectDB();
@@ -212,14 +174,6 @@ namespace M3_Pratique
                     }
                 }
             }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Une erreur est survenu : " + ex.Message, "Récupération des états", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Récupération des états", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
             finally
             {
                 // On ferme la connexion
@@ -236,9 +190,6 @@ namespace M3_Pratique
         /// <param name="recetteNom">le nom de la recette</param>
         public static void AjouterLot(int quantite, long idEtat, long idRecette, string recetteNom)
         {
-            // Si la liste n'est pas encore initialisé, l'initialise
-            if (Lots == null)
-                Lots = new List<Lot>();
 
             // Récupère la date
             DateTime date = DateTime.Now;
@@ -283,18 +234,14 @@ namespace M3_Pratique
                 // Ferme la connexion
                 DatabaseManager.CloseConnexion();
             }
-         }
+        }
         /// <summary>
         /// Ajoute une recette à la base de données
         /// </summary>
         /// <param name="recetteNom"> le nom de la recette </param>
         /// <param name="listeOperation"> la liste des opérations </param>
-        public static void AjouterRecette(string recetteNom, List<Operation>listeOperation)
+        public static void AjouterRecette(string recetteNom, List<Operation> listeOperation)
         {
-            // Si la liste n'est pas encore initialisé, l'initialise
-            if (Recettes == null)
-                Recettes = new List<Recette>();
-
             // Récupère la date
             DateTime date = DateTime.Now;
             long id = -1;

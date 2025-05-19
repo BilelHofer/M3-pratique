@@ -24,7 +24,6 @@ namespace M3_Pratique
         {
             InitializeComponent();
 
-            Global.RecupererRecette();
             AfficherRecettes(Global.Recettes);
         }
 

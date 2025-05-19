@@ -21,6 +21,19 @@ namespace M3_Pratique
         [STAThread]
         static void Main()
         {
+            // Récupère les données depuis la base de données
+            try
+            {
+                Global.RecupererEtat();
+                Global.RecupererLots();
+                Global.RecupererRecette();
+                Global.recupererEvenement();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la connexion à la base de données : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LotManager());

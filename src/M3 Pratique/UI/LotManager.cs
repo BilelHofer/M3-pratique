@@ -21,12 +21,6 @@ namespace M3_Pratique
         {
             InitializeComponent();
 
-            // Charge les données nécessaires depuis les objets globaux
-            Global.RecupererLots();
-            Global.RecupererEtat();
-            Global.RecupererRecette();
-            Global.recupererEvenement();
-
             // Prépare la combobox des états
             InitialiserComboBoxEtat();
 
