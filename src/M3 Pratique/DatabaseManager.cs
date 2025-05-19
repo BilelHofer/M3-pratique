@@ -8,7 +8,6 @@ namespace M3_Pratique
     /// <summary>
     /// Classe de gestion de la base de données.
     /// </summary>
-
     public class DatabaseManager
     {
         private static MySqlConnection _connection;
@@ -20,7 +19,7 @@ namespace M3_Pratique
         {
             try
             {
-                _connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ConnexionMySQL"].ConnectionString);
+                _connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ServerMySQLLocal"].ConnectionString);
                 if (_connection.State == ConnectionState.Closed)
                     _connection.Open();
             }

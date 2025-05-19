@@ -21,9 +21,11 @@ namespace M3_Pratique
         [STAThread]
         static void Main()
         {
+            Global.RecupererTout();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LotManager());
         }
     }
 }

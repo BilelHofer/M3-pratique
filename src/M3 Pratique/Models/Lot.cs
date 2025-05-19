@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace M3_Pratique
+{
+    /// <summary>
+    /// Classe représentant un lot.
+    /// </summary>
+    public class Lot
+    {
+        private long _id;
+        private string _nom;
+        private int _quantite;
+        private DateTime _date;
+        private long _idEtat;
+        private long _idRecette;
+
+        public long Id { get => _id; set => _id = value; }
+        public string Nom { get => _nom; set => _nom = value; }
+        public int Quantite { get => _quantite; set => _quantite = value; }
+        public DateTime Date { get => _date; set => _date = value; }
+        public long IdEtat { get => _idEtat; set => _idEtat = value; }
+        public long IdRecette { get => _idRecette; set => _idRecette = value; }
+
+        // Constructure d'un lot
+        public Lot(long id, string nom, int quantite, DateTime date, long idEtat, long idRecette)
+        {
+            Id = id;
+            Nom = nom;
+            Quantite = quantite;
+            Date = date;
+            IdEtat = idEtat;
+            IdRecette = idRecette;
+        }
+    }
+}

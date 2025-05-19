@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace M3_Pratique
 {
-    public partial class Form1 : Form
+    public partial class RecetteInformation : Form
     {
-        public Form1()
+        public RecetteInformation(Recette recette)
         {
             InitializeComponent();
         }
