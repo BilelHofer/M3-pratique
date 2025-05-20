@@ -134,8 +134,11 @@ namespace M3_Pratique
                                     reader.GetInt32("LOT_Quantite"),
                                     reader.GetDateTime("LOT_DateHeureCreation"),
                                     reader.GetInt64("id_Etat"),
-                                    reader.GetInt64("id_recette")
-                                );
+                                    reader.GetInt64("id_recette"),
+
+                                    // récupère la recette correspondante
+                                    Recettes.FirstOrDefault(r => r.Id == reader.GetInt64("id_recette"))
+                                    );
 
                             // Ajout du lot à la liste
                             Lots.Add(lot);
@@ -230,8 +233,8 @@ namespace M3_Pratique
             try
             {
                 RecupererEtat();
-                RecupererLots();
                 RecupererRecette();
+                RecupererLots();
                 RecupererEvenement();
                 RecupererOperation();
 
@@ -279,7 +282,7 @@ namespace M3_Pratique
                 }
 
                 // ajout du lot à la liste des lots global
-                Global.Lots.Add(new Lot(id, nom, (int)quantite, date, idEtat, idRecette));
+                Global.Lots.Add(new Lot(id, nom, (int)quantite, date, idEtat, idRecette, Recettes.FirstOrDefault(r => r.Id == idRecette)));
 
                 MessageBox.Show($"Lot {nom} créé avec succès", "Création de lot", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

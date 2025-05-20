@@ -94,7 +94,7 @@ namespace M3_Pratique
             labelEtat.Text = Global.Etats.FirstOrDefault(etat => etat.Id == lot.IdEtat)?.Libelle ?? "";
             labelCreation.Text = lot.Date.ToString("dd/MM/yyyy");
             labelNbPiece.Text = lot.Quantite.ToString();
-            labelRecette.Text = Global.Recettes.FirstOrDefault(r => r.Id == lot.IdRecette)?.Nom ?? "";
+            buttonTypePiece.Text = lot.Recette.Nom;
             groupBoxLotSelectionner.Visible = true;
         }
 
@@ -195,6 +195,27 @@ namespace M3_Pratique
                 // Affiche tous les lots
                 AfficherLots(Global.Lots);
             }
+        }
+
+        private void buttonTypePiece_Click(object sender, EventArgs e)
+        {
+            // Vérifie si la fenêtre de création de recette est déjà ouverte
+            if (Global.recetteInformationForm == null || Global.recetteInformationForm.IsDisposed)
+            {
+                Global.recetteInformationForm = new RecetteInformation(carteSelectionnee.Lot.Recette);
+            }
+            else
+            {
+                Global.recetteInformationForm.MiseAJourInformation(carteSelectionnee.Lot.Recette);
+            }
+
+            // Si la fenêtre est minimusée, on la restaure
+            if (Global.recetteInformationForm.WindowState == FormWindowState.Minimized)
+                Global.recetteInformationForm.WindowState = FormWindowState.Normal;
+
+            Global.recetteInformationForm.Show();
+            Global.recetteInformationForm.BringToFront();
+            Global.recetteInformationForm.Activate();
         }
     }
 }

@@ -37,7 +37,6 @@
             this.labelEvenementMessage = new System.Windows.Forms.Label();
             this.labelEvenementDate = new System.Windows.Forms.Label();
             this.flowLayoutPanelEvenements = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelRecette = new System.Windows.Forms.Label();
             this.labelNbPiece = new System.Windows.Forms.Label();
             this.labelCreation = new System.Windows.Forms.Label();
             this.labelEtat = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.buttonRecette = new System.Windows.Forms.Button();
             this.LabelIconRefresh = new System.Windows.Forms.Label();
             this.labelRechercherIcon = new System.Windows.Forms.Label();
+            this.buttonTypePiece = new System.Windows.Forms.Button();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.SuspendLayout();
@@ -97,8 +97,8 @@
             this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxLotSelectionner.Controls.Add(this.buttonTypePiece);
             this.groupBoxLotSelectionner.Controls.Add(this.groupBoxEvenement);
-            this.groupBoxLotSelectionner.Controls.Add(this.labelRecette);
             this.groupBoxLotSelectionner.Controls.Add(this.labelNbPiece);
             this.groupBoxLotSelectionner.Controls.Add(this.labelCreation);
             this.groupBoxLotSelectionner.Controls.Add(this.labelEtat);
@@ -156,16 +156,6 @@
             this.flowLayoutPanelEvenements.Size = new System.Drawing.Size(505, 333);
             this.flowLayoutPanelEvenements.TabIndex = 9;
             this.flowLayoutPanelEvenements.WrapContents = false;
-            // 
-            // labelRecette
-            // 
-            this.labelRecette.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRecette.Location = new System.Drawing.Point(134, 145);
-            this.labelRecette.Name = "labelRecette";
-            this.labelRecette.Size = new System.Drawing.Size(116, 16);
-            this.labelRecette.TabIndex = 8;
-            this.labelRecette.Text = "Type de pièce";
-            this.labelRecette.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelNbPiece
             // 
@@ -276,6 +266,16 @@
             this.labelRechercherIcon.Size = new System.Drawing.Size(34, 31);
             this.labelRechercherIcon.TabIndex = 3;
             // 
+            // buttonTypePiece
+            // 
+            this.buttonTypePiece.Location = new System.Drawing.Point(151, 142);
+            this.buttonTypePiece.Name = "buttonTypePiece";
+            this.buttonTypePiece.Size = new System.Drawing.Size(99, 23);
+            this.buttonTypePiece.TabIndex = 13;
+            this.buttonTypePiece.Text = "Type de pièce";
+            this.buttonTypePiece.UseVisualStyleBackColor = true;
+            this.buttonTypePiece.Click += new System.EventHandler(this.buttonTypePiece_Click);
+            // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -315,7 +315,6 @@
         private System.Windows.Forms.Label labelLotNom;
         private System.Windows.Forms.Label labelTitreNbPièce;
         private System.Windows.Forms.Label labelTitreType;
-        private System.Windows.Forms.Label labelRecette;
         private System.Windows.Forms.Label labelNbPiece;
         private System.Windows.Forms.Label labelCreation;
         private System.Windows.Forms.Label labelEtat;
@@ -325,6 +324,7 @@
         private System.Windows.Forms.GroupBox groupBoxEvenement;
         private System.Windows.Forms.Button buttonRecette;
         private System.Windows.Forms.Label LabelIconRefresh;
+        private System.Windows.Forms.Button buttonTypePiece;
     }
 }
 
