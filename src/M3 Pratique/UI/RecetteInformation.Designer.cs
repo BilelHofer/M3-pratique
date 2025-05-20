@@ -33,6 +33,13 @@
             this.labelDate = new System.Windows.Forms.Label();
             this.groupBoxOpération = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanelOperations = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelEnTeteNum = new System.Windows.Forms.Label();
+            this.labelEnTeteNom = new System.Windows.Forms.Label();
+            this.labelEnTetePosMoteur = new System.Windows.Forms.Label();
+            this.labelEnTeteTempsAttente = new System.Windows.Forms.Label();
+            this.labelEnTeteCycleVerin = new System.Windows.Forms.Label();
+            this.labelEnTeteQuittance = new System.Windows.Forms.Label();
+            this.labelEnTeteSensHoraire = new System.Windows.Forms.Label();
             this.groupBoxOpération.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,29 +73,100 @@
             // 
             // groupBoxOpération
             // 
+            this.groupBoxOpération.Controls.Add(this.labelEnTeteSensHoraire);
+            this.groupBoxOpération.Controls.Add(this.labelEnTeteQuittance);
+            this.groupBoxOpération.Controls.Add(this.labelEnTeteCycleVerin);
+            this.groupBoxOpération.Controls.Add(this.labelEnTeteTempsAttente);
+            this.groupBoxOpération.Controls.Add(this.labelEnTetePosMoteur);
+            this.groupBoxOpération.Controls.Add(this.labelEnTeteNom);
+            this.groupBoxOpération.Controls.Add(this.labelEnTeteNum);
             this.groupBoxOpération.Controls.Add(this.flowLayoutPanelOperations);
             this.groupBoxOpération.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBoxOpération.Location = new System.Drawing.Point(10, 65);
             this.groupBoxOpération.Name = "groupBoxOpération";
             this.groupBoxOpération.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.groupBoxOpération.Size = new System.Drawing.Size(1047, 479);
+            this.groupBoxOpération.Size = new System.Drawing.Size(874, 479);
             this.groupBoxOpération.TabIndex = 3;
             this.groupBoxOpération.TabStop = false;
             this.groupBoxOpération.Text = "Opération";
             // 
             // flowLayoutPanelOperations
             // 
+            this.flowLayoutPanelOperations.AutoScroll = true;
             this.flowLayoutPanelOperations.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 21);
+            this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 46);
             this.flowLayoutPanelOperations.Name = "flowLayoutPanelOperations";
-            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(1027, 455);
+            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(854, 430);
             this.flowLayoutPanelOperations.TabIndex = 0;
+            // 
+            // labelEnTeteNum
+            // 
+            this.labelEnTeteNum.AutoSize = true;
+            this.labelEnTeteNum.Location = new System.Drawing.Point(13, 27);
+            this.labelEnTeteNum.Name = "labelEnTeteNum";
+            this.labelEnTeteNum.Size = new System.Drawing.Size(55, 16);
+            this.labelEnTeteNum.TabIndex = 1;
+            this.labelEnTeteNum.Text = "Numéro";
+            // 
+            // labelEnTeteNom
+            // 
+            this.labelEnTeteNom.AutoSize = true;
+            this.labelEnTeteNom.Location = new System.Drawing.Point(85, 27);
+            this.labelEnTeteNom.Name = "labelEnTeteNom";
+            this.labelEnTeteNom.Size = new System.Drawing.Size(36, 16);
+            this.labelEnTeteNom.TabIndex = 2;
+            this.labelEnTeteNom.Text = "Nom";
+            // 
+            // labelEnTetePosMoteur
+            // 
+            this.labelEnTetePosMoteur.AutoSize = true;
+            this.labelEnTetePosMoteur.Location = new System.Drawing.Point(275, 27);
+            this.labelEnTetePosMoteur.Name = "labelEnTetePosMoteur";
+            this.labelEnTetePosMoteur.Size = new System.Drawing.Size(99, 16);
+            this.labelEnTetePosMoteur.TabIndex = 3;
+            this.labelEnTetePosMoteur.Text = "Position Moteur";
+            // 
+            // labelEnTeteTempsAttente
+            // 
+            this.labelEnTeteTempsAttente.AutoSize = true;
+            this.labelEnTeteTempsAttente.Location = new System.Drawing.Point(391, 27);
+            this.labelEnTeteTempsAttente.Name = "labelEnTeteTempsAttente";
+            this.labelEnTeteTempsAttente.Size = new System.Drawing.Size(122, 16);
+            this.labelEnTeteTempsAttente.TabIndex = 4;
+            this.labelEnTeteTempsAttente.Text = "Temps d\'attente [s]";
+            // 
+            // labelEnTeteCycleVerin
+            // 
+            this.labelEnTeteCycleVerin.AutoSize = true;
+            this.labelEnTeteCycleVerin.Location = new System.Drawing.Point(558, 27);
+            this.labelEnTeteCycleVerin.Name = "labelEnTeteCycleVerin";
+            this.labelEnTeteCycleVerin.Size = new System.Drawing.Size(75, 16);
+            this.labelEnTeteCycleVerin.TabIndex = 5;
+            this.labelEnTeteCycleVerin.Text = "Cycle Verin";
+            // 
+            // labelEnTeteQuittance
+            // 
+            this.labelEnTeteQuittance.AutoSize = true;
+            this.labelEnTeteQuittance.Location = new System.Drawing.Point(668, 27);
+            this.labelEnTeteQuittance.Name = "labelEnTeteQuittance";
+            this.labelEnTeteQuittance.Size = new System.Drawing.Size(63, 16);
+            this.labelEnTeteQuittance.TabIndex = 6;
+            this.labelEnTeteQuittance.Text = "Quittance";
+            // 
+            // labelEnTeteSensHoraire
+            // 
+            this.labelEnTeteSensHoraire.AutoSize = true;
+            this.labelEnTeteSensHoraire.Location = new System.Drawing.Point(761, 27);
+            this.labelEnTeteSensHoraire.Name = "labelEnTeteSensHoraire";
+            this.labelEnTeteSensHoraire.Size = new System.Drawing.Size(94, 16);
+            this.labelEnTeteSensHoraire.TabIndex = 7;
+            this.labelEnTeteSensHoraire.Text = "Sense Horaire";
             // 
             // RecetteInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(894, 554);
             this.Controls.Add(this.groupBoxOpération);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelInfoDate);
@@ -98,6 +176,7 @@
             this.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
             this.Text = "Information de la recette";
             this.groupBoxOpération.ResumeLayout(false);
+            this.groupBoxOpération.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +189,12 @@
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.GroupBox groupBoxOpération;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOperations;
+        private System.Windows.Forms.Label labelEnTeteCycleVerin;
+        private System.Windows.Forms.Label labelEnTeteTempsAttente;
+        private System.Windows.Forms.Label labelEnTetePosMoteur;
+        private System.Windows.Forms.Label labelEnTeteNom;
+        private System.Windows.Forms.Label labelEnTeteNum;
+        private System.Windows.Forms.Label labelEnTeteSensHoraire;
+        private System.Windows.Forms.Label labelEnTeteQuittance;
     }
 }

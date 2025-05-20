@@ -49,7 +49,7 @@
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(58, 12);
+            this.labelNom.Location = new System.Drawing.Point(79, 12);
             this.labelNom.MaximumSize = new System.Drawing.Size(187, 0);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(36, 16);
@@ -59,7 +59,7 @@
             // labelPositionMoteur
             // 
             this.labelPositionMoteur.AutoSize = true;
-            this.labelPositionMoteur.Location = new System.Drawing.Point(251, 12);
+            this.labelPositionMoteur.Location = new System.Drawing.Point(309, 12);
             this.labelPositionMoteur.Name = "labelPositionMoteur";
             this.labelPositionMoteur.Size = new System.Drawing.Size(72, 16);
             this.labelPositionMoteur.TabIndex = 2;
@@ -68,7 +68,7 @@
             // labelTempsAttente
             // 
             this.labelTempsAttente.AutoSize = true;
-            this.labelTempsAttente.Location = new System.Drawing.Point(329, 12);
+            this.labelTempsAttente.Location = new System.Drawing.Point(432, 12);
             this.labelTempsAttente.Name = "labelTempsAttente";
             this.labelTempsAttente.Size = new System.Drawing.Size(89, 16);
             this.labelTempsAttente.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.checkBoxCycleVerin.AutoSize = true;
             this.checkBoxCycleVerin.Enabled = false;
-            this.checkBoxCycleVerin.Location = new System.Drawing.Point(424, 11);
+            this.checkBoxCycleVerin.Location = new System.Drawing.Point(571, 11);
             this.checkBoxCycleVerin.Name = "checkBoxCycleVerin";
             this.checkBoxCycleVerin.Size = new System.Drawing.Size(18, 17);
             this.checkBoxCycleVerin.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             this.checkBoxQuittance.AutoSize = true;
             this.checkBoxQuittance.Enabled = false;
-            this.checkBoxQuittance.Location = new System.Drawing.Point(448, 11);
+            this.checkBoxQuittance.Location = new System.Drawing.Point(676, 11);
             this.checkBoxQuittance.Name = "checkBoxQuittance";
             this.checkBoxQuittance.Size = new System.Drawing.Size(18, 17);
             this.checkBoxQuittance.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             this.checkBoxSensMoteur.AutoSize = true;
             this.checkBoxSensMoteur.Enabled = false;
-            this.checkBoxSensMoteur.Location = new System.Drawing.Point(472, 11);
+            this.checkBoxSensMoteur.Location = new System.Drawing.Point(789, 11);
             this.checkBoxSensMoteur.Name = "checkBoxSensMoteur";
             this.checkBoxSensMoteur.Size = new System.Drawing.Size(18, 17);
             this.checkBoxSensMoteur.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.MinimumSize = new System.Drawing.Size(520, 0);
             this.Name = "OperationCarte";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(520, 50);
+            this.Size = new System.Drawing.Size(820, 56);
             this.ResumeLayout(false);
             this.PerformLayout();
 
