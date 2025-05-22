@@ -105,10 +105,7 @@ namespace M3_Pratique
         {
             flowLayoutPanelEvenements.Controls.Clear();
 
-            var evenements = Global.Evenements
-                .Where(e => e.IdLot == idLot)
-                .OrderByDescending(e => e.Date)
-                .ToList();
+            var evenements = Global.GetEvenementsByLot(idLot);
 
             groupBoxEvenement.Visible = evenements.Count > 0;
 

@@ -46,7 +46,7 @@ namespace M3_Pratique
             labelDate.Text = recette.DateCreation.ToString();
 
             // Récupère tous les opération qui ont l'id de la recette
-            var operations = Global.Operations.Where(op => op.IdRecette == recette.Id).ToList();
+            var operations = Global.GetOperationsByRecette(recette.Id);
 
             // Affiche les opérations dans le FlowLayoutPanel
             AfficherOperation(operations);

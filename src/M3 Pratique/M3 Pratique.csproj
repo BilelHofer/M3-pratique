@@ -98,7 +98,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="Data\DatabaseManager.cs" />
+    <Compile Include="Data\DatabaseService.cs" />
     <Compile Include="Models\Etat.cs" />
     <Compile Include="Models\Evenement.cs" />
     <Compile Include="UI\Components\EvenementCarte.cs">
