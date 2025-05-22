@@ -68,29 +68,23 @@ namespace M3_Pratique
 
         private void btnCreerRecette_Click(object sender, EventArgs e)
         {
-            // Vérifie si la fenêtre de création de recette est déjà ouverte
-            if (Global.recetteCreationForm == null || Global.recetteCreationForm.IsDisposed)
+            FormManager.OuvrirRecetteCreation(() => MiseAJourListeRecette());
+        }
+
+        /// <summary>
+        /// Met à jour la liste des recettes dans le comboBox
+        /// </summary>
+        private void MiseAJourListeRecette()
+        {
+            BindingList<Recette> recettes = new BindingList<Recette>();
+            for (int i = 0; i < Global.Recettes.Count; i++)
             {
-                Global.recetteCreationForm = new RecetteCreation();
-                Global.recetteCreationForm.RecetteAjoute += (s, args) =>
-                {
-                    // Met à jour la liste des recettes après la création d'une nouvelle recette
-                    BindingList<Recette> recettes = new BindingList<Recette>();
-                    for (int i = 0; i < Global.Recettes.Count; i++)
-                    {
-                        recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
-                    }
-                    comboBoxRecette.DataSource = recettes;
-                };
-
-                // Si la fenêtre est minimusée, on la restaure
-                if (Global.recetteCreationForm.WindowState == FormWindowState.Minimized)
-                    Global.recetteCreationForm.WindowState = FormWindowState.Normal;
-
-                Global.recetteCreationForm.Show();
-                Global.recetteCreationForm.BringToFront();
-                Global.recetteCreationForm.Activate();
+                recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
             }
+            comboBoxRecette.DataSource = recettes;
+
+            // sélectionne la dernière recette
+            comboBoxRecette.SelectedIndex = comboBoxRecette.Items.Count - 1;
         }
 
         private void LotCreation_Load(object sender, EventArgs e)

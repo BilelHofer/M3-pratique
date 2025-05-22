@@ -10,8 +10,6 @@ namespace M3_Pratique
 {
     public partial class LotManager : Form
     {
-        private RecetteManager RecetteManagerForm = null;
-        private LotCreation lotCreationForm = null;
         private LotCarte carteSelectionnee = null;
 
         /// <summary>
@@ -121,19 +119,7 @@ namespace M3_Pratique
         /// </summary>
         private void btnCreerLot_Click(object sender, EventArgs e)
         {
-            if (lotCreationForm == null || lotCreationForm.IsDisposed)
-            {
-                lotCreationForm = new LotCreation();
-                lotCreationForm.LotAjoute += (s, args) => AfficherLots(Global.Lots);
-            }
-
-            // Si la fenêtre est minimusée, on la restaure
-            if (lotCreationForm.WindowState == FormWindowState.Minimized)
-                lotCreationForm.WindowState = FormWindowState.Normal;
-
-            lotCreationForm.Show();
-            lotCreationForm.BringToFront();
-            lotCreationForm.Activate();
+            FormManager.OuvrirLotCreation(() => AfficherLots(Global.Lots));
         }
 
         /// <summary>
@@ -174,13 +160,7 @@ namespace M3_Pratique
         /// </summary>
         private void buttonRecette_Click(object sender, EventArgs e)
         {
-            if (RecetteManagerForm == null || RecetteManagerForm.IsDisposed)
-            {
-                RecetteManagerForm = new RecetteManager();
-            }
-
-            RecetteManagerForm.Show();
-            RecetteManagerForm.BringToFront();
+            FormManager.OuvrirRecetteManager();
         }
 
         private void LabelIconRefresh_Click(object sender, EventArgs e)
@@ -196,23 +176,7 @@ namespace M3_Pratique
 
         private void buttonTypePiece_Click(object sender, EventArgs e)
         {
-            // Vérifie si la fenêtre de création de recette est déjà ouverte
-            if (Global.recetteInformationForm == null || Global.recetteInformationForm.IsDisposed)
-            {
-                Global.recetteInformationForm = new RecetteInformation(carteSelectionnee.Lot.Recette);
-            }
-            else
-            {
-                Global.recetteInformationForm.MiseAJourInformation(carteSelectionnee.Lot.Recette);
-            }
-
-            // Si la fenêtre est minimusée, on la restaure
-            if (Global.recetteInformationForm.WindowState == FormWindowState.Minimized)
-                Global.recetteInformationForm.WindowState = FormWindowState.Normal;
-
-            Global.recetteInformationForm.Show();
-            Global.recetteInformationForm.BringToFront();
-            Global.recetteInformationForm.Activate();
+            FormManager.OuvrirRecetteInformation(carteSelectionnee.Lot.Recette);
         }
     }
 }

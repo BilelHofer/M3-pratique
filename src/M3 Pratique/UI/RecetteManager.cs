@@ -72,20 +72,7 @@ namespace M3_Pratique
         /// <param name="e"></param>
         private void btnCreerRecette_Click(object sender, EventArgs e)
         {
-            // Vérifie si la fenêtre de création de recette est déjà ouverte
-            if (Global.recetteCreationForm == null || Global.recetteCreationForm.IsDisposed)
-            {
-                Global.recetteCreationForm = new RecetteCreation();
-                Global.recetteCreationForm.RecetteAjoute += (s, args) => AfficherRecettes(Global.Recettes);
-
-                // Si la fenêtre est minimusée, on la restaure
-                if (Global.recetteCreationForm.WindowState == FormWindowState.Minimized)
-                    Global.recetteCreationForm.WindowState = FormWindowState.Normal;
-
-                Global.recetteCreationForm.Show();
-                Global.recetteCreationForm.BringToFront();
-                Global.recetteCreationForm.Activate();
-            }
+            FormManager.OuvrirRecetteCreation(() => AfficherRecettes(Global.Recettes));
         }
     }
 }

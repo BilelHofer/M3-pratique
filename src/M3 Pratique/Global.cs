@@ -16,11 +16,6 @@ namespace M3_Pratique
 {
     static class Global
     {
-        #region Formulaires
-        public static RecetteCreation recetteCreationForm = null;
-        public static RecetteInformation recetteInformationForm = null;
-        #endregion
-
         #region Listes de données
         // Liste des recettes
         private static List<Recette> _recettes = new List<Recette>();
