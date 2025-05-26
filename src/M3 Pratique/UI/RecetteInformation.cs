@@ -26,6 +26,10 @@ namespace M3_Pratique
             MiseAJourInformation(recette);
         }
 
+        /// <summary>
+        /// Affiche les opérations associées à une recette dans le FlowLayoutPanel.
+        /// </summary>
+        /// <param name="operations">Opération à afficher</param>
         private void AfficherOperation(IEnumerable<Operation> operations)
         {
             flowLayoutPanelOperations.Controls.Clear();
@@ -39,6 +43,10 @@ namespace M3_Pratique
             }
         }
 
+        /// <summary>
+        /// Met à jour les informations de la recette affichée dans la fenêtre.
+        /// </summary>
+        /// <param name="recette">Recette à afficher</param>
         public void MiseAJourInformation(Recette recette)
         {
             _recette = recette;
@@ -56,6 +64,9 @@ namespace M3_Pratique
             AfficherOperation(operations);
         }
 
+        /// <summary>
+        /// Suppression d'une recette.
+        /// </summary>
         private void buttonSupprimerRecette_Click(object sender, EventArgs e)
         {
             // Affiche une boîte de dialogue de confirmation
@@ -72,6 +83,14 @@ namespace M3_Pratique
                 // Ferme la fenêtre
                 this.Close();
             }
+        }
+
+        /// <summary>
+        /// Ouvre le formulaire de création de recette et fournis la recette à modifier
+        /// </summary>
+        private void buttonModifierRecette_Click(object sender, EventArgs e)
+        {
+            FormManager.OuvrirRecetteCreation(_recette);
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -343,14 +345,25 @@ namespace M3_Pratique.Data
         /// <param name="operation">Opération à ajouter</param>
         /// <param name="idRecette">ID de la recette parent</param>
         /// <returns>ID de l'opération créée ou -1 en cas d'erreur</returns>
-        private static long AjouterOperation(Operation operation, long idRecette)
+        public static long AjouterOperation(Operation operation, long idRecette)
         {
+            bool mustClose = false;
             try
             {
+                // Si la connexion n'est pas ouverte, on l'ouvre
+                var conn = DatabaseManager.GetConnexion();
+                if (conn.State != ConnectionState.Open)
+                {
+                    DatabaseManager.ConnectDB();
+                    mustClose = true;
+                }
+
                 using (MySqlCommand cmd = new MySqlCommand(
-                    "INSERT INTO operation (OPE_Nom, OPE_Numero, OPE_PositionMoteur, OPE_TempsAttente, OPE_CycleVerin, OPE_Quittance, OPE_SensMoteur, Id_Recette) " +
-                    "VALUES (@nom, @numero, @positionMoteur, @tempsAttente, @cycleVerin, @quittance, @sensMoteur, @idRecette)",
-                    DatabaseManager.GetConnexion()))
+                    "INSERT INTO operation (OPE_Nom, OPE_Numero, OPE_PositionMoteur, " +
+                    "OPE_TempsAttente, OPE_CycleVerin, OPE_Quittance, OPE_SensMoteur, Id_Recette) " +
+                    "VALUES (@nom, @numero, @positionMoteur, @tempsAttente, " +
+                    "@cycleVerin, @quittance, @sensMoteur, @idRecette)",
+                    conn))
                 {
                     cmd.Parameters.AddWithValue("@nom", operation.Nom);
                     cmd.Parameters.AddWithValue("@numero", operation.Numero);
@@ -369,18 +382,54 @@ namespace M3_Pratique.Data
             {
                 return -1;
             }
+            finally
+            {
+                // Si on avait ouvert la connexion ici, on la ferme aussi
+                if (mustClose)
+                    DatabaseManager.CloseConnexion();
+            }
         }
+
 
         #endregion
 
         #region Méthodes de mise à jour
 
-        //TODO modification recette si aucun lot n'est associé
+        public static void ModifierRecette(long idRecette, string nom)
+        {
+            try
+            {
+                DatabaseManager.ConnectDB();
+                using (MySqlCommand cmd = new MySqlCommand("UPDATE recette SET REC_Nom = @nom WHERE id_recette = @idRecette", DatabaseManager.GetConnexion()))
+                {
+                    cmd.Parameters.AddWithValue("@nom", nom);
+                    cmd.Parameters.AddWithValue("@idRecette", idRecette);
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Recette modifiée avec succès", "Modification de recette", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Une erreur est survenue lors de la modification : " + ex.Message, "Modification de recette", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Modification de recette", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                DatabaseManager.CloseConnexion();
+            }
+        }
 
         #endregion
 
         #region Méthodes de suppression
 
+        /// <summary>
+        /// Supprime une recette et toutes les opérations associées à cette recette de la base de données.
+        /// </summary>
+        /// <param name="idRecette">Id de la recette à supprimer</param>
         public static void SupprimerRecette(long idRecette)
         {
             try
@@ -416,14 +465,40 @@ namespace M3_Pratique.Data
             }
         }
 
+        public static void SupprimerOperationByRecette(long idRecette)
+        {
+            try
+            {
+                DatabaseManager.ConnectDB();
+                // Supprimer les opérations associées à la recette
+                using (MySqlCommand cmd = new MySqlCommand("DELETE FROM operation WHERE Id_Recette = @idRecette", DatabaseManager.GetConnexion()))
+                {
+                    cmd.Parameters.AddWithValue("@idRecette", idRecette);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Une erreur est survenue lors de la suppression des opérations : " + ex.Message, "Suppression d'opérations", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Suppression d'opérations", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                DatabaseManager.CloseConnexion();
+            }
+        }
+
         #endregion
 
-        #region Méthodes utilitaires
+            #region Méthodes utilitaires
 
-        /// <summary>
-        /// Charge toutes les données depuis la base de données
-        /// </summary>
-        /// <returns>True si le chargement a réussi</returns>
+            /// <summary>
+            /// Charge toutes les données depuis la base de données
+            /// </summary>
+            /// <returns>True si le chargement a réussi</returns>
         public static bool ChargerToutesLesDonnees()
         {
             try

@@ -139,28 +139,17 @@ namespace M3_Pratique
             _recetteCreationForm.Activate();
         }
 
-        /* TODO
-
         /// <summary>
         /// Ouvre le formulaire de création de recette avec des données spécifiques
         /// </summary>
         /// <param name="recette">Recette à éditer</param>
-        public static void OuvrirRecetteCreation(Recette recette = null)
+        public static void OuvrirRecetteCreation(Recette recette)
         {
             _recetteCreationForm = OuvrirOuActiverFormulaire(
                 ref _recetteCreationForm,
-                () => recette != null ? new RecetteCreation(recette) : new RecetteCreation(),
-                (form) => {
-                    if (recette != null)
-                    {
-                        // TODO Métode a créer pour charger la recette
-                        // form.ChargerRecette(recette);
-                    }
-                }
+                () => new RecetteCreation(recette)
             );
         }
-
-        */
 
         #endregion
 
