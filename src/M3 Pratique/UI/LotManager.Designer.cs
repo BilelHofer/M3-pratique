@@ -50,9 +50,17 @@
             this.groupBoxListeLots = new System.Windows.Forms.GroupBox();
             this.groupBoxListeRecette = new System.Windows.Forms.GroupBox();
             this.groupBoxCreationLot = new System.Windows.Forms.GroupBox();
+            this.btnCreerRecette = new System.Windows.Forms.Button();
+            this.comboBoxRecette = new System.Windows.Forms.ComboBox();
+            this.labelRecette = new System.Windows.Forms.Label();
+            this.numericUpDownNbPiece = new System.Windows.Forms.NumericUpDown();
+            this.labelNombrePiece = new System.Windows.Forms.Label();
+            this.btnCreer = new System.Windows.Forms.Button();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.groupBoxListeLots.SuspendLayout();
+            this.groupBoxCreationLot.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanelLots
@@ -295,12 +303,77 @@
             this.groupBoxCreationLot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxCreationLot.Controls.Add(this.btnCreerRecette);
+            this.groupBoxCreationLot.Controls.Add(this.comboBoxRecette);
+            this.groupBoxCreationLot.Controls.Add(this.labelRecette);
+            this.groupBoxCreationLot.Controls.Add(this.numericUpDownNbPiece);
+            this.groupBoxCreationLot.Controls.Add(this.labelNombrePiece);
+            this.groupBoxCreationLot.Controls.Add(this.btnCreer);
             this.groupBoxCreationLot.Location = new System.Drawing.Point(640, 620);
             this.groupBoxCreationLot.Name = "groupBoxCreationLot";
             this.groupBoxCreationLot.Size = new System.Drawing.Size(620, 390);
             this.groupBoxCreationLot.TabIndex = 11;
             this.groupBoxCreationLot.TabStop = false;
             this.groupBoxCreationLot.Text = "Création d\'un lot";
+            this.groupBoxCreationLot.Enter += new System.EventHandler(this.groupBoxCreationLot_Enter);
+            // 
+            // btnCreerRecette
+            // 
+            this.btnCreerRecette.Location = new System.Drawing.Point(394, 155);
+            this.btnCreerRecette.Name = "btnCreerRecette";
+            this.btnCreerRecette.Size = new System.Drawing.Size(25, 25);
+            this.btnCreerRecette.TabIndex = 13;
+            this.btnCreerRecette.Text = "+";
+            this.btnCreerRecette.UseVisualStyleBackColor = true;
+            this.btnCreerRecette.Click += new System.EventHandler(this.btnCreerRecette_Click);
+            // 
+            // comboBoxRecette
+            // 
+            this.comboBoxRecette.FormattingEnabled = true;
+            this.comboBoxRecette.Location = new System.Drawing.Point(268, 155);
+            this.comboBoxRecette.Name = "comboBoxRecette";
+            this.comboBoxRecette.Size = new System.Drawing.Size(120, 24);
+            this.comboBoxRecette.TabIndex = 12;
+            // 
+            // labelRecette
+            // 
+            this.labelRecette.AutoSize = true;
+            this.labelRecette.Location = new System.Drawing.Point(150, 158);
+            this.labelRecette.Name = "labelRecette";
+            this.labelRecette.Size = new System.Drawing.Size(95, 16);
+            this.labelRecette.TabIndex = 11;
+            this.labelRecette.Text = "Type de pièce";
+            // 
+            // numericUpDownNbPiece
+            // 
+            this.numericUpDownNbPiece.Location = new System.Drawing.Point(268, 120);
+            this.numericUpDownNbPiece.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDownNbPiece.Name = "numericUpDownNbPiece";
+            this.numericUpDownNbPiece.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownNbPiece.TabIndex = 10;
+            // 
+            // labelNombrePiece
+            // 
+            this.labelNombrePiece.AutoSize = true;
+            this.labelNombrePiece.Location = new System.Drawing.Point(150, 122);
+            this.labelNombrePiece.Name = "labelNombrePiece";
+            this.labelNombrePiece.Size = new System.Drawing.Size(112, 16);
+            this.labelNombrePiece.TabIndex = 9;
+            this.labelNombrePiece.Text = "Nombre de pièce";
+            // 
+            // btnCreer
+            // 
+            this.btnCreer.Location = new System.Drawing.Point(396, 248);
+            this.btnCreer.Name = "btnCreer";
+            this.btnCreer.Size = new System.Drawing.Size(75, 23);
+            this.btnCreer.TabIndex = 7;
+            this.btnCreer.Text = "Créer";
+            this.btnCreer.UseVisualStyleBackColor = true;
+            this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
             // LotManager
             // 
@@ -322,6 +395,9 @@
             this.groupBoxEvenement.PerformLayout();
             this.groupBoxListeLots.ResumeLayout(false);
             this.groupBoxListeLots.PerformLayout();
+            this.groupBoxCreationLot.ResumeLayout(false);
+            this.groupBoxCreationLot.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,6 +425,12 @@
         private System.Windows.Forms.GroupBox groupBoxListeLots;
         private System.Windows.Forms.GroupBox groupBoxListeRecette;
         private System.Windows.Forms.GroupBox groupBoxCreationLot;
+        private System.Windows.Forms.Button btnCreerRecette;
+        private System.Windows.Forms.ComboBox comboBoxRecette;
+        private System.Windows.Forms.Label labelRecette;
+        private System.Windows.Forms.NumericUpDown numericUpDownNbPiece;
+        private System.Windows.Forms.Label labelNombrePiece;
+        private System.Windows.Forms.Button btnCreer;
     }
 }
 
