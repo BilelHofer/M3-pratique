@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreerLot = new System.Windows.Forms.Button();
             this.flowLayoutPanelLots = new System.Windows.Forms.FlowLayoutPanel();
             this.textBoxRechercheLot = new System.Windows.Forms.TextBox();
             this.comboBoxEtat = new System.Windows.Forms.ComboBox();
@@ -46,40 +45,35 @@
             this.labelTitreCreation = new System.Windows.Forms.Label();
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
-            this.buttonRecette = new System.Windows.Forms.Button();
             this.LabelIconRefresh = new System.Windows.Forms.Label();
             this.labelRechercherIcon = new System.Windows.Forms.Label();
+            this.groupBoxListeLots = new System.Windows.Forms.GroupBox();
+            this.groupBoxListeRecette = new System.Windows.Forms.GroupBox();
+            this.groupBoxCreationLot = new System.Windows.Forms.GroupBox();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
+            this.groupBoxListeLots.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCreerLot
-            // 
-            this.btnCreerLot.Location = new System.Drawing.Point(350, 15);
-            this.btnCreerLot.Name = "btnCreerLot";
-            this.btnCreerLot.Size = new System.Drawing.Size(100, 30);
-            this.btnCreerLot.TabIndex = 0;
-            this.btnCreerLot.Text = "Créer";
-            this.btnCreerLot.UseVisualStyleBackColor = true;
-            this.btnCreerLot.Click += new System.EventHandler(this.btnCreerLot_Click);
             // 
             // flowLayoutPanelLots
             // 
+            this.flowLayoutPanelLots.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelLots.AutoScroll = true;
-            this.flowLayoutPanelLots.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanelLots.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelLots.Location = new System.Drawing.Point(0, 80);
+            this.flowLayoutPanelLots.Location = new System.Drawing.Point(20, 95);
             this.flowLayoutPanelLots.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelLots.Name = "flowLayoutPanelLots";
             this.flowLayoutPanelLots.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.flowLayoutPanelLots.Size = new System.Drawing.Size(450, 953);
+            this.flowLayoutPanelLots.Size = new System.Drawing.Size(500, 900);
             this.flowLayoutPanelLots.TabIndex = 1;
             this.flowLayoutPanelLots.WrapContents = false;
             this.flowLayoutPanelLots.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelLots_Paint);
             // 
             // textBoxRechercheLot
             // 
-            this.textBoxRechercheLot.Location = new System.Drawing.Point(20, 19);
+            this.textBoxRechercheLot.Location = new System.Drawing.Point(20, 29);
             this.textBoxRechercheLot.Name = "textBoxRechercheLot";
             this.textBoxRechercheLot.Size = new System.Drawing.Size(220, 22);
             this.textBoxRechercheLot.TabIndex = 2;
@@ -88,7 +82,7 @@
             // comboBoxEtat
             // 
             this.comboBoxEtat.FormattingEnabled = true;
-            this.comboBoxEtat.Location = new System.Drawing.Point(20, 50);
+            this.comboBoxEtat.Location = new System.Drawing.Point(20, 60);
             this.comboBoxEtat.Name = "comboBoxEtat";
             this.comboBoxEtat.Size = new System.Drawing.Size(80, 24);
             this.comboBoxEtat.TabIndex = 4;
@@ -96,8 +90,7 @@
             // 
             // groupBoxLotSelectionner
             // 
-            this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxLotSelectionner.Controls.Add(this.buttonTypePiece);
             this.groupBoxLotSelectionner.Controls.Add(this.groupBoxEvenement);
@@ -109,9 +102,9 @@
             this.groupBoxLotSelectionner.Controls.Add(this.labelTitreCreation);
             this.groupBoxLotSelectionner.Controls.Add(this.labelTitreEtat);
             this.groupBoxLotSelectionner.Controls.Add(this.labelLotNom);
-            this.groupBoxLotSelectionner.Location = new System.Drawing.Point(460, 15);
+            this.groupBoxLotSelectionner.Location = new System.Drawing.Point(640, 10);
             this.groupBoxLotSelectionner.Name = "groupBoxLotSelectionner";
-            this.groupBoxLotSelectionner.Size = new System.Drawing.Size(1440, 1004);
+            this.groupBoxLotSelectionner.Size = new System.Drawing.Size(620, 600);
             this.groupBoxLotSelectionner.TabIndex = 6;
             this.groupBoxLotSelectionner.TabStop = false;
             this.groupBoxLotSelectionner.Text = "Lot sélectionné";
@@ -250,21 +243,11 @@
             this.labelLotNom.TabIndex = 0;
             this.labelLotNom.Text = "Nom";
             // 
-            // buttonRecette
-            // 
-            this.buttonRecette.Location = new System.Drawing.Point(350, 50);
-            this.buttonRecette.Name = "buttonRecette";
-            this.buttonRecette.Size = new System.Drawing.Size(100, 30);
-            this.buttonRecette.TabIndex = 7;
-            this.buttonRecette.Text = "Recette";
-            this.buttonRecette.UseVisualStyleBackColor = true;
-            this.buttonRecette.Click += new System.EventHandler(this.buttonRecette_Click);
-            // 
             // LabelIconRefresh
             // 
             this.LabelIconRefresh.BackColor = System.Drawing.Color.Transparent;
             this.LabelIconRefresh.Image = global::M3_Pratique.Properties.Resources.refresh;
-            this.LabelIconRefresh.Location = new System.Drawing.Point(300, 15);
+            this.LabelIconRefresh.Location = new System.Drawing.Point(300, 25);
             this.LabelIconRefresh.Name = "LabelIconRefresh";
             this.LabelIconRefresh.Size = new System.Drawing.Size(30, 30);
             this.LabelIconRefresh.TabIndex = 8;
@@ -274,25 +257,60 @@
             // 
             this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
             this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
-            this.labelRechercherIcon.Location = new System.Drawing.Point(230, 15);
+            this.labelRechercherIcon.Location = new System.Drawing.Point(240, 25);
             this.labelRechercherIcon.Margin = new System.Windows.Forms.Padding(0);
             this.labelRechercherIcon.Name = "labelRechercherIcon";
             this.labelRechercherIcon.Size = new System.Drawing.Size(30, 30);
             this.labelRechercherIcon.TabIndex = 3;
+            // 
+            // groupBoxListeLots
+            // 
+            this.groupBoxListeLots.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBoxListeLots.Controls.Add(this.textBoxRechercheLot);
+            this.groupBoxListeLots.Controls.Add(this.LabelIconRefresh);
+            this.groupBoxListeLots.Controls.Add(this.comboBoxEtat);
+            this.groupBoxListeLots.Controls.Add(this.flowLayoutPanelLots);
+            this.groupBoxListeLots.Controls.Add(this.labelRechercherIcon);
+            this.groupBoxListeLots.Location = new System.Drawing.Point(10, 10);
+            this.groupBoxListeLots.Name = "groupBoxListeLots";
+            this.groupBoxListeLots.Size = new System.Drawing.Size(620, 1000);
+            this.groupBoxListeLots.TabIndex = 9;
+            this.groupBoxListeLots.TabStop = false;
+            this.groupBoxListeLots.Text = "Liste de lots";
+            // 
+            // groupBoxListeRecette
+            // 
+            this.groupBoxListeRecette.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxListeRecette.Location = new System.Drawing.Point(1270, 10);
+            this.groupBoxListeRecette.Name = "groupBoxListeRecette";
+            this.groupBoxListeRecette.Size = new System.Drawing.Size(620, 1000);
+            this.groupBoxListeRecette.TabIndex = 10;
+            this.groupBoxListeRecette.TabStop = false;
+            this.groupBoxListeRecette.Text = "Liste de recettes";
+            // 
+            // groupBoxCreationLot
+            // 
+            this.groupBoxCreationLot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxCreationLot.Location = new System.Drawing.Point(640, 620);
+            this.groupBoxCreationLot.Name = "groupBoxCreationLot";
+            this.groupBoxCreationLot.Size = new System.Drawing.Size(620, 390);
+            this.groupBoxCreationLot.TabIndex = 11;
+            this.groupBoxCreationLot.TabStop = false;
+            this.groupBoxCreationLot.Text = "Création d\'un lot";
             // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
-            this.Controls.Add(this.LabelIconRefresh);
-            this.Controls.Add(this.buttonRecette);
+            this.Controls.Add(this.groupBoxCreationLot);
+            this.Controls.Add(this.groupBoxListeRecette);
+            this.Controls.Add(this.groupBoxListeLots);
             this.Controls.Add(this.groupBoxLotSelectionner);
-            this.Controls.Add(this.comboBoxEtat);
-            this.Controls.Add(this.labelRechercherIcon);
-            this.Controls.Add(this.textBoxRechercheLot);
-            this.Controls.Add(this.flowLayoutPanelLots);
-            this.Controls.Add(this.btnCreerLot);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LotManager";
             this.Padding = new System.Windows.Forms.Padding(0, 80, 0, 0);
@@ -302,14 +320,13 @@
             this.groupBoxLotSelectionner.PerformLayout();
             this.groupBoxEvenement.ResumeLayout(false);
             this.groupBoxEvenement.PerformLayout();
+            this.groupBoxListeLots.ResumeLayout(false);
+            this.groupBoxListeLots.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCreerLot;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelLots;
         private System.Windows.Forms.TextBox textBoxRechercheLot;
         private System.Windows.Forms.Label labelRechercherIcon;
@@ -327,9 +344,11 @@
         private System.Windows.Forms.Label labelEvenementMessage;
         private System.Windows.Forms.Label labelEvenementDate;
         private System.Windows.Forms.GroupBox groupBoxEvenement;
-        private System.Windows.Forms.Button buttonRecette;
         private System.Windows.Forms.Label LabelIconRefresh;
         private System.Windows.Forms.Button buttonTypePiece;
+        private System.Windows.Forms.GroupBox groupBoxListeLots;
+        private System.Windows.Forms.GroupBox groupBoxListeRecette;
+        private System.Windows.Forms.GroupBox groupBoxCreationLot;
     }
 }
 

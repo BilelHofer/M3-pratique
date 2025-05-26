@@ -115,14 +115,6 @@ namespace M3_Pratique
         }
 
         /// <summary>
-        /// Gère le clic sur le bouton "Créer un lot".
-        /// </summary>
-        private void btnCreerLot_Click(object sender, EventArgs e)
-        {
-            FormManager.OuvrirLotCreation(() => AfficherLots(Global.Lots));
-        }
-
-        /// <summary>
         /// Réagit à la modification du texte de recherche pour filtrer les lots.
         /// </summary>
         private void textBoxRechercheLot_TextChanged(object sender, EventArgs e)
@@ -153,14 +145,6 @@ namespace M3_Pratique
                 );
 
             AfficherLots(lotsFiltres);
-        }
-
-        /// <summary>
-        /// Gère le clic sur le bouton "Ouvrir les recettes".
-        /// </summary>
-        private void buttonRecette_Click(object sender, EventArgs e)
-        {
-            FormManager.OuvrirRecetteManager();
         }
 
         private void LabelIconRefresh_Click(object sender, EventArgs e)
