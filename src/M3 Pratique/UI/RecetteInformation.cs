@@ -45,11 +45,34 @@ namespace M3_Pratique
             labelNomRecette.Text = recette.Nom;
             labelDate.Text = recette.DateCreation.ToString();
 
+            // Affiche les boutons modifier et supprimer si la recette n'est utilisée par aucun lot
+            buttonModifierRecette.Visible = !Global.Lots.Any(lot => lot.IdRecette == recette.Id);
+            buttonSupprimerRecette.Visible = !Global.Lots.Any(lot => lot.IdRecette == recette.Id);
+
             // Récupère tous les opération qui ont l'id de la recette
             var operations = Global.GetOperationsByRecette(recette.Id);
 
             // Affiche les opérations dans le FlowLayoutPanel
             AfficherOperation(operations);
         }
+
+        private void buttonSupprimerRecette_Click(object sender, EventArgs e)
+        {
+            // Affiche une boîte de dialogue de confirmation
+            var result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cette recette ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                // Supprime la recette
+                Global.SupprimerRecette(_recette.Id);
+
+                // Met à jour l'affichage des recettes
+                FormManager.RecetteManagerForm.AfficherRecettes(Global.Recettes);
+
+                // Ferme la fenêtre
+                this.Close();
+            }
+        }
     }
 }
+

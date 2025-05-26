@@ -32,7 +32,7 @@ namespace M3_Pratique
         /// <summary>
         /// Affiche une collection de lots dans le FlowLayoutPanel.
         /// </summary>
-        private void AfficherRecettes(IEnumerable<Recette> recettes)
+        public void AfficherRecettes(IEnumerable<Recette> recettes)
         {
             flowLayoutPanelRecettes.Controls.Clear();
 

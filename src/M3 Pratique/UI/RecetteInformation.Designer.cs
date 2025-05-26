@@ -32,14 +32,16 @@
             this.labelInfoDate = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
             this.groupBoxOpération = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanelOperations = new System.Windows.Forms.FlowLayoutPanel();
-            this.labelEnTeteNum = new System.Windows.Forms.Label();
-            this.labelEnTeteNom = new System.Windows.Forms.Label();
-            this.labelEnTetePosMoteur = new System.Windows.Forms.Label();
-            this.labelEnTeteTempsAttente = new System.Windows.Forms.Label();
-            this.labelEnTeteCycleVerin = new System.Windows.Forms.Label();
-            this.labelEnTeteQuittance = new System.Windows.Forms.Label();
             this.labelEnTeteSensHoraire = new System.Windows.Forms.Label();
+            this.labelEnTeteQuittance = new System.Windows.Forms.Label();
+            this.labelEnTeteCycleVerin = new System.Windows.Forms.Label();
+            this.labelEnTeteTempsAttente = new System.Windows.Forms.Label();
+            this.labelEnTetePosMoteur = new System.Windows.Forms.Label();
+            this.labelEnTeteNom = new System.Windows.Forms.Label();
+            this.labelEnTeteNum = new System.Windows.Forms.Label();
+            this.flowLayoutPanelOperations = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonModifierRecette = new System.Windows.Forms.Button();
+            this.buttonSupprimerRecette = new System.Windows.Forms.Button();
             this.groupBoxOpération.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,59 +92,14 @@
             this.groupBoxOpération.TabStop = false;
             this.groupBoxOpération.Text = "Opération";
             // 
-            // flowLayoutPanelOperations
+            // labelEnTeteSensHoraire
             // 
-            this.flowLayoutPanelOperations.AutoScroll = true;
-            this.flowLayoutPanelOperations.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 46);
-            this.flowLayoutPanelOperations.Name = "flowLayoutPanelOperations";
-            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(854, 430);
-            this.flowLayoutPanelOperations.TabIndex = 0;
-            // 
-            // labelEnTeteNum
-            // 
-            this.labelEnTeteNum.AutoSize = true;
-            this.labelEnTeteNum.Location = new System.Drawing.Point(13, 27);
-            this.labelEnTeteNum.Name = "labelEnTeteNum";
-            this.labelEnTeteNum.Size = new System.Drawing.Size(55, 16);
-            this.labelEnTeteNum.TabIndex = 1;
-            this.labelEnTeteNum.Text = "Numéro";
-            // 
-            // labelEnTeteNom
-            // 
-            this.labelEnTeteNom.AutoSize = true;
-            this.labelEnTeteNom.Location = new System.Drawing.Point(85, 27);
-            this.labelEnTeteNom.Name = "labelEnTeteNom";
-            this.labelEnTeteNom.Size = new System.Drawing.Size(36, 16);
-            this.labelEnTeteNom.TabIndex = 2;
-            this.labelEnTeteNom.Text = "Nom";
-            // 
-            // labelEnTetePosMoteur
-            // 
-            this.labelEnTetePosMoteur.AutoSize = true;
-            this.labelEnTetePosMoteur.Location = new System.Drawing.Point(275, 27);
-            this.labelEnTetePosMoteur.Name = "labelEnTetePosMoteur";
-            this.labelEnTetePosMoteur.Size = new System.Drawing.Size(99, 16);
-            this.labelEnTetePosMoteur.TabIndex = 3;
-            this.labelEnTetePosMoteur.Text = "Position Moteur";
-            // 
-            // labelEnTeteTempsAttente
-            // 
-            this.labelEnTeteTempsAttente.AutoSize = true;
-            this.labelEnTeteTempsAttente.Location = new System.Drawing.Point(391, 27);
-            this.labelEnTeteTempsAttente.Name = "labelEnTeteTempsAttente";
-            this.labelEnTeteTempsAttente.Size = new System.Drawing.Size(122, 16);
-            this.labelEnTeteTempsAttente.TabIndex = 4;
-            this.labelEnTeteTempsAttente.Text = "Temps d\'attente [s]";
-            // 
-            // labelEnTeteCycleVerin
-            // 
-            this.labelEnTeteCycleVerin.AutoSize = true;
-            this.labelEnTeteCycleVerin.Location = new System.Drawing.Point(558, 27);
-            this.labelEnTeteCycleVerin.Name = "labelEnTeteCycleVerin";
-            this.labelEnTeteCycleVerin.Size = new System.Drawing.Size(75, 16);
-            this.labelEnTeteCycleVerin.TabIndex = 5;
-            this.labelEnTeteCycleVerin.Text = "Cycle Verin";
+            this.labelEnTeteSensHoraire.AutoSize = true;
+            this.labelEnTeteSensHoraire.Location = new System.Drawing.Point(761, 27);
+            this.labelEnTeteSensHoraire.Name = "labelEnTeteSensHoraire";
+            this.labelEnTeteSensHoraire.Size = new System.Drawing.Size(94, 16);
+            this.labelEnTeteSensHoraire.TabIndex = 7;
+            this.labelEnTeteSensHoraire.Text = "Sense Horaire";
             // 
             // labelEnTeteQuittance
             // 
@@ -153,20 +110,88 @@
             this.labelEnTeteQuittance.TabIndex = 6;
             this.labelEnTeteQuittance.Text = "Quittance";
             // 
-            // labelEnTeteSensHoraire
+            // labelEnTeteCycleVerin
             // 
-            this.labelEnTeteSensHoraire.AutoSize = true;
-            this.labelEnTeteSensHoraire.Location = new System.Drawing.Point(761, 27);
-            this.labelEnTeteSensHoraire.Name = "labelEnTeteSensHoraire";
-            this.labelEnTeteSensHoraire.Size = new System.Drawing.Size(94, 16);
-            this.labelEnTeteSensHoraire.TabIndex = 7;
-            this.labelEnTeteSensHoraire.Text = "Sense Horaire";
+            this.labelEnTeteCycleVerin.AutoSize = true;
+            this.labelEnTeteCycleVerin.Location = new System.Drawing.Point(558, 27);
+            this.labelEnTeteCycleVerin.Name = "labelEnTeteCycleVerin";
+            this.labelEnTeteCycleVerin.Size = new System.Drawing.Size(75, 16);
+            this.labelEnTeteCycleVerin.TabIndex = 5;
+            this.labelEnTeteCycleVerin.Text = "Cycle Verin";
+            // 
+            // labelEnTeteTempsAttente
+            // 
+            this.labelEnTeteTempsAttente.AutoSize = true;
+            this.labelEnTeteTempsAttente.Location = new System.Drawing.Point(391, 27);
+            this.labelEnTeteTempsAttente.Name = "labelEnTeteTempsAttente";
+            this.labelEnTeteTempsAttente.Size = new System.Drawing.Size(122, 16);
+            this.labelEnTeteTempsAttente.TabIndex = 4;
+            this.labelEnTeteTempsAttente.Text = "Temps d\'attente [s]";
+            // 
+            // labelEnTetePosMoteur
+            // 
+            this.labelEnTetePosMoteur.AutoSize = true;
+            this.labelEnTetePosMoteur.Location = new System.Drawing.Point(275, 27);
+            this.labelEnTetePosMoteur.Name = "labelEnTetePosMoteur";
+            this.labelEnTetePosMoteur.Size = new System.Drawing.Size(99, 16);
+            this.labelEnTetePosMoteur.TabIndex = 3;
+            this.labelEnTetePosMoteur.Text = "Position Moteur";
+            // 
+            // labelEnTeteNom
+            // 
+            this.labelEnTeteNom.AutoSize = true;
+            this.labelEnTeteNom.Location = new System.Drawing.Point(85, 27);
+            this.labelEnTeteNom.Name = "labelEnTeteNom";
+            this.labelEnTeteNom.Size = new System.Drawing.Size(36, 16);
+            this.labelEnTeteNom.TabIndex = 2;
+            this.labelEnTeteNom.Text = "Nom";
+            // 
+            // labelEnTeteNum
+            // 
+            this.labelEnTeteNum.AutoSize = true;
+            this.labelEnTeteNum.Location = new System.Drawing.Point(13, 27);
+            this.labelEnTeteNum.Name = "labelEnTeteNum";
+            this.labelEnTeteNum.Size = new System.Drawing.Size(55, 16);
+            this.labelEnTeteNum.TabIndex = 1;
+            this.labelEnTeteNum.Text = "Numéro";
+            // 
+            // flowLayoutPanelOperations
+            // 
+            this.flowLayoutPanelOperations.AutoScroll = true;
+            this.flowLayoutPanelOperations.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 46);
+            this.flowLayoutPanelOperations.Name = "flowLayoutPanelOperations";
+            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(854, 430);
+            this.flowLayoutPanelOperations.TabIndex = 0;
+            // 
+            // buttonModifierRecette
+            // 
+            this.buttonModifierRecette.Location = new System.Drawing.Point(656, 3);
+            this.buttonModifierRecette.Name = "buttonModifierRecette";
+            this.buttonModifierRecette.Size = new System.Drawing.Size(107, 33);
+            this.buttonModifierRecette.TabIndex = 4;
+            this.buttonModifierRecette.Text = "Modifier";
+            this.buttonModifierRecette.UseVisualStyleBackColor = true;
+            this.buttonModifierRecette.Visible = false;
+            // 
+            // buttonSupprimerRecette
+            // 
+            this.buttonSupprimerRecette.Location = new System.Drawing.Point(776, 3);
+            this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
+            this.buttonSupprimerRecette.Size = new System.Drawing.Size(107, 33);
+            this.buttonSupprimerRecette.TabIndex = 5;
+            this.buttonSupprimerRecette.Text = "Supprimer";
+            this.buttonSupprimerRecette.UseVisualStyleBackColor = true;
+            this.buttonSupprimerRecette.Visible = false;
+            this.buttonSupprimerRecette.Click += new System.EventHandler(this.buttonSupprimerRecette_Click);
             // 
             // RecetteInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 554);
+            this.Controls.Add(this.buttonSupprimerRecette);
+            this.Controls.Add(this.buttonModifierRecette);
             this.Controls.Add(this.groupBoxOpération);
             this.Controls.Add(this.labelDate);
             this.Controls.Add(this.labelInfoDate);
@@ -196,5 +221,7 @@
         private System.Windows.Forms.Label labelEnTeteNum;
         private System.Windows.Forms.Label labelEnTeteSensHoraire;
         private System.Windows.Forms.Label labelEnTeteQuittance;
+        private System.Windows.Forms.Button buttonModifierRecette;
+        private System.Windows.Forms.Button buttonSupprimerRecette;
     }
 }

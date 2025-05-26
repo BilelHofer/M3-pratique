@@ -43,38 +43,6 @@ namespace M3_Pratique
         #region Méthodes de récupération (délégation vers DatabaseService)
 
         /// <summary>
-        /// Récupère les recettes de la base de données
-        /// </summary>
-        public static void RecupererRecette()
-        {
-            Recettes = DatabaseService.GetRecettes();
-        }
-
-        /// <summary>
-        /// Récupère les événements de la base de données
-        /// </summary>
-        public static void RecupererEvenement()
-        {
-            Evenements = DatabaseService.GetEvenements();
-        }
-
-        /// <summary>
-        /// Récupère les lots de la base de données
-        /// </summary>
-        public static void RecupererLots()
-        {
-            Lots = DatabaseService.GetLots(Recettes);
-        }
-
-        /// <summary>
-        /// Récupère les états de la base de données
-        /// </summary>
-        public static void RecupererEtat()
-        {
-            Etats = DatabaseService.GetEtats();
-        }
-
-        /// <summary>
         /// Récupère les opérations de la base de données
         /// </summary>
         public static void RecupererOperation()
@@ -93,7 +61,7 @@ namespace M3_Pratique
 
         #endregion
 
-        #region Méthodes d'ajout (délégation vers DatabaseService)
+        #region Méthodes d'ajout
 
         /// <summary>
         /// Ajoute un lot à la base de données
@@ -126,6 +94,18 @@ namespace M3_Pratique
                 // Recharger les opérations pour avoir les IDs corrects
                 RecupererOperation();
             }
+        }
+
+        #endregion
+
+        #region Méthodes de suppression
+        
+        public static void SupprimerRecette(long idRecette)
+        {
+            // Supprime la recette de la base de données
+            DatabaseService.SupprimerRecette(idRecette);
+            // Supprime la recette de la liste en mémoire
+            Recettes.RemoveAll(r => r.Id == idRecette);
         }
 
         #endregion

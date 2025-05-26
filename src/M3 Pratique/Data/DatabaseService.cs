@@ -379,6 +379,45 @@ namespace M3_Pratique.Data
 
         #endregion
 
+        #region Méthodes de suppression
+
+        public static void SupprimerRecette(long idRecette)
+        {
+            try
+            {
+                DatabaseManager.ConnectDB();
+
+                // Supprimer les opérations associées à la recette
+                using (MySqlCommand cmd = new MySqlCommand("DELETE FROM operation WHERE Id_Recette = @idRecette", DatabaseManager.GetConnexion()))
+                {
+                    cmd.Parameters.AddWithValue("@idRecette", idRecette);
+                    cmd.ExecuteNonQuery();
+                }
+
+                // Supprimer la recette
+                using (MySqlCommand cmd = new MySqlCommand("DELETE FROM recette WHERE id_recette = @idRecette", DatabaseManager.GetConnexion()))
+                {
+                    cmd.Parameters.AddWithValue("@idRecette", idRecette);
+                    cmd.ExecuteNonQuery();
+                }
+                MessageBox.Show("Recette supprimée avec succès", "Suppression de recette", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Une erreur est survenue lors de la suppression : " + ex.Message, "Suppression de recette", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("La connexion à la base de données n'est pas établie : " + ex.Message, "Suppression de recette", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            finally
+            {
+                DatabaseManager.CloseConnexion();
+            }
+        }
+
+        #endregion
+
         #region Méthodes utilitaires
 
         /// <summary>
