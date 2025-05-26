@@ -319,9 +319,9 @@
             // 
             // btnCreerRecette
             // 
-            this.btnCreerRecette.Location = new System.Drawing.Point(394, 155);
+            this.btnCreerRecette.Location = new System.Drawing.Point(350, 138);
             this.btnCreerRecette.Name = "btnCreerRecette";
-            this.btnCreerRecette.Size = new System.Drawing.Size(25, 25);
+            this.btnCreerRecette.Size = new System.Drawing.Size(24, 24);
             this.btnCreerRecette.TabIndex = 13;
             this.btnCreerRecette.Text = "+";
             this.btnCreerRecette.UseVisualStyleBackColor = true;
@@ -330,7 +330,7 @@
             // comboBoxRecette
             // 
             this.comboBoxRecette.FormattingEnabled = true;
-            this.comboBoxRecette.Location = new System.Drawing.Point(268, 155);
+            this.comboBoxRecette.Location = new System.Drawing.Point(200, 139);
             this.comboBoxRecette.Name = "comboBoxRecette";
             this.comboBoxRecette.Size = new System.Drawing.Size(120, 24);
             this.comboBoxRecette.TabIndex = 12;
@@ -338,7 +338,7 @@
             // labelRecette
             // 
             this.labelRecette.AutoSize = true;
-            this.labelRecette.Location = new System.Drawing.Point(150, 158);
+            this.labelRecette.Location = new System.Drawing.Point(50, 142);
             this.labelRecette.Name = "labelRecette";
             this.labelRecette.Size = new System.Drawing.Size(95, 16);
             this.labelRecette.TabIndex = 11;
@@ -346,7 +346,7 @@
             // 
             // numericUpDownNbPiece
             // 
-            this.numericUpDownNbPiece.Location = new System.Drawing.Point(268, 120);
+            this.numericUpDownNbPiece.Location = new System.Drawing.Point(200, 99);
             this.numericUpDownNbPiece.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -359,17 +359,19 @@
             // labelNombrePiece
             // 
             this.labelNombrePiece.AutoSize = true;
-            this.labelNombrePiece.Location = new System.Drawing.Point(150, 122);
+            this.labelNombrePiece.Location = new System.Drawing.Point(50, 102);
             this.labelNombrePiece.Name = "labelNombrePiece";
             this.labelNombrePiece.Size = new System.Drawing.Size(112, 16);
             this.labelNombrePiece.TabIndex = 9;
             this.labelNombrePiece.Text = "Nombre de pièce";
+            this.labelNombrePiece.Click += new System.EventHandler(this.labelNombrePiece_Click);
             // 
             // btnCreer
             // 
-            this.btnCreer.Location = new System.Drawing.Point(396, 248);
+            this.btnCreer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCreer.Location = new System.Drawing.Point(450, 250);
             this.btnCreer.Name = "btnCreer";
-            this.btnCreer.Size = new System.Drawing.Size(75, 23);
+            this.btnCreer.Size = new System.Drawing.Size(100, 50);
             this.btnCreer.TabIndex = 7;
             this.btnCreer.Text = "Créer";
             this.btnCreer.UseVisualStyleBackColor = true;

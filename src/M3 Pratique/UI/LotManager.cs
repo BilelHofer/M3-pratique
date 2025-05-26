@@ -233,5 +233,10 @@ namespace M3_Pratique
             // sélectionne la dernière recette
             comboBoxRecette.SelectedIndex = comboBoxRecette.Items.Count - 1;
         }
+
+        private void labelNombrePiece_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
