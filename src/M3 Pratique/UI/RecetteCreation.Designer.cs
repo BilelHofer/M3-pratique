@@ -42,7 +42,6 @@
             this.labelCycleVerinOperation = new System.Windows.Forms.Label();
             this.labelTempsAttenteOperation = new System.Windows.Forms.Label();
             this.labelPositionMoteurOperation = new System.Windows.Forms.Label();
-            this.labelNumeroOperation = new System.Windows.Forms.Label();
             this.labelNomOperation = new System.Windows.Forms.Label();
             this.btnEnregistrerRecette = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -75,7 +74,7 @@
             // 
             this.btnCreerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnCreerRecette.Location = new System.Drawing.Point(856, 510);
+            this.btnCreerRecette.Location = new System.Drawing.Point(901, 510);
             this.btnCreerRecette.Name = "btnCreerRecette";
             this.btnCreerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnCreerRecette.TabIndex = 3;
@@ -97,7 +96,7 @@
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelOperation.Location = new System.Drawing.Point(20, 190);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
-            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(830, 400);
+            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(855, 400);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
             this.flowLayoutPanelOperation.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelOperation_Paint);
@@ -139,7 +138,7 @@
             // 
             this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(856, 424);
+            this.btnAnnuler.Location = new System.Drawing.Point(901, 424);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 80);
             this.btnAnnuler.TabIndex = 12;
@@ -150,7 +149,7 @@
             // labelSensHoraireOperation
             // 
             this.labelSensHoraireOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSensHoraireOperation.Location = new System.Drawing.Point(760, 167);
+            this.labelSensHoraireOperation.Location = new System.Drawing.Point(713, 167);
             this.labelSensHoraireOperation.Name = "labelSensHoraireOperation";
             this.labelSensHoraireOperation.Size = new System.Drawing.Size(90, 20);
             this.labelSensHoraireOperation.TabIndex = 42;
@@ -159,54 +158,45 @@
             // labelQuittanceOperation
             // 
             this.labelQuittanceOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelQuittanceOperation.Location = new System.Drawing.Point(660, 167);
+            this.labelQuittanceOperation.Location = new System.Drawing.Point(613, 167);
             this.labelQuittanceOperation.Name = "labelQuittanceOperation";
-            this.labelQuittanceOperation.Size = new System.Drawing.Size(80, 20);
+            this.labelQuittanceOperation.Size = new System.Drawing.Size(103, 20);
             this.labelQuittanceOperation.TabIndex = 41;
             this.labelQuittanceOperation.Text = "Quittance";
             // 
             // labelCycleVerinOperation
             // 
             this.labelCycleVerinOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCycleVerinOperation.Location = new System.Drawing.Point(560, 167);
+            this.labelCycleVerinOperation.Location = new System.Drawing.Point(513, 167);
             this.labelCycleVerinOperation.Name = "labelCycleVerinOperation";
-            this.labelCycleVerinOperation.Size = new System.Drawing.Size(80, 20);
+            this.labelCycleVerinOperation.Size = new System.Drawing.Size(103, 20);
             this.labelCycleVerinOperation.TabIndex = 40;
             this.labelCycleVerinOperation.Text = "Cycle vérin";
             // 
             // labelTempsAttenteOperation
             // 
             this.labelTempsAttenteOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(430, 167);
+            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(383, 167);
             this.labelTempsAttenteOperation.Name = "labelTempsAttenteOperation";
-            this.labelTempsAttenteOperation.Size = new System.Drawing.Size(110, 20);
+            this.labelTempsAttenteOperation.Size = new System.Drawing.Size(131, 20);
             this.labelTempsAttenteOperation.TabIndex = 39;
             this.labelTempsAttenteOperation.Text = "Temps d\'attente";
             // 
             // labelPositionMoteurOperation
             // 
             this.labelPositionMoteurOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(290, 167);
+            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(243, 167);
             this.labelPositionMoteurOperation.Name = "labelPositionMoteurOperation";
-            this.labelPositionMoteurOperation.Size = new System.Drawing.Size(120, 20);
+            this.labelPositionMoteurOperation.Size = new System.Drawing.Size(141, 20);
             this.labelPositionMoteurOperation.TabIndex = 38;
             this.labelPositionMoteurOperation.Text = "Position du moteur";
-            // 
-            // labelNumeroOperation
-            // 
-            this.labelNumeroOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumeroOperation.Location = new System.Drawing.Point(190, 167);
-            this.labelNumeroOperation.Name = "labelNumeroOperation";
-            this.labelNumeroOperation.Size = new System.Drawing.Size(80, 20);
-            this.labelNumeroOperation.TabIndex = 37;
-            this.labelNumeroOperation.Text = "Numéro";
             // 
             // labelNomOperation
             // 
             this.labelNomOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNomOperation.Location = new System.Drawing.Point(20, 167);
+            this.labelNomOperation.Location = new System.Drawing.Point(76, 167);
             this.labelNomOperation.Name = "labelNomOperation";
-            this.labelNomOperation.Size = new System.Drawing.Size(150, 20);
+            this.labelNomOperation.Size = new System.Drawing.Size(172, 20);
             this.labelNomOperation.TabIndex = 36;
             this.labelNomOperation.Text = "Nom                                     ";
             // 
@@ -214,7 +204,7 @@
             // 
             this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnEnregistrerRecette.Location = new System.Drawing.Point(856, 510);
+            this.btnEnregistrerRecette.Location = new System.Drawing.Point(901, 510);
             this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
             this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnEnregistrerRecette.TabIndex = 43;
@@ -234,7 +224,6 @@
             this.Controls.Add(this.labelCycleVerinOperation);
             this.Controls.Add(this.labelTempsAttenteOperation);
             this.Controls.Add(this.labelPositionMoteurOperation);
-            this.Controls.Add(this.labelNumeroOperation);
             this.Controls.Add(this.labelNomOperation);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.labelOperation);
@@ -248,6 +237,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RecetteCreation";
             this.Text = "Création d\'une recette";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RecetteCreation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -270,7 +260,6 @@
         private System.Windows.Forms.Label labelCycleVerinOperation;
         private System.Windows.Forms.Label labelTempsAttenteOperation;
         private System.Windows.Forms.Label labelPositionMoteurOperation;
-        private System.Windows.Forms.Label labelNumeroOperation;
         private System.Windows.Forms.Label labelNomOperation;
         private System.Windows.Forms.Button btnEnregistrerRecette;
     }

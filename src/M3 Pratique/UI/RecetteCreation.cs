@@ -1,4 +1,5 @@
 ﻿using M3_Pratique.Data;
+using Org.BouncyCastle.Asn1.BC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace M3_Pratique
 {
@@ -19,6 +21,8 @@ namespace M3_Pratique
         private bool enModification = false;
 
         private Recette _recette = null;
+
+        private int nombreOperation = 0;
 
         List<OperationCarteEdit> operationCartes = new List<OperationCarteEdit>();
         public RecetteCreation()
@@ -44,7 +48,7 @@ namespace M3_Pratique
             // Affiche les opérations de la recette
             foreach (var operation in Global.GetOperationsByRecette(recette.Id))
             {
-                var carte = new OperationCarteEdit();
+                var carte = new OperationCarteEdit(operation.Numero);
                 carte.SetOperation(operation);
 
                 flowLayoutPanelOperation.Controls.Add(carte);
@@ -160,18 +164,19 @@ namespace M3_Pratique
 
         private void btnSupprimerOperation_Click(object sender, EventArgs e)
         {
-            var carte = new OperationCarteEdit();
             if (flowLayoutPanelOperation.Controls.Count > 0)
             {
                 flowLayoutPanelOperation.Controls.Remove(flowLayoutPanelOperation.Controls[flowLayoutPanelOperation.Controls.Count - 1]);
                 operationCartes.RemoveAt(operationCartes.Count - 1);
             }
 
+            nombreOperation--;
         }
 
         private void btnAjoutOperation_Click(object sender, EventArgs e)
         {
-            var carte = new OperationCarteEdit();
+            var carte = new OperationCarteEdit(nombreOperation);
+            nombreOperation++;
             if (flowLayoutPanelOperation.Controls.Count < 10)
             {
                 flowLayoutPanelOperation.Controls.Add(carte);
@@ -189,6 +194,76 @@ namespace M3_Pratique
         {
             // Ferme la fenêtre
             this.Close();
+        }
+
+        /// <summary>
+        /// Monte le contrôle d'une position dans le FlowLayoutPanel.
+        /// </summary>
+        /// <param name="control">Le contrôle à déplacer vers le haut.</param>
+        public void OperationMonter(OperationCarteEdit control)
+        {
+            // Index courant dans la collection
+            int index = flowLayoutPanelOperation.Controls.GetChildIndex(control);
+
+            // Si on est déjà tout en haut, on ne fait rien
+            if (index <= 0)
+                return;
+
+            // Change l'index position des position
+            control.Position--;
+            var other = flowLayoutPanelOperation.Controls[index - 1] as OperationCarteEdit;
+            if (other != null)
+            {
+                // On incrémente sa Position
+                other.Position++;
+            }
+
+            // Change l'index : déplace vers l'avant d'une position
+            flowLayoutPanelOperation.Controls.SetChildIndex(control, index - 1);
+
+            // force le redraw/layout
+            flowLayoutPanelOperation.PerformLayout();
+        }
+
+        public void OperationDescendre(OperationCarteEdit control)
+        {
+            // Index courant dans la collection
+            int index = flowLayoutPanelOperation.Controls.GetChildIndex(control);
+
+            // Si on est déjà tout en bas, on ne fait rien
+            if (index >= flowLayoutPanelOperation.Controls.Count - 1)
+                return;
+
+            // Change l'index position des position
+            control.Position++;
+            var other = flowLayoutPanelOperation.Controls[index + 1] as OperationCarteEdit;
+            if (other != null)
+            {
+                // On décrémente sa Position
+                other.Position--;
+            }
+
+            // Change l'index : déplace vers l'arrière d'une position
+            flowLayoutPanelOperation.Controls.SetChildIndex(control, index + 1);
+
+            // force le redraw/layout
+            flowLayoutPanelOperation.PerformLayout();
+        }
+
+        public void OperationSupprimer(OperationCarteEdit control)
+        {
+            // Supprime le contrôle du FlowLayoutPanel
+            flowLayoutPanelOperation.Controls.Remove(control);
+            operationCartes.Remove(control);
+            // Réajuste les positions des opérations restantes
+            for (int i = 0; i < operationCartes.Count; i++)
+            {
+                operationCartes[i].Position = i;
+            }
+            // force le redraw/layout
+            flowLayoutPanelOperation.PerformLayout();
+
+            nombreOperation--;
         }
     }
 }

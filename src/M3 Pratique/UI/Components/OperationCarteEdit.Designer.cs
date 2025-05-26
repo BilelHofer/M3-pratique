@@ -32,12 +32,12 @@
             this.checkBoxCycleVerin = new System.Windows.Forms.CheckBox();
             this.checkBoxQuittance = new System.Windows.Forms.CheckBox();
             this.textBoxNomOperation = new System.Windows.Forms.TextBox();
-            this.numericUpDownNumeroOperation = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPositionMoteur = new System.Windows.Forms.NumericUpDown();
             this.checkBoxSensHoraire = new System.Windows.Forms.CheckBox();
             this.labelIconCroix = new System.Windows.Forms.Label();
+            this.labelMonter = new System.Windows.Forms.Label();
+            this.labelDescendre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempsAttente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroOperation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPositionMoteur)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,17 +69,10 @@
             // 
             // textBoxNomOperation
             // 
-            this.textBoxNomOperation.Location = new System.Drawing.Point(0, 19);
+            this.textBoxNomOperation.Location = new System.Drawing.Point(98, 19);
             this.textBoxNomOperation.Name = "textBoxNomOperation";
             this.textBoxNomOperation.Size = new System.Drawing.Size(150, 22);
             this.textBoxNomOperation.TabIndex = 5;
-            // 
-            // numericUpDownNumeroOperation
-            // 
-            this.numericUpDownNumeroOperation.Location = new System.Drawing.Point(170, 19);
-            this.numericUpDownNumeroOperation.Name = "numericUpDownNumeroOperation";
-            this.numericUpDownNumeroOperation.Size = new System.Drawing.Size(80, 22);
-            this.numericUpDownNumeroOperation.TabIndex = 7;
             // 
             // numericUpDownPositionMoteur
             // 
@@ -100,19 +93,41 @@
             // labelIconCroix
             // 
             this.labelIconCroix.Image = global::M3_Pratique.Properties.Resources.croix;
-            this.labelIconCroix.Location = new System.Drawing.Point(846, 8);
+            this.labelIconCroix.Location = new System.Drawing.Point(844, 8);
             this.labelIconCroix.Name = "labelIconCroix";
             this.labelIconCroix.Size = new System.Drawing.Size(37, 39);
             this.labelIconCroix.TabIndex = 16;
+            this.labelIconCroix.Click += new System.EventHandler(this.labelIconCroix_Click);
+            // 
+            // labelMonter
+            // 
+            this.labelMonter.AutoSize = true;
+            this.labelMonter.Location = new System.Drawing.Point(34, 13);
+            this.labelMonter.Name = "labelMonter";
+            this.labelMonter.Size = new System.Drawing.Size(26, 16);
+            this.labelMonter.TabIndex = 17;
+            this.labelMonter.Text = "UP";
+            this.labelMonter.Click += new System.EventHandler(this.labelMonter_Click);
+            // 
+            // labelDescendre
+            // 
+            this.labelDescendre.AutoSize = true;
+            this.labelDescendre.Location = new System.Drawing.Point(25, 34);
+            this.labelDescendre.Name = "labelDescendre";
+            this.labelDescendre.Size = new System.Drawing.Size(49, 16);
+            this.labelDescendre.TabIndex = 18;
+            this.labelDescendre.Text = "DOWB";
+            this.labelDescendre.Click += new System.EventHandler(this.labelDescendre_Click);
             // 
             // OperationCarteEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelDescendre);
+            this.Controls.Add(this.labelMonter);
             this.Controls.Add(this.labelIconCroix);
             this.Controls.Add(this.checkBoxSensHoraire);
             this.Controls.Add(this.numericUpDownPositionMoteur);
-            this.Controls.Add(this.numericUpDownNumeroOperation);
             this.Controls.Add(this.textBoxNomOperation);
             this.Controls.Add(this.checkBoxQuittance);
             this.Controls.Add(this.checkBoxCycleVerin);
@@ -120,7 +135,6 @@
             this.Name = "OperationCarteEdit";
             this.Size = new System.Drawing.Size(887, 60);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempsAttente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroOperation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPositionMoteur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -132,9 +146,10 @@
         private System.Windows.Forms.CheckBox checkBoxCycleVerin;
         private System.Windows.Forms.CheckBox checkBoxQuittance;
         private System.Windows.Forms.TextBox textBoxNomOperation;
-        private System.Windows.Forms.NumericUpDown numericUpDownNumeroOperation;
         private System.Windows.Forms.NumericUpDown numericUpDownPositionMoteur;
         private System.Windows.Forms.CheckBox checkBoxSensHoraire;
         private System.Windows.Forms.Label labelIconCroix;
+        private System.Windows.Forms.Label labelMonter;
+        private System.Windows.Forms.Label labelDescendre;
     }
 }
