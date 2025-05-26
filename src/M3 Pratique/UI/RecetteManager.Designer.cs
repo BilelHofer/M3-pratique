@@ -69,7 +69,7 @@
             this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(0, 60);
             this.flowLayoutPanelRecettes.Name = "flowLayoutPanelRecettes";
             this.flowLayoutPanelRecettes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(443, 494);
+            this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(443, 973);
             this.flowLayoutPanelRecettes.TabIndex = 7;
             this.flowLayoutPanelRecettes.WrapContents = false;
             // 
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.flowLayoutPanelRecettes);
             this.Controls.Add(this.labelRechercherIcon);
             this.Controls.Add(this.textBoxRechercheRecette);

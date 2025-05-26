@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreerLot = new System.Windows.Forms.Button();
             this.flowLayoutPanelLots = new System.Windows.Forms.FlowLayoutPanel();
             this.textBoxRechercheLot = new System.Windows.Forms.TextBox();
             this.comboBoxEtat = new System.Windows.Forms.ComboBox();
             this.groupBoxLotSelectionner = new System.Windows.Forms.GroupBox();
+            this.buttonTypePiece = new System.Windows.Forms.Button();
             this.groupBoxEvenement = new System.Windows.Forms.GroupBox();
             this.labelEvenementMessage = new System.Windows.Forms.Label();
             this.labelEvenementDate = new System.Windows.Forms.Label();
@@ -45,57 +45,60 @@
             this.labelTitreCreation = new System.Windows.Forms.Label();
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
-            this.buttonRecette = new System.Windows.Forms.Button();
             this.LabelIconRefresh = new System.Windows.Forms.Label();
             this.labelRechercherIcon = new System.Windows.Forms.Label();
-            this.buttonTypePiece = new System.Windows.Forms.Button();
+            this.groupBoxListeLots = new System.Windows.Forms.GroupBox();
+            this.groupBoxListeRecette = new System.Windows.Forms.GroupBox();
+            this.groupBoxCreationLot = new System.Windows.Forms.GroupBox();
+            this.btnCreerRecette = new System.Windows.Forms.Button();
+            this.comboBoxRecette = new System.Windows.Forms.ComboBox();
+            this.labelRecette = new System.Windows.Forms.Label();
+            this.numericUpDownNbPiece = new System.Windows.Forms.NumericUpDown();
+            this.labelNombrePiece = new System.Windows.Forms.Label();
+            this.btnCreer = new System.Windows.Forms.Button();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
+            this.groupBoxListeLots.SuspendLayout();
+            this.groupBoxCreationLot.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCreerLot
-            // 
-            this.btnCreerLot.Location = new System.Drawing.Point(331, 14);
-            this.btnCreerLot.Name = "btnCreerLot";
-            this.btnCreerLot.Size = new System.Drawing.Size(86, 32);
-            this.btnCreerLot.TabIndex = 0;
-            this.btnCreerLot.Text = "Créer";
-            this.btnCreerLot.UseVisualStyleBackColor = true;
-            this.btnCreerLot.Click += new System.EventHandler(this.btnCreerLot_Click);
             // 
             // flowLayoutPanelLots
             // 
+            this.flowLayoutPanelLots.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelLots.AutoScroll = true;
-            this.flowLayoutPanelLots.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanelLots.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelLots.Location = new System.Drawing.Point(0, 80);
+            this.flowLayoutPanelLots.Location = new System.Drawing.Point(20, 95);
+            this.flowLayoutPanelLots.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanelLots.Name = "flowLayoutPanelLots";
             this.flowLayoutPanelLots.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.flowLayoutPanelLots.Size = new System.Drawing.Size(443, 510);
+            this.flowLayoutPanelLots.Size = new System.Drawing.Size(500, 900);
             this.flowLayoutPanelLots.TabIndex = 1;
             this.flowLayoutPanelLots.WrapContents = false;
+            this.flowLayoutPanelLots.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelLots_Paint);
             // 
             // textBoxRechercheLot
             // 
-            this.textBoxRechercheLot.Location = new System.Drawing.Point(12, 14);
+            this.textBoxRechercheLot.Location = new System.Drawing.Point(20, 29);
             this.textBoxRechercheLot.Name = "textBoxRechercheLot";
-            this.textBoxRechercheLot.Size = new System.Drawing.Size(219, 22);
+            this.textBoxRechercheLot.Size = new System.Drawing.Size(220, 22);
             this.textBoxRechercheLot.TabIndex = 2;
             this.textBoxRechercheLot.TextChanged += new System.EventHandler(this.textBoxRechercheLot_TextChanged);
             // 
             // comboBoxEtat
             // 
             this.comboBoxEtat.FormattingEnabled = true;
-            this.comboBoxEtat.Location = new System.Drawing.Point(12, 44);
+            this.comboBoxEtat.Location = new System.Drawing.Point(20, 60);
             this.comboBoxEtat.Name = "comboBoxEtat";
-            this.comboBoxEtat.Size = new System.Drawing.Size(76, 24);
+            this.comboBoxEtat.Size = new System.Drawing.Size(80, 24);
             this.comboBoxEtat.TabIndex = 4;
             this.comboBoxEtat.SelectedIndexChanged += new System.EventHandler(this.comboBoxEtat_SelectedIndexChanged);
             // 
             // groupBoxLotSelectionner
             // 
-            this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBoxLotSelectionner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxLotSelectionner.Controls.Add(this.buttonTypePiece);
             this.groupBoxLotSelectionner.Controls.Add(this.groupBoxEvenement);
@@ -107,22 +110,32 @@
             this.groupBoxLotSelectionner.Controls.Add(this.labelTitreCreation);
             this.groupBoxLotSelectionner.Controls.Add(this.labelTitreEtat);
             this.groupBoxLotSelectionner.Controls.Add(this.labelLotNom);
-            this.groupBoxLotSelectionner.Location = new System.Drawing.Point(449, 14);
+            this.groupBoxLotSelectionner.Location = new System.Drawing.Point(640, 10);
             this.groupBoxLotSelectionner.Name = "groupBoxLotSelectionner";
-            this.groupBoxLotSelectionner.Size = new System.Drawing.Size(558, 561);
+            this.groupBoxLotSelectionner.Size = new System.Drawing.Size(620, 600);
             this.groupBoxLotSelectionner.TabIndex = 6;
             this.groupBoxLotSelectionner.TabStop = false;
             this.groupBoxLotSelectionner.Text = "Lot sélectionné";
             this.groupBoxLotSelectionner.Visible = false;
+            // 
+            // buttonTypePiece
+            // 
+            this.buttonTypePiece.Location = new System.Drawing.Point(136, 141);
+            this.buttonTypePiece.Name = "buttonTypePiece";
+            this.buttonTypePiece.Size = new System.Drawing.Size(104, 24);
+            this.buttonTypePiece.TabIndex = 13;
+            this.buttonTypePiece.Text = "Type de pièce";
+            this.buttonTypePiece.UseVisualStyleBackColor = true;
+            this.buttonTypePiece.Click += new System.EventHandler(this.buttonTypePiece_Click);
             // 
             // groupBoxEvenement
             // 
             this.groupBoxEvenement.Controls.Add(this.labelEvenementMessage);
             this.groupBoxEvenement.Controls.Add(this.labelEvenementDate);
             this.groupBoxEvenement.Controls.Add(this.flowLayoutPanelEvenements);
-            this.groupBoxEvenement.Location = new System.Drawing.Point(22, 175);
+            this.groupBoxEvenement.Location = new System.Drawing.Point(20, 180);
             this.groupBoxEvenement.Name = "groupBoxEvenement";
-            this.groupBoxEvenement.Size = new System.Drawing.Size(520, 380);
+            this.groupBoxEvenement.Size = new System.Drawing.Size(420, 380);
             this.groupBoxEvenement.TabIndex = 12;
             this.groupBoxEvenement.TabStop = false;
             this.groupBoxEvenement.Text = "Evénement";
@@ -130,7 +143,7 @@
             // labelEvenementMessage
             // 
             this.labelEvenementMessage.AutoSize = true;
-            this.labelEvenementMessage.Location = new System.Drawing.Point(151, 18);
+            this.labelEvenementMessage.Location = new System.Drawing.Point(150, 20);
             this.labelEvenementMessage.Name = "labelEvenementMessage";
             this.labelEvenementMessage.Size = new System.Drawing.Size(64, 16);
             this.labelEvenementMessage.TabIndex = 11;
@@ -139,7 +152,7 @@
             // labelEvenementDate
             // 
             this.labelEvenementDate.AutoSize = true;
-            this.labelEvenementDate.Location = new System.Drawing.Point(15, 19);
+            this.labelEvenementDate.Location = new System.Drawing.Point(10, 20);
             this.labelEvenementDate.Name = "labelEvenementDate";
             this.labelEvenementDate.Size = new System.Drawing.Size(36, 16);
             this.labelEvenementDate.TabIndex = 10;
@@ -151,18 +164,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelEvenements.AutoScroll = true;
             this.flowLayoutPanelEvenements.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelEvenements.Location = new System.Drawing.Point(9, 37);
+            this.flowLayoutPanelEvenements.Location = new System.Drawing.Point(10, 40);
             this.flowLayoutPanelEvenements.Name = "flowLayoutPanelEvenements";
-            this.flowLayoutPanelEvenements.Size = new System.Drawing.Size(505, 333);
+            this.flowLayoutPanelEvenements.Size = new System.Drawing.Size(400, 330);
             this.flowLayoutPanelEvenements.TabIndex = 9;
             this.flowLayoutPanelEvenements.WrapContents = false;
+            this.flowLayoutPanelEvenements.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelEvenements_Paint);
             // 
             // labelNbPiece
             // 
             this.labelNbPiece.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNbPiece.Location = new System.Drawing.Point(149, 119);
+            this.labelNbPiece.Location = new System.Drawing.Point(155, 120);
             this.labelNbPiece.Name = "labelNbPiece";
-            this.labelNbPiece.Size = new System.Drawing.Size(101, 16);
+            this.labelNbPiece.Size = new System.Drawing.Size(85, 16);
             this.labelNbPiece.TabIndex = 7;
             this.labelNbPiece.Text = "Nb Pièce";
             this.labelNbPiece.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -170,9 +184,9 @@
             // labelCreation
             // 
             this.labelCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreation.Location = new System.Drawing.Point(149, 93);
+            this.labelCreation.Location = new System.Drawing.Point(150, 95);
             this.labelCreation.Name = "labelCreation";
-            this.labelCreation.Size = new System.Drawing.Size(101, 16);
+            this.labelCreation.Size = new System.Drawing.Size(90, 16);
             this.labelCreation.TabIndex = 6;
             this.labelCreation.Text = "Creation";
             this.labelCreation.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -180,9 +194,9 @@
             // labelEtat
             // 
             this.labelEtat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEtat.Location = new System.Drawing.Point(60, 66);
+            this.labelEtat.Location = new System.Drawing.Point(62, 70);
             this.labelEtat.Name = "labelEtat";
-            this.labelEtat.Size = new System.Drawing.Size(190, 16);
+            this.labelEtat.Size = new System.Drawing.Size(178, 16);
             this.labelEtat.TabIndex = 5;
             this.labelEtat.Text = "Etat";
             this.labelEtat.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -191,7 +205,7 @@
             // 
             this.labelTitreType.AutoSize = true;
             this.labelTitreType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreType.Location = new System.Drawing.Point(21, 145);
+            this.labelTitreType.Location = new System.Drawing.Point(20, 145);
             this.labelTitreType.Name = "labelTitreType";
             this.labelTitreType.Size = new System.Drawing.Size(116, 16);
             this.labelTitreType.TabIndex = 4;
@@ -201,7 +215,7 @@
             // 
             this.labelTitreNbPièce.AutoSize = true;
             this.labelTitreNbPièce.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreNbPièce.Location = new System.Drawing.Point(21, 119);
+            this.labelTitreNbPièce.Location = new System.Drawing.Point(20, 120);
             this.labelTitreNbPièce.Name = "labelTitreNbPièce";
             this.labelTitreNbPièce.Size = new System.Drawing.Size(135, 16);
             this.labelTitreNbPièce.TabIndex = 3;
@@ -211,7 +225,7 @@
             // 
             this.labelTitreCreation.AutoSize = true;
             this.labelTitreCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreCreation.Location = new System.Drawing.Point(19, 93);
+            this.labelTitreCreation.Location = new System.Drawing.Point(20, 95);
             this.labelTitreCreation.Name = "labelTitreCreation";
             this.labelTitreCreation.Size = new System.Drawing.Size(130, 16);
             this.labelTitreCreation.TabIndex = 2;
@@ -221,7 +235,7 @@
             // 
             this.labelTitreEtat.AutoSize = true;
             this.labelTitreEtat.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitreEtat.Location = new System.Drawing.Point(20, 66);
+            this.labelTitreEtat.Location = new System.Drawing.Point(20, 70);
             this.labelTitreEtat.Name = "labelTitreEtat";
             this.labelTitreEtat.Size = new System.Drawing.Size(42, 16);
             this.labelTitreEtat.TabIndex = 1;
@@ -231,29 +245,19 @@
             // 
             this.labelLotNom.AutoSize = true;
             this.labelLotNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLotNom.Location = new System.Drawing.Point(19, 30);
+            this.labelLotNom.Location = new System.Drawing.Point(20, 30);
             this.labelLotNom.Name = "labelLotNom";
             this.labelLotNom.Size = new System.Drawing.Size(47, 20);
             this.labelLotNom.TabIndex = 0;
             this.labelLotNom.Text = "Nom";
             // 
-            // buttonRecette
-            // 
-            this.buttonRecette.Location = new System.Drawing.Point(331, 47);
-            this.buttonRecette.Name = "buttonRecette";
-            this.buttonRecette.Size = new System.Drawing.Size(86, 32);
-            this.buttonRecette.TabIndex = 7;
-            this.buttonRecette.Text = "Recette";
-            this.buttonRecette.UseVisualStyleBackColor = true;
-            this.buttonRecette.Click += new System.EventHandler(this.buttonRecette_Click);
-            // 
             // LabelIconRefresh
             // 
             this.LabelIconRefresh.BackColor = System.Drawing.Color.Transparent;
             this.LabelIconRefresh.Image = global::M3_Pratique.Properties.Resources.refresh;
-            this.LabelIconRefresh.Location = new System.Drawing.Point(291, 10);
+            this.LabelIconRefresh.Location = new System.Drawing.Point(300, 25);
             this.LabelIconRefresh.Name = "LabelIconRefresh";
-            this.LabelIconRefresh.Size = new System.Drawing.Size(34, 31);
+            this.LabelIconRefresh.Size = new System.Drawing.Size(30, 30);
             this.LabelIconRefresh.TabIndex = 8;
             this.LabelIconRefresh.Click += new System.EventHandler(this.LabelIconRefresh_Click);
             // 
@@ -261,50 +265,144 @@
             // 
             this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
             this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
-            this.labelRechercherIcon.Location = new System.Drawing.Point(236, 10);
+            this.labelRechercherIcon.Location = new System.Drawing.Point(240, 25);
+            this.labelRechercherIcon.Margin = new System.Windows.Forms.Padding(0);
             this.labelRechercherIcon.Name = "labelRechercherIcon";
-            this.labelRechercherIcon.Size = new System.Drawing.Size(34, 31);
+            this.labelRechercherIcon.Size = new System.Drawing.Size(30, 30);
             this.labelRechercherIcon.TabIndex = 3;
             // 
-            // buttonTypePiece
+            // groupBoxListeLots
             // 
-            this.buttonTypePiece.Location = new System.Drawing.Point(151, 142);
-            this.buttonTypePiece.Name = "buttonTypePiece";
-            this.buttonTypePiece.Size = new System.Drawing.Size(99, 23);
-            this.buttonTypePiece.TabIndex = 13;
-            this.buttonTypePiece.Text = "Type de pièce";
-            this.buttonTypePiece.UseVisualStyleBackColor = true;
-            this.buttonTypePiece.Click += new System.EventHandler(this.buttonTypePiece_Click);
+            this.groupBoxListeLots.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBoxListeLots.Controls.Add(this.textBoxRechercheLot);
+            this.groupBoxListeLots.Controls.Add(this.LabelIconRefresh);
+            this.groupBoxListeLots.Controls.Add(this.comboBoxEtat);
+            this.groupBoxListeLots.Controls.Add(this.flowLayoutPanelLots);
+            this.groupBoxListeLots.Controls.Add(this.labelRechercherIcon);
+            this.groupBoxListeLots.Location = new System.Drawing.Point(10, 10);
+            this.groupBoxListeLots.Name = "groupBoxListeLots";
+            this.groupBoxListeLots.Size = new System.Drawing.Size(620, 1000);
+            this.groupBoxListeLots.TabIndex = 9;
+            this.groupBoxListeLots.TabStop = false;
+            this.groupBoxListeLots.Text = "Liste de lots";
+            // 
+            // groupBoxListeRecette
+            // 
+            this.groupBoxListeRecette.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxListeRecette.Location = new System.Drawing.Point(1270, 10);
+            this.groupBoxListeRecette.Name = "groupBoxListeRecette";
+            this.groupBoxListeRecette.Size = new System.Drawing.Size(620, 1000);
+            this.groupBoxListeRecette.TabIndex = 10;
+            this.groupBoxListeRecette.TabStop = false;
+            this.groupBoxListeRecette.Text = "Liste de recettes";
+            // 
+            // groupBoxCreationLot
+            // 
+            this.groupBoxCreationLot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxCreationLot.Controls.Add(this.btnCreerRecette);
+            this.groupBoxCreationLot.Controls.Add(this.comboBoxRecette);
+            this.groupBoxCreationLot.Controls.Add(this.labelRecette);
+            this.groupBoxCreationLot.Controls.Add(this.numericUpDownNbPiece);
+            this.groupBoxCreationLot.Controls.Add(this.labelNombrePiece);
+            this.groupBoxCreationLot.Controls.Add(this.btnCreer);
+            this.groupBoxCreationLot.Location = new System.Drawing.Point(640, 620);
+            this.groupBoxCreationLot.Name = "groupBoxCreationLot";
+            this.groupBoxCreationLot.Size = new System.Drawing.Size(620, 390);
+            this.groupBoxCreationLot.TabIndex = 11;
+            this.groupBoxCreationLot.TabStop = false;
+            this.groupBoxCreationLot.Text = "Création d\'un lot";
+            this.groupBoxCreationLot.Enter += new System.EventHandler(this.groupBoxCreationLot_Enter);
+            // 
+            // btnCreerRecette
+            // 
+            this.btnCreerRecette.Location = new System.Drawing.Point(394, 155);
+            this.btnCreerRecette.Name = "btnCreerRecette";
+            this.btnCreerRecette.Size = new System.Drawing.Size(25, 25);
+            this.btnCreerRecette.TabIndex = 13;
+            this.btnCreerRecette.Text = "+";
+            this.btnCreerRecette.UseVisualStyleBackColor = true;
+            this.btnCreerRecette.Click += new System.EventHandler(this.btnCreerRecette_Click);
+            // 
+            // comboBoxRecette
+            // 
+            this.comboBoxRecette.FormattingEnabled = true;
+            this.comboBoxRecette.Location = new System.Drawing.Point(268, 155);
+            this.comboBoxRecette.Name = "comboBoxRecette";
+            this.comboBoxRecette.Size = new System.Drawing.Size(120, 24);
+            this.comboBoxRecette.TabIndex = 12;
+            // 
+            // labelRecette
+            // 
+            this.labelRecette.AutoSize = true;
+            this.labelRecette.Location = new System.Drawing.Point(150, 158);
+            this.labelRecette.Name = "labelRecette";
+            this.labelRecette.Size = new System.Drawing.Size(95, 16);
+            this.labelRecette.TabIndex = 11;
+            this.labelRecette.Text = "Type de pièce";
+            // 
+            // numericUpDownNbPiece
+            // 
+            this.numericUpDownNbPiece.Location = new System.Drawing.Point(268, 120);
+            this.numericUpDownNbPiece.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDownNbPiece.Name = "numericUpDownNbPiece";
+            this.numericUpDownNbPiece.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownNbPiece.TabIndex = 10;
+            // 
+            // labelNombrePiece
+            // 
+            this.labelNombrePiece.AutoSize = true;
+            this.labelNombrePiece.Location = new System.Drawing.Point(150, 122);
+            this.labelNombrePiece.Name = "labelNombrePiece";
+            this.labelNombrePiece.Size = new System.Drawing.Size(112, 16);
+            this.labelNombrePiece.TabIndex = 9;
+            this.labelNombrePiece.Text = "Nombre de pièce";
+            // 
+            // btnCreer
+            // 
+            this.btnCreer.Location = new System.Drawing.Point(396, 248);
+            this.btnCreer.Name = "btnCreer";
+            this.btnCreer.Size = new System.Drawing.Size(75, 23);
+            this.btnCreer.TabIndex = 7;
+            this.btnCreer.Text = "Créer";
+            this.btnCreer.UseVisualStyleBackColor = true;
+            this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 590);
-            this.Controls.Add(this.LabelIconRefresh);
-            this.Controls.Add(this.buttonRecette);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.groupBoxCreationLot);
+            this.Controls.Add(this.groupBoxListeRecette);
+            this.Controls.Add(this.groupBoxListeLots);
             this.Controls.Add(this.groupBoxLotSelectionner);
-            this.Controls.Add(this.comboBoxEtat);
-            this.Controls.Add(this.labelRechercherIcon);
-            this.Controls.Add(this.textBoxRechercheLot);
-            this.Controls.Add(this.flowLayoutPanelLots);
-            this.Controls.Add(this.btnCreerLot);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LotManager";
             this.Padding = new System.Windows.Forms.Padding(0, 80, 0, 0);
             this.Text = "Manager de lot";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBoxLotSelectionner.ResumeLayout(false);
             this.groupBoxLotSelectionner.PerformLayout();
             this.groupBoxEvenement.ResumeLayout(false);
             this.groupBoxEvenement.PerformLayout();
+            this.groupBoxListeLots.ResumeLayout(false);
+            this.groupBoxListeLots.PerformLayout();
+            this.groupBoxCreationLot.ResumeLayout(false);
+            this.groupBoxCreationLot.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCreerLot;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelLots;
         private System.Windows.Forms.TextBox textBoxRechercheLot;
         private System.Windows.Forms.Label labelRechercherIcon;
@@ -322,9 +420,17 @@
         private System.Windows.Forms.Label labelEvenementMessage;
         private System.Windows.Forms.Label labelEvenementDate;
         private System.Windows.Forms.GroupBox groupBoxEvenement;
-        private System.Windows.Forms.Button buttonRecette;
         private System.Windows.Forms.Label LabelIconRefresh;
         private System.Windows.Forms.Button buttonTypePiece;
+        private System.Windows.Forms.GroupBox groupBoxListeLots;
+        private System.Windows.Forms.GroupBox groupBoxListeRecette;
+        private System.Windows.Forms.GroupBox groupBoxCreationLot;
+        private System.Windows.Forms.Button btnCreerRecette;
+        private System.Windows.Forms.ComboBox comboBoxRecette;
+        private System.Windows.Forms.Label labelRecette;
+        private System.Windows.Forms.NumericUpDown numericUpDownNbPiece;
+        private System.Windows.Forms.Label labelNombrePiece;
+        private System.Windows.Forms.Button btnCreer;
     }
 }
 

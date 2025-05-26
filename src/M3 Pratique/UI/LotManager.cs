@@ -24,6 +24,16 @@ namespace M3_Pratique
 
             // Affiche tous les lots
             AfficherLots(Global.Lots);
+
+            // Ajout des recettes à la selection
+            BindingList<Recette> recettes = new BindingList<Recette>();
+            for (int i = 0; i < Global.Recettes.Count; i++)
+            {
+                recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
+            }
+            comboBoxRecette.ValueMember = null;
+            comboBoxRecette.DisplayMember = "Nom";
+            comboBoxRecette.DataSource = recettes;
         }
 
         /// <summary>
@@ -115,14 +125,6 @@ namespace M3_Pratique
         }
 
         /// <summary>
-        /// Gère le clic sur le bouton "Créer un lot".
-        /// </summary>
-        private void btnCreerLot_Click(object sender, EventArgs e)
-        {
-            FormManager.OuvrirLotCreation(() => AfficherLots(Global.Lots));
-        }
-
-        /// <summary>
         /// Réagit à la modification du texte de recherche pour filtrer les lots.
         /// </summary>
         private void textBoxRechercheLot_TextChanged(object sender, EventArgs e)
@@ -155,14 +157,6 @@ namespace M3_Pratique
             AfficherLots(lotsFiltres);
         }
 
-        /// <summary>
-        /// Gère le clic sur le bouton "Ouvrir les recettes".
-        /// </summary>
-        private void buttonRecette_Click(object sender, EventArgs e)
-        {
-            FormManager.OuvrirRecetteManager();
-        }
-
         private void LabelIconRefresh_Click(object sender, EventArgs e)
         {
             if (Global.RecupererTout())
@@ -177,6 +171,67 @@ namespace M3_Pratique
         private void buttonTypePiece_Click(object sender, EventArgs e)
         {
             FormManager.OuvrirRecetteInformation(carteSelectionnee.Lot.Recette);
+        }
+
+        private void flowLayoutPanelLots_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanelEvenements_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBoxCreationLot_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        // Création d'un lot
+        private void btnCreer_Click(object sender, EventArgs e)
+        {
+            // Vérification des champs
+            if (numericUpDownNbPiece.Value <= 0)
+            {
+                MessageBox.Show("Le nombre de pièce doit être supérieur à 0", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboBoxRecette.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une recette", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // TODO récupérer le bon id état depuis la db
+                int idEtat = 1;
+
+                Global.AjouterLot((int)numericUpDownNbPiece.Value, idEtat, ((Recette)comboBoxRecette.SelectedItem).Id, ((Recette)comboBoxRecette.SelectedItem).Nom);
+
+                // Ajout de l'évènement pour mettre à jours la listes des lots
+                AfficherLots(Global.Lots);
+
+            }
+        }
+
+        private void btnCreerRecette_Click(object sender, EventArgs e)
+        {
+            FormManager.OuvrirRecetteCreation(() => MiseAJourListeRecette());
+        }
+
+        /// <summary>
+        /// Met à jour la liste des recettes dans le comboBox
+        /// </summary>
+        private void MiseAJourListeRecette()
+        {
+            BindingList<Recette> recettes = new BindingList<Recette>();
+            for (int i = 0; i < Global.Recettes.Count; i++)
+            {
+                recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
+            }
+            comboBoxRecette.DataSource = recettes;
+
+            // sélectionne la dernière recette
+            comboBoxRecette.SelectedIndex = comboBoxRecette.Items.Count - 1;
         }
     }
 }
