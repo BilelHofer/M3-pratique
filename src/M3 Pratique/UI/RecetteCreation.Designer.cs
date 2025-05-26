@@ -74,7 +74,7 @@
             // 
             this.btnCreerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnCreerRecette.Location = new System.Drawing.Point(901, 510);
+            this.btnCreerRecette.Location = new System.Drawing.Point(921, 510);
             this.btnCreerRecette.Name = "btnCreerRecette";
             this.btnCreerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnCreerRecette.TabIndex = 3;
@@ -96,7 +96,7 @@
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelOperation.Location = new System.Drawing.Point(20, 190);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
-            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(855, 400);
+            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(890, 400);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
             this.flowLayoutPanelOperation.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelOperation_Paint);
@@ -138,7 +138,7 @@
             // 
             this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(901, 424);
+            this.btnAnnuler.Location = new System.Drawing.Point(921, 424);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 80);
             this.btnAnnuler.TabIndex = 12;
@@ -204,7 +204,7 @@
             // 
             this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnEnregistrerRecette.Location = new System.Drawing.Point(901, 510);
+            this.btnEnregistrerRecette.Location = new System.Drawing.Point(921, 510);
             this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
             this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnEnregistrerRecette.TabIndex = 43;
