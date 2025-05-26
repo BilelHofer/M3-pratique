@@ -173,6 +173,7 @@
             this.buttonModifierRecette.Text = "Modifier";
             this.buttonModifierRecette.UseVisualStyleBackColor = true;
             this.buttonModifierRecette.Visible = false;
+            this.buttonModifierRecette.Click += new System.EventHandler(this.buttonModifierRecette_Click);
             // 
             // buttonSupprimerRecette
             // 

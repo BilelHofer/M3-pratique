@@ -1,4 +1,5 @@
-﻿using System;
+﻿using M3_Pratique.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,13 +16,41 @@ namespace M3_Pratique
     {
         public event EventHandler RecetteAjoute;
 
+        private bool enModification = false;
+
+        private Recette _recette = null;
+
         List<OperationCarteEdit> operationCartes = new List<OperationCarteEdit>();
         public RecetteCreation()
         {
             InitializeComponent();
-
+            enModification = false;
             flowLayoutPanelOperation.Controls.Clear();
 
+            btnCreerRecette.Visible = true;
+            btnEnregistrerRecette.Visible = false;
+
+        }
+
+        public RecetteCreation(Recette recette)
+        {
+            InitializeComponent();
+            flowLayoutPanelOperation.Controls.Clear();
+            enModification = true;
+            btnCreerRecette.Visible = false;
+            btnEnregistrerRecette.Visible = true;
+            _recette = recette;
+
+            // Affiche les opérations de la recette
+            foreach (var operation in Global.GetOperationsByRecette(recette.Id))
+            {
+                var carte = new OperationCarteEdit();
+                carte.SetOperation(operation);
+
+                flowLayoutPanelOperation.Controls.Add(carte);
+                operationCartes.Add(carte);
+            }
+            textBoxNomRecette.Text = recette.Nom;
         }
 
         private void RecetteCreation_Load(object sender, EventArgs e)
@@ -34,24 +63,12 @@ namespace M3_Pratique
 
         }
         // Création d'une recette
-        private void btnEnregistrerRecette_Click(object sender, EventArgs e)
+        private void btnCreerRecette_Click(object sender, EventArgs e)
         {
-            // Vérification des champs (Regex pour enlever les espaces)
-            if (Regex.Replace(textBoxNomRecette.Text, @"\s+", "") == "")
+            if (validationChamp())
             {
-                MessageBox.Show("Veuillez entrer un nom de recette", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (flowLayoutPanelOperation.Controls.Count <= 0)
-            {
-                MessageBox.Show("Veuillez ajouter au moins une opération", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                // Création de la liste des opérations
-                List<Operation> listeOperations = new List<Operation>();
-
                 // Récupération des opérations
-                listeOperations = operationCartes.Select(carte => carte.GetOperation()).ToList();
+                List<Operation> listeOperations = operationCartes.Select(carte => carte.GetOperation()).ToList();
 
                 Global.AjouterRecette(textBoxNomRecette.Text, listeOperations);
 
@@ -62,6 +79,70 @@ namespace M3_Pratique
                 this.Close();
             }
         }
+
+        private void buttonEnregistrerRecette_Click(object sender, EventArgs e)
+        {
+            if (validationChamp())
+            {
+                // Suppression des opérations existantes
+                DatabaseService.SupprimerOperationByRecette(_recette.Id);
+
+                // Suppression des opérations associé à la recette dans la liste global
+                Global.Operations.RemoveAll(op => op.IdRecette == _recette.Id);
+
+                // Création de la liste des opérations
+                List<Operation> listeOperations = operationCartes.Select(carte => carte.GetOperation()).ToList();
+
+                // Modication du nom de la recette
+                DatabaseService.ModifierRecette(_recette.Id, textBoxNomRecette.Text);
+
+                // Modifcation du nom de la recette dans la liste global
+                Global.Recettes.Where(r => r.Id == _recette.Id).ToList().ForEach(r => r.Nom = textBoxNomRecette.Text);
+                _recette.Nom = textBoxNomRecette.Text;
+
+                // Ajout des opérations à la recette
+                foreach (Operation operation in listeOperations)
+                {
+                    long idOperation = DatabaseService.AjouterOperation(operation, _recette.Id);
+                    if (idOperation != -1)
+                    {
+                        Global.Operations.Add(new Operation(
+                            idOperation,
+                            operation.Nom,
+                            operation.Numero,
+                            operation.PositionMoteur,
+                            operation.TempsAttente,
+                            operation.CycleVerin,
+                            operation.Quittance,
+                            operation.SensMoteur,
+                            _recette.Id));
+                    }
+                }
+
+                // Mise à jours des formulaires
+                FormManager.RecetteManagerForm.AfficherRecettes(Global.Recettes);
+                FormManager.OuvrirRecetteInformation(_recette);
+
+                this.Close();
+            }
+        }
+
+        private bool validationChamp()
+        {
+            // Vérification des champs (Regex pour enlever les espaces)
+            if (Regex.Replace(textBoxNomRecette.Text, @"\s+", "") == "")
+            {
+                MessageBox.Show("Veuillez entrer un nom de recette", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (flowLayoutPanelOperation.Controls.Count <= 0)
+            {
+                MessageBox.Show("Veuillez ajouter au moins une opération", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         private void labelNomRecette_Click(object sender, EventArgs e)
         {
 
@@ -74,7 +155,7 @@ namespace M3_Pratique
 
         private void flowLayoutPanelOperation_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void btnSupprimerOperation_Click(object sender, EventArgs e)
@@ -85,18 +166,18 @@ namespace M3_Pratique
                 flowLayoutPanelOperation.Controls.Remove(flowLayoutPanelOperation.Controls[flowLayoutPanelOperation.Controls.Count - 1]);
                 operationCartes.RemoveAt(operationCartes.Count - 1);
             }
-            
+
         }
 
         private void btnAjoutOperation_Click(object sender, EventArgs e)
         {
             var carte = new OperationCarteEdit();
-            if(flowLayoutPanelOperation.Controls.Count < 10)
+            if (flowLayoutPanelOperation.Controls.Count < 10)
             {
                 flowLayoutPanelOperation.Controls.Add(carte);
                 operationCartes.Add(carte);
             }
-            
+
         }
 
         private void labelOperation_Click(object sender, EventArgs e)

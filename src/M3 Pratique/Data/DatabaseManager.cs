@@ -36,6 +36,8 @@ namespace M3_Pratique
         /// <returns></returns>
         public static MySqlConnection GetConnexion()
         {
+            if (_connection == null)
+                ConnectDB();
             return _connection;
         }
 
