@@ -19,7 +19,7 @@ namespace M3_Pratique
         {
             try
             {
-                _connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ServerMySQLLocal"].ConnectionString);
+                _connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ServerMySQL"].ConnectionString);
                 if (_connection.State == ConnectionState.Closed)
                     _connection.Open();
             }

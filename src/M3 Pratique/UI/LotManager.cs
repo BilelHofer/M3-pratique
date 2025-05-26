@@ -178,5 +178,15 @@ namespace M3_Pratique
         {
             FormManager.OuvrirRecetteInformation(carteSelectionnee.Lot.Recette);
         }
+
+        private void flowLayoutPanelLots_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanelEvenements_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
