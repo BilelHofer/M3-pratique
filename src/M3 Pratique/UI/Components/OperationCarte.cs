@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace M3_Pratique.UI.Components
 {
+    /// <summary>
+    /// Classe représentant une opération dans l'interface utilisateur.
+    /// </summary>
     public partial class OperationCarte : UserControl
     {
+        /// <summary>
+        /// Constructeur de la carte d'opération.
+        /// </summary>
+        /// <param name="operation">Opération afficher</param>
         public OperationCarte(Operation operation)
         {
             InitializeComponent();

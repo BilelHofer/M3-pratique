@@ -47,7 +47,6 @@
             this.numericUpDownTempsAttente.Name = "numericUpDownTempsAttente";
             this.numericUpDownTempsAttente.Size = new System.Drawing.Size(110, 22);
             this.numericUpDownTempsAttente.TabIndex = 3;
-            this.numericUpDownTempsAttente.ValueChanged += new System.EventHandler(this.numericUpDownTempsAttente_ValueChanged);
             // 
             // checkBoxCycleVerin
             // 

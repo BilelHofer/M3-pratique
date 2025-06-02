@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Classe représentant une carte d'édition d'opération dans l'interface utilisateur.
+    /// </summary>
     public partial class OperationCarteEdit : UserControl
     {
 
         private int position;
         public int Position { get => position; set => position = value; }
 
+        /// <summary>
+        /// Constructeur de la carte d'édition d'opération.
+        /// </summary>
+        /// <param name="pos"></param>
         public OperationCarteEdit(int pos)
         {
             InitializeComponent();
@@ -23,11 +23,10 @@ namespace M3_Pratique
             Position = pos;
         }
 
-        private void numericUpDownTempsAttente_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Récupère l'opération à partir des champs de la carte d'édition.
+        /// </summary>
+        /// <returns></returns>
         public Operation GetOperation()
         {
             // Récupération de l'opération
@@ -35,6 +34,10 @@ namespace M3_Pratique
             return operation;
         }
 
+        /// <summary>
+        /// Met à jour les champs de la carte d'édition avec les données de l'opération fournie.
+        /// </summary>
+        /// <param name="operation"></param>
         public void SetOperation(Operation operation)
         {
             // Mise à jour des champs avec les données de l'opération
@@ -46,16 +49,31 @@ namespace M3_Pratique
             checkBoxSensHoraire.Checked = operation.SensMoteur;
         }
 
+        /// <summary>
+        /// Événement déclenché lors du clic sur l'icône de suppression de la carte d'édition d'opération.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void labelIconCroix_Click(object sender, EventArgs e)
         {
             FormManager.RecetteCreationForm.OperationSupprimer(this);
         }
 
+        /// <summary>
+        /// Événement déclenché lors du clic sur l'icône de montée de la carte d'édition d'opération.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void labelMonter_Click(object sender, EventArgs e)
         {
             FormManager.RecetteCreationForm.OperationMonter(this);
         }
 
+        /// <summary>
+        /// Événement déclenché lors du clic sur l'icône de descente de la carte d'édition d'opération.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void labelDescendre_Click(object sender, EventArgs e)
         {
            FormManager.RecetteCreationForm.OperationDescendre(this);

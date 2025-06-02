@@ -1,22 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Classe représentant une carte de lot dans l'interface utilisateur.
+    /// </summary>
     public partial class LotCarte : UserControl
     {
         private Lot _lot;
         public event EventHandler<long> LotSelectionne;
 
         public Lot Lot { get => _lot; set => _lot = value; }
+
+        /// <summary>
+        /// Constructeur de la carte de lot.
+        /// </summary>
+        /// <param name="lot">Lot afficher</param>
         public LotCarte(Lot lot)
         {
             InitializeComponent();
@@ -35,7 +36,11 @@ namespace M3_Pratique
             }
         }
 
-
+        /// <summary>
+        /// Événement déclenché lors du clic sur la carte du lot.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LotCarte_Click(object sender, EventArgs e)
         {
             LotSelectionne?.Invoke(this, _lot.Id);
