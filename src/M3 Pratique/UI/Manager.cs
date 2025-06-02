@@ -35,6 +35,10 @@ namespace M3_Pratique
             comboBoxRecette.ValueMember = null;
             comboBoxRecette.DisplayMember = "Nom";
             comboBoxRecette.DataSource = recettes;
+
+
+            // Affiche les recettes
+            AfficherRecettes(Global.Recettes);
         }
 
         /// <summary>
@@ -283,18 +287,13 @@ namespace M3_Pratique
         {
 
         }
-        
 
-        /*
-        /// <summary>
-        /// Constructeur de la classe RecetteManager.
-        /// </summary>
-        public RecetteManager()
+        private void flowLayoutPanelRecettes_Paint(object sender, PaintEventArgs e)
         {
-            InitializeComponent();
 
-            AfficherRecettes(Global.Recettes);
         }
-        */
+
+
+
     }
 }

@@ -39,6 +39,7 @@
             this.labelRechercherIcon.Name = "labelRechercherIcon";
             this.labelRechercherIcon.Size = new System.Drawing.Size(34, 31);
             this.labelRechercherIcon.TabIndex = 6;
+            this.labelRechercherIcon.Click += new System.EventHandler(this.labelRechercherIcon_Click);
             // 
             // RecetteManager
             // 

@@ -31,5 +31,10 @@ namespace M3_Pratique
         {
 
         }
+
+        private void labelRechercherIcon_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

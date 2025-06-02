@@ -49,6 +49,8 @@
             this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.groupBoxListeLots = new System.Windows.Forms.GroupBox();
             this.groupBoxListeRecette = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanelRecettes = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBoxRechercheRecette = new System.Windows.Forms.TextBox();
             this.btnCreerRecette = new System.Windows.Forms.Button();
             this.groupBoxCreationLot = new System.Windows.Forms.GroupBox();
             this.comboBoxRecette = new System.Windows.Forms.ComboBox();
@@ -56,8 +58,6 @@
             this.numericUpDownNbPiece = new System.Windows.Forms.NumericUpDown();
             this.labelNombrePiece = new System.Windows.Forms.Label();
             this.btnCreer = new System.Windows.Forms.Button();
-            this.textBoxRechercheRecette = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanelRecettes = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.groupBoxListeLots.SuspendLayout();
@@ -305,6 +305,27 @@
             this.groupBoxListeRecette.Text = "Liste de recettes";
             this.groupBoxListeRecette.Enter += new System.EventHandler(this.groupBoxListeRecette_Enter);
             // 
+            // flowLayoutPanelRecettes
+            // 
+            this.flowLayoutPanelRecettes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanelRecettes.AutoScroll = true;
+            this.flowLayoutPanelRecettes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(70, 200);
+            this.flowLayoutPanelRecettes.Name = "flowLayoutPanelRecettes";
+            this.flowLayoutPanelRecettes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(443, 973);
+            this.flowLayoutPanelRecettes.TabIndex = 8;
+            this.flowLayoutPanelRecettes.WrapContents = false;
+            this.flowLayoutPanelRecettes.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelRecettes_Paint);
+            // 
+            // textBoxRechercheRecette
+            // 
+            this.textBoxRechercheRecette.Location = new System.Drawing.Point(50, 67);
+            this.textBoxRechercheRecette.Name = "textBoxRechercheRecette";
+            this.textBoxRechercheRecette.Size = new System.Drawing.Size(219, 22);
+            this.textBoxRechercheRecette.TabIndex = 6;
+            this.textBoxRechercheRecette.TextChanged += new System.EventHandler(this.textBoxRechercheRecette_TextChanged);
+            // 
             // btnCreerRecette
             // 
             this.btnCreerRecette.Location = new System.Drawing.Point(286, 104);
@@ -384,27 +405,7 @@
             this.btnCreer.UseVisualStyleBackColor = true;
             this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
-            // textBoxRechercheRecette
-            // 
-            this.textBoxRechercheRecette.Location = new System.Drawing.Point(50, 67);
-            this.textBoxRechercheRecette.Name = "textBoxRechercheRecette";
-            this.textBoxRechercheRecette.Size = new System.Drawing.Size(219, 22);
-            this.textBoxRechercheRecette.TabIndex = 6;
-            this.textBoxRechercheRecette.TextChanged += new System.EventHandler(this.textBoxRechercheRecette_TextChanged);
-            // 
-            // flowLayoutPanelRecettes
-            // 
-            this.flowLayoutPanelRecettes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flowLayoutPanelRecettes.AutoScroll = true;
-            this.flowLayoutPanelRecettes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(96, 220);
-            this.flowLayoutPanelRecettes.Name = "flowLayoutPanelRecettes";
-            this.flowLayoutPanelRecettes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(443, 973);
-            this.flowLayoutPanelRecettes.TabIndex = 8;
-            this.flowLayoutPanelRecettes.WrapContents = false;
-            // 
-            // LotManager
+            // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -414,9 +415,9 @@
             this.Controls.Add(this.groupBoxListeLots);
             this.Controls.Add(this.groupBoxLotSelectionner);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "LotManager";
+            this.Name = "Manager";
             this.Padding = new System.Windows.Forms.Padding(0, 80, 0, 0);
-            this.Text = "Manager de lot";
+            this.Text = "Lots et recettes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBoxLotSelectionner.ResumeLayout(false);
             this.groupBoxLotSelectionner.PerformLayout();
