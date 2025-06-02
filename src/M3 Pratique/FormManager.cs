@@ -11,10 +11,10 @@ namespace M3_Pratique
         #region Instances des formulaires
         private static RecetteCreation _recetteCreationForm = null;
         private static RecetteInformation _recetteInformationForm = null;
-        private static Manager _lotManagerForm = null;
+        private static Manager _managerForm = null;
 
         public static RecetteCreation RecetteCreationForm { get => _recetteCreationForm; set => _recetteCreationForm = value; }
-        public static Manager LotManagerForm { get => _lotManagerForm; set => _lotManagerForm = value; }
+        public static Manager ManagerForm { get => _managerForm; set => _managerForm = value; }
         #endregion
 
         #region Méthodes génériques de gestion des formulaires

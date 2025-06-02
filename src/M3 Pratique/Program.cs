@@ -28,7 +28,7 @@ namespace M3_Pratique
             // Création de l'instance de la fenêtre principal
             Manager lotManager = new Manager();
 
-            FormManager.LotManagerForm = lotManager;
+            FormManager.ManagerForm = lotManager;
             Application.Run(lotManager);
         }
     }

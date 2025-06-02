@@ -17,9 +17,6 @@ namespace M3_Pratique
     public partial class RecetteCreation : Form
     {
         public event EventHandler RecetteAjoute;
-
-        private bool enModification = false;
-
         private Recette _recette = null;
 
         private int nombreOperation = 0;
@@ -28,7 +25,6 @@ namespace M3_Pratique
         public RecetteCreation()
         {
             InitializeComponent();
-            enModification = false;
             flowLayoutPanelOperation.Controls.Clear();
 
             btnCreerRecette.Visible = true;
@@ -40,7 +36,6 @@ namespace M3_Pratique
         {
             InitializeComponent();
             flowLayoutPanelOperation.Controls.Clear();
-            enModification = true;
             btnCreerRecette.Visible = false;
             btnEnregistrerRecette.Visible = true;
             _recette = recette;
@@ -124,7 +119,7 @@ namespace M3_Pratique
                 }
 
                 // Mise à jours des formulaires
-                // TODO FormManager.RecetteManagerForm.AfficherRecettes(Global.Recettes);
+                FormManager.ManagerForm.AfficherRecettes(Global.Recettes);
                 FormManager.OuvrirRecetteInformation(_recette);
 
                 this.Close();
