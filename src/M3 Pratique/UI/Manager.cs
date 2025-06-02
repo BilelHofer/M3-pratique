@@ -9,14 +9,14 @@ using M3_Pratique.UI.Components;
 
 namespace M3_Pratique
 {
-    public partial class LotManager : Form
+    public partial class Manager : Form
     {
         private LotCarte carteSelectionnee = null;
 
         /// <summary>
         /// Constructeur de la classe LotManager.
         /// </summary>
-        public LotManager()
+        public Manager()
         {
             InitializeComponent();
 
@@ -203,7 +203,6 @@ namespace M3_Pratique
             }
             else
             {
-                // TODO récupérer le bon id état depuis la db
                 int idEtat = 1;
 
                 Global.AjouterLot((int)numericUpDownNbPiece.Value, idEtat, ((Recette)comboBoxRecette.SelectedItem).Id, ((Recette)comboBoxRecette.SelectedItem).Nom);

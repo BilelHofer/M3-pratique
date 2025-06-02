@@ -1,6 +1,6 @@
 ﻿namespace M3_Pratique
 {
-    partial class LotManager
+    partial class Manager
     {
         /// <summary>
         /// Variable nécessaire au concepteur.

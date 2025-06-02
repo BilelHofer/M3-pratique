@@ -135,11 +135,11 @@
     <Compile Include="UI\LotCreation.Designer.cs">
       <DependentUpon>LotCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\LotManager.cs">
+    <Compile Include="UI\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\LotManager.Designer.cs">
-      <DependentUpon>LotManager.cs</DependentUpon>
+    <Compile Include="UI\Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Operation.cs" />
     <Compile Include="UI\Components\OperationCarteEdit.cs">
@@ -184,8 +184,8 @@
     <EmbeddedResource Include="UI\LotCreation.resx">
       <DependentUpon>LotCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\LotManager.resx">
-      <DependentUpon>LotManager.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\OperationCarteEdit.resx">
       <DependentUpon>OperationCarteEdit.cs</DependentUpon>
