@@ -181,6 +181,8 @@ namespace M3_Pratique
                 InitialiserComboBoxEtat();
                 // Affiche tous les lots
                 AfficherLots(Global.Lots);
+                // Affiche toutes les recettes
+                AfficherRecettes(Global.Recettes);
             }
         }
 
