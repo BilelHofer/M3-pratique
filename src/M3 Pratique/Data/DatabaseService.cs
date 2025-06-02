@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M3_Pratique.Data
@@ -18,7 +15,7 @@ namespace M3_Pratique.Data
         #region Méthodes de récupération
 
         /// <summary>
-        /// Récupère toutes les recettes de la base de données
+        /// Récupère toutes les recettes
         /// </summary>
         /// <returns>Liste des recettes</returns>
         public static List<Recette> GetRecettes()
@@ -55,7 +52,7 @@ namespace M3_Pratique.Data
         }
 
         /// <summary>
-        /// Récupère tous les événements de la base de données
+        /// Récupère tous les événements
         /// </summary>
         /// <returns>Liste des événements</returns>
         public static List<Evenement> GetEvenements()
@@ -91,7 +88,7 @@ namespace M3_Pratique.Data
         }
 
         /// <summary>
-        /// Récupère tous les lots de la base de données
+        /// Récupère tous les lots
         /// </summary>
         /// <param name="recettes">Liste des recettes pour la liaison</param>
         /// <returns>Liste des lots</returns>
@@ -133,7 +130,7 @@ namespace M3_Pratique.Data
         }
 
         /// <summary>
-        /// Récupère tous les états de la base de données
+        /// Récupère tous les états
         /// </summary>
         /// <returns>Liste des états</returns>
         public static List<Etat> GetEtats()
@@ -167,7 +164,7 @@ namespace M3_Pratique.Data
         }
 
         /// <summary>
-        /// Récupère toutes les opérations de la base de données
+        /// Récupère toutes les opérations
         /// </summary>
         /// <returns>Liste des opérations</returns>
         public static List<Operation> GetOperations()
@@ -223,7 +220,9 @@ namespace M3_Pratique.Data
         public static Lot AjouterLot(int quantite, long idEtat, long idRecette, string recetteNom)
         {
             DateTime date = DateTime.Now;
+            // Création automatique du nom du lot
             string nom = $"{quantite}-{recetteNom}-{date:yy/MM/dd}";
+
             long id = -1;
 
             try
@@ -395,6 +394,11 @@ namespace M3_Pratique.Data
 
         #region Méthodes de mise à jour
 
+        /// <summary>
+        /// Modifie le nom d'une recette dans la base de données.
+        /// </summary>
+        /// <param name="idRecette"></param>
+        /// <param name="nom"></param>
         public static void ModifierRecette(long idRecette, string nom)
         {
             try
@@ -465,6 +469,10 @@ namespace M3_Pratique.Data
             }
         }
 
+        /// <summary>
+        /// Supprime toutes les opérations associées à une recette spécifique de la base de données.
+        /// </summary>
+        /// <param name="idRecette">Id de la recette contenant les opérations</param>
         public static void SupprimerOperationByRecette(long idRecette)
         {
             try
@@ -493,12 +501,12 @@ namespace M3_Pratique.Data
 
         #endregion
 
-            #region Méthodes utilitaires
+        #region Méthodes utilitaires
 
-            /// <summary>
-            /// Charge toutes les données depuis la base de données
-            /// </summary>
-            /// <returns>True si le chargement a réussi</returns>
+        /// <summary>
+        /// Charge toutes les données depuis la base de données
+        /// </summary>
+        /// <returns>True si le chargement a réussi</returns>
         public static bool ChargerToutesLesDonnees()
         {
             try

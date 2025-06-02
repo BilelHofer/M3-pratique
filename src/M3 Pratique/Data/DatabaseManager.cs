@@ -32,8 +32,9 @@ namespace M3_Pratique
 
         /// <summary>
         /// Méthode pour récupérer la connexion à la base de données.
+        /// Si la connexion est null, ouvre la connexion
         /// </summary>
-        /// <returns></returns>
+        /// <returns>La connexion</returns>
         public static MySqlConnection GetConnexion()
         {
             if (_connection == null)

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace M3_Pratique
 {
     /// <summary>
-    /// Gestionnaire centralisé pour l'ouverture et la gestion des formulaires
+    /// Gestionnaire pour l'ouverture et la gestion des formulaires
     /// </summary>
     public static class FormManager
     {
@@ -14,9 +13,11 @@ namespace M3_Pratique
         private static RecetteInformation _recetteInformationForm = null;
         private static RecetteManager _recetteManagerForm = null;
         private static LotCreation _lotCreationForm = null;
+        private static LotManager _lotManagerForm = null;
 
         public static RecetteManager RecetteManagerForm { get => _recetteManagerForm; set => _recetteManagerForm = value; }
         public static RecetteCreation RecetteCreationForm { get => _recetteCreationForm; set => _recetteCreationForm = value; }
+        public static LotManager LotManagerForm { get => _lotManagerForm; set => _lotManagerForm = value; }
         #endregion
 
         #region Méthodes génériques de gestion des formulaires
@@ -150,38 +151,6 @@ namespace M3_Pratique
                 ref _recetteCreationForm,
                 () => new RecetteCreation(recette)
             );
-        }
-
-        #endregion
-
-        #region Méthodes d'événements
-
-        /// <summary>
-        /// Événement déclenché lors de l'ouverture d'un formulaire
-        /// </summary>
-        public static event Action<string> FormulaireOuvert;
-
-        /// <summary>
-        /// Événement déclenché lors de la fermeture d'un formulaire
-        /// </summary>
-        public static event Action<string> FormulaireFerme;
-
-        /// <summary>
-        /// Déclenche l'événement d'ouverture de formulaire
-        /// </summary>
-        /// <param name="nomFormulaire">Nom du formulaire</param>
-        private static void OnFormulaireOuvert(string nomFormulaire)
-        {
-            FormulaireOuvert?.Invoke(nomFormulaire);
-        }
-
-        /// <summary>
-        /// Déclenche l'événement de fermeture de formulaire
-        /// </summary>
-        /// <param name="nomFormulaire">Nom du formulaire</param>
-        private static void OnFormulaireFerme(string nomFormulaire)
-        {
-            FormulaireFerme?.Invoke(nomFormulaire);
         }
 
         #endregion

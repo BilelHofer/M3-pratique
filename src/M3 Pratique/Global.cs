@@ -1,19 +1,13 @@
-﻿/**
- * Gère la gestion gestion des données en mémoire
- * 
- */
-
-
-using M3_Pratique.Data;
-using System;
+﻿using M3_Pratique.Data;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Listes des données local de la db
+    /// et délégation vers la base de données
+    /// </summary>
     static class Global
     {
         #region Listes de données
@@ -40,7 +34,7 @@ namespace M3_Pratique
         public static List<Evenement> Evenements { get => _evenements; set => _evenements = value; }
         #endregion
 
-        #region Méthodes de récupération (délégation vers DatabaseService)
+        #region Méthodes de récupération
 
         /// <summary>
         /// Récupère les opérations de la base de données

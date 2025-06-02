@@ -6,9 +6,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M3_Pratique
@@ -21,11 +18,18 @@ namespace M3_Pratique
         [STAThread]
         static void Main()
         {
+            // récupération des données de la base de données
             Global.RecupererTout();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LotManager());
+
+
+            // Création de l'instance de la fenêtre principal
+            LotManager lotManager = new LotManager();
+
+            FormManager.LotManagerForm = lotManager;
+            Application.Run(lotManager);
         }
     }
 }
