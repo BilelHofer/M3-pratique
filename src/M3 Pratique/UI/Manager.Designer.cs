@@ -45,8 +45,6 @@
             this.labelTitreCreation = new System.Windows.Forms.Label();
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
-            this.LabelIconRefresh = new System.Windows.Forms.Label();
-            this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.groupBoxListeLots = new System.Windows.Forms.GroupBox();
             this.groupBoxListeRecette = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanelRecettes = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,6 +56,9 @@
             this.numericUpDownNbPiece = new System.Windows.Forms.NumericUpDown();
             this.labelNombrePiece = new System.Windows.Forms.Label();
             this.btnCreer = new System.Windows.Forms.Button();
+            this.LabelIconRefresh = new System.Windows.Forms.Label();
+            this.labelRechercherIcon = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.groupBoxListeLots.SuspendLayout();
@@ -119,7 +120,6 @@
             this.groupBoxLotSelectionner.TabIndex = 6;
             this.groupBoxLotSelectionner.TabStop = false;
             this.groupBoxLotSelectionner.Text = "Lot sélectionné";
-            this.groupBoxLotSelectionner.Visible = false;
             // 
             // buttonTypePiece
             // 
@@ -254,32 +254,11 @@
             this.labelLotNom.TabIndex = 0;
             this.labelLotNom.Text = "Nom";
             // 
-            // LabelIconRefresh
-            // 
-            this.LabelIconRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.LabelIconRefresh.Image = global::M3_Pratique.Properties.Resources.refresh;
-            this.LabelIconRefresh.Location = new System.Drawing.Point(300, 25);
-            this.LabelIconRefresh.Name = "LabelIconRefresh";
-            this.LabelIconRefresh.Size = new System.Drawing.Size(30, 30);
-            this.LabelIconRefresh.TabIndex = 8;
-            this.LabelIconRefresh.Click += new System.EventHandler(this.LabelIconRefresh_Click);
-            // 
-            // labelRechercherIcon
-            // 
-            this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
-            this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
-            this.labelRechercherIcon.Location = new System.Drawing.Point(240, 25);
-            this.labelRechercherIcon.Margin = new System.Windows.Forms.Padding(0);
-            this.labelRechercherIcon.Name = "labelRechercherIcon";
-            this.labelRechercherIcon.Size = new System.Drawing.Size(30, 30);
-            this.labelRechercherIcon.TabIndex = 3;
-            // 
             // groupBoxListeLots
             // 
             this.groupBoxListeLots.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBoxListeLots.Controls.Add(this.textBoxRechercheLot);
-            this.groupBoxListeLots.Controls.Add(this.LabelIconRefresh);
             this.groupBoxListeLots.Controls.Add(this.comboBoxEtat);
             this.groupBoxListeLots.Controls.Add(this.flowLayoutPanelLots);
             this.groupBoxListeLots.Controls.Add(this.labelRechercherIcon);
@@ -294,7 +273,9 @@
             // 
             this.groupBoxListeRecette.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxListeRecette.Controls.Add(this.label1);
             this.groupBoxListeRecette.Controls.Add(this.flowLayoutPanelRecettes);
+            this.groupBoxListeRecette.Controls.Add(this.LabelIconRefresh);
             this.groupBoxListeRecette.Controls.Add(this.textBoxRechercheRecette);
             this.groupBoxListeRecette.Controls.Add(this.btnCreerRecette);
             this.groupBoxListeRecette.Location = new System.Drawing.Point(1270, 10);
@@ -310,7 +291,7 @@
             this.flowLayoutPanelRecettes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanelRecettes.AutoScroll = true;
             this.flowLayoutPanelRecettes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(70, 200);
+            this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(36, 73);
             this.flowLayoutPanelRecettes.Name = "flowLayoutPanelRecettes";
             this.flowLayoutPanelRecettes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
             this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(443, 973);
@@ -320,7 +301,7 @@
             // 
             // textBoxRechercheRecette
             // 
-            this.textBoxRechercheRecette.Location = new System.Drawing.Point(50, 67);
+            this.textBoxRechercheRecette.Location = new System.Drawing.Point(36, 33);
             this.textBoxRechercheRecette.Name = "textBoxRechercheRecette";
             this.textBoxRechercheRecette.Size = new System.Drawing.Size(219, 22);
             this.textBoxRechercheRecette.TabIndex = 6;
@@ -328,11 +309,11 @@
             // 
             // btnCreerRecette
             // 
-            this.btnCreerRecette.Location = new System.Drawing.Point(286, 104);
+            this.btnCreerRecette.Location = new System.Drawing.Point(352, 28);
             this.btnCreerRecette.Name = "btnCreerRecette";
-            this.btnCreerRecette.Size = new System.Drawing.Size(86, 32);
+            this.btnCreerRecette.Size = new System.Drawing.Size(139, 32);
             this.btnCreerRecette.TabIndex = 5;
-            this.btnCreerRecette.Text = "Créer";
+            this.btnCreerRecette.Text = "Nouvelle Recette";
             this.btnCreerRecette.UseVisualStyleBackColor = true;
             this.btnCreerRecette.Click += new System.EventHandler(this.btnCreerRecette_Click);
             // 
@@ -401,9 +382,39 @@
             this.btnCreer.Name = "btnCreer";
             this.btnCreer.Size = new System.Drawing.Size(100, 50);
             this.btnCreer.TabIndex = 7;
-            this.btnCreer.Text = "Créer";
+            this.btnCreer.Text = "Créer un lot";
             this.btnCreer.UseVisualStyleBackColor = true;
             this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
+            // 
+            // LabelIconRefresh
+            // 
+            this.LabelIconRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.LabelIconRefresh.Image = global::M3_Pratique.Properties.Resources.refresh;
+            this.LabelIconRefresh.Location = new System.Drawing.Point(587, -2);
+            this.LabelIconRefresh.Name = "LabelIconRefresh";
+            this.LabelIconRefresh.Size = new System.Drawing.Size(30, 30);
+            this.LabelIconRefresh.TabIndex = 8;
+            this.LabelIconRefresh.Click += new System.EventHandler(this.LabelIconRefresh_Click);
+            // 
+            // labelRechercherIcon
+            // 
+            this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
+            this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
+            this.labelRechercherIcon.Location = new System.Drawing.Point(240, 25);
+            this.labelRechercherIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.labelRechercherIcon.Name = "labelRechercherIcon";
+            this.labelRechercherIcon.Size = new System.Drawing.Size(30, 30);
+            this.labelRechercherIcon.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
+            this.label1.Location = new System.Drawing.Point(258, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 30);
+            this.label1.TabIndex = 5;
             // 
             // Manager
             // 
@@ -465,6 +476,7 @@
         private System.Windows.Forms.Button btnCreerRecette;
         private System.Windows.Forms.TextBox textBoxRechercheRecette;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRecettes;
+        private System.Windows.Forms.Label label1;
     }
 }
 

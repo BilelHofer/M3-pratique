@@ -11,11 +11,8 @@ namespace M3_Pratique
         #region Instances des formulaires
         private static RecetteCreation _recetteCreationForm = null;
         private static RecetteInformation _recetteInformationForm = null;
-        private static RecetteManager _recetteManagerForm = null;
-        private static LotCreation _lotCreationForm = null;
         private static Manager _lotManagerForm = null;
 
-        public static RecetteManager RecetteManagerForm { get => _recetteManagerForm; set => _recetteManagerForm = value; }
         public static RecetteCreation RecetteCreationForm { get => _recetteCreationForm; set => _recetteCreationForm = value; }
         public static Manager LotManagerForm { get => _lotManagerForm; set => _lotManagerForm = value; }
         #endregion
@@ -72,45 +69,6 @@ namespace M3_Pratique
                 () => new RecetteInformation(recette),
                 (form) => form.MiseAJourInformation(recette)
             );
-        }
-
-        /// <summary>
-        /// Ouvre le formulaire de gestion des recettes
-        /// </summary>
-        public static void OuvrirRecetteManager()
-        {
-            _recetteManagerForm = OuvrirOuActiverFormulaire(
-                ref _recetteManagerForm,
-                () => new RecetteManager()
-            );
-        }
-
-        /// <summary>
-        /// Ouvre le formulaire de création de lot
-        /// </summary>
-        /// <param name="onLotAjoute">Action à exécuter quand un lot est ajouté</param>
-        public static void OuvrirLotCreation(Action onLotAjoute = null)
-        {
-            // Si le formulaire n'existe pas ou est fermé, on le crée
-            if (_lotCreationForm == null || _lotCreationForm.IsDisposed)
-            {
-                _lotCreationForm = new LotCreation();
-
-                // Abonnement à l'événement lors de la création
-                if (onLotAjoute != null)
-                {
-                    _lotCreationForm.LotAjoute += (s, e) => onLotAjoute();
-                }
-            }
-
-            // Gestion de l'état de la fenêtre
-            if (_lotCreationForm.WindowState == FormWindowState.Minimized)
-                _lotCreationForm.WindowState = FormWindowState.Normal;
-
-            // Affichage et activation
-            _lotCreationForm.Show();
-            _lotCreationForm.BringToFront();
-            _lotCreationForm.Activate();
         }
 
         /// <summary>

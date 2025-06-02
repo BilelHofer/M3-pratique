@@ -129,12 +129,6 @@
     <Compile Include="UI\Components\RecetteCarte.Designer.cs">
       <DependentUpon>RecetteCarte.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\LotCreation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\LotCreation.Designer.cs">
-      <DependentUpon>LotCreation.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,12 +157,6 @@
     <Compile Include="UI\RecetteInformation.Designer.cs">
       <DependentUpon>RecetteInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\RecetteManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\RecetteManager.Designer.cs">
-      <DependentUpon>RecetteManager.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UI\Components\EvenementCarte.resx">
       <DependentUpon>EvenementCarte.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,9 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\RecetteCarte.resx">
       <DependentUpon>RecetteCarte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\LotCreation.resx">
-      <DependentUpon>LotCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
@@ -206,9 +191,6 @@
     <EmbeddedResource Include="UI\RecetteInformation.resx">
       <DependentUpon>RecetteInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\RecetteManager.resx">
-      <DependentUpon>RecetteManager.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Config\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -231,6 +213,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\croix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

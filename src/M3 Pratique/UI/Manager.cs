@@ -26,6 +26,12 @@ namespace M3_Pratique
             // Affiche tous les lots
             AfficherLots(Global.Lots);
 
+            // masque les controle de la groupBox 
+            foreach (Control ctrl in groupBoxLotSelectionner.Controls)
+            {
+                ctrl.Visible = false;
+            }
+
             // Ajout des recettes à la selection
             BindingList<Recette> recettes = new BindingList<Recette>();
             for (int i = 0; i < Global.Recettes.Count; i++)
@@ -108,7 +114,12 @@ namespace M3_Pratique
             labelCreation.Text = lot.Date.ToString("dd/MM/yyyy");
             labelNbPiece.Text = lot.Quantite.ToString();
             buttonTypePiece.Text = lot.Recette.Nom;
-            groupBoxLotSelectionner.Visible = true;
+
+
+            foreach (Control ctrl in groupBoxLotSelectionner.Controls)
+            {
+                ctrl.Visible = true;
+            }
         }
 
         /// <summary>

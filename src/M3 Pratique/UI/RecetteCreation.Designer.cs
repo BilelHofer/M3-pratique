@@ -74,7 +74,7 @@
             // 
             this.btnCreerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnCreerRecette.Location = new System.Drawing.Point(921, 510);
+            this.btnCreerRecette.Location = new System.Drawing.Point(788, 42);
             this.btnCreerRecette.Name = "btnCreerRecette";
             this.btnCreerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnCreerRecette.TabIndex = 3;
@@ -96,7 +96,7 @@
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelOperation.Location = new System.Drawing.Point(20, 190);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
-            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(890, 400);
+            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(904, 714);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
             this.flowLayoutPanelOperation.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelOperation_Paint);
@@ -138,7 +138,7 @@
             // 
             this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(921, 424);
+            this.btnAnnuler.Location = new System.Drawing.Point(660, 42);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 80);
             this.btnAnnuler.TabIndex = 12;
@@ -149,7 +149,7 @@
             // labelSensHoraireOperation
             // 
             this.labelSensHoraireOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSensHoraireOperation.Location = new System.Drawing.Point(713, 167);
+            this.labelSensHoraireOperation.Location = new System.Drawing.Point(757, 167);
             this.labelSensHoraireOperation.Name = "labelSensHoraireOperation";
             this.labelSensHoraireOperation.Size = new System.Drawing.Size(90, 20);
             this.labelSensHoraireOperation.TabIndex = 42;
@@ -158,7 +158,7 @@
             // labelQuittanceOperation
             // 
             this.labelQuittanceOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelQuittanceOperation.Location = new System.Drawing.Point(613, 167);
+            this.labelQuittanceOperation.Location = new System.Drawing.Point(657, 167);
             this.labelQuittanceOperation.Name = "labelQuittanceOperation";
             this.labelQuittanceOperation.Size = new System.Drawing.Size(103, 20);
             this.labelQuittanceOperation.TabIndex = 41;
@@ -167,7 +167,7 @@
             // labelCycleVerinOperation
             // 
             this.labelCycleVerinOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCycleVerinOperation.Location = new System.Drawing.Point(513, 167);
+            this.labelCycleVerinOperation.Location = new System.Drawing.Point(557, 167);
             this.labelCycleVerinOperation.Name = "labelCycleVerinOperation";
             this.labelCycleVerinOperation.Size = new System.Drawing.Size(103, 20);
             this.labelCycleVerinOperation.TabIndex = 40;
@@ -176,7 +176,7 @@
             // labelTempsAttenteOperation
             // 
             this.labelTempsAttenteOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(383, 167);
+            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(427, 167);
             this.labelTempsAttenteOperation.Name = "labelTempsAttenteOperation";
             this.labelTempsAttenteOperation.Size = new System.Drawing.Size(131, 20);
             this.labelTempsAttenteOperation.TabIndex = 39;
@@ -185,7 +185,7 @@
             // labelPositionMoteurOperation
             // 
             this.labelPositionMoteurOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(243, 167);
+            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(287, 167);
             this.labelPositionMoteurOperation.Name = "labelPositionMoteurOperation";
             this.labelPositionMoteurOperation.Size = new System.Drawing.Size(141, 20);
             this.labelPositionMoteurOperation.TabIndex = 38;
@@ -194,7 +194,7 @@
             // labelNomOperation
             // 
             this.labelNomOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNomOperation.Location = new System.Drawing.Point(76, 167);
+            this.labelNomOperation.Location = new System.Drawing.Point(120, 167);
             this.labelNomOperation.Name = "labelNomOperation";
             this.labelNomOperation.Size = new System.Drawing.Size(172, 20);
             this.labelNomOperation.TabIndex = 36;
@@ -204,7 +204,7 @@
             // 
             this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnEnregistrerRecette.Location = new System.Drawing.Point(921, 510);
+            this.btnEnregistrerRecette.Location = new System.Drawing.Point(787, 42);
             this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
             this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnEnregistrerRecette.TabIndex = 43;
@@ -217,7 +217,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1103, 713);
+            this.ClientSize = new System.Drawing.Size(1158, 916);
             this.Controls.Add(this.btnEnregistrerRecette);
             this.Controls.Add(this.labelSensHoraireOperation);
             this.Controls.Add(this.labelQuittanceOperation);
