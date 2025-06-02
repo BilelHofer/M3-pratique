@@ -124,7 +124,7 @@ namespace M3_Pratique
                 }
 
                 // Mise à jours des formulaires
-                FormManager.RecetteManagerForm.AfficherRecettes(Global.Recettes);
+                // TODO FormManager.RecetteManagerForm.AfficherRecettes(Global.Recettes);
                 FormManager.OuvrirRecetteInformation(_recette);
 
                 this.Close();

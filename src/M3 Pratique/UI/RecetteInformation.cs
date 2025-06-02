@@ -78,7 +78,7 @@ namespace M3_Pratique
                 Global.SupprimerRecette(_recette.Id);
 
                 // Met à jour l'affichage des recettes
-                FormManager.RecetteManagerForm.AfficherRecettes(Global.Recettes);
+                // TO DO FormManager.RecetteManagerForm.AfficherRecettes(Global.Recettes);
 
                 // Ferme la fenêtre
                 this.Close();

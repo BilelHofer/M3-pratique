@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using M3_Pratique.UI.Components;
 
 namespace M3_Pratique
 {
@@ -213,10 +214,6 @@ namespace M3_Pratique
             }
         }
 
-        private void btnCreerRecette_Click(object sender, EventArgs e)
-        {
-            FormManager.OuvrirRecetteCreation(() => MiseAJourListeRecette());
-        }
 
         /// <summary>
         /// Met à jour la liste des recettes dans le comboBox
@@ -238,5 +235,67 @@ namespace M3_Pratique
         {
 
         }
+
+        private void groupBoxListeRecette_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreerRecette_Click(object sender, EventArgs e)
+        {
+            FormManager.OuvrirRecetteCreation(() => AfficherRecettes(Global.Recettes));
+        }
+
+
+        /// <summary>
+        /// Applique un filtre sur les recettes en fonction du texte saisi
+        /// </summary>
+        private void FiltrerRecettes()
+        {
+            var recherche = textBoxRechercheRecette.Text.ToLower();
+
+            var recettesFiltres = Global.Recettes
+                .Where(recette =>
+                    (string.IsNullOrWhiteSpace(recherche) || recette.Nom.ToLower().Contains(recherche)));
+
+            AfficherRecettes(recettesFiltres);
+        }
+
+        private void textBoxRechercheRecette_TextChanged(object sender, EventArgs e)
+        {
+            FiltrerRecettes();
+        }
+
+        /// <summary>
+        /// Affiche une collection de lots dans le FlowLayoutPanel.
+        /// </summary>
+        public void AfficherRecettes(IEnumerable<Recette> recettes)
+        {
+            flowLayoutPanelRecettes.Controls.Clear();
+
+            foreach (var recette in recettes)
+            {
+                var carte = new RecetteCarte(recette);
+                flowLayoutPanelRecettes.Controls.Add(carte);
+            }
+        }
+
+        private void numericUpDownNbPiece_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        /*
+        /// <summary>
+        /// Constructeur de la classe RecetteManager.
+        /// </summary>
+        public RecetteManager()
+        {
+            InitializeComponent();
+
+            AfficherRecettes(Global.Recettes);
+        }
+        */
     }
 }

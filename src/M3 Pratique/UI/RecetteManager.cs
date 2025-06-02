@@ -19,60 +19,17 @@ namespace M3_Pratique
     {
         
 
-        /// <summary>
-        /// Constructeur de la classe RecetteManager.
-        /// </summary>
-        public RecetteManager()
+ 
+
+
+
+
+
+
+
+        private void flowLayoutPanelRecettes_Paint(object sender, PaintEventArgs e)
         {
-            InitializeComponent();
 
-            AfficherRecettes(Global.Recettes);
-        }
-
-        /// <summary>
-        /// Affiche une collection de lots dans le FlowLayoutPanel.
-        /// </summary>
-        public void AfficherRecettes(IEnumerable<Recette> recettes)
-        {
-            flowLayoutPanelRecettes.Controls.Clear();
-
-            foreach (var recette in recettes)
-            {
-                var carte = new RecetteCarte(recette);
-                flowLayoutPanelRecettes.Controls.Add(carte);
-            }
-        }
-
-        /// <summary>
-        /// Applique un filtre sur les recettes en fonction du texte saisi
-        /// </summary>
-        private void FiltrerLots()
-        {
-            var recherche = textBoxRechercheRecette.Text.ToLower();
-
-            var recettesFiltres = Global.Recettes
-                .Where(recette =>
-                    (string.IsNullOrWhiteSpace(recherche) || recette.Nom.ToLower().Contains(recherche)));
-
-            AfficherRecettes(recettesFiltres);
-        }
-
-        /// <summary>
-        /// Réagit à la modification du texte de recherche pour filtrer les recettes.
-        /// </summary>
-        private void textBoxRechercheRecette_TextChanged(object sender, EventArgs e)
-        {
-            FiltrerLots();
-        }
-
-        /// <summary>
-        /// Crée la fenetre de création de recette ou la met en page principal
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCreerRecette_Click(object sender, EventArgs e)
-        {
-            FormManager.OuvrirRecetteCreation(() => AfficherRecettes(Global.Recettes));
         }
     }
 }

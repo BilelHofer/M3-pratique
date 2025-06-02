@@ -49,16 +49,19 @@
             this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.groupBoxListeLots = new System.Windows.Forms.GroupBox();
             this.groupBoxListeRecette = new System.Windows.Forms.GroupBox();
-            this.groupBoxCreationLot = new System.Windows.Forms.GroupBox();
             this.btnCreerRecette = new System.Windows.Forms.Button();
+            this.groupBoxCreationLot = new System.Windows.Forms.GroupBox();
             this.comboBoxRecette = new System.Windows.Forms.ComboBox();
             this.labelRecette = new System.Windows.Forms.Label();
             this.numericUpDownNbPiece = new System.Windows.Forms.NumericUpDown();
             this.labelNombrePiece = new System.Windows.Forms.Label();
             this.btnCreer = new System.Windows.Forms.Button();
+            this.textBoxRechercheRecette = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanelRecettes = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.groupBoxListeLots.SuspendLayout();
+            this.groupBoxListeRecette.SuspendLayout();
             this.groupBoxCreationLot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).BeginInit();
             this.SuspendLayout();
@@ -291,19 +294,32 @@
             // 
             this.groupBoxListeRecette.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxListeRecette.Controls.Add(this.flowLayoutPanelRecettes);
+            this.groupBoxListeRecette.Controls.Add(this.textBoxRechercheRecette);
+            this.groupBoxListeRecette.Controls.Add(this.btnCreerRecette);
             this.groupBoxListeRecette.Location = new System.Drawing.Point(1270, 10);
             this.groupBoxListeRecette.Name = "groupBoxListeRecette";
             this.groupBoxListeRecette.Size = new System.Drawing.Size(620, 1000);
             this.groupBoxListeRecette.TabIndex = 10;
             this.groupBoxListeRecette.TabStop = false;
             this.groupBoxListeRecette.Text = "Liste de recettes";
+            this.groupBoxListeRecette.Enter += new System.EventHandler(this.groupBoxListeRecette_Enter);
+            // 
+            // btnCreerRecette
+            // 
+            this.btnCreerRecette.Location = new System.Drawing.Point(286, 104);
+            this.btnCreerRecette.Name = "btnCreerRecette";
+            this.btnCreerRecette.Size = new System.Drawing.Size(86, 32);
+            this.btnCreerRecette.TabIndex = 5;
+            this.btnCreerRecette.Text = "Créer";
+            this.btnCreerRecette.UseVisualStyleBackColor = true;
+            this.btnCreerRecette.Click += new System.EventHandler(this.btnCreerRecette_Click);
             // 
             // groupBoxCreationLot
             // 
             this.groupBoxCreationLot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxCreationLot.Controls.Add(this.btnCreerRecette);
             this.groupBoxCreationLot.Controls.Add(this.comboBoxRecette);
             this.groupBoxCreationLot.Controls.Add(this.labelRecette);
             this.groupBoxCreationLot.Controls.Add(this.numericUpDownNbPiece);
@@ -316,16 +332,6 @@
             this.groupBoxCreationLot.TabStop = false;
             this.groupBoxCreationLot.Text = "Création d\'un lot";
             this.groupBoxCreationLot.Enter += new System.EventHandler(this.groupBoxCreationLot_Enter);
-            // 
-            // btnCreerRecette
-            // 
-            this.btnCreerRecette.Location = new System.Drawing.Point(350, 138);
-            this.btnCreerRecette.Name = "btnCreerRecette";
-            this.btnCreerRecette.Size = new System.Drawing.Size(24, 24);
-            this.btnCreerRecette.TabIndex = 13;
-            this.btnCreerRecette.Text = "+";
-            this.btnCreerRecette.UseVisualStyleBackColor = true;
-            this.btnCreerRecette.Click += new System.EventHandler(this.btnCreerRecette_Click);
             // 
             // comboBoxRecette
             // 
@@ -355,6 +361,7 @@
             this.numericUpDownNbPiece.Name = "numericUpDownNbPiece";
             this.numericUpDownNbPiece.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownNbPiece.TabIndex = 10;
+            this.numericUpDownNbPiece.ValueChanged += new System.EventHandler(this.numericUpDownNbPiece_ValueChanged);
             // 
             // labelNombrePiece
             // 
@@ -377,6 +384,26 @@
             this.btnCreer.UseVisualStyleBackColor = true;
             this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
+            // textBoxRechercheRecette
+            // 
+            this.textBoxRechercheRecette.Location = new System.Drawing.Point(50, 67);
+            this.textBoxRechercheRecette.Name = "textBoxRechercheRecette";
+            this.textBoxRechercheRecette.Size = new System.Drawing.Size(219, 22);
+            this.textBoxRechercheRecette.TabIndex = 6;
+            this.textBoxRechercheRecette.TextChanged += new System.EventHandler(this.textBoxRechercheRecette_TextChanged);
+            // 
+            // flowLayoutPanelRecettes
+            // 
+            this.flowLayoutPanelRecettes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanelRecettes.AutoScroll = true;
+            this.flowLayoutPanelRecettes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(96, 220);
+            this.flowLayoutPanelRecettes.Name = "flowLayoutPanelRecettes";
+            this.flowLayoutPanelRecettes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
+            this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(443, 973);
+            this.flowLayoutPanelRecettes.TabIndex = 8;
+            this.flowLayoutPanelRecettes.WrapContents = false;
+            // 
             // LotManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,6 +424,8 @@
             this.groupBoxEvenement.PerformLayout();
             this.groupBoxListeLots.ResumeLayout(false);
             this.groupBoxListeLots.PerformLayout();
+            this.groupBoxListeRecette.ResumeLayout(false);
+            this.groupBoxListeRecette.PerformLayout();
             this.groupBoxCreationLot.ResumeLayout(false);
             this.groupBoxCreationLot.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNbPiece)).EndInit();
@@ -427,12 +456,14 @@
         private System.Windows.Forms.GroupBox groupBoxListeLots;
         private System.Windows.Forms.GroupBox groupBoxListeRecette;
         private System.Windows.Forms.GroupBox groupBoxCreationLot;
-        private System.Windows.Forms.Button btnCreerRecette;
         private System.Windows.Forms.ComboBox comboBoxRecette;
         private System.Windows.Forms.Label labelRecette;
         private System.Windows.Forms.NumericUpDown numericUpDownNbPiece;
         private System.Windows.Forms.Label labelNombrePiece;
         private System.Windows.Forms.Button btnCreer;
+        private System.Windows.Forms.Button btnCreerRecette;
+        private System.Windows.Forms.TextBox textBoxRechercheRecette;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRecettes;
     }
 }
 
