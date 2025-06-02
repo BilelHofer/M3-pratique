@@ -23,28 +23,20 @@ namespace M3_Pratique
             // Prépare la combobox des états
             InitialiserComboBoxEtat();
 
-            // Affiche tous les lots
-            AfficherLots(Global.Lots);
-
             // masque les controle de la groupBox 
             foreach (Control ctrl in groupBoxLotSelectionner.Controls)
             {
                 ctrl.Visible = false;
             }
 
-            // Ajout des recettes à la selection
-            BindingList<Recette> recettes = new BindingList<Recette>();
-            for (int i = 0; i < Global.Recettes.Count; i++)
-            {
-                recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
-            }
-            comboBoxRecette.ValueMember = null;
-            comboBoxRecette.DisplayMember = "Nom";
-            comboBoxRecette.DataSource = recettes;
-
+            // met a jour la combobox
+            MiseAJourComboBoxRecette();
 
             // Affiche les recettes
             AfficherRecettes(Global.Recettes);
+
+            // Affiche tous les lots
+            AfficherLots(Global.Lots);
         }
 
         /// <summary>
@@ -179,11 +171,29 @@ namespace M3_Pratique
             {
                 // Prépare la combobox des états
                 InitialiserComboBoxEtat();
+
                 // Affiche tous les lots
                 AfficherLots(Global.Lots);
                 // Affiche toutes les recettes
                 AfficherRecettes(Global.Recettes);
+
+                // Mise a jour de la combobox recette
+                MiseAJourComboBoxRecette();
+
             }
+        }
+
+        private void MiseAJourComboBoxRecette()
+        {
+            // Ajout des recettes à la selection
+            BindingList<Recette> recettes = new BindingList<Recette>();
+            for (int i = 0; i < Global.Recettes.Count; i++)
+            {
+                recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
+            }
+            comboBoxRecette.ValueMember = null;
+            comboBoxRecette.DisplayMember = "Nom";
+            comboBoxRecette.DataSource = recettes;
         }
 
         private void buttonTypePiece_Click(object sender, EventArgs e)
@@ -227,24 +237,10 @@ namespace M3_Pratique
                 // Ajout de l'évènement pour mettre à jours la listes des lots
                 AfficherLots(Global.Lots);
 
+                // Sélectionne le dernier lot créé
+                SelectionCarte(flowLayoutPanelLots.Controls[0] as LotCarte, Global.Lots.Last().Id);
+
             }
-        }
-
-
-        /// <summary>
-        /// Met à jour la liste des recettes dans le comboBox
-        /// </summary>
-        private void MiseAJourListeRecette()
-        {
-            BindingList<Recette> recettes = new BindingList<Recette>();
-            for (int i = 0; i < Global.Recettes.Count; i++)
-            {
-                recettes.Add(new Recette(Global.Recettes[i].Id, Global.Recettes[i].Nom, Global.Recettes[i].DateCreation));
-            }
-            comboBoxRecette.DataSource = recettes;
-
-            // sélectionne la dernière recette
-            comboBoxRecette.SelectedIndex = comboBoxRecette.Items.Count - 1;
         }
 
         private void labelNombrePiece_Click(object sender, EventArgs e)
