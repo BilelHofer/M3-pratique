@@ -46,8 +46,11 @@
             this.labelTitreEtat = new System.Windows.Forms.Label();
             this.labelLotNom = new System.Windows.Forms.Label();
             this.groupBoxListeLots = new System.Windows.Forms.GroupBox();
+            this.labelRechercherIcon = new System.Windows.Forms.Label();
             this.groupBoxListeRecette = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanelRecettes = new System.Windows.Forms.FlowLayoutPanel();
+            this.LabelIconRefresh = new System.Windows.Forms.Label();
             this.textBoxRechercheRecette = new System.Windows.Forms.TextBox();
             this.btnCreerRecette = new System.Windows.Forms.Button();
             this.groupBoxCreationLot = new System.Windows.Forms.GroupBox();
@@ -56,9 +59,6 @@
             this.numericUpDownNbPiece = new System.Windows.Forms.NumericUpDown();
             this.labelNombrePiece = new System.Windows.Forms.Label();
             this.btnCreer = new System.Windows.Forms.Button();
-            this.LabelIconRefresh = new System.Windows.Forms.Label();
-            this.labelRechercherIcon = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxLotSelectionner.SuspendLayout();
             this.groupBoxEvenement.SuspendLayout();
             this.groupBoxListeLots.SuspendLayout();
@@ -269,6 +269,16 @@
             this.groupBoxListeLots.TabStop = false;
             this.groupBoxListeLots.Text = "Liste de lots";
             // 
+            // labelRechercherIcon
+            // 
+            this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
+            this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
+            this.labelRechercherIcon.Location = new System.Drawing.Point(240, 25);
+            this.labelRechercherIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.labelRechercherIcon.Name = "labelRechercherIcon";
+            this.labelRechercherIcon.Size = new System.Drawing.Size(30, 30);
+            this.labelRechercherIcon.TabIndex = 3;
+            // 
             // groupBoxListeRecette
             // 
             this.groupBoxListeRecette.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -286,32 +296,52 @@
             this.groupBoxListeRecette.Text = "Liste de recettes";
             this.groupBoxListeRecette.Enter += new System.EventHandler(this.groupBoxListeRecette_Enter);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
+            this.label1.Location = new System.Drawing.Point(270, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 30);
+            this.label1.TabIndex = 5;
+            // 
             // flowLayoutPanelRecettes
             // 
             this.flowLayoutPanelRecettes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanelRecettes.AutoScroll = true;
             this.flowLayoutPanelRecettes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(36, 73);
+            this.flowLayoutPanelRecettes.Location = new System.Drawing.Point(40, 100);
             this.flowLayoutPanelRecettes.Name = "flowLayoutPanelRecettes";
             this.flowLayoutPanelRecettes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
-            this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(443, 973);
+            this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(450, 850);
             this.flowLayoutPanelRecettes.TabIndex = 8;
             this.flowLayoutPanelRecettes.WrapContents = false;
             this.flowLayoutPanelRecettes.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelRecettes_Paint);
             // 
+            // LabelIconRefresh
+            // 
+            this.LabelIconRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.LabelIconRefresh.Image = global::M3_Pratique.Properties.Resources.refresh;
+            this.LabelIconRefresh.Location = new System.Drawing.Point(587, -2);
+            this.LabelIconRefresh.Name = "LabelIconRefresh";
+            this.LabelIconRefresh.Size = new System.Drawing.Size(30, 30);
+            this.LabelIconRefresh.TabIndex = 8;
+            this.LabelIconRefresh.Click += new System.EventHandler(this.LabelIconRefresh_Click);
+            // 
             // textBoxRechercheRecette
             // 
-            this.textBoxRechercheRecette.Location = new System.Drawing.Point(36, 33);
+            this.textBoxRechercheRecette.Location = new System.Drawing.Point(40, 39);
             this.textBoxRechercheRecette.Name = "textBoxRechercheRecette";
-            this.textBoxRechercheRecette.Size = new System.Drawing.Size(219, 22);
+            this.textBoxRechercheRecette.Size = new System.Drawing.Size(220, 22);
             this.textBoxRechercheRecette.TabIndex = 6;
             this.textBoxRechercheRecette.TextChanged += new System.EventHandler(this.textBoxRechercheRecette_TextChanged);
             // 
             // btnCreerRecette
             // 
-            this.btnCreerRecette.Location = new System.Drawing.Point(352, 28);
+            this.btnCreerRecette.Location = new System.Drawing.Point(350, 35);
             this.btnCreerRecette.Name = "btnCreerRecette";
-            this.btnCreerRecette.Size = new System.Drawing.Size(139, 32);
+            this.btnCreerRecette.Size = new System.Drawing.Size(150, 30);
             this.btnCreerRecette.TabIndex = 5;
             this.btnCreerRecette.Text = "Nouvelle Recette";
             this.btnCreerRecette.UseVisualStyleBackColor = true;
@@ -385,36 +415,6 @@
             this.btnCreer.Text = "Créer un lot";
             this.btnCreer.UseVisualStyleBackColor = true;
             this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
-            // 
-            // LabelIconRefresh
-            // 
-            this.LabelIconRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.LabelIconRefresh.Image = global::M3_Pratique.Properties.Resources.refresh;
-            this.LabelIconRefresh.Location = new System.Drawing.Point(587, -2);
-            this.LabelIconRefresh.Name = "LabelIconRefresh";
-            this.LabelIconRefresh.Size = new System.Drawing.Size(30, 30);
-            this.LabelIconRefresh.TabIndex = 8;
-            this.LabelIconRefresh.Click += new System.EventHandler(this.LabelIconRefresh_Click);
-            // 
-            // labelRechercherIcon
-            // 
-            this.labelRechercherIcon.BackColor = System.Drawing.Color.Transparent;
-            this.labelRechercherIcon.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
-            this.labelRechercherIcon.Location = new System.Drawing.Point(240, 25);
-            this.labelRechercherIcon.Margin = new System.Windows.Forms.Padding(0);
-            this.labelRechercherIcon.Name = "labelRechercherIcon";
-            this.labelRechercherIcon.Size = new System.Drawing.Size(30, 30);
-            this.labelRechercherIcon.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Image = global::M3_Pratique.Properties.Resources.rechercheIcon;
-            this.label1.Location = new System.Drawing.Point(258, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 30);
-            this.label1.TabIndex = 5;
             // 
             // Manager
             // 
