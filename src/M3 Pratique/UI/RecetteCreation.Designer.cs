@@ -212,7 +212,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1158, 916);
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.btnEnregistrerRecette);
             this.Controls.Add(this.labelSensHoraireOperation);
             this.Controls.Add(this.labelQuittanceOperation);

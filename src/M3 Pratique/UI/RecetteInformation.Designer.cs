@@ -49,7 +49,7 @@
             // 
             this.labelNomRecette.AutoSize = true;
             this.labelNomRecette.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNomRecette.Location = new System.Drawing.Point(12, 3);
+            this.labelNomRecette.Location = new System.Drawing.Point(15, 5);
             this.labelNomRecette.Name = "labelNomRecette";
             this.labelNomRecette.Size = new System.Drawing.Size(56, 25);
             this.labelNomRecette.TabIndex = 0;
@@ -58,7 +58,7 @@
             // labelInfoDate
             // 
             this.labelInfoDate.AutoSize = true;
-            this.labelInfoDate.Location = new System.Drawing.Point(13, 32);
+            this.labelInfoDate.Location = new System.Drawing.Point(15, 30);
             this.labelInfoDate.Name = "labelInfoDate";
             this.labelInfoDate.Size = new System.Drawing.Size(115, 16);
             this.labelInfoDate.TabIndex = 1;
@@ -67,7 +67,7 @@
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(129, 32);
+            this.labelDate.Location = new System.Drawing.Point(130, 30);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(34, 16);
             this.labelDate.TabIndex = 2;
@@ -75,6 +75,7 @@
             // 
             // groupBoxOpération
             // 
+            this.groupBoxOpération.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBoxOpération.Controls.Add(this.labelEnTeteSensHoraire);
             this.groupBoxOpération.Controls.Add(this.labelEnTeteQuittance);
             this.groupBoxOpération.Controls.Add(this.labelEnTeteCycleVerin);
@@ -83,11 +84,10 @@
             this.groupBoxOpération.Controls.Add(this.labelEnTeteNom);
             this.groupBoxOpération.Controls.Add(this.labelEnTeteNum);
             this.groupBoxOpération.Controls.Add(this.flowLayoutPanelOperations);
-            this.groupBoxOpération.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxOpération.Location = new System.Drawing.Point(10, 65);
+            this.groupBoxOpération.Location = new System.Drawing.Point(10, 60);
             this.groupBoxOpération.Name = "groupBoxOpération";
             this.groupBoxOpération.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.groupBoxOpération.Size = new System.Drawing.Size(874, 479);
+            this.groupBoxOpération.Size = new System.Drawing.Size(960, 480);
             this.groupBoxOpération.TabIndex = 3;
             this.groupBoxOpération.TabStop = false;
             this.groupBoxOpération.Text = "Opération";
@@ -95,7 +95,7 @@
             // labelEnTeteSensHoraire
             // 
             this.labelEnTeteSensHoraire.AutoSize = true;
-            this.labelEnTeteSensHoraire.Location = new System.Drawing.Point(761, 27);
+            this.labelEnTeteSensHoraire.Location = new System.Drawing.Point(761, 30);
             this.labelEnTeteSensHoraire.Name = "labelEnTeteSensHoraire";
             this.labelEnTeteSensHoraire.Size = new System.Drawing.Size(94, 16);
             this.labelEnTeteSensHoraire.TabIndex = 7;
@@ -104,7 +104,7 @@
             // labelEnTeteQuittance
             // 
             this.labelEnTeteQuittance.AutoSize = true;
-            this.labelEnTeteQuittance.Location = new System.Drawing.Point(668, 27);
+            this.labelEnTeteQuittance.Location = new System.Drawing.Point(670, 30);
             this.labelEnTeteQuittance.Name = "labelEnTeteQuittance";
             this.labelEnTeteQuittance.Size = new System.Drawing.Size(63, 16);
             this.labelEnTeteQuittance.TabIndex = 6;
@@ -113,7 +113,7 @@
             // labelEnTeteCycleVerin
             // 
             this.labelEnTeteCycleVerin.AutoSize = true;
-            this.labelEnTeteCycleVerin.Location = new System.Drawing.Point(558, 27);
+            this.labelEnTeteCycleVerin.Location = new System.Drawing.Point(560, 30);
             this.labelEnTeteCycleVerin.Name = "labelEnTeteCycleVerin";
             this.labelEnTeteCycleVerin.Size = new System.Drawing.Size(75, 16);
             this.labelEnTeteCycleVerin.TabIndex = 5;
@@ -122,7 +122,7 @@
             // labelEnTeteTempsAttente
             // 
             this.labelEnTeteTempsAttente.AutoSize = true;
-            this.labelEnTeteTempsAttente.Location = new System.Drawing.Point(391, 27);
+            this.labelEnTeteTempsAttente.Location = new System.Drawing.Point(390, 30);
             this.labelEnTeteTempsAttente.Name = "labelEnTeteTempsAttente";
             this.labelEnTeteTempsAttente.Size = new System.Drawing.Size(122, 16);
             this.labelEnTeteTempsAttente.TabIndex = 4;
@@ -131,7 +131,7 @@
             // labelEnTetePosMoteur
             // 
             this.labelEnTetePosMoteur.AutoSize = true;
-            this.labelEnTetePosMoteur.Location = new System.Drawing.Point(275, 27);
+            this.labelEnTetePosMoteur.Location = new System.Drawing.Point(275, 30);
             this.labelEnTetePosMoteur.Name = "labelEnTetePosMoteur";
             this.labelEnTetePosMoteur.Size = new System.Drawing.Size(99, 16);
             this.labelEnTetePosMoteur.TabIndex = 3;
@@ -140,7 +140,7 @@
             // labelEnTeteNom
             // 
             this.labelEnTeteNom.AutoSize = true;
-            this.labelEnTeteNom.Location = new System.Drawing.Point(85, 27);
+            this.labelEnTeteNom.Location = new System.Drawing.Point(85, 30);
             this.labelEnTeteNom.Name = "labelEnTeteNom";
             this.labelEnTeteNom.Size = new System.Drawing.Size(36, 16);
             this.labelEnTeteNom.TabIndex = 2;
@@ -149,7 +149,7 @@
             // labelEnTeteNum
             // 
             this.labelEnTeteNum.AutoSize = true;
-            this.labelEnTeteNum.Location = new System.Drawing.Point(13, 27);
+            this.labelEnTeteNum.Location = new System.Drawing.Point(15, 30);
             this.labelEnTeteNum.Name = "labelEnTeteNum";
             this.labelEnTeteNum.Size = new System.Drawing.Size(55, 16);
             this.labelEnTeteNum.TabIndex = 1;
@@ -157,18 +157,18 @@
             // 
             // flowLayoutPanelOperations
             // 
+            this.flowLayoutPanelOperations.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.flowLayoutPanelOperations.AutoScroll = true;
-            this.flowLayoutPanelOperations.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 46);
+            this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 50);
             this.flowLayoutPanelOperations.Name = "flowLayoutPanelOperations";
-            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(854, 430);
+            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(850, 430);
             this.flowLayoutPanelOperations.TabIndex = 0;
             // 
             // buttonModifierRecette
             // 
-            this.buttonModifierRecette.Location = new System.Drawing.Point(656, 3);
+            this.buttonModifierRecette.Location = new System.Drawing.Point(600, 5);
             this.buttonModifierRecette.Name = "buttonModifierRecette";
-            this.buttonModifierRecette.Size = new System.Drawing.Size(107, 33);
+            this.buttonModifierRecette.Size = new System.Drawing.Size(100, 30);
             this.buttonModifierRecette.TabIndex = 4;
             this.buttonModifierRecette.Text = "Modifier";
             this.buttonModifierRecette.UseVisualStyleBackColor = true;
@@ -177,9 +177,9 @@
             // 
             // buttonSupprimerRecette
             // 
-            this.buttonSupprimerRecette.Location = new System.Drawing.Point(776, 3);
+            this.buttonSupprimerRecette.Location = new System.Drawing.Point(750, 5);
             this.buttonSupprimerRecette.Name = "buttonSupprimerRecette";
-            this.buttonSupprimerRecette.Size = new System.Drawing.Size(107, 33);
+            this.buttonSupprimerRecette.Size = new System.Drawing.Size(100, 30);
             this.buttonSupprimerRecette.TabIndex = 5;
             this.buttonSupprimerRecette.Text = "Supprimer";
             this.buttonSupprimerRecette.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 554);
+            this.ClientSize = new System.Drawing.Size(982, 553);
             this.Controls.Add(this.buttonSupprimerRecette);
             this.Controls.Add(this.buttonModifierRecette);
             this.Controls.Add(this.groupBoxOpération);
