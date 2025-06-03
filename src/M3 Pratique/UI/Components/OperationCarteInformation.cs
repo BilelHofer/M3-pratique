@@ -19,7 +19,7 @@ namespace M3_Pratique.UI.Components
             labelNumero.Text = operation.Numero.ToString();
             labelNom.Text = operation.Nom;
             labelPositionMoteur.Text = operation.PositionMoteur.ToString();
-            labelTempsAttente.Text  = operation.TempsAttente.ToString();
+            labelTempsAttente.Text = operation.TempsAttente.ToString();
             checkBoxCycleVerin.Checked = operation.CycleVerin;
             checkBoxQuittance.Checked = operation.Quittance;
             checkBoxSensMoteur.Checked = operation.SensMoteur;

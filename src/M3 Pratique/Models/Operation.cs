@@ -12,7 +12,7 @@ namespace M3_Pratique
     /// </summary>
     public class Operation
     {
-        private long _id =-1;
+        private long _id = -1;
         private string _nom;
         private int _numero;
         private int _positionMoteur;

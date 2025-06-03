@@ -93,7 +93,7 @@ namespace M3_Pratique
         #endregion
 
         #region Méthodes de suppression
-        
+
         public static void SupprimerRecette(long idRecette)
         {
             // Supprime la recette de la base de données
