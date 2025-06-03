@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace M3_Pratique
 {
 
-    // Classe représentant une opération
+    /// <summary>
+    /// Classe représentant une opération.
+    /// </summary>
     public class Operation
     {
         private long _id =-1;
@@ -31,7 +33,18 @@ namespace M3_Pratique
         public long IdRecette { get => _idRecette; set => _idRecette = value; }
 
 
-        // Constructeur d'une opération
+        /// <summary>
+        /// Constructeur par défaut de la classe Operation.
+        /// </summary>
+        /// <param name="id">Id de l'opération</param>
+        /// <param name="nom">Nom de l'opération</param>
+        /// <param name="numero">Numéro de l'opération</param>
+        /// <param name="positionMoteur">Position du moteur</param>
+        /// <param name="tempsAttente">Temps d'attente</param>
+        /// <param name="cycleVerin">Cycle vérin</param>
+        /// <param name="quittance">Quittance</param>
+        /// <param name="sensMoteur">Sens du moteur</param>
+        /// <param name="idRecette">id de la recette liée</param>
         public Operation(long id, string nom, int numero, int positionMoteur, int tempsAttente, bool cycleVerin, bool quittance, bool sensMoteur, long idRecette)
         {
             Id = id;
