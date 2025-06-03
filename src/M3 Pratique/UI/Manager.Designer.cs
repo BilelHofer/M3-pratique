@@ -81,7 +81,6 @@
             this.flowLayoutPanelLots.Size = new System.Drawing.Size(500, 900);
             this.flowLayoutPanelLots.TabIndex = 1;
             this.flowLayoutPanelLots.WrapContents = false;
-            this.flowLayoutPanelLots.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelLots_Paint);
             // 
             // textBoxRechercheLot
             // 
@@ -172,7 +171,6 @@
             this.flowLayoutPanelEvenements.Size = new System.Drawing.Size(400, 330);
             this.flowLayoutPanelEvenements.TabIndex = 9;
             this.flowLayoutPanelEvenements.WrapContents = false;
-            this.flowLayoutPanelEvenements.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelEvenements_Paint);
             // 
             // labelNbPiece
             // 
@@ -294,7 +292,6 @@
             this.groupBoxListeRecette.TabIndex = 10;
             this.groupBoxListeRecette.TabStop = false;
             this.groupBoxListeRecette.Text = "Liste de recettes";
-            this.groupBoxListeRecette.Enter += new System.EventHandler(this.groupBoxListeRecette_Enter);
             // 
             // label1
             // 
@@ -317,7 +314,6 @@
             this.flowLayoutPanelRecettes.Size = new System.Drawing.Size(450, 850);
             this.flowLayoutPanelRecettes.TabIndex = 8;
             this.flowLayoutPanelRecettes.WrapContents = false;
-            this.flowLayoutPanelRecettes.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelRecettes_Paint);
             // 
             // LabelIconRefresh
             // 
@@ -363,7 +359,6 @@
             this.groupBoxCreationLot.TabIndex = 11;
             this.groupBoxCreationLot.TabStop = false;
             this.groupBoxCreationLot.Text = "Création d\'un lot";
-            this.groupBoxCreationLot.Enter += new System.EventHandler(this.groupBoxCreationLot_Enter);
             // 
             // comboBoxRecette
             // 
@@ -393,7 +388,6 @@
             this.numericUpDownNbPiece.Name = "numericUpDownNbPiece";
             this.numericUpDownNbPiece.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownNbPiece.TabIndex = 10;
-            this.numericUpDownNbPiece.ValueChanged += new System.EventHandler(this.numericUpDownNbPiece_ValueChanged);
             // 
             // labelNombrePiece
             // 
@@ -403,7 +397,6 @@
             this.labelNombrePiece.Size = new System.Drawing.Size(112, 16);
             this.labelNombrePiece.TabIndex = 9;
             this.labelNombrePiece.Text = "Nombre de pièce";
-            this.labelNombrePiece.Click += new System.EventHandler(this.labelNombrePiece_Click);
             // 
             // btnCreer
             // 

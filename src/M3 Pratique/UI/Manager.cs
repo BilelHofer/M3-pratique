@@ -9,12 +9,15 @@ using M3_Pratique.UI.Components;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Classe représentant le gestionnaire principal de l'application.
+    /// </summary>
     public partial class Manager : Form
     {
         private LotCarte carteSelectionnee = null;
 
         /// <summary>
-        /// Constructeur de la classe LotManager.
+        /// Constructeur de la classe Manager.
         /// </summary>
         public Manager()
         {
@@ -135,6 +138,8 @@ namespace M3_Pratique
         /// <summary>
         /// Réagit à la modification du texte de recherche pour filtrer les lots.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxRechercheLot_TextChanged(object sender, EventArgs e)
         {
             FiltrerLots();
@@ -143,6 +148,8 @@ namespace M3_Pratique
         /// <summary>
         /// Réagit au changement de sélection dans la ComboBox des états.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void comboBoxEtat_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltrerLots();
@@ -165,6 +172,11 @@ namespace M3_Pratique
             AfficherLots(lotsFiltres);
         }
 
+        /// <summary>
+        /// Rafraichit les données de l'application en récupérant les dernières informations depuis la base de données.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LabelIconRefresh_Click(object sender, EventArgs e)
         {
             if (Global.RecupererTout())
@@ -179,10 +191,12 @@ namespace M3_Pratique
 
                 // Mise a jour de la combobox recette
                 MiseAJourComboBoxRecette();
-
             }
         }
 
+        /// <summary>
+        /// Met à jour la ComboBox des recettes avec les recettes disponibles.
+        /// </summary>
         private void MiseAJourComboBoxRecette()
         {
             // Ajout des recettes à la selection
@@ -196,27 +210,21 @@ namespace M3_Pratique
             comboBoxRecette.DataSource = recettes;
         }
 
+        /// <summary>
+        /// Ouvre la fenêtre d'information de la recette associée au lot sélectionné.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonTypePiece_Click(object sender, EventArgs e)
         {
             FormManager.OuvrirRecetteInformation(carteSelectionnee.Lot.Recette);
         }
 
-        private void flowLayoutPanelLots_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanelEvenements_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBoxCreationLot_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        // Création d'un lot
+        /// <summary>
+        /// Crée un nouveau lot en fonction des informations saisies dans les champs.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreer_Click(object sender, EventArgs e)
         {
             // Vérification des champs
@@ -243,16 +251,11 @@ namespace M3_Pratique
             }
         }
 
-        private void labelNombrePiece_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBoxListeRecette_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Ouvre le formulaire de création de recette pour ajouter une nouvelle recette.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerRecette_Click(object sender, EventArgs e)
         {
             FormManager.OuvrirRecetteCreation(() => AfficherRecettes(Global.Recettes));
@@ -273,6 +276,11 @@ namespace M3_Pratique
             AfficherRecettes(recettesFiltres);
         }
 
+        /// <summary>
+        /// Réagit à la modification du texte de recherche pour filtrer les lots.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxRechercheRecette_TextChanged(object sender, EventArgs e)
         {
             FiltrerRecettes();
@@ -281,6 +289,7 @@ namespace M3_Pratique
         /// <summary>
         /// Affiche une collection de lots dans le FlowLayoutPanel.
         /// </summary>
+        /// <param name="recettes">Recette à afficher</param>
         public void AfficherRecettes(IEnumerable<Recette> recettes)
         {
             flowLayoutPanelRecettes.Controls.Clear();
@@ -291,18 +300,5 @@ namespace M3_Pratique
                 flowLayoutPanelRecettes.Controls.Add(carte);
             }
         }
-
-        private void numericUpDownNbPiece_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanelRecettes_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
     }
 }
