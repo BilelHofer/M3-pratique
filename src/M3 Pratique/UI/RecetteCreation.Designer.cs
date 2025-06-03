@@ -70,6 +70,7 @@
             // 
             // btnCreerRecette
             // 
+            this.btnCreerRecette.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCreerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreerRecette.ForeColor = System.Drawing.Color.Black;
             this.btnCreerRecette.Location = new System.Drawing.Point(1500, 800);
@@ -93,7 +94,7 @@
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelOperation.Location = new System.Drawing.Point(20, 190);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
-            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(900, 750);
+            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(931, 750);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
             // 
