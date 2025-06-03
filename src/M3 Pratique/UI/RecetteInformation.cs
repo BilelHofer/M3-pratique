@@ -1,22 +1,23 @@
 ﻿using M3_Pratique.UI.Components;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Classe représentant une fenêtre d'information sur une recette.
+    /// </summary>
     public partial class RecetteInformation : Form
     {
         private Recette _recette;
 
+        /// <summary>
+        /// Constructeur de la fenêtre d'information sur une recette.
+        /// </summary>
+        /// <param name="recette">Recette à afficher</param>
         public RecetteInformation(Recette recette)
         {
             InitializeComponent();

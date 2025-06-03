@@ -57,7 +57,6 @@
             this.labelTextRecette.Size = new System.Drawing.Size(141, 39);
             this.labelTextRecette.TabIndex = 0;
             this.labelTextRecette.Text = "Recette";
-            this.labelTextRecette.Click += new System.EventHandler(this.labelTextRecette_Click);
             // 
             // labelNomRecette
             // 
@@ -68,7 +67,6 @@
             this.labelNomRecette.Size = new System.Drawing.Size(54, 20);
             this.labelNomRecette.TabIndex = 1;
             this.labelNomRecette.Text = "Nom :";
-            this.labelNomRecette.Click += new System.EventHandler(this.labelNomRecette_Click);
             // 
             // btnCreerRecette
             // 
@@ -88,7 +86,6 @@
             this.textBoxNomRecette.Name = "textBoxNomRecette";
             this.textBoxNomRecette.Size = new System.Drawing.Size(188, 22);
             this.textBoxNomRecette.TabIndex = 4;
-            this.textBoxNomRecette.TextChanged += new System.EventHandler(this.textBoxNomRecette_TextChanged);
             // 
             // flowLayoutPanelOperation
             // 
@@ -99,7 +96,6 @@
             this.flowLayoutPanelOperation.Size = new System.Drawing.Size(904, 714);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
-            this.flowLayoutPanelOperation.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelOperation_Paint);
             // 
             // btnAjoutOperation
             // 
@@ -132,7 +128,6 @@
             this.labelOperation.Size = new System.Drawing.Size(82, 20);
             this.labelOperation.TabIndex = 8;
             this.labelOperation.Text = "Opération";
-            this.labelOperation.Click += new System.EventHandler(this.labelOperation_Click);
             // 
             // btnAnnuler
             // 
@@ -238,7 +233,6 @@
             this.Name = "RecetteCreation";
             this.Text = "Création d\'une recette";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.RecetteCreation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,19 +1,16 @@
 ﻿using M3_Pratique.Data;
-using Org.BouncyCastle.Asn1.BC;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Classe représentant une fenêtre de création ou de modification d'une recette.
+    /// </summary>
     public partial class RecetteCreation : Form
     {
         public event EventHandler RecetteAjoute;
@@ -22,6 +19,10 @@ namespace M3_Pratique
         private int nombreOperation = 0;
 
         List<OperationCarteEdit> operationCartes = new List<OperationCarteEdit>();
+
+        /// <summary>
+        /// Constructeur de la fenêtre de création d'une recette.
+        /// </summary>
         public RecetteCreation()
         {
             InitializeComponent();
@@ -32,6 +33,10 @@ namespace M3_Pratique
 
         }
 
+        /// <summary>
+        /// Constructeur de la fenêtre de modification d'une recette
+        /// </summary>
+        /// <param name="recette">La recette a modifier</param>
         public RecetteCreation(Recette recette)
         {
             InitializeComponent();
@@ -52,16 +57,11 @@ namespace M3_Pratique
             textBoxNomRecette.Text = recette.Nom;
         }
 
-        private void RecetteCreation_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelTextRecette_Click(object sender, EventArgs e)
-        {
-
-        }
-        // Création d'une recette
+        /// <summary>
+        /// Créer une recette
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreerRecette_Click(object sender, EventArgs e)
         {
             if (validationChamp())
@@ -79,6 +79,11 @@ namespace M3_Pratique
             }
         }
 
+        /// <summary>
+        /// Enregistre une recette
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonEnregistrerRecette_Click(object sender, EventArgs e)
         {
             if (validationChamp())
@@ -126,6 +131,10 @@ namespace M3_Pratique
             }
         }
 
+        /// <summary>
+        /// Valide les champs de la recette
+        /// </summary>
+        /// <returns></returns>
         private bool validationChamp()
         {
             // Vérification des champs (Regex pour enlever les espaces)
@@ -142,21 +151,11 @@ namespace M3_Pratique
             return true;
         }
 
-        private void labelNomRecette_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxNomRecette_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanelOperation_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Supprime la dernière opération
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSupprimerOperation_Click(object sender, EventArgs e)
         {
             if (flowLayoutPanelOperation.Controls.Count > 0)
@@ -168,6 +167,11 @@ namespace M3_Pratique
             nombreOperation--;
         }
 
+        /// <summary>
+        /// Ajoute une nouvelle opération
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAjoutOperation_Click(object sender, EventArgs e)
         {
             var carte = new OperationCarteEdit(nombreOperation);
@@ -180,11 +184,11 @@ namespace M3_Pratique
 
         }
 
-        private void labelOperation_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// ferme la fenêtre sans enregistrer les modifications.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAnnuler_Click(object sender, EventArgs e)
         {
             // Ferme la fenêtre
@@ -194,7 +198,7 @@ namespace M3_Pratique
         /// <summary>
         /// Monte le contrôle d'une position dans le FlowLayoutPanel.
         /// </summary>
-        /// <param name="control">Le contrôle à déplacer vers le haut.</param>
+        /// <param name="control">Opération à déplacer vers le haut.</param>
         public void OperationMonter(OperationCarteEdit control)
         {
             // Index courant dans la collection
@@ -220,6 +224,10 @@ namespace M3_Pratique
             flowLayoutPanelOperation.PerformLayout();
         }
 
+        /// <summary>
+        /// Descent l'opération d'une position dans le FlowLayoutPanel.
+        /// </summary>
+        /// <param name="control">Opération à descendre</param>
         public void OperationDescendre(OperationCarteEdit control)
         {
             // Index courant dans la collection
@@ -245,6 +253,10 @@ namespace M3_Pratique
             flowLayoutPanelOperation.PerformLayout();
         }
 
+        /// <summary>
+        /// Supprime une opération précise de la recette.
+        /// </summary>
+        /// <param name="control">Opération à supprimer</param>
         public void OperationSupprimer(OperationCarteEdit control)
         {
             // Supprime le contrôle du FlowLayoutPanel
