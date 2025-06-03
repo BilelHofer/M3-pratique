@@ -1,4 +1,4 @@
-﻿namespace M3_Pratique
+﻿namespace M3_Pratique.UI.Components
 {
     partial class OperationCarte
     {
@@ -28,102 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numericUpDownTempsAttente = new System.Windows.Forms.NumericUpDown();
+            this.labelNumero = new System.Windows.Forms.Label();
+            this.labelNom = new System.Windows.Forms.Label();
+            this.labelPositionMoteur = new System.Windows.Forms.Label();
+            this.labelTempsAttente = new System.Windows.Forms.Label();
             this.checkBoxCycleVerin = new System.Windows.Forms.CheckBox();
             this.checkBoxQuittance = new System.Windows.Forms.CheckBox();
-            this.textBoxNomOperation = new System.Windows.Forms.TextBox();
-            this.numericUpDownNumeroOperation = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownPositionMoteur = new System.Windows.Forms.NumericUpDown();
-            this.checkBoxSensHoraire = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempsAttente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroOperation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPositionMoteur)).BeginInit();
+            this.checkBoxSensMoteur = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // numericUpDownTempsAttente
+            // labelNumero
             // 
-            this.numericUpDownTempsAttente.Location = new System.Drawing.Point(410, 19);
-            this.numericUpDownTempsAttente.Name = "numericUpDownTempsAttente";
-            this.numericUpDownTempsAttente.Size = new System.Drawing.Size(110, 22);
-            this.numericUpDownTempsAttente.TabIndex = 1;
-            this.numericUpDownTempsAttente.ValueChanged += new System.EventHandler(this.numericUpDownTempsAttente_ValueChanged);
+            this.labelNumero.AutoSize = true;
+            this.labelNumero.Location = new System.Drawing.Point(13, 12);
+            this.labelNumero.Name = "labelNumero";
+            this.labelNumero.Size = new System.Drawing.Size(32, 16);
+            this.labelNumero.TabIndex = 0;
+            this.labelNumero.Text = "num";
+            // 
+            // labelNom
+            // 
+            this.labelNom.AutoSize = true;
+            this.labelNom.Location = new System.Drawing.Point(79, 12);
+            this.labelNom.MaximumSize = new System.Drawing.Size(187, 0);
+            this.labelNom.Name = "labelNom";
+            this.labelNom.Size = new System.Drawing.Size(36, 16);
+            this.labelNom.TabIndex = 1;
+            this.labelNom.Text = "Nom";
+            // 
+            // labelPositionMoteur
+            // 
+            this.labelPositionMoteur.AutoSize = true;
+            this.labelPositionMoteur.Location = new System.Drawing.Point(309, 12);
+            this.labelPositionMoteur.Name = "labelPositionMoteur";
+            this.labelPositionMoteur.Size = new System.Drawing.Size(72, 16);
+            this.labelPositionMoteur.TabIndex = 2;
+            this.labelPositionMoteur.Text = "PosMoteur";
+            // 
+            // labelTempsAttente
+            // 
+            this.labelTempsAttente.AutoSize = true;
+            this.labelTempsAttente.Location = new System.Drawing.Point(432, 12);
+            this.labelTempsAttente.Name = "labelTempsAttente";
+            this.labelTempsAttente.Size = new System.Drawing.Size(89, 16);
+            this.labelTempsAttente.TabIndex = 3;
+            this.labelTempsAttente.Text = "PosTempsAtt";
             // 
             // checkBoxCycleVerin
             // 
             this.checkBoxCycleVerin.AutoSize = true;
-            this.checkBoxCycleVerin.Location = new System.Drawing.Point(571, 21);
+            this.checkBoxCycleVerin.Enabled = false;
+            this.checkBoxCycleVerin.Location = new System.Drawing.Point(571, 11);
             this.checkBoxCycleVerin.Name = "checkBoxCycleVerin";
             this.checkBoxCycleVerin.Size = new System.Drawing.Size(18, 17);
-            this.checkBoxCycleVerin.TabIndex = 3;
+            this.checkBoxCycleVerin.TabIndex = 4;
             this.checkBoxCycleVerin.UseVisualStyleBackColor = true;
             // 
             // checkBoxQuittance
             // 
             this.checkBoxQuittance.AutoSize = true;
-            this.checkBoxQuittance.Location = new System.Drawing.Point(671, 21);
+            this.checkBoxQuittance.Enabled = false;
+            this.checkBoxQuittance.Location = new System.Drawing.Point(676, 11);
             this.checkBoxQuittance.Name = "checkBoxQuittance";
             this.checkBoxQuittance.Size = new System.Drawing.Size(18, 17);
-            this.checkBoxQuittance.TabIndex = 4;
+            this.checkBoxQuittance.TabIndex = 5;
             this.checkBoxQuittance.UseVisualStyleBackColor = true;
             // 
-            // textBoxNomOperation
+            // checkBoxSensMoteur
             // 
-            this.textBoxNomOperation.Location = new System.Drawing.Point(0, 19);
-            this.textBoxNomOperation.Name = "textBoxNomOperation";
-            this.textBoxNomOperation.Size = new System.Drawing.Size(150, 22);
-            this.textBoxNomOperation.TabIndex = 5;
-            // 
-            // numericUpDownNumeroOperation
-            // 
-            this.numericUpDownNumeroOperation.Location = new System.Drawing.Point(170, 19);
-            this.numericUpDownNumeroOperation.Name = "numericUpDownNumeroOperation";
-            this.numericUpDownNumeroOperation.Size = new System.Drawing.Size(80, 22);
-            this.numericUpDownNumeroOperation.TabIndex = 7;
-            // 
-            // numericUpDownPositionMoteur
-            // 
-            this.numericUpDownPositionMoteur.Location = new System.Drawing.Point(270, 19);
-            this.numericUpDownPositionMoteur.Name = "numericUpDownPositionMoteur";
-            this.numericUpDownPositionMoteur.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownPositionMoteur.TabIndex = 10;
-            // 
-            // checkBoxSensHoraire
-            // 
-            this.checkBoxSensHoraire.AutoSize = true;
-            this.checkBoxSensHoraire.Location = new System.Drawing.Point(771, 21);
-            this.checkBoxSensHoraire.Name = "checkBoxSensHoraire";
-            this.checkBoxSensHoraire.Size = new System.Drawing.Size(18, 17);
-            this.checkBoxSensHoraire.TabIndex = 15;
-            this.checkBoxSensHoraire.UseVisualStyleBackColor = true;
+            this.checkBoxSensMoteur.AutoSize = true;
+            this.checkBoxSensMoteur.Enabled = false;
+            this.checkBoxSensMoteur.Location = new System.Drawing.Point(789, 11);
+            this.checkBoxSensMoteur.Name = "checkBoxSensMoteur";
+            this.checkBoxSensMoteur.Size = new System.Drawing.Size(18, 17);
+            this.checkBoxSensMoteur.TabIndex = 6;
+            this.checkBoxSensMoteur.UseVisualStyleBackColor = true;
             // 
             // OperationCarte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.checkBoxSensHoraire);
-            this.Controls.Add(this.numericUpDownPositionMoteur);
-            this.Controls.Add(this.numericUpDownNumeroOperation);
-            this.Controls.Add(this.textBoxNomOperation);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.checkBoxSensMoteur);
             this.Controls.Add(this.checkBoxQuittance);
             this.Controls.Add(this.checkBoxCycleVerin);
-            this.Controls.Add(this.numericUpDownTempsAttente);
+            this.Controls.Add(this.labelTempsAttente);
+            this.Controls.Add(this.labelPositionMoteur);
+            this.Controls.Add(this.labelNom);
+            this.Controls.Add(this.labelNumero);
+            this.MinimumSize = new System.Drawing.Size(520, 0);
             this.Name = "OperationCarte";
-            this.Size = new System.Drawing.Size(830, 60);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempsAttente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumeroOperation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPositionMoteur)).EndInit();
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Size = new System.Drawing.Size(820, 56);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.NumericUpDown numericUpDownTempsAttente;
+
+        private System.Windows.Forms.Label labelNumero;
+        private System.Windows.Forms.Label labelNom;
+        private System.Windows.Forms.Label labelPositionMoteur;
+        private System.Windows.Forms.Label labelTempsAttente;
         private System.Windows.Forms.CheckBox checkBoxCycleVerin;
         private System.Windows.Forms.CheckBox checkBoxQuittance;
-        private System.Windows.Forms.TextBox textBoxNomOperation;
-        private System.Windows.Forms.NumericUpDown numericUpDownNumeroOperation;
-        private System.Windows.Forms.NumericUpDown numericUpDownPositionMoteur;
-        private System.Windows.Forms.CheckBox checkBoxSensHoraire;
+        private System.Windows.Forms.CheckBox checkBoxSensMoteur;
     }
 }

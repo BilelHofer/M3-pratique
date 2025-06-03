@@ -17,6 +17,7 @@ namespace M3_Pratique
         private DateTime _date;
         private long _idEtat;
         private long _idRecette;
+        private Recette _recette;
 
         public long Id { get => _id; set => _id = value; }
         public string Nom { get => _nom; set => _nom = value; }
@@ -24,9 +25,10 @@ namespace M3_Pratique
         public DateTime Date { get => _date; set => _date = value; }
         public long IdEtat { get => _idEtat; set => _idEtat = value; }
         public long IdRecette { get => _idRecette; set => _idRecette = value; }
+        public Recette Recette { get => _recette; set => _recette = value; }
 
         // Constructure d'un lot
-        public Lot(long id, string nom, int quantite, DateTime date, long idEtat, long idRecette)
+        public Lot(long id, string nom, int quantite, DateTime date, long idEtat, long idRecette, Recette recette)
         {
             Id = id;
             Nom = nom;
@@ -34,6 +36,7 @@ namespace M3_Pratique
             Date = date;
             IdEtat = idEtat;
             IdRecette = idRecette;
+            Recette = recette;
         }
     }
 }

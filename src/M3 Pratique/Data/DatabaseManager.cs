@@ -19,7 +19,7 @@ namespace M3_Pratique
         {
             try
             {
-                _connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ServerMySQLLocal"].ConnectionString);
+                _connection = new MySqlConnection(ConfigurationManager.ConnectionStrings["ServerMySQL"].ConnectionString);
                 if (_connection.State == ConnectionState.Closed)
                     _connection.Open();
             }
@@ -32,10 +32,13 @@ namespace M3_Pratique
 
         /// <summary>
         /// Méthode pour récupérer la connexion à la base de données.
+        /// Si la connexion est null, ouvre la connexion
         /// </summary>
-        /// <returns></returns>
+        /// <returns>La connexion</returns>
         public static MySqlConnection GetConnexion()
         {
+            if (_connection == null)
+                ConnectDB();
             return _connection;
         }
 

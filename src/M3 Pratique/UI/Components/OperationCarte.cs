@@ -1,32 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace M3_Pratique
+namespace M3_Pratique.UI.Components
 {
+    /// <summary>
+    /// Classe représentant une opération dans l'interface utilisateur.
+    /// </summary>
     public partial class OperationCarte : UserControl
     {
-        public OperationCarte()
+        /// <summary>
+        /// Constructeur de la carte d'opération.
+        /// </summary>
+        /// <param name="operation">Opération afficher</param>
+        public OperationCarte(Operation operation)
         {
             InitializeComponent();
-        }
 
-        private void numericUpDownTempsAttente_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        public Operation GetOperation()
-        {
-            // Récupération de l'opération
-            Operation operation = new Operation(-1, textBoxNomOperation.Text, (int)numericUpDownNumeroOperation.Value, (int)numericUpDownPositionMoteur.Value, (int)numericUpDownTempsAttente.Value, checkBoxCycleVerin.Checked, checkBoxQuittance.Checked, checkBoxSensHoraire.Checked, -1);
-            return operation;
+            // Ajout des champs
+            labelNumero.Text = operation.Numero.ToString();
+            labelNom.Text = operation.Nom;
+            labelPositionMoteur.Text = operation.PositionMoteur.ToString();
+            labelTempsAttente.Text  = operation.TempsAttente.ToString();
+            checkBoxCycleVerin.Checked = operation.CycleVerin;
+            checkBoxQuittance.Checked = operation.Quittance;
+            checkBoxSensMoteur.Checked = operation.SensMoteur;
         }
     }
 }

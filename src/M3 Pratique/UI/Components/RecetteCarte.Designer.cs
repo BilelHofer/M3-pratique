@@ -52,6 +52,7 @@
             this.Name = "RecetteCarte";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Size = new System.Drawing.Size(401, 47);
+            this.Click += new System.EventHandler(this.RecetteCarte_Click);
             this.ResumeLayout(false);
 
         }

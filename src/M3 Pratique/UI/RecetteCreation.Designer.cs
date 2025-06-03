@@ -30,7 +30,7 @@
         {
             this.labelTextRecette = new System.Windows.Forms.Label();
             this.labelNomRecette = new System.Windows.Forms.Label();
-            this.btnEnregistrerRecette = new System.Windows.Forms.Button();
+            this.btnCreerRecette = new System.Windows.Forms.Button();
             this.textBoxNomRecette = new System.Windows.Forms.TextBox();
             this.flowLayoutPanelOperation = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAjoutOperation = new System.Windows.Forms.Button();
@@ -42,8 +42,8 @@
             this.labelCycleVerinOperation = new System.Windows.Forms.Label();
             this.labelTempsAttenteOperation = new System.Windows.Forms.Label();
             this.labelPositionMoteurOperation = new System.Windows.Forms.Label();
-            this.labelNumeroOperation = new System.Windows.Forms.Label();
             this.labelNomOperation = new System.Windows.Forms.Label();
+            this.btnEnregistrerRecette = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTextRecette
@@ -57,7 +57,6 @@
             this.labelTextRecette.Size = new System.Drawing.Size(141, 39);
             this.labelTextRecette.TabIndex = 0;
             this.labelTextRecette.Text = "Recette";
-            this.labelTextRecette.Click += new System.EventHandler(this.labelTextRecette_Click);
             // 
             // labelNomRecette
             // 
@@ -68,19 +67,18 @@
             this.labelNomRecette.Size = new System.Drawing.Size(54, 20);
             this.labelNomRecette.TabIndex = 1;
             this.labelNomRecette.Text = "Nom :";
-            this.labelNomRecette.Click += new System.EventHandler(this.labelNomRecette_Click);
             // 
-            // btnEnregistrerRecette
+            // btnCreerRecette
             // 
-            this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnEnregistrerRecette.Location = new System.Drawing.Point(856, 510);
-            this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
-            this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
-            this.btnEnregistrerRecette.TabIndex = 3;
-            this.btnEnregistrerRecette.Text = "Enregistrer";
-            this.btnEnregistrerRecette.UseVisualStyleBackColor = true;
-            this.btnEnregistrerRecette.Click += new System.EventHandler(this.btnEnregistrerRecette_Click);
+            this.btnCreerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreerRecette.ForeColor = System.Drawing.Color.Black;
+            this.btnCreerRecette.Location = new System.Drawing.Point(788, 42);
+            this.btnCreerRecette.Name = "btnCreerRecette";
+            this.btnCreerRecette.Size = new System.Drawing.Size(100, 80);
+            this.btnCreerRecette.TabIndex = 3;
+            this.btnCreerRecette.Text = "Créer";
+            this.btnCreerRecette.UseVisualStyleBackColor = true;
+            this.btnCreerRecette.Click += new System.EventHandler(this.btnCreerRecette_Click);
             // 
             // textBoxNomRecette
             // 
@@ -88,7 +86,6 @@
             this.textBoxNomRecette.Name = "textBoxNomRecette";
             this.textBoxNomRecette.Size = new System.Drawing.Size(188, 22);
             this.textBoxNomRecette.TabIndex = 4;
-            this.textBoxNomRecette.TextChanged += new System.EventHandler(this.textBoxNomRecette_TextChanged);
             // 
             // flowLayoutPanelOperation
             // 
@@ -96,10 +93,9 @@
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelOperation.Location = new System.Drawing.Point(20, 190);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
-            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(830, 400);
+            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(904, 714);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
-            this.flowLayoutPanelOperation.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelOperation_Paint);
             // 
             // btnAjoutOperation
             // 
@@ -132,13 +128,12 @@
             this.labelOperation.Size = new System.Drawing.Size(82, 20);
             this.labelOperation.TabIndex = 8;
             this.labelOperation.Text = "Opération";
-            this.labelOperation.Click += new System.EventHandler(this.labelOperation_Click);
             // 
             // btnAnnuler
             // 
             this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(856, 424);
+            this.btnAnnuler.Location = new System.Drawing.Point(660, 42);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 80);
             this.btnAnnuler.TabIndex = 12;
@@ -149,7 +144,7 @@
             // labelSensHoraireOperation
             // 
             this.labelSensHoraireOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSensHoraireOperation.Location = new System.Drawing.Point(760, 167);
+            this.labelSensHoraireOperation.Location = new System.Drawing.Point(757, 167);
             this.labelSensHoraireOperation.Name = "labelSensHoraireOperation";
             this.labelSensHoraireOperation.Size = new System.Drawing.Size(90, 20);
             this.labelSensHoraireOperation.TabIndex = 42;
@@ -158,69 +153,72 @@
             // labelQuittanceOperation
             // 
             this.labelQuittanceOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelQuittanceOperation.Location = new System.Drawing.Point(660, 167);
+            this.labelQuittanceOperation.Location = new System.Drawing.Point(657, 167);
             this.labelQuittanceOperation.Name = "labelQuittanceOperation";
-            this.labelQuittanceOperation.Size = new System.Drawing.Size(80, 20);
+            this.labelQuittanceOperation.Size = new System.Drawing.Size(103, 20);
             this.labelQuittanceOperation.TabIndex = 41;
             this.labelQuittanceOperation.Text = "Quittance";
             // 
             // labelCycleVerinOperation
             // 
             this.labelCycleVerinOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCycleVerinOperation.Location = new System.Drawing.Point(560, 167);
+            this.labelCycleVerinOperation.Location = new System.Drawing.Point(557, 167);
             this.labelCycleVerinOperation.Name = "labelCycleVerinOperation";
-            this.labelCycleVerinOperation.Size = new System.Drawing.Size(80, 20);
+            this.labelCycleVerinOperation.Size = new System.Drawing.Size(103, 20);
             this.labelCycleVerinOperation.TabIndex = 40;
             this.labelCycleVerinOperation.Text = "Cycle vérin";
             // 
             // labelTempsAttenteOperation
             // 
             this.labelTempsAttenteOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(430, 167);
+            this.labelTempsAttenteOperation.Location = new System.Drawing.Point(427, 167);
             this.labelTempsAttenteOperation.Name = "labelTempsAttenteOperation";
-            this.labelTempsAttenteOperation.Size = new System.Drawing.Size(110, 20);
+            this.labelTempsAttenteOperation.Size = new System.Drawing.Size(131, 20);
             this.labelTempsAttenteOperation.TabIndex = 39;
             this.labelTempsAttenteOperation.Text = "Temps d\'attente";
             // 
             // labelPositionMoteurOperation
             // 
             this.labelPositionMoteurOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(290, 167);
+            this.labelPositionMoteurOperation.Location = new System.Drawing.Point(287, 167);
             this.labelPositionMoteurOperation.Name = "labelPositionMoteurOperation";
-            this.labelPositionMoteurOperation.Size = new System.Drawing.Size(120, 20);
+            this.labelPositionMoteurOperation.Size = new System.Drawing.Size(141, 20);
             this.labelPositionMoteurOperation.TabIndex = 38;
             this.labelPositionMoteurOperation.Text = "Position du moteur";
-            // 
-            // labelNumeroOperation
-            // 
-            this.labelNumeroOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNumeroOperation.Location = new System.Drawing.Point(190, 167);
-            this.labelNumeroOperation.Name = "labelNumeroOperation";
-            this.labelNumeroOperation.Size = new System.Drawing.Size(80, 20);
-            this.labelNumeroOperation.TabIndex = 37;
-            this.labelNumeroOperation.Text = "Numéro";
             // 
             // labelNomOperation
             // 
             this.labelNomOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNomOperation.Location = new System.Drawing.Point(20, 167);
+            this.labelNomOperation.Location = new System.Drawing.Point(120, 167);
             this.labelNomOperation.Name = "labelNomOperation";
-            this.labelNomOperation.Size = new System.Drawing.Size(150, 20);
+            this.labelNomOperation.Size = new System.Drawing.Size(172, 20);
             this.labelNomOperation.TabIndex = 36;
             this.labelNomOperation.Text = "Nom                                     ";
+            // 
+            // btnEnregistrerRecette
+            // 
+            this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
+            this.btnEnregistrerRecette.Location = new System.Drawing.Point(787, 42);
+            this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
+            this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
+            this.btnEnregistrerRecette.TabIndex = 43;
+            this.btnEnregistrerRecette.Text = "Enregistrer";
+            this.btnEnregistrerRecette.UseVisualStyleBackColor = true;
+            this.btnEnregistrerRecette.Click += new System.EventHandler(this.buttonEnregistrerRecette_Click);
             // 
             // RecetteCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1103, 713);
+            this.ClientSize = new System.Drawing.Size(1158, 916);
+            this.Controls.Add(this.btnEnregistrerRecette);
             this.Controls.Add(this.labelSensHoraireOperation);
             this.Controls.Add(this.labelQuittanceOperation);
             this.Controls.Add(this.labelCycleVerinOperation);
             this.Controls.Add(this.labelTempsAttenteOperation);
             this.Controls.Add(this.labelPositionMoteurOperation);
-            this.Controls.Add(this.labelNumeroOperation);
             this.Controls.Add(this.labelNomOperation);
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.labelOperation);
@@ -228,13 +226,13 @@
             this.Controls.Add(this.btnAjoutOperation);
             this.Controls.Add(this.flowLayoutPanelOperation);
             this.Controls.Add(this.textBoxNomRecette);
-            this.Controls.Add(this.btnEnregistrerRecette);
+            this.Controls.Add(this.btnCreerRecette);
             this.Controls.Add(this.labelNomRecette);
             this.Controls.Add(this.labelTextRecette);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RecetteCreation";
             this.Text = "Création d\'une recette";
-            this.Load += new System.EventHandler(this.RecetteCreation_Load);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,7 +242,7 @@
 
         private System.Windows.Forms.Label labelTextRecette;
         private System.Windows.Forms.Label labelNomRecette;
-        private System.Windows.Forms.Button btnEnregistrerRecette;
+        private System.Windows.Forms.Button btnCreerRecette;
         private System.Windows.Forms.TextBox textBoxNomRecette;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOperation;
         private System.Windows.Forms.Button btnAjoutOperation;
@@ -256,7 +254,7 @@
         private System.Windows.Forms.Label labelCycleVerinOperation;
         private System.Windows.Forms.Label labelTempsAttenteOperation;
         private System.Windows.Forms.Label labelPositionMoteurOperation;
-        private System.Windows.Forms.Label labelNumeroOperation;
         private System.Windows.Forms.Label labelNomOperation;
+        private System.Windows.Forms.Button btnEnregistrerRecette;
     }
 }

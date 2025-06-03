@@ -98,7 +98,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseManager.cs" />
+    <Compile Include="Data\DatabaseManager.cs" />
+    <Compile Include="Data\DatabaseService.cs" />
+    <Compile Include="FormManager.cs" />
     <Compile Include="Models\Etat.cs" />
     <Compile Include="Models\Evenement.cs" />
     <Compile Include="UI\Components\EvenementCarte.cs">
@@ -115,30 +117,30 @@
     <Compile Include="UI\Components\LotCarte.Designer.cs">
       <DependentUpon>LotCarte.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\OperationCarte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Components\OperationCarte.Designer.cs">
+      <DependentUpon>OperationCarte.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\RecetteCarte.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UI\Components\RecetteCarte.Designer.cs">
       <DependentUpon>RecetteCarte.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\LotCreation.cs">
+    <Compile Include="UI\Manager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\LotCreation.Designer.cs">
-      <DependentUpon>LotCreation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\LotManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\LotManager.Designer.cs">
-      <DependentUpon>LotManager.cs</DependentUpon>
+    <Compile Include="UI\Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Operation.cs" />
-    <Compile Include="UI\Components\OperationCarte.cs">
+    <Compile Include="UI\Components\OperationCarteEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Components\OperationCarte.Designer.cs">
-      <DependentUpon>OperationCarte.cs</DependentUpon>
+    <Compile Include="UI\Components\OperationCarteEdit.Designer.cs">
+      <DependentUpon>OperationCarteEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,29 +157,23 @@
     <Compile Include="UI\RecetteInformation.Designer.cs">
       <DependentUpon>RecetteInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\RecetteManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\RecetteManager.Designer.cs">
-      <DependentUpon>RecetteManager.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UI\Components\EvenementCarte.resx">
       <DependentUpon>EvenementCarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\LotCarte.resx">
       <DependentUpon>LotCarte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\OperationCarte.resx">
+      <DependentUpon>OperationCarte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\RecetteCarte.resx">
       <DependentUpon>RecetteCarte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\LotCreation.resx">
-      <DependentUpon>LotCreation.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\LotManager.resx">
-      <DependentUpon>LotManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Components\OperationCarte.resx">
-      <DependentUpon>OperationCarte.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Components\OperationCarteEdit.resx">
+      <DependentUpon>OperationCarteEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\RecetteInformation.resx">
       <DependentUpon>RecetteInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\RecetteManager.resx">
-      <DependentUpon>RecetteManager.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Config\packages.config" />
     <None Include="Properties\Settings.settings">
@@ -217,6 +210,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\croix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace M3_Pratique
 {
+    /// <summary>
+    /// Classe représentant une carte d'événement dans l'interface utilisateur.
+    /// </summary>
     public partial class EvenementCarte : UserControl
     {
+        /// <summary>
+        /// Constructeur de la carte d'événement.
+        /// </summary>
+        /// <param name="evenement">Événement afficher</param>
         public EvenementCarte(Evenement evenement)
         {
             InitializeComponent();
