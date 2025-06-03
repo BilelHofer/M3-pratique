@@ -75,7 +75,7 @@
             // 
             // groupBoxOpération
             // 
-            this.groupBoxOpération.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBoxOpération.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBoxOpération.Controls.Add(this.labelEnTeteSensHoraire);
             this.groupBoxOpération.Controls.Add(this.labelEnTeteQuittance);
             this.groupBoxOpération.Controls.Add(this.labelEnTeteCycleVerin);
@@ -87,7 +87,7 @@
             this.groupBoxOpération.Location = new System.Drawing.Point(10, 60);
             this.groupBoxOpération.Name = "groupBoxOpération";
             this.groupBoxOpération.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.groupBoxOpération.Size = new System.Drawing.Size(960, 480);
+            this.groupBoxOpération.Size = new System.Drawing.Size(960, 550);
             this.groupBoxOpération.TabIndex = 3;
             this.groupBoxOpération.TabStop = false;
             this.groupBoxOpération.Text = "Opération";
@@ -157,11 +157,11 @@
             // 
             // flowLayoutPanelOperations
             // 
-            this.flowLayoutPanelOperations.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flowLayoutPanelOperations.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.flowLayoutPanelOperations.AutoScroll = true;
             this.flowLayoutPanelOperations.Location = new System.Drawing.Point(10, 50);
             this.flowLayoutPanelOperations.Name = "flowLayoutPanelOperations";
-            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(850, 430);
+            this.flowLayoutPanelOperations.Size = new System.Drawing.Size(850, 480);
             this.flowLayoutPanelOperations.TabIndex = 0;
             // 
             // buttonModifierRecette
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(982, 653);
             this.Controls.Add(this.buttonSupprimerRecette);
             this.Controls.Add(this.buttonModifierRecette);
             this.Controls.Add(this.groupBoxOpération);

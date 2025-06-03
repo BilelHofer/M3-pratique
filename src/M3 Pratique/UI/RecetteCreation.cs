@@ -18,7 +18,7 @@ namespace M3_Pratique
 
         private int nombreOperation = 0;
 
-        List<OperationCarteEdit> operationCartes = new List<OperationCarteEdit>();
+        List<OperationCarteCreation> operationCartes = new List<OperationCarteCreation>();
 
         /// <summary>
         /// Constructeur de la fenêtre de création d'une recette.
@@ -48,7 +48,7 @@ namespace M3_Pratique
             // Affiche les opérations de la recette
             foreach (var operation in Global.GetOperationsByRecette(recette.Id))
             {
-                var carte = new OperationCarteEdit(operation.Numero);
+                var carte = new OperationCarteCreation(operation.Numero);
                 carte.SetOperation(operation);
 
                 flowLayoutPanelOperation.Controls.Add(carte);
@@ -174,7 +174,7 @@ namespace M3_Pratique
         /// <param name="e"></param>
         private void btnAjoutOperation_Click(object sender, EventArgs e)
         {
-            var carte = new OperationCarteEdit(nombreOperation);
+            var carte = new OperationCarteCreation(nombreOperation);
             nombreOperation++;
             if (flowLayoutPanelOperation.Controls.Count < 10)
             {
@@ -199,7 +199,7 @@ namespace M3_Pratique
         /// Monte le contrôle d'une position dans le FlowLayoutPanel.
         /// </summary>
         /// <param name="control">Opération à déplacer vers le haut.</param>
-        public void OperationMonter(OperationCarteEdit control)
+        public void OperationMonter(OperationCarteCreation control)
         {
             // Index courant dans la collection
             int index = flowLayoutPanelOperation.Controls.GetChildIndex(control);
@@ -210,7 +210,7 @@ namespace M3_Pratique
 
             // Change l'index position des position
             control.Position--;
-            var other = flowLayoutPanelOperation.Controls[index - 1] as OperationCarteEdit;
+            var other = flowLayoutPanelOperation.Controls[index - 1] as OperationCarteCreation;
             if (other != null)
             {
                 // On incrémente sa Position
@@ -228,7 +228,7 @@ namespace M3_Pratique
         /// Descent l'opération d'une position dans le FlowLayoutPanel.
         /// </summary>
         /// <param name="control">Opération à descendre</param>
-        public void OperationDescendre(OperationCarteEdit control)
+        public void OperationDescendre(OperationCarteCreation control)
         {
             // Index courant dans la collection
             int index = flowLayoutPanelOperation.Controls.GetChildIndex(control);
@@ -239,7 +239,7 @@ namespace M3_Pratique
 
             // Change l'index position des position
             control.Position++;
-            var other = flowLayoutPanelOperation.Controls[index + 1] as OperationCarteEdit;
+            var other = flowLayoutPanelOperation.Controls[index + 1] as OperationCarteCreation;
             if (other != null)
             {
                 // On décrémente sa Position
@@ -257,7 +257,7 @@ namespace M3_Pratique
         /// Supprime une opération précise de la recette.
         /// </summary>
         /// <param name="control">Opération à supprimer</param>
-        public void OperationSupprimer(OperationCarteEdit control)
+        public void OperationSupprimer(OperationCarteCreation control)
         {
             // Supprime le contrôle du FlowLayoutPanel
             flowLayoutPanelOperation.Controls.Remove(control);

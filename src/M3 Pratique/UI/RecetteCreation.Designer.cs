@@ -72,7 +72,7 @@
             // 
             this.btnCreerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnCreerRecette.Location = new System.Drawing.Point(788, 42);
+            this.btnCreerRecette.Location = new System.Drawing.Point(1500, 800);
             this.btnCreerRecette.Name = "btnCreerRecette";
             this.btnCreerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnCreerRecette.TabIndex = 3;
@@ -93,7 +93,7 @@
             this.flowLayoutPanelOperation.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelOperation.Location = new System.Drawing.Point(20, 190);
             this.flowLayoutPanelOperation.Name = "flowLayoutPanelOperation";
-            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(904, 714);
+            this.flowLayoutPanelOperation.Size = new System.Drawing.Size(900, 750);
             this.flowLayoutPanelOperation.TabIndex = 5;
             this.flowLayoutPanelOperation.WrapContents = false;
             // 
@@ -131,9 +131,10 @@
             // 
             // btnAnnuler
             // 
+            this.btnAnnuler.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnnuler.ForeColor = System.Drawing.Color.Black;
-            this.btnAnnuler.Location = new System.Drawing.Point(660, 42);
+            this.btnAnnuler.Location = new System.Drawing.Point(1300, 800);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(100, 80);
             this.btnAnnuler.TabIndex = 12;
@@ -197,9 +198,10 @@
             // 
             // btnEnregistrerRecette
             // 
+            this.btnEnregistrerRecette.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnEnregistrerRecette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnregistrerRecette.ForeColor = System.Drawing.Color.Black;
-            this.btnEnregistrerRecette.Location = new System.Drawing.Point(787, 42);
+            this.btnEnregistrerRecette.Location = new System.Drawing.Point(1500, 800);
             this.btnEnregistrerRecette.Name = "btnEnregistrerRecette";
             this.btnEnregistrerRecette.Size = new System.Drawing.Size(100, 80);
             this.btnEnregistrerRecette.TabIndex = 43;

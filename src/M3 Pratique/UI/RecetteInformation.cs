@@ -39,7 +39,7 @@ namespace M3_Pratique
 
             foreach (var operation in operationsTries)
             {
-                var carte = new OperationCarte(operation);
+                var carte = new OperationCarteInformation(operation);
                 flowLayoutPanelOperations.Controls.Add(carte);
             }
         }

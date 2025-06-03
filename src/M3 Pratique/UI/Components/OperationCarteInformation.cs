@@ -5,13 +5,13 @@ namespace M3_Pratique.UI.Components
     /// <summary>
     /// Classe représentant une opération dans l'interface utilisateur.
     /// </summary>
-    public partial class OperationCarte : UserControl
+    public partial class OperationCarteInformation : UserControl
     {
         /// <summary>
         /// Constructeur de la carte d'opération.
         /// </summary>
         /// <param name="operation">Opération afficher</param>
-        public OperationCarte(Operation operation)
+        public OperationCarteInformation(Operation operation)
         {
             InitializeComponent();
 

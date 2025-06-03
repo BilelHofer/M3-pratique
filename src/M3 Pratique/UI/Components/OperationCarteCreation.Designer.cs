@@ -1,6 +1,6 @@
 ﻿namespace M3_Pratique
 {
-    partial class OperationCarteEdit
+    partial class OperationCarteCreation
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -51,7 +51,7 @@
             // checkBoxCycleVerin
             // 
             this.checkBoxCycleVerin.AutoSize = true;
-            this.checkBoxCycleVerin.Location = new System.Drawing.Point(571, 21);
+            this.checkBoxCycleVerin.Location = new System.Drawing.Point(570, 21);
             this.checkBoxCycleVerin.Name = "checkBoxCycleVerin";
             this.checkBoxCycleVerin.Size = new System.Drawing.Size(18, 17);
             this.checkBoxCycleVerin.TabIndex = 4;
@@ -60,7 +60,7 @@
             // checkBoxQuittance
             // 
             this.checkBoxQuittance.AutoSize = true;
-            this.checkBoxQuittance.Location = new System.Drawing.Point(671, 21);
+            this.checkBoxQuittance.Location = new System.Drawing.Point(670, 21);
             this.checkBoxQuittance.Name = "checkBoxQuittance";
             this.checkBoxQuittance.Size = new System.Drawing.Size(18, 17);
             this.checkBoxQuittance.TabIndex = 5;
@@ -68,7 +68,7 @@
             // 
             // textBoxNomOperation
             // 
-            this.textBoxNomOperation.Location = new System.Drawing.Point(98, 19);
+            this.textBoxNomOperation.Location = new System.Drawing.Point(100, 19);
             this.textBoxNomOperation.Name = "textBoxNomOperation";
             this.textBoxNomOperation.Size = new System.Drawing.Size(150, 22);
             this.textBoxNomOperation.TabIndex = 1;
@@ -83,7 +83,7 @@
             // checkBoxSensHoraire
             // 
             this.checkBoxSensHoraire.AutoSize = true;
-            this.checkBoxSensHoraire.Location = new System.Drawing.Point(771, 21);
+            this.checkBoxSensHoraire.Location = new System.Drawing.Point(770, 21);
             this.checkBoxSensHoraire.Name = "checkBoxSensHoraire";
             this.checkBoxSensHoraire.Size = new System.Drawing.Size(18, 17);
             this.checkBoxSensHoraire.TabIndex = 6;
@@ -92,31 +92,31 @@
             // labelDescendre
             // 
             this.labelDescendre.Image = global::M3_Pratique.Properties.Resources.down;
-            this.labelDescendre.Location = new System.Drawing.Point(27, 29);
+            this.labelDescendre.Location = new System.Drawing.Point(30, 30);
             this.labelDescendre.Name = "labelDescendre";
-            this.labelDescendre.Size = new System.Drawing.Size(49, 31);
+            this.labelDescendre.Size = new System.Drawing.Size(45, 30);
             this.labelDescendre.TabIndex = 18;
             this.labelDescendre.Click += new System.EventHandler(this.labelDescendre_Click);
             // 
             // labelMonter
             // 
             this.labelMonter.Image = global::M3_Pratique.Properties.Resources.up;
-            this.labelMonter.Location = new System.Drawing.Point(28, 3);
+            this.labelMonter.Location = new System.Drawing.Point(30, 0);
             this.labelMonter.Name = "labelMonter";
-            this.labelMonter.Size = new System.Drawing.Size(46, 26);
+            this.labelMonter.Size = new System.Drawing.Size(45, 30);
             this.labelMonter.TabIndex = 17;
             this.labelMonter.Click += new System.EventHandler(this.labelMonter_Click);
             // 
             // labelIconCroix
             // 
             this.labelIconCroix.Image = global::M3_Pratique.Properties.Resources.croix;
-            this.labelIconCroix.Location = new System.Drawing.Point(844, 8);
+            this.labelIconCroix.Location = new System.Drawing.Point(850, 10);
             this.labelIconCroix.Name = "labelIconCroix";
-            this.labelIconCroix.Size = new System.Drawing.Size(37, 39);
+            this.labelIconCroix.Size = new System.Drawing.Size(40, 40);
             this.labelIconCroix.TabIndex = 16;
             this.labelIconCroix.Click += new System.EventHandler(this.labelIconCroix_Click);
             // 
-            // OperationCarteEdit
+            // OperationCarteCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,8 +129,8 @@
             this.Controls.Add(this.checkBoxQuittance);
             this.Controls.Add(this.checkBoxCycleVerin);
             this.Controls.Add(this.numericUpDownTempsAttente);
-            this.Name = "OperationCarteEdit";
-            this.Size = new System.Drawing.Size(887, 60);
+            this.Name = "OperationCarteCreation";
+            this.Size = new System.Drawing.Size(896, 60);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTempsAttente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPositionMoteur)).EndInit();
             this.ResumeLayout(false);
