@@ -76,7 +76,7 @@ namespace M3_Pratique
         /// <param name="e"></param>
         private void labelDescendre_Click(object sender, EventArgs e)
         {
-           FormManager.RecetteCreationForm.OperationDescendre(this);
+            FormManager.RecetteCreationForm.OperationDescendre(this);
         }
     }
 }

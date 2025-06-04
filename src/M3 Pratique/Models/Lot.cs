@@ -27,7 +27,16 @@ namespace M3_Pratique
         public long IdRecette { get => _idRecette; set => _idRecette = value; }
         public Recette Recette { get => _recette; set => _recette = value; }
 
-        // Constructure d'un lot
+        /// <summary>
+        /// Constructeur par défaut de la classe Lot.
+        /// </summary>
+        /// <param name="id">Id du lot</param>
+        /// <param name="nom">Nom du lot</param>
+        /// <param name="quantite">Quantité du lot</param>
+        /// <param name="date">Date du lot</param>
+        /// <param name="idEtat">Id de l'état</param>
+        /// <param name="idRecette">Id de la recette</param>
+        /// <param name="recette">Recette complete</param>
         public Lot(long id, string nom, int quantite, DateTime date, long idEtat, long idRecette, Recette recette)
         {
             Id = id;
