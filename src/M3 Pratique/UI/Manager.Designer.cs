@@ -137,7 +137,7 @@
             this.groupBoxEvenement.Controls.Add(this.flowLayoutPanelEvenements);
             this.groupBoxEvenement.Location = new System.Drawing.Point(20, 180);
             this.groupBoxEvenement.Name = "groupBoxEvenement";
-            this.groupBoxEvenement.Size = new System.Drawing.Size(420, 380);
+            this.groupBoxEvenement.Size = new System.Drawing.Size(500, 380);
             this.groupBoxEvenement.TabIndex = 12;
             this.groupBoxEvenement.TabStop = false;
             this.groupBoxEvenement.Text = "Evénement";
@@ -168,7 +168,7 @@
             this.flowLayoutPanelEvenements.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanelEvenements.Location = new System.Drawing.Point(10, 40);
             this.flowLayoutPanelEvenements.Name = "flowLayoutPanelEvenements";
-            this.flowLayoutPanelEvenements.Size = new System.Drawing.Size(400, 330);
+            this.flowLayoutPanelEvenements.Size = new System.Drawing.Size(480, 330);
             this.flowLayoutPanelEvenements.TabIndex = 9;
             this.flowLayoutPanelEvenements.WrapContents = false;
             // 
