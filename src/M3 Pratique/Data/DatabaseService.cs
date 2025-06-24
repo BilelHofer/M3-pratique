@@ -58,7 +58,6 @@ namespace M3_Pratique.Data
         public static List<Evenement> GetEvenements()
         {
             List<Evenement> evenements = new List<Evenement>();
-
             try
             {
                 DatabaseManager.ConnectDB();
@@ -68,10 +67,22 @@ namespace M3_Pratique.Data
                     {
                         while (reader.Read())
                         {
+                            // Gestion de la date null
+                            DateTime dateHeure;
+                            if (reader.IsDBNull(reader.GetOrdinal("EVE_DateHeure")))
+
+                            {
+                                dateHeure = DateTime.Now; // Utilise l'heure actuelle si null
+                            }
+                            else
+                            {
+                                dateHeure = reader.GetDateTime("EVE_DateHeure");
+                            }
+
                             Evenement evenement = new Evenement(
                                 reader.GetInt64("id_evenement"),
                                 reader.GetString("EVE_Message"),
-                                reader.GetDateTime("EVE_DateHeure"),
+                                dateHeure,
                                 reader.GetInt64("id_Lot")
                             );
                             evenements.Add(evenement);
@@ -83,7 +94,6 @@ namespace M3_Pratique.Data
             {
                 DatabaseManager.CloseConnexion();
             }
-
             return evenements;
         }
 

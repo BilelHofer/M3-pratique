@@ -19,7 +19,12 @@ namespace M3_Pratique
         public string Nom { get => _nom; set => _nom = value; }
         public DateTime DateCreation { get => _dateCreation; set => _dateCreation = value; }
 
-        // Constructeur de la classe Recette
+        /// <summary>
+        /// Constructeur par défaut de la classe Recette.
+        /// </summary>
+        /// <param name="id">id de la recette</param>
+        /// <param name="nom">Nom de la recette</param>
+        /// <param name="dateCreation">Date de création de la recette</param>
         public Recette(long id, string nom, DateTime dateCreation)
         {
             Id = id;

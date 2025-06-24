@@ -117,11 +117,11 @@
     <Compile Include="UI\Components\LotCarte.Designer.cs">
       <DependentUpon>LotCarte.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Components\OperationCarte.cs">
+    <Compile Include="UI\Components\OperationCarteInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Components\OperationCarte.Designer.cs">
-      <DependentUpon>OperationCarte.cs</DependentUpon>
+    <Compile Include="UI\Components\OperationCarteInformation.Designer.cs">
+      <DependentUpon>OperationCarteInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\RecetteCarte.cs">
       <SubType>UserControl</SubType>
@@ -136,11 +136,11 @@
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Operation.cs" />
-    <Compile Include="UI\Components\OperationCarteEdit.cs">
+    <Compile Include="UI\Components\OperationCarteCreation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\Components\OperationCarteEdit.Designer.cs">
-      <DependentUpon>OperationCarteEdit.cs</DependentUpon>
+    <Compile Include="UI\Components\OperationCarteCreation.Designer.cs">
+      <DependentUpon>OperationCarteCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,8 +163,8 @@
     <EmbeddedResource Include="UI\Components\LotCarte.resx">
       <DependentUpon>LotCarte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Components\OperationCarte.resx">
-      <DependentUpon>OperationCarte.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Components\OperationCarteInformation.resx">
+      <DependentUpon>OperationCarteInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\RecetteCarte.resx">
       <DependentUpon>RecetteCarte.cs</DependentUpon>
@@ -172,8 +172,8 @@
     <EmbeddedResource Include="UI\Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Components\OperationCarteEdit.resx">
-      <DependentUpon>OperationCarteEdit.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Components\OperationCarteCreation.resx">
+      <DependentUpon>OperationCarteCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

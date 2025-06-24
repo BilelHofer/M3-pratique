@@ -6,7 +6,7 @@ namespace M3_Pratique
     /// <summary>
     /// Classe représentant une carte d'édition d'opération dans l'interface utilisateur.
     /// </summary>
-    public partial class OperationCarteEdit : UserControl
+    public partial class OperationCarteCreation : UserControl
     {
 
         private int position;
@@ -16,7 +16,7 @@ namespace M3_Pratique
         /// Constructeur de la carte d'édition d'opération.
         /// </summary>
         /// <param name="pos"></param>
-        public OperationCarteEdit(int pos)
+        public OperationCarteCreation(int pos)
         {
             InitializeComponent();
 
@@ -76,7 +76,7 @@ namespace M3_Pratique
         /// <param name="e"></param>
         private void labelDescendre_Click(object sender, EventArgs e)
         {
-           FormManager.RecetteCreationForm.OperationDescendre(this);
+            FormManager.RecetteCreationForm.OperationDescendre(this);
         }
     }
 }

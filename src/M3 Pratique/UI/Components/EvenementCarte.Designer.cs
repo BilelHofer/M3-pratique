@@ -62,10 +62,10 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelMessage);
             this.Controls.Add(this.labelDate);
-            this.MaximumSize = new System.Drawing.Size(396, 32);
-            this.MinimumSize = new System.Drawing.Size(392, 28);
+            this.MaximumSize = new System.Drawing.Size(398, 32);
+            this.MinimumSize = new System.Drawing.Size(394, 28);
             this.Name = "EvenementCarte";
-            this.Size = new System.Drawing.Size(394, 30);
+            this.Size = new System.Drawing.Size(396, 30);
             this.ResumeLayout(false);
             this.PerformLayout();
 

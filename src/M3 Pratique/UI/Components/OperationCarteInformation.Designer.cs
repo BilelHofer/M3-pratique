@@ -1,6 +1,6 @@
 ﻿namespace M3_Pratique.UI.Components
 {
-    partial class OperationCarte
+    partial class OperationCarteInformation
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -40,7 +40,7 @@
             // labelNumero
             // 
             this.labelNumero.AutoSize = true;
-            this.labelNumero.Location = new System.Drawing.Point(13, 12);
+            this.labelNumero.Location = new System.Drawing.Point(15, 12);
             this.labelNumero.Name = "labelNumero";
             this.labelNumero.Size = new System.Drawing.Size(32, 16);
             this.labelNumero.TabIndex = 0;
@@ -49,7 +49,7 @@
             // labelNom
             // 
             this.labelNom.AutoSize = true;
-            this.labelNom.Location = new System.Drawing.Point(79, 12);
+            this.labelNom.Location = new System.Drawing.Point(80, 12);
             this.labelNom.MaximumSize = new System.Drawing.Size(187, 0);
             this.labelNom.Name = "labelNom";
             this.labelNom.Size = new System.Drawing.Size(36, 16);
@@ -59,7 +59,7 @@
             // labelPositionMoteur
             // 
             this.labelPositionMoteur.AutoSize = true;
-            this.labelPositionMoteur.Location = new System.Drawing.Point(309, 12);
+            this.labelPositionMoteur.Location = new System.Drawing.Point(310, 12);
             this.labelPositionMoteur.Name = "labelPositionMoteur";
             this.labelPositionMoteur.Size = new System.Drawing.Size(72, 16);
             this.labelPositionMoteur.TabIndex = 2;
@@ -68,7 +68,7 @@
             // labelTempsAttente
             // 
             this.labelTempsAttente.AutoSize = true;
-            this.labelTempsAttente.Location = new System.Drawing.Point(432, 12);
+            this.labelTempsAttente.Location = new System.Drawing.Point(430, 12);
             this.labelTempsAttente.Name = "labelTempsAttente";
             this.labelTempsAttente.Size = new System.Drawing.Size(89, 16);
             this.labelTempsAttente.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.checkBoxCycleVerin.AutoSize = true;
             this.checkBoxCycleVerin.Enabled = false;
-            this.checkBoxCycleVerin.Location = new System.Drawing.Point(571, 11);
+            this.checkBoxCycleVerin.Location = new System.Drawing.Point(570, 12);
             this.checkBoxCycleVerin.Name = "checkBoxCycleVerin";
             this.checkBoxCycleVerin.Size = new System.Drawing.Size(18, 17);
             this.checkBoxCycleVerin.TabIndex = 4;
@@ -88,7 +88,7 @@
             // 
             this.checkBoxQuittance.AutoSize = true;
             this.checkBoxQuittance.Enabled = false;
-            this.checkBoxQuittance.Location = new System.Drawing.Point(676, 11);
+            this.checkBoxQuittance.Location = new System.Drawing.Point(680, 12);
             this.checkBoxQuittance.Name = "checkBoxQuittance";
             this.checkBoxQuittance.Size = new System.Drawing.Size(18, 17);
             this.checkBoxQuittance.TabIndex = 5;
@@ -98,13 +98,13 @@
             // 
             this.checkBoxSensMoteur.AutoSize = true;
             this.checkBoxSensMoteur.Enabled = false;
-            this.checkBoxSensMoteur.Location = new System.Drawing.Point(789, 11);
+            this.checkBoxSensMoteur.Location = new System.Drawing.Point(790, 12);
             this.checkBoxSensMoteur.Name = "checkBoxSensMoteur";
             this.checkBoxSensMoteur.Size = new System.Drawing.Size(18, 17);
             this.checkBoxSensMoteur.TabIndex = 6;
             this.checkBoxSensMoteur.UseVisualStyleBackColor = true;
             // 
-            // OperationCarte
+            // OperationCarteInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,9 +118,9 @@
             this.Controls.Add(this.labelNom);
             this.Controls.Add(this.labelNumero);
             this.MinimumSize = new System.Drawing.Size(520, 0);
-            this.Name = "OperationCarte";
+            this.Name = "OperationCarteInformation";
             this.Padding = new System.Windows.Forms.Padding(10);
-            this.Size = new System.Drawing.Size(820, 56);
+            this.Size = new System.Drawing.Size(846, 50);
             this.ResumeLayout(false);
             this.PerformLayout();
 

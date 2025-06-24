@@ -1,0 +1,49 @@
+CREATE TABLE Etat(
+   Id_Etat INT AUTO_INCREMENT,
+   ETA_Libelle VARCHAR(50) ,
+   PRIMARY KEY(Id_Etat)
+);
+
+CREATE TABLE Recette(
+   Id_Recette INT AUTO_INCREMENT,
+   REC_Nom VARCHAR(50)  NOT NULL,
+   REC_DateHeureCréation DATETIME NOT NULL,
+   PRIMARY KEY(Id_Recette),
+   UNIQUE(REC_Nom)
+);
+
+CREATE TABLE Lot(
+   Id_Lot INT AUTO_INCREMENT,
+   LOT_Nom VARCHAR(50)  NOT NULL,
+   LOT_Quantite INT NOT NULL,
+   LOT_DateHeureCréation DATETIME NOT NULL,
+   Id_Etat INT NOT NULL,
+   Id_Recette INT NOT NULL,
+   PRIMARY KEY(Id_Lot),
+   UNIQUE(LOT_Nom),
+   FOREIGN KEY(Id_Etat) REFERENCES Etat(Id_Etat),
+   FOREIGN KEY(Id_Recette) REFERENCES Recette(Id_Recette)
+);
+
+CREATE TABLE Evénement(
+   Id_Evénement INT AUTO_INCREMENT,
+   EVE_Message VARCHAR(50)  NOT NULL,
+   EVE_DateHeure DATETIME,
+   Id_Lot INT NOT NULL,
+   PRIMARY KEY(Id_Evénement),
+   FOREIGN KEY(Id_Lot) REFERENCES Lot(Id_Lot)
+);
+
+CREATE TABLE Opération(
+   Id_Operation INT AUTO_INCREMENT,
+   OPE_Nom VARCHAR(50) ,
+   OPE_Numero INT,
+   OPE_PositionMoteur INT,
+   OPE_TempsAttente INT,
+   OPE_CycleVerin BOOLEAN,
+   OPE_Quittance BOOLEAN,
+   OPE_SensMoteur BOOLEAN,
+   Id_Recette INT NOT NULL,
+   PRIMARY KEY(Id_Operation),
+   FOREIGN KEY(Id_Recette) REFERENCES Recette(Id_Recette)
+);
